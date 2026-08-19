@@ -647,6 +647,37 @@ padding-bottom:110px;
             <div class="stat-card"><div class="stat-title">${escapeHtml(match.AwayTeam||'')} - Derniers Matchs</div>${renderMatchList(match.last_matches_away||[], match.AwayTeam)}</div>
         `;
     }
+    
+    function renderCotesTab(match) {
+    const odds = match.odds || {};
+    const h2h = odds.h2h || {};
+    const totals = odds.totals || {};
+    const bookmaker = odds.bookmaker || 'N/A';
+
+    let html = `<div class="stat-card"><div class="stat-title">Bookmaker</div><div class="stat-row"><span class="stat-label">Source</span><span class="stat-value">${escapeHtml(bookmaker)}</span></div></div>`;
+
+    if (Object.keys(h2h).length) {
+        html += `<div class="stat-card"><div class="stat-title">Cotes 1X2</div>`;
+        Object.entries(h2h).forEach(([outcome, cote]) => {
+            html += `<div class="stat-row"><span class="stat-label">${escapeHtml(outcome)}</span><span class="stat-value">${cote}</span></div>`;
+        });
+        html += `</div>`;
+    }
+
+    if (Object.keys(totals).length) {
+        html += `<div class="stat-card"><div class="stat-title">Cotes Over/Under 2.5</div>`;
+        Object.entries(totals).forEach(([outcome, cote]) => {
+            html += `<div class="stat-row"><span class="stat-label">${escapeHtml(outcome)}</span><span class="stat-value">${cote}</span></div>`;
+        });
+        html += `</div>`;
+    }
+
+    if (!Object.keys(h2h).length && !Object.keys(totals).length) {
+        html += `<div class="info-box"><div class="info-box-title">Aucune cote disponible</div></div>`;
+    }
+
+    return html;
+}
 
     function renderH2HTab(match) {
         const h2h = match.confrontations_saison_derniere || [];
