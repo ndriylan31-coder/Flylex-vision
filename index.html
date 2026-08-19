@@ -475,6 +475,7 @@ padding-bottom:110px;
         if (match.analyse_ia || match.prediction_principale) tabs.push({ id: 'prediction', label: 'Prédiction IA' });
         if (match.last_matches_home && match.last_matches_home.length) tabs.push({ id: 'recents', label: 'Matchs Récents' });
         if (match.confrontations_saison_derniere && match.confrontations_saison_derniere.length) tabs.push({ id: 'h2h', label: 'H2H' });
+        if (match.odds && (match.odds.h2h || match.odds.totals)) tabs.push({ id: 'cotes', label: 'Cotes' });
         if (match.classement_complet && match.classement_complet.length) tabs.push({ id: 'classements', label: 'Classements' });
 
         const tabsWrapper = document.getElementById('tabsWrapper');
