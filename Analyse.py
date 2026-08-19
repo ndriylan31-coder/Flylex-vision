@@ -2908,71 +2908,95 @@ def get_odds_for_match(sport_odds_id, home_team_api, away_team_api, home_team_es
         return None
 
 # 🔧 Classe réutilisable de scraping de classement (VERSION AMÉLIORÉE)
+def extract_league_slug_from_url(url):
+    """
+    Extrait le code de ligue ESPN depuis l'URL stockée dans classement_ligue_mapping.
+    Ex: https://www.espn.com/soccer/standings/_/league/eng.1 -> "eng.1"
+    """
+    if not url:
+        return None
+    match = re.search(r"/league/([a-z0-9.\-]+)", url)
+    return match.group(1) if match else None
+ 
+ 
 class ClassementScraper:
+    """
+    VERSION CORRIGÉE : utilise l'API JSON ESPN au lieu du scraping HTML
+    (ESPN a migré vers du rendu JavaScript, cassant l'ancien scraping BeautifulSoup)
+    """
     def __init__(self, url):
         self.url = url
-        self.headers = {'User-Agent': 'Mozilla/5.0'}
         self.teams_positions = {}
-        self.full_standings = []  # Nouveau : stockage du classement complet
-
+        self.full_standings = []
+ 
     def scrape_table(self):
+        league_slug = extract_league_slug_from_url(self.url)
+        if not league_slug:
+            print(f"❌ Impossible d'extraire le code de ligue depuis {self.url}")
+            return
+ 
+        api_url = f"https://site.web.api.espn.com/apis/v2/sports/soccer/{league_slug}/standings"
+        params = {"type": 0, "level": 0}
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                          "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+        }
+ 
         try:
-            response = requests.get(self.url, headers=self.headers)
+            response = requests.get(api_url, headers=headers, params=params, timeout=15)
             response.raise_for_status()
-            soup = BeautifulSoup(response.text, 'html.parser')
-            
-            # 1. Extraire les noms d'équipes
-            team_divs = soup.select('.team-link .hide-mobile a')
-            team_names = [tag.text.strip() for tag in team_divs]
-            
-            # 2. Extraire les points (8e cellule de chaque ligne dans le 2e tableau)
-            stat_rows = soup.select('.Table__Scroller .Table__TBODY > tr')
-            team_points = []
-            
-            for row in stat_rows:
-                cells = row.find_all("td")
-                if len(cells) >= 8:
-                    try:
-                        points = int(cells[7].text.strip())
-                    except ValueError:
-                        points = None
-                    team_points.append(points)
-            
-            # 3. Combiner équipes + points et créer le dictionnaire de positions
-            teams_data = list(zip(team_names, team_points))
-            
-            print(f"🏆 Classement extrait de {self.url}:")
-            for i, (team, pts) in enumerate(teams_data, start=1):
-                if team and pts is not None:
-                    self.teams_positions[team.lower()] = (i, team, pts)
-                    self.full_standings.append({
-                        "position": i,
-                        "team": team,
-                        "points": pts
-                    })
-                    print(f"  {i}. {team}: {pts} points")
-
+            data = response.json()
         except Exception as e:
-            print(f"❌ Erreur scraping classement : {e}")
-
+            print(f"❌ Erreur API JSON classement ({league_slug}) : {e}")
+            return
+ 
+        # La structure varie : parfois "standings" directement, parfois via "children"
+        entries = []
+        if "standings" in data and "entries" in data.get("standings", {}):
+            entries = data["standings"]["entries"]
+        elif "children" in data and data["children"]:
+            entries = data["children"][0].get("standings", {}).get("entries", [])
+ 
+        if not entries:
+            print(f"⚠️ Aucune entrée de classement trouvée pour {league_slug}")
+            return
+ 
+        print(f"🏆 Classement extrait (API JSON) pour {league_slug}:")
+        for i, entry in enumerate(entries, start=1):
+            team_name = entry.get("team", {}).get("displayName", "N/A")
+            stats = entry.get("stats", [])
+            points = None
+            for stat in stats:
+                if stat.get("name") == "points" or stat.get("abbreviation") == "PTS":
+                    try:
+                        points = int(float(stat.get("value", 0)))
+                    except (ValueError, TypeError):
+                        points = None
+                    break
+ 
+            if team_name and points is not None:
+                self.teams_positions[team_name.lower()] = (i, team_name, points)
+                self.full_standings.append({
+                    "position": i,
+                    "team": team_name,
+                    "points": points
+                })
+                print(f"  {i}. {team_name}: {points} points")
+ 
     def get_position(self, team_query):
-        # Utiliser le mapping pour convertir le nom API vers le nom ESPN
         mapped_team_name = team_name_mapping.get(team_query, team_query)
-        
-        # Recherche exacte d'abord
+ 
         if mapped_team_name.lower() in self.teams_positions:
             return self.teams_positions[mapped_team_name.lower()]
-        
-        # Recherche partielle ensuite
+ 
         for key, (position, full_name, points) in self.teams_positions.items():
             if mapped_team_name.lower() in key or key in mapped_team_name.lower():
                 return position, full_name, points
         return None, None, None
-
+ 
     def get_full_standings(self):
-        """Retourne le classement complet"""
         return self.full_standings
-
+        
 # 🧠 Fonction utilitaire get_team_classement_position (modifiée pour retourner le classement complet)
 def get_team_classement_position(country, league, team_name):
     league_info = classement_ligue_mapping.get(country, {}).get(league)
