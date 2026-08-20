@@ -1,270 +1,257 @@
-<!DOCTYPE html>
+<!DOCTYPE<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vision Flylex</title>
-<link rel="manifest" href="manifest.json">
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
-<link rel="apple-touch-icon" href="icon-192x192.png">
-<meta name="theme-color" content="#0a1647">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+    <meta name="theme-color" content="#0a1230">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(180deg, #0a1647 0%, #1a2b7a 50%, #0a1647 100%);
-            min-height: 100vh; color: white;
-        }
-        .container { max-width:480px; margin:0 auto; min-height:100vh; display:flex; flex-direction:column; background: linear-gradient(180deg, #0d1b5e 0%, #0a1445 100%); }
-        header.app-header { display:flex; align-items:center; justify-content:center; gap:20px; padding:20px; margin:20px 20px 30px 20px; }
-        header.app-header.hide-on-live { display:flex; }
-        .app-logo-img { width:80px; height:80px; border-radius:18px; object-fit:cover; box-shadow:0 4px 20px rgba(59,130,246,0.4), inset 0 2px 10px rgba(255,255,255,0.1); border:2px solid rgba(96,165,250,0.4); }
-.slogan-container { text-align:center; padding:0 20px 25px 20px; }
-.slogan-divider { display:flex; align-items:center; justify-content:center; gap:15px; margin-bottom:15px; }
-.slogan-divider::before, .slogan-divider::after { content:''; flex:1; height:1px; background: rgba(96,165,250,0.4); max-width:130px; }
-.slogan-icon { font-size:18px; }
-.slogan-main { font-style:italic; font-weight:700; font-size:16px; margin-bottom:8px; }
-.slogan-sub { font-size:14px; color:#93c5fd; }
-.slogan-highlight { color:#60a5fa; font-style:italic; font-weight:700; }
-        .app-title { font-size:28px; font-weight:700; letter-spacing:2px; }
-        .loading-container { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; padding:40px; background-image:url('splash-background.jpg'); background-size:cover; background-position:center; }
-        .spinner { width:60px; height:60px; border:4px solid rgba(59,130,246,0.2); border-top:4px solid #3b82f6; border-radius:50%; animation:spin 1s linear infinite; }
-        @keyframes spin { 0%{ transform:rotate(0deg);} 100%{ transform:rotate(360deg);} }
-        .loading-text { font-size:16px; color:rgba(255,255,255,0.8); text-align:center; }
-        .error-container { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; padding:40px; }
-        .error-icon { font-size:64px; }
-        .error-text { font-size:16px; color:rgba(255,255,255,0.8); text-align:center; line-height:1.6; }
-        .matches-container { flex:1; padding:0 20px; overflow-y:auto; padding-bottom:110px; }
-        .match-card { background: linear-gradient(135deg, rgba(37,99,235,0.25) 0%, rgba(29,78,216,0.15) 100%); border-radius:32px; padding:30px 20px; margin-bottom:30px; box-shadow:0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1), 0 0 40px rgba(37,99,235,0.1); border:1px solid rgba(59,130,246,0.2); position:relative; cursor:pointer; transition:all 0.3s ease; }
-        .match-card:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1), 0 0 50px rgba(37,99,235,0.2); }
-        .match-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
-        .team { display:flex; flex-direction:column; align-items:center; gap:12px; flex:1; }
-        .team-logo { width:90px; height:90px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(59,130,246,0.4), inset 0 2px 10px rgba(255,255,255,0.1); border:2px solid rgba(96,165,250,0.4); overflow:hidden; }
-        .team-logo img { width:100%; height:100%; object-fit:contain; }
-        .team-name { font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:1px; text-align:center; }
-        .vs-container { display:flex; flex-direction:column; align-items:center; gap:8px; margin:0 20px; }
-        .match-date { font-size:12px; font-weight:600; letter-spacing:1px; color:rgba(255,255,255,0.8); text-transform:uppercase; text-align:center; width:100%; }
-        .vs-text { font-size:48px; font-weight:900; letter-spacing:4px; color:white; text-shadow:0 4px 20px rgba(59,130,246,0.6); }
-        .reliability { text-align:center; background: linear-gradient(135deg, rgba(59,130,246,0.4) 0%, rgba(37,99,235,0.3) 100%); border-radius:20px; padding:12px 24px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; border:1px solid rgba(96,165,250,0.3); box-shadow:0 2px 10px rgba(0,0,0,0.2); }
-        .bottom-nav { position:fixed; bottom:16px; left:50%; transform:translateX(-50%); width:calc(100% - 32px); max-width:448px; display:flex; justify-content:space-around; align-items:center; padding:12px 8px; background: linear-gradient(135deg, rgba(30,64,175,0.88) 0%, rgba(29,41,138,0.88) 100%); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-radius:28px; border:1px solid rgba(96,165,250,0.35); box-shadow:0 10px 35px rgba(0,0,0,0.45), 0 0 25px rgba(37,99,235,0.25); z-index:500; }
-.nav-item { display:flex; flex-direction:column; align-items:center; gap:4px; cursor:pointer; transition:all 0.3s ease; padding:8px 14px; border-radius:18px; }
-.nav-item:hover { background: rgba(255,255,255,0.1); }
-.nav-item.active { background: rgba(255,255,255,0.18); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15); }
-.nav-item span { font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; text-align:center; line-height:1.2; }
-        .details-page { position:fixed; top:0; left:0; right:0; bottom:0; background: linear-gradient(180deg, #0d1b5e 0%, #0a1445 100%); z-index:1000; display:none; flex-direction:column; overflow:hidden; }
+        * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+        body { font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color:white; min-height:100vh; }
+        .app-shell { max-width:480px; margin:0 auto; min-height:100vh; display:flex; flex-direction:column; position:relative; overflow-x:hidden; }
+ 
+        /* ===== THEME ACCUEIL : NOIR-BLEU ===== */
+        .home-shell { background:linear-gradient(160deg, #05070f 0%, #0a1230 45%, #060814 100%); }
+ 
+        .home-topbar { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:16px 16px 4px 16px; }
+        .icon-btn { width:44px; height:44px; border-radius:50%; background:rgba(59,130,246,0.12); border:1px solid rgba(96,165,250,0.4); display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; box-shadow:0 0 14px rgba(59,130,246,0.25); }
+        .icon-btn svg { width:20px; height:20px; }
+        .slogan-pill { flex:1; text-align:center; border:1px solid rgba(96,165,250,0.4); border-radius:20px; padding:8px 14px; background:linear-gradient(90deg, rgba(59,130,246,0.08), rgba(139,92,246,0.08), rgba(234,179,8,0.08)); }
+        .slogan-pill .slogan-main { font-style:italic; font-weight:700; font-size:14px; }
+        .slogan-pill .slogan-sub { font-size:10px; color:#93c5fd; }
+        .slogan-pill .slogan-highlight { color:#60a5fa; }
+        .app-logo-round { width:46px; height:46px; border-radius:50%; overflow:hidden; border:2px solid rgba(96,165,250,0.5); box-shadow:0 0 16px rgba(59,130,246,0.4); flex-shrink:0; background:#0a1230; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:800; text-align:center; }
+        .app-logo-round img { width:100%; height:100%; object-fit:cover; }
+ 
+        .section-title-row { display:flex; align-items:center; justify-content:space-between; padding:18px 20px 8px 20px; }
+        .section-title-row h2 { font-size:19px; font-weight:800; }
+        .section-title-row .see-all { font-size:13px; color:#38bdf8; font-weight:600; }
+ 
+        .matches-container { flex:1; padding:0 16px 85px 16px; overflow-y:auto; }
+ 
+        .home-match-card { background:linear-gradient(160deg, rgba(20,30,60,0.85) 0%, rgba(10,15,35,0.9) 100%); border:1px solid rgba(59,130,246,0.18); border-radius:22px; padding:16px; margin-bottom:16px; box-shadow:0 8px 24px rgba(0,0,0,0.35); cursor:pointer; transition:transform .2s ease; }
+        .home-match-card:active { transform:scale(0.98); }
+        .home-match-row { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+        .home-team-col { flex:1; display:flex; flex-direction:column; align-items:center; gap:8px; min-width:0; }
+        .home-team-col .team-name { font-size:13px; font-weight:700; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%; }
+        .home-team-logo { width:56px; height:56px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; overflow:hidden; box-shadow:0 0 10px rgba(59,130,246,0.3); }
+        .home-team-logo img { width:100%; height:100%; object-fit:contain; }
+        .home-match-center { flex:1.3; text-align:center; display:flex; flex-direction:column; align-items:center; gap:4px; }
+        .home-league-tag { display:flex; align-items:center; gap:5px; font-size:11px; color:rgba(255,255,255,0.75); font-weight:600; }
+        .home-league-tag .dot { width:14px; height:14px; border-radius:50%; background:rgba(59,130,246,0.3); display:inline-block; }
+        .home-match-time { font-size:20px; font-weight:800; }
+        .home-odds-row { display:flex; gap:6px; margin-top:6px; }
+        .odds-chip { font-size:12px; font-weight:700; padding:5px 9px; border-radius:10px; border:1px solid rgba(96,165,250,0.4); background:rgba(59,130,246,0.12); color:#93c5fd; }
+        .odds-chip.draw { border-color:rgba(255,255,255,0.2); background:rgba(255,255,255,0.05); color:rgba(255,255,255,0.75); }
+ 
+        .bottom-nav-float { position:fixed; bottom:14px; left:50%; transform:translateX(-50%); width:calc(100% - 40px); max-width:400px; display:flex; justify-content:space-around; align-items:center; padding:7px 5px; background:rgba(10,15,35,0.85); backdrop-filter:blur(16px); border:1px solid rgba(59,130,246,0.3); border-radius:18px; box-shadow:0 8px 22px rgba(0,0,0,0.45); z-index:900; }
+        .nav-item-f { display:flex; flex-direction:column; align-items:center; gap:2px; padding:5px 8px; border-radius:11px; cursor:pointer; color:rgba(255,255,255,0.55); flex:1; }
+        .nav-item-f svg { width:16px; height:16px; }
+        .nav-item-f span { font-size:8px; font-weight:700; text-transform:uppercase; text-align:center; line-height:1.1; }
+        .nav-item-f.active { color:#38bdf8; background:rgba(56,189,248,0.12); }
+ 
+        .side-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:1500; display:none; }
+        .side-overlay.active { display:block; }
+        .side-panel { position:fixed; top:0; left:0; bottom:0; width:34%; min-width:230px; max-width:300px; background:linear-gradient(180deg, #1a0505 0%, #0d0505 60%, #1a0505 100%); border-right:1px solid rgba(239,68,68,0.35); z-index:1600; transform:translateX(-100%); transition:transform .3s ease; display:flex; flex-direction:column; padding:24px 16px; overflow-y:auto; }
+        .side-panel.active { transform:translateX(0); }
+        .side-panel-title { font-size:16px; font-weight:800; margin-bottom:20px; color:#f87171; text-transform:uppercase; letter-spacing:1px; }
+        .side-panel-item { padding:13px 10px; border-radius:12px; font-size:14px; font-weight:600; color:rgba(255,255,255,0.85); cursor:pointer; margin-bottom:4px; }
+        .side-panel-item:active, .side-panel-item.active { background:rgba(239,68,68,0.18); color:#fca5a5; }
+ 
+        /* ===== THEME DETAILS : NOIR-ROUGE ===== */
+        .details-page { position:fixed; inset:0; background:linear-gradient(180deg, #150404 0%, #1c0505 40%, #0c0303 100%); z-index:1000; display:none; flex-direction:column; overflow:hidden; }
         .details-page.active { display:flex; }
-        .details-header { background: linear-gradient(135deg, rgba(37,99,235,0.3) 0%, rgba(29,78,216,0.2) 100%); padding:20px; border-bottom:1px solid rgba(59,130,246,0.2); z-index:1002; position:relative; }
-        .back-button { background: rgba(59,130,246,0.3); border:1px solid rgba(96,165,250,0.3); border-radius:12px; padding:10px 20px; color:white; font-size:14px; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:8px; margin-bottom:20px; transition:all 0.3s ease; border:none; }
-        .back-button:hover { background: rgba(59,130,246,0.4); }
-        .details-match-info { display:flex; align-items:center; justify-content:space-between; margin-top:10px; }
-        .details-team { display:flex; flex-direction:column; align-items:center; gap:10px; flex:1; }
-        .details-team-logo { width:70px; height:70px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(59,130,246,0.4); border:2px solid rgba(96,165,250,0.4); overflow:hidden; }
+        .details-header { padding:16px 16px 10px 16px; border-bottom:1px solid rgba(239,68,68,0.2); }
+        .details-header-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+        .details-back { display:flex; align-items:center; gap:6px; font-size:15px; font-weight:700; color:white; background:none; border:none; cursor:pointer; }
+        .details-back svg { width:20px; height:20px; }
+        .details-share { width:38px; height:38px; border-radius:12px; border:1px solid rgba(239,68,68,0.4); display:flex; align-items:center; justify-content:center; }
+        .details-league-line { text-align:center; margin-bottom:14px; }
+        .details-league-line .league-name { font-size:15px; font-weight:700; }
+        .details-league-line .league-round { font-size:12px; color:#ef4444; font-weight:700; margin-top:2px; }
+        .details-match-info { display:flex; align-items:center; justify-content:space-between; }
+        .details-team { flex:1; display:flex; flex-direction:column; align-items:center; gap:8px; }
+        .details-team-logo { width:64px; height:64px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; overflow:hidden; box-shadow:0 0 12px rgba(239,68,68,0.25); }
         .details-team-logo img { width:100%; height:100%; object-fit:contain; }
-        .details-team-name { font-size:16px; font-weight:700; text-transform:uppercase; text-align:center; }
-        .details-vs { font-size:32px; font-weight:900; margin:0 15px; color:white; text-shadow:0 4px 20px rgba(59,130,246,0.6); }
-        .tabs-container { background: rgba(10,22,71,0.95); padding:15px 10px 10px 10px; overflow-x:auto; border-bottom:1px solid rgba(59,130,246,0.2); position:sticky; top:0; z-index:1001; backdrop-filter: blur(10px); }
-        .tabs-wrapper { display:flex; gap:10px; min-width:min-content; padding-bottom:5px; }
-        .tab-button { padding:10px 20px; background: rgba(37,99,235,0.2); border:1px solid rgba(59,130,246,0.3); border-radius:20px; color:rgba(255,255,255,0.7); font-size:13px; font-weight:600; cursor:pointer; transition:all 0.3s ease; white-space:nowrap; text-transform:uppercase; letter-spacing:0.5px; }
-        .tab-button:hover { background: rgba(37,99,235,0.3); color:white; }
-        .tab-button.active { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color:white; border-color: rgba(96,165,250,0.5); box-shadow:0 4px 15px rgba(59,130,246,0.4); }
-        .tab-contents-wrapper { flex:1; overflow-y:auto; overflow-x:hidden; position:relative; z-index:1000; }
-        .tab-content { padding:20px; display:none; min-height:100%; }
+        .details-team-name { font-size:14px; font-weight:700; text-align:center; }
+        .details-vs { font-size:26px; font-weight:900; margin:0 10px; }
+        .details-time-line { text-align:center; margin-top:8px; font-size:13px; font-weight:700; color:#ef4444; }
+        .details-time-line .value { color:white; font-size:16px; margin-left:6px; }
+ 
+        .tabs-container { padding:12px 12px 8px 12px; overflow-x:auto; }
+        .tabs-wrapper { display:flex; gap:8px; min-width:min-content; }
+        .tab-button { padding:9px 16px; background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.25); border-radius:14px; color:rgba(255,255,255,0.65); font-size:13px; font-weight:700; white-space:nowrap; cursor:pointer; }
+        .tab-button.active { background:#ef4444; color:white; border-color:#ef4444; box-shadow:0 4px 14px rgba(239,68,68,0.4); }
+        .tab-contents-wrapper { flex:1; overflow-y:auto; padding-bottom:24px; }
+        .tab-content { padding:16px; display:none; }
         .tab-content.active { display:block; }
-        .stat-card { background: linear-gradient(135deg, rgba(37,99,235,0.2) 0%, rgba(29,78,216,0.1) 100%); border-radius:20px; padding:20px; margin-bottom:15px; border:1px solid rgba(59,130,246,0.2); }
-        .stat-title { font-size:14px; font-weight:700; text-transform:uppercase; color:rgba(255,255,255,0.9); margin-bottom:15px; letter-spacing:1px; }
-        .stat-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; font-size:14px; }
-        .stat-row:last-child { margin-bottom:0; }
-        .stat-label { color:rgba(255,255,255,0.7); font-weight:500; }
-        .stat-value { font-weight:700; color:white; }
-        .progress-bar { width:100%; height:8px; background: rgba(0,0,0,0.3); border-radius:10px; overflow:hidden; margin-top:8px; }
-        .progress-fill { height:100%; background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%); border-radius:10px; transition: width 0.3s ease; }
-        .vs-stat { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
-        .vs-stat-team { flex:1; text-align:center; }
-        .vs-stat-value { font-size:24px; font-weight:900; color:white; }
-        .vs-stat-label { font-size:11px; color:rgba(255,255,255,0.6); text-transform:uppercase; margin-top:5px; letter-spacing:0.5px; }
-        .vs-stat-vs { margin:0 20px; color:rgba(255,255,255,0.4); font-weight:700; }
-        .proba-card { background: linear-gradient(135deg, rgba(16,185,129,0.2) 0%, rgba(5,150,105,0.1) 100%); border:1px solid rgba(16,185,129,0.3); border-radius:20px; padding:20px; margin-bottom:15px; text-align:center; }
-        .proba-label { font-size:13px; text-transform:uppercase; color:rgba(255,255,255,0.7); letter-spacing:1px; margin-bottom:10px; }
-        .proba-value { font-size:48px; font-weight:900; color:#10b981; text-shadow:0 4px 20px rgba(16,185,129,0.5); }
-        .prediction-card { background: linear-gradient(135deg, rgba(245,158,11,0.2) 0%, rgba(217,119,6,0.1) 100%); border:1px solid rgba(245,158,11,0.3); border-radius:20px; padding:25px; margin-bottom:15px; text-align:center; }
-        .prediction-title { font-size:14px; text-transform:uppercase; color:rgba(255,255,255,0.7); letter-spacing:1px; margin-bottom:15px; }
-        .prediction-result { font-size:28px; font-weight:900; color:#f59e0b; text-shadow:0 4px 20px rgba(245,158,11,0.5); margin-bottom:10px; }
-        .prediction-confidence { font-size:13px; color:rgba(255,255,255,0.6); }
-        .recent-match { background: linear-gradient(135deg, rgba(37,99,235,0.15) 0%, rgba(29,78,216,0.1) 100%); border:1px solid rgba(59,130,246,0.2); border-radius:16px; padding:15px; margin-bottom:12px; }
-        .recent-match-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
-        .recent-match-date { font-size:11px; color:rgba(255,255,255,0.5); text-transform:uppercase; }
-        .recent-match-teams { display:flex; justify-content:space-between; align-items:center; }
-        .recent-team { font-size:14px; font-weight:600; }
-        .recent-score { font-size:18px; font-weight:900; color:#3b82f6; }
-        .ranking-item { display:flex; align-items:center; gap:15px; padding:15px; background: linear-gradient(135deg, rgba(37,99,235,0.15) 0%, rgba(29,78,216,0.1) 100%); border:1px solid rgba(59,130,246,0.2); border-radius:16px; margin-bottom:12px; }
-        .ranking-position { font-size:20px; font-weight:900; color:#3b82f6; min-width:30px; }
-        .ranking-team { flex:1; font-size:14px; font-weight:600; }
-        .ranking-points { font-size:16px; font-weight:700; color:#10b981; }
-        .info-box { background: linear-gradient(135deg, rgba(139,92,246,0.2) 0%, rgba(124,58,237,0.1) 100%); border:1px solid rgba(139,92,246,0.3); border-radius:16px; padding:15px; margin-bottom:12px; }
-        .info-box-title { font-size:13px; font-weight:700; color:#a78bfa; text-transform:uppercase; margin-bottom:8px; letter-spacing:0.5px; }
-        .info-box-content { font-size:13px; color:rgba(255,255,255,0.8); line-height:1.6; white-space:pre-wrap; }
-        .form-indicator { display:inline-block; width:24px; height:24px; border-radius:4px; text-align:center; line-height:24px; font-weight:700; font-size:12px; margin-right:4px; }
-        .form-w { background:#10b981; color:white; }
-        .form-d { background:#eab308; color:white; }
-        .form-l { background:#ef4444; color:white; }
-
-        /* Styles pour la page Live - MODIFIÉS pour permettre le scroll */
-        .live-container {
-flex:1;
-padding:0;
-overflow-y: auto !important;
-overflow-x: hidden;
-display:flex;
-flex-direction:column;
-min-height:0;
-padding-bottom:110px;
--webkit-overflow-scrolling: touch;
-}
-        .live-iframe-wrapper {
-            width:100%;
-            position:relative;
-            min-height:1200px;
-            height:auto;
-        }
-        .live-iframe-wrapper iframe {
-            width:100% !important;
-            height:1200px !important;
-            min-height:1200px;
-            border:none;
-            display:block;
-        }
-
-        .scores-container { flex:1; padding:0 20px 110px 20px; overflow-y:auto; }
-        .score-card { background: linear-gradient(135deg, rgba(37,99,235,0.25) 0%, rgba(29,78,216,0.15) 100%); border-radius:24px; padding:20px; margin-bottom:20px; box-shadow:0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1); border:1px solid rgba(59,130,246,0.2); }
-        .score-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; }
-        .score-teams { display:flex; justify-content:space-between; align-items:center; gap:15px; }
-        .score-team { flex:1; text-align:center; }
-        .score-team-name { font-size:16px; font-weight:700; text-transform:uppercase; margin-bottom:8px; }
-        .score-team-logo { width:60px; height:60px; margin:0 auto; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; overflow:hidden; box-shadow:0 4px 15px rgba(59,130,246,0.3); }
-        .score-team-logo img { width:100%; height:100%; object-fit:contain; }
-        .score-vs { font-size:24px; font-weight:900; color:rgba(255,255,255,0.7); }
-        .score-result { text-align:center; margin-top:15px; padding-top:15px; border-top:1px solid rgba(59,130,246,0.2); }
-        .score-prediction { font-size:28px; font-weight:900; color:#10b981; margin-bottom:5px; }
-        .score-probability { font-size:12px; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.5px; }
-
-        @media (prefers-color-scheme: dark) {
-            body { background: linear-gradient(180deg, #0a1647 0%, #1a2b7a 50%, #0a1647 100%); }
-        }
-        @media (max-width:380px) {
-            .team-logo { width:75px; height:75px; font-size:10px; }
-            .vs-container { margin:0 10px; }
-            .match-date { font-size:10px; }
-            .vs-text { font-size:36px; }
-            .team-name { font-size:16px; }
-            .nav-item span { font-size:9px; }
-            .details-team-logo { width:60px; height:60px; }
-            .details-vs { font-size:24px; margin:0 10px; }
-            .tab-button { padding:8px 16px; font-size:12px; }
-            .score-team-name { font-size:14px; }
-            .score-team-logo { width:50px; height:50px; }
-            .score-prediction { font-size:24px; }
-        }
-        .tabs-container::-webkit-scrollbar { height:3px; }
-        .tabs-container::-webkit-scrollbar-track { background:rgba(0,0,0,0.2); border-radius:10px; }
-        .tabs-container::-webkit-scrollbar-thumb { background:rgba(59,130,246,0.5); border-radius:10px; }
-        .tab-contents-wrapper::-webkit-scrollbar { width:6px; }
-        .tab-contents-wrapper::-webkit-scrollbar-track { background:rgba(0,0,0,0.2); }
-        .tab-contents-wrapper::-webkit-scrollbar-thumb { background:rgba(59,130,246,0.5); border-radius:10px; }
-        .scores-container::-webkit-scrollbar { width:6px; }
-        .scores-container::-webkit-scrollbar-track { background:rgba(0,0,0,0.2); }
-        .scores-container::-webkit-scrollbar-thumb { background:rgba(59,130,246,0.5); border-radius:10px; }
-        .live-container::-webkit-scrollbar { width:6px; }
-        .live-container::-webkit-scrollbar-track { background:rgba(0,0,0,0.2); }
-        .live-container::-webkit-scrollbar-thumb { background:rgba(59,130,246,0.5); border-radius:10px; }
-
-        .notification { position:fixed; bottom:90px; left:50%; transform:translateX(-50%) translateY(100px); opacity:0; background: rgba(0,0,0,0.85); color:white; padding:12px 20px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.4); z-index:2000; transition: all 0.3s ease; pointer-events:none; }
+ 
+        .r-card { background:rgba(255,255,255,0.04); border:1px solid rgba(239,68,68,0.15); border-radius:18px; padding:18px; margin-bottom:14px; }
+        .r-card-title { font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:14px; color:rgba(255,255,255,0.9); }
+        .proba-3col { display:flex; gap:10px; margin-bottom:10px; }
+        .proba-box { flex:1; background:rgba(255,255,255,0.04); border-radius:14px; padding:12px 6px; text-align:center; }
+        .proba-box .lbl { font-size:11px; color:rgba(255,255,255,0.6); margin-bottom:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+        .proba-box .val { font-size:22px; font-weight:900; color:#ef4444; }
+        .proba-gradient-bar { height:8px; border-radius:6px; background:linear-gradient(90deg, #ef4444 0%, #f59e0b 50%, #22c55e 100%); margin-top:4px; }
+        .odds-3col { display:flex; gap:10px; }
+        .odds-box { flex:1; background:rgba(255,255,255,0.05); border:1px solid rgba(239,68,68,0.2); border-radius:12px; padding:12px 4px; text-align:center; }
+        .odds-box .sym { font-size:12px; font-weight:800; color:#ef4444; margin-right:4px; }
+        .odds-box .num { font-size:17px; font-weight:800; }
+        .split-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+        .split-row .lbl { font-size:13px; color:rgba(255,255,255,0.7); }
+        .split-row .val { font-weight:800; }
+        .form-strip { display:flex; align-items:center; gap:6px; justify-content:center; padding:6px 0; }
+        .form-strip .divider { width:1px; height:22px; background:rgba(255,255,255,0.2); margin:0 6px; }
+        .form-chip { width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:white; }
+        .form-chip.w { background:#22c55e; }
+        .form-chip.d { background:#f59e0b; }
+        .form-chip.l { background:#ef4444; }
+        .score-row { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px; }
+        .score-row:last-child { border-bottom:none; }
+        .prediction-hero { text-align:center; padding:22px; background:linear-gradient(135deg, rgba(239,68,68,0.18), rgba(239,68,68,0.05)); border:1px solid rgba(239,68,68,0.3); border-radius:18px; margin-bottom:14px; }
+        .prediction-hero .p-label { font-size:12px; text-transform:uppercase; color:rgba(255,255,255,0.6); letter-spacing:1px; margin-bottom:8px; }
+        .prediction-hero .p-value { font-size:22px; font-weight:900; color:#ef4444; margin-bottom:6px; }
+        .prediction-hero .p-conf { font-size:13px; color:rgba(255,255,255,0.65); }
+        .info-box-r { background:rgba(255,255,255,0.03); border:1px solid rgba(239,68,68,0.15); border-radius:16px; padding:14px; margin-bottom:12px; font-size:13px; line-height:1.6; color:rgba(255,255,255,0.85); white-space:pre-wrap; }
+        .recent-row { display:flex; justify-content:space-between; align-items:center; padding:12px; background:rgba(255,255,255,0.03); border-radius:12px; margin-bottom:8px; font-size:13px; }
+        .rank-row { display:flex; align-items:center; gap:12px; padding:12px; background:rgba(255,255,255,0.03); border-radius:12px; margin-bottom:8px; }
+        .rank-row.highlight { border:1px solid rgba(239,68,68,0.5); background:rgba(239,68,68,0.1); }
+        .rank-pos { font-size:16px; font-weight:900; color:#ef4444; min-width:26px; }
+        .rank-team { flex:1; font-size:13px; font-weight:600; }
+        .rank-pts { font-size:14px; font-weight:800; color:rgba(255,255,255,0.85); }
+ 
+        .loading-container, .error-container { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:40px; text-align:center; }
+        .spinner { width:56px; height:56px; border:4px solid rgba(59,130,246,0.2); border-top:4px solid #3b82f6; border-radius:50%; animation:spin 1s linear infinite; }
+        @keyframes spin { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
+        .loading-text, .error-text { font-size:14px; color:rgba(255,255,255,0.75); }
+        .error-icon { font-size:56px; }
+ 
+        .live-container { flex:1; overflow-y:auto; padding-bottom:85px; }
+        .live-iframe-wrapper { width:100%; min-height:1100px; }
+        .live-iframe-wrapper iframe { width:100%!important; height:1100px!important; border:none; display:block; }
+ 
+        .scores-container { flex:1; padding:0 16px 85px 16px; overflow-y:auto; }
+        .score-home-card { background:linear-gradient(160deg, rgba(20,30,60,0.85), rgba(10,15,35,0.9)); border:1px solid rgba(59,130,246,0.18); border-radius:20px; padding:16px; margin-bottom:14px; }
+ 
+        .notification { position:fixed; bottom:100px; left:50%; transform:translateX(-50%) translateY(100px); opacity:0; background:rgba(0,0,0,0.9); color:white; padding:11px 18px; border-radius:12px; z-index:2000; transition:all .3s ease; pointer-events:none; font-size:13px; }
         .notification.show { transform:translateX(-50%) translateY(0); opacity:1; pointer-events:auto; }
+ 
+        ::-webkit-scrollbar { width:5px; height:5px; }
+        ::-webkit-scrollbar-thumb { background:rgba(239,68,68,0.4); border-radius:8px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="app-header hide-on-live" id="appHeader" role="banner">
-<div class="app-title">Vision Flylex</div>
-<img src="logo-ylan.png" alt="YLAN" class="app-logo-img">
-</header>
-<div class="slogan-container hide-on-live" id="sloganContainer">
-<div class="slogan-divider"><span class="slogan-icon">🎯</span></div>
-<div class="slogan-main">On y va au talent…</div>
-<div class="slogan-sub">avec une petite touche de <span class="slogan-highlight">vision</span> ✨</div>
-</div>
-
+    <div class="app-shell home-shell" id="homeShell">
+ 
+        <div class="home-topbar" id="homeTopbar">
+            <div class="icon-btn" id="menuBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+            </div>
+            <div class="slogan-pill">
+                <div class="slogan-main">On y va au talent…</div>
+                <div class="slogan-sub">avec une petite touche de <span class="slogan-highlight">vision</span> ✨</div>
+            </div>
+            <div class="app-logo-round"><img src="icon-192x192.png" alt="Vision Flylex"></div>
+        </div>
+ 
+        <div class="section-title-row" id="sectionTitleRow" style="display:none;">
+            <h2>Matches du jour</h2>
+            <span class="see-all">Voir tout</span>
+        </div>
+ 
         <div class="loading-container" id="loadingContainer">
             <div class="spinner" id="spinner"></div>
             <div class="loading-text" id="loadingText">Chargement des prédictions...</div>
         </div>
-
+ 
         <div class="error-container" id="errorContainer" style="display:none;">
             <div class="error-icon">⚠️</div>
             <div class="error-text" id="errorText">Erreur de chargement des données</div>
         </div>
-
+ 
         <div class="matches-container" id="matchesContainer" style="display:none;"></div>
-
         <div class="live-container" id="liveContainer" style="display:none;">
             <div class="live-iframe-wrapper">
-                <iframe src="https://www.scorebat.com/embed/livescore/?token=MjQ3MTI4XzE3NjEzOTc2NTdfNDAzNWJmOWNhNmJkMTA3MWE3M2U0MzNlYjMyOTczZjQ5OWI5M2ViMw=="
-                        allowfullscreen
-                        allow="autoplay; fullscreen"
-                        class="_scorebatEmbeddedPlayer_"></iframe>
+                <iframe src="https://www.scorebat.com/embed/livescore/?token=MjQ3MTI4XzE3NjEzOTc2NTdfNDAzNWJmOWNhNmJkMTA3MWE3M2U0MzNlYjMyOTczZjQ5OWI5M2ViMw==" allowfullscreen allow="autoplay; fullscreen" class="_scorebatEmbeddedPlayer_"></iframe>
             </div>
         </div>
-
         <div class="scores-container" id="scoresContainer" style="display:none;"></div>
-
-        <div class="bottom-nav">
-            <div class="nav-item active" data-page="pronostic"><span>PRONOSTIC<br>1X2</span></div>
-            <div class="nav-item" data-page="live"><span>LIVE</span></div>
-            <div class="nav-item" data-page="scores"><span>PRONOS<br>SCORE EXACT</span></div>
-            <div class="nav-item" data-page="profil"><span>PROFIL</span></div>
+ 
+        <div class="bottom-nav-float">
+            <div class="nav-item-f active" data-page="pronostic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5" fill="currentColor"/></svg>
+                <span>Pronostic<br>1X2</span>
+            </div>
+            <div class="nav-item-f" data-page="live">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M8.5 8.5a5 5 0 000 7"/><path d="M15.5 8.5a5 5 0 010 7"/><path d="M5.5 5.5a9 9 0 000 13"/><path d="M18.5 5.5a9 9 0 010 13"/></svg>
+                <span>Live</span>
+            </div>
+            <div class="nav-item-f" data-page="scores">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+                <span>Pronos<br>Score exact</span>
+            </div>
+            <div class="nav-item-f" data-page="profil">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+                <span>Profil</span>
+            </div>
         </div>
     </div>
-
+ 
+    <div class="side-overlay" id="sideOverlay"></div>
+    <div class="side-panel" id="sidePanel">
+        <div class="side-panel-title">Vision Flylex</div>
+        <div class="side-panel-item active" data-page="pronostic">Pronostic 1X2</div>
+        <div class="side-panel-item" data-page="scores">Pronos score exact</div>
+        <div class="side-panel-item" data-page="live">Live</div>
+        <div class="side-panel-item" data-page="profil">Profil</div>
+    </div>
+ 
     <div class="details-page" id="detailsPage">
         <div class="details-header">
-            <button class="back-button" id="backButton">← Retour</button>
+            <div class="details-header-row">
+                <button class="details-back" id="backButton">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                    Détails du match
+                </button>
+                <div class="details-share">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><path d="M12 3v12M8 7l4-4 4 4M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6"/></svg>
+                </div>
+            </div>
+            <div class="details-league-line">
+                <div class="league-name" id="detailsLeagueName">—</div>
+            </div>
             <div class="details-match-info">
                 <div class="details-team">
-                    <div class="details-team-logo" id="detailsTeam1Logo">
-                        <img src="" alt="" id="detailsTeam1LogoImg">
-                    </div>
+                    <div class="details-team-logo"><img src="" alt="" id="detailsTeam1LogoImg"></div>
                     <div class="details-team-name" id="detailsTeam1Name">ÉQUIPE 1</div>
                 </div>
                 <div class="details-vs">VS</div>
                 <div class="details-team">
-                    <div class="details-team-logo" id="detailsTeam2Logo">
-                        <img src="" alt="" id="detailsTeam2LogoImg">
-                    </div>
+                    <div class="details-team-logo"><img src="" alt="" id="detailsTeam2LogoImg"></div>
                     <div class="details-team-name" id="detailsTeam2Name">ÉQUIPE 2</div>
                 </div>
             </div>
+            <div class="details-time-line" id="detailsTimeLine"></div>
         </div>
-
-        <div class="tabs-container">
-            <div class="tabs-wrapper" id="tabsWrapper"></div>
-        </div>
-
-        <div class="tab-contents-wrapper">
-            <div id="tabContentsContainer"></div>
-        </div>
+ 
+        <div class="tabs-container"><div class="tabs-wrapper" id="tabsWrapper"></div></div>
+        <div class="tab-contents-wrapper"><div id="tabContentsContainer"></div></div>
     </div>
-
+ 
     <div class="notification" id="notification" role="status" aria-live="polite"></div>
-
+ 
     <script>
-    function showNotification(msg, timeout=3000) {
+    function showNotification(msg, timeout=2500) {
         const n = document.getElementById('notification');
-        n.textContent = msg;
-        n.classList.add('show');
+        n.textContent = msg; n.classList.add('show');
         setTimeout(()=> n.classList.remove('show'), timeout);
     }
-
+ 
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
@@ -272,32 +259,38 @@ padding-bottom:110px;
         js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'scorebat-jssdk'));
-
+ 
     function getTodayDate() {
         const d = new Date();
-        const y = d.getFullYear();
-        const m = String(d.getMonth()+1).padStart(2,'0');
-        const day = String(d.getDate()).padStart(2,'0');
-        return `${y}-${m}-${day}`;
+        return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
     }
-
+ 
     function formatDate(dateString) {
         const date = new Date(dateString);
         if (isNaN(date.getTime())) return dateString || '';
-        const opt = { day:'numeric', month:'long', year:'numeric', hour:'2-digit', minute:'2-digit' };
-        return date.toLocaleDateString('fr-FR', opt);
+        return date.toLocaleDateString('fr-FR', { day:'numeric', month:'long', year:'numeric', hour:'2-digit', minute:'2-digit' });
     }
-
-    function formatForm(form) {
+ 
+    function formatTimeOnly(dateString) {
+        const date = new Date(dateString);
+        if (isNaN(date.getTime())) return '';
+        return date.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+    }
+ 
+    function escapeHtml(str) {
+        if (!str) return '';
+        return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
+    }
+ 
+    function formToChips(form) {
         if (!form || !Array.isArray(form)) return '';
-        return form.map(result => {
-            const letter = (result || '').toUpperCase();
-            const className = letter === 'W' ? 'form-w' : (letter === 'D' ? 'form-d' : 'form-l');
-            const display = letter === 'W' ? 'V' : (letter === 'D' ? 'N' : 'D');
-            return `<span class="form-indicator ${className}">${display}</span>`;
+        return form.map(r => {
+            const l = (r||'').toUpperCase();
+            const cls = l === 'W' ? 'w' : (l === 'D' ? 'd' : 'l');
+            return `<span class="form-chip ${cls}">${l==='W'?'V':(l==='D'?'N':'D')}</span>`;
         }).join('');
     }
-
+ 
     async function fetchWithTimeout(url, options = {}, timeout = 8000) {
         const controller = new AbortController();
         const id = setTimeout(() => controller.abort(), timeout);
@@ -305,14 +298,11 @@ padding-bottom:110px;
             const resp = await fetch(url, { ...options, signal: controller.signal });
             clearTimeout(id);
             return resp;
-        } catch (err) {
-            clearTimeout(id);
-            throw err;
-        }
+        } catch (err) { clearTimeout(id); throw err; }
     }
-
+ 
     let globalMatchData = null;
-
+ 
     async function loadData() {
         const todayDate = getTodayDate();
         const url = `https://raw.githubusercontent.com/ndriylan31-coder/Flylex-vision/main/prédiction-${todayDate}-analyse-ia.json`;
@@ -327,473 +317,380 @@ padding-bottom:110px;
                 return data;
             } catch (err) {
                 attempt++;
-                console.log('Fetch attempt', attempt, 'failed:', err);
                 if (attempt > maxRetries) throw err;
                 await new Promise(r => setTimeout(r, 1000 * attempt));
             }
         }
         throw new Error('Échec de récupération');
     }
-
+ 
+    function getDetails(data) {
+        return (data && data.statistiques_brutes_avec_ia_hors_montecarlo && data.statistiques_brutes_avec_ia_hors_montecarlo.details)
+            || (data && data.statistiques_brutes_avec_ia && data.statistiques_brutes_avec_ia.details) || [];
+    }
+ 
     function renderMatches(data) {
         const container = document.getElementById('matchesContainer');
         container.innerHTML = '';
-
-        const details = (data && data.statistiques_brutes_avec_ia_hors_montecarlo && data.statistiques_brutes_avec_ia_hors_montecarlo.details) || (data && data.statistiques_brutes_avec_ia && data.statistiques_brutes_avec_ia.details) || [];
+        const details = getDetails(data);
+        document.getElementById('sectionTitleRow').style.display = 'flex';
+ 
         if (!Array.isArray(details) || details.length === 0) {
             document.getElementById('loadingContainer').style.display = 'none';
             document.getElementById('errorContainer').style.display = 'flex';
-            document.getElementById('errorText').textContent = 'Aucun pronostic disponible aujourd\'hui.';
+            document.getElementById('errorText').textContent = "Aucun pronostic disponible aujourd'hui.";
             return;
         }
-
+ 
         details.forEach(match => {
-            const matchCard = document.createElement('div');
-            matchCard.className = 'match-card';
-            matchCard.dataset.matchId = match.id || '';
-
-            const logoHome = match.logo_home || '';
-            const logoAway = match.logo_away || '';
-
-            const dateFormatted = formatDate(match.date || match.Date || '');
-
-            matchCard.innerHTML = `
-                <div class="match-row">
-                    <div class="team">
-                        <div class="team-logo">${logoHome ? `<img src="${logoHome}" alt="${escapeHtml(match.HomeTeam||'')}" onerror="this.style.display='none'">` : ''}</div>
+            const card = document.createElement('div');
+            card.className = 'home-match-card';
+            const odds = match.odds || {};
+            const h2h = odds.h2h || {};
+            const oddsKeys = Object.keys(h2h);
+            let oddsHtml = '';
+            if (oddsKeys.length) {
+                oddsHtml = '<div class="home-odds-row">';
+                oddsKeys.slice(0,3).forEach(k => {
+                    const isDraw = k.toLowerCase() === 'draw' || k.toLowerCase().includes('nul');
+                    oddsHtml += `<span class="odds-chip ${isDraw?'draw':''}">${h2h[k]}</span>`;
+                });
+                oddsHtml += '</div>';
+            }
+            card.innerHTML = `
+                <div class="home-match-row">
+                    <div class="home-team-col">
+                        <div class="home-team-logo">${match.logo_home?`<img src="${match.logo_home}" alt="" onerror="this.style.display='none'">`:''}</div>
                         <div class="team-name">${escapeHtml(match.HomeTeam||'')}</div>
                     </div>
-
-                    <div class="vs-container">
-                        <div class="match-date">${dateFormatted}</div>
-                        <div class="vs-text">VS</div>
+                    <div class="home-match-center">
+                        <div class="home-league-tag"><span class="dot"></span>${escapeHtml((match.league||'').split(' - ').pop())}</div>
+                        <div class="home-match-time">${formatTimeOnly(match.date)||'--:--'}</div>
+                        ${oddsHtml}
                     </div>
-
-                    <div class="team">
-                        <div class="team-logo">${logoAway ? `<img src="${logoAway}" alt="${escapeHtml(match.AwayTeam||'')}" onerror="this.style.display='none'">` : ''}</div>
+                    <div class="home-team-col">
+                        <div class="home-team-logo">${match.logo_away?`<img src="${match.logo_away}" alt="" onerror="this.style.display='none'">`:''}</div>
                         <div class="team-name">${escapeHtml(match.AwayTeam||'')}</div>
                     </div>
                 </div>
-
-                <div class="reliability">FIABILITÉ : ${Number(match.confiance_pourcentage || match.confiance || 50)}%</div>
             `;
-
-            matchCard.addEventListener('click', () => openMatchDetails(match));
-            container.appendChild(matchCard);
+            card.addEventListener('click', () => openMatchDetails(match));
+            container.appendChild(card);
         });
-
+ 
         document.getElementById('loadingContainer').style.display = 'none';
         container.style.display = 'block';
     }
-
+ 
     function renderScores(data) {
         const container = document.getElementById('scoresContainer');
         container.innerHTML = '';
-
-        const details = (data && data.statistiques_brutes_avec_ia_hors_montecarlo && data.statistiques_brutes_avec_ia_hors_montecarlo.details) || (data && data.statistiques_brutes_avec_ia && data.statistiques_brutes_avec_ia.details) || [];
+        const details = getDetails(data);
         if (!Array.isArray(details) || details.length === 0) {
-            container.innerHTML = '<div class="info-box" style="margin:20px;"><div class="info-box-title">Aucun score disponible</div></div>';
+            container.innerHTML = '<div class="r-card"><div class="r-card-title">Aucun score disponible</div></div>';
             return;
         }
-
         const allScores = [];
         details.forEach(match => {
-            const prob = match.Probabilites || match.Probabilites || null;
+            const prob = match.Probabilites || null;
             if (prob && prob.scores_probables) {
-                Object.entries(prob.scores_probables).forEach(([score, percentage]) => {
-                    allScores.push({
-                        match: match,
-                        score: score,
-                        percentage: percentage
-                    });
-                });
+                Object.entries(prob.scores_probables).forEach(([score, pct]) => allScores.push({ match, score, pct }));
             }
         });
-
-        allScores.sort((a, b) => b.percentage - a.percentage);
-        const top5 = allScores.slice(0, 5);
-
-        if (top5.length === 0) {
-            container.innerHTML = '<div class="info-box" style="margin:20px;"><div class="info-box-title">Aucun score probable disponible</div></div>';
+        allScores.sort((a,b) => b.pct - a.pct);
+        const top5 = allScores.slice(0,5);
+        if (!top5.length) {
+            container.innerHTML = '<div class="r-card"><div class="r-card-title">Aucun score probable disponible</div></div>';
             return;
         }
-
-        top5.forEach((item, index) => {
-            const match = item.match;
-            const scoreCard = document.createElement('div');
-            scoreCard.className = 'score-card';
-
-            const logoHome = match.logo_home || '';
-            const logoAway = match.logo_away || '';
-
-            scoreCard.innerHTML = `
-                <div class="score-header">
-                    <span style="font-size:12px; color:rgba(255,255,255,0.6);">#${index + 1} PLUS PROBABLE</span>
-                    <span style="font-size:12px; color:rgba(255,255,255,0.6);">${formatDate(match.date || match.Date || '')}</span>
+        top5.forEach((item, i) => {
+            const m = item.match;
+            const card = document.createElement('div');
+            card.className = 'score-home-card';
+            card.innerHTML = `
+                <div style="display:flex; justify-content:space-between; font-size:11px; color:rgba(255,255,255,0.6); margin-bottom:10px;">
+                    <span>#${i+1} PLUS PROBABLE</span><span>${escapeHtml((m.league||'').split(' - ').pop())}</span>
                 </div>
-                <div class="score-teams">
-                    <div class="score-team">
-                        <div class="score-team-logo">${logoHome ? `<img src="${logoHome}" alt="${escapeHtml(match.HomeTeam||'')}" onerror="this.style.display='none'">` : ''}</div>
-                        <div class="score-team-name">${escapeHtml(match.HomeTeam||'')}</div>
-                    </div>
-                    <div class="score-vs">VS</div>
-                    <div class="score-team">
-                        <div class="score-team-logo">${logoAway ? `<img src="${logoAway}" alt="${escapeHtml(match.AwayTeam||'')}" onerror="this.style.display='none'">` : ''}</div>
-                        <div class="score-team-name">${escapeHtml(match.AwayTeam||'')}</div>
-                    </div>
-                </div>
-                <div class="score-result">
-                    <div class="score-prediction">${escapeHtml(item.score)}</div>
-                    <div class="score-probability">Probabilité : ${item.percentage}%</div>
+                <div style="display:flex; align-items:center; justify-content:space-between;">
+                    <div class="home-team-col"><div class="home-team-logo">${m.logo_home?`<img src="${m.logo_home}" onerror="this.style.display='none'">`:''}</div><div class="team-name">${escapeHtml(m.HomeTeam||'')}</div></div>
+                    <div style="text-align:center;"><div style="font-size:26px; font-weight:900; color:#38bdf8;">${escapeHtml(item.score)}</div><div style="font-size:11px; color:rgba(255,255,255,0.6);">${item.pct}%</div></div>
+                    <div class="home-team-col"><div class="home-team-logo">${m.logo_away?`<img src="${m.logo_away}" onerror="this.style.display='none'">`:''}</div><div class="team-name">${escapeHtml(m.AwayTeam||'')}</div></div>
                 </div>
             `;
-
-            scoreCard.addEventListener('click', () => openMatchDetails(match));
-            container.appendChild(scoreCard);
+            card.addEventListener('click', () => openMatchDetails(m));
+            container.appendChild(card);
         });
     }
-
-    function escapeHtml(str) {
-        if (!str) return '';
-        return String(str)
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-    }
-
+ 
     function openMatchDetails(match) {
         document.getElementById('detailsTeam1Name').textContent = match.HomeTeam || 'ÉQUIPE 1';
         document.getElementById('detailsTeam2Name').textContent = match.AwayTeam || 'ÉQUIPE 2';
         document.getElementById('detailsTeam1LogoImg').src = match.logo_home || '';
         document.getElementById('detailsTeam2LogoImg').src = match.logo_away || '';
-
-        const tabs = [];
-        tabs.push({ id: 'statistiques', label: 'Statistiques' });
-        if (match.Probabilites) tabs.push({ id: 'probabilites', label: 'Probabilités' });
-        if (match.analyse_ia || match.prediction_principale) tabs.push({ id: 'prediction', label: 'Prédiction IA' });
-        if (match.last_matches_home && match.last_matches_home.length) tabs.push({ id: 'recents', label: 'Matchs Récents' });
-        if (match.confrontations_saison_derniere && match.confrontations_saison_derniere.length) tabs.push({ id: 'h2h', label: 'H2H' });
-        if (match.odds && (match.odds.h2h || match.odds.totals)) tabs.push({ id: 'cotes', label: 'Cotes' });
-        if (match.classement_complet && match.classement_complet.length) tabs.push({ id: 'classements', label: 'Classements' });
-
+        document.getElementById('detailsLeagueName').textContent = match.league || '';
+        document.getElementById('detailsTimeLine').innerHTML = `Aujourd'hui <span class="value">${formatTimeOnly(match.date)}</span>`;
+ 
+        const tabs = [{ id:'apercu', label:'Aperçu' }, { id:'stats', label:'Stats' }];
+        if (match.confrontations_saison_derniere && match.confrontations_saison_derniere.length) tabs.push({ id:'h2h', label:'H2H' });
+        if (match.analyse_ia || match.prediction_principale) tabs.push({ id:'prediction', label:'Prédiction IA' });
+        if (match.last_matches_home && match.last_matches_home.length) tabs.push({ id:'recents', label:'Matchs récents' });
+        if (match.classement_complet && match.classement_complet.length) tabs.push({ id:'classement', label:'Classement' });
+ 
         const tabsWrapper = document.getElementById('tabsWrapper');
         tabsWrapper.innerHTML = '';
-        tabs.forEach((t,i)=>{
+        tabs.forEach((t,i) => {
             const btn = document.createElement('button');
-            btn.className = `tab-button ${i===0 ? 'active':''}`;
+            btn.className = `tab-button ${i===0?'active':''}`;
             btn.dataset.tab = t.id;
             btn.textContent = t.label;
             tabsWrapper.appendChild(btn);
         });
-
+ 
         renderTabContents(match, tabs);
         document.getElementById('detailsPage').classList.add('active');
-
         document.querySelector('.tab-contents-wrapper').scrollTop = 0;
     }
-
+ 
     function renderTabContents(match, tabs) {
         const container = document.getElementById('tabContentsContainer');
         container.innerHTML = '';
         tabs.forEach((tab, idx) => {
             const div = document.createElement('div');
-            div.className = `tab-content ${idx===0 ? 'active':''}`;
+            div.className = `tab-content ${idx===0?'active':''}`;
             div.id = 'tab-' + tab.id;
             switch (tab.id) {
-                case 'statistiques': div.innerHTML = renderStatistiquesTab(match); break;
-                case 'probabilites': div.innerHTML = renderProbabilitesTab(match); break;
+                case 'apercu': div.innerHTML = renderApercuTab(match); break;
+                case 'stats': div.innerHTML = renderStatsTab(match); break;
+                case 'h2h': div.innerHTML = renderH2HTab(match); break;
                 case 'prediction': div.innerHTML = renderPredictionTab(match); break;
                 case 'recents': div.innerHTML = renderRecentsTab(match); break;
-                case 'h2h': div.innerHTML = renderH2HTab(match); break;
-                case 'cotes': div.innerHTML = renderCotesTab(match); break;
-                case 'classements': div.innerHTML = renderClassementsTab(match); break;
-                default: div.innerHTML = '<div class="info-box">Aucune donnée</div>';
+                case 'classement': div.innerHTML = renderClassementTab(match); break;
+                default: div.innerHTML = '<div class="r-card">Aucune donnée</div>';
             }
             container.appendChild(div);
         });
     }
-
-    function renderStatistiquesTab(match) {
+ 
+    function renderApercuTab(match) {
+        const prob = match.Probabilites || {};
+        const oneX2 = prob['1x2'] || { V1:0, X:0, V2:0 };
+        const ou = prob.over_under || {};
+        const btts = prob.btts || { oui:0, non:0 };
+        const scores = prob.scores_probables || {};
+        const odds = match.odds || {};
+        const h2hOdds = odds.h2h || {};
+        const totalsOdds = odds.totals || {};
         const statsHome = match.stats_home || {};
         const statsAway = match.stats_away || {};
-        return `
-            <div class="stat-card">
-                <div class="stat-title">Statistiques Générales</div>
-                <div class="vs-stat">
-                    <div class="vs-stat-team">
-                        <div class="vs-stat-value">${(statsHome.moyenne_marques||0).toFixed(1)}</div>
-                        <div class="vs-stat-label">Buts marqués</div>
-                    </div>
-                    <div class="vs-stat-vs">VS</div>
-                    <div class="vs-stat-team">
-                        <div class="vs-stat-value">${(statsAway.moyenne_marques||0).toFixed(1)}</div>
-                        <div class="vs-stat-label">Buts marqués</div>
-                    </div>
+ 
+        let html = `
+            <div class="r-card">
+                <div class="r-card-title">Probabilités</div>
+                <div class="proba-3col">
+                    <div class="proba-box"><div class="lbl">${escapeHtml(match.HomeTeam||'Domicile')}</div><div class="val">${oneX2.V1||0}%</div></div>
+                    <div class="proba-box"><div class="lbl">Match nul</div><div class="val">${oneX2.X||0}%</div></div>
+                    <div class="proba-box"><div class="lbl">${escapeHtml(match.AwayTeam||'Extérieur')}</div><div class="val">${oneX2.V2||0}%</div></div>
                 </div>
-
-                <div class="vs-stat">
-                    <div class="vs-stat-team">
-                        <div class="vs-stat-value">${(statsHome.moyenne_encaisses||0).toFixed(1)}</div>
-                        <div class="vs-stat-label">Buts encaissés</div>
-                    </div>
-                    <div class="vs-stat-vs">VS</div>
-                    <div class="vs-stat-team">
-                        <div class="vs-stat-value">${(statsAway.moyenne_encaisses||0).toFixed(1)}</div>
-                        <div class="vs-stat-label">Buts encaissés</div>
-                    </div>
-                </div>
-
-                <div class="stat-row"><span class="stat-label">Points sur 6 matchs</span><span class="stat-value">${statsHome.total_points_6||0} - ${statsAway.total_points_6||0}</span></div>
-                <div class="stat-row"><span class="stat-label">Points sur 10 matchs</span><span class="stat-value">${statsHome.total_points_10||0} - ${statsAway.total_points_10||0}</span></div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-title">Forme Récente (6 matchs)</div>
-                <div class="stat-row"><span class="stat-label">${escapeHtml(match.HomeTeam||'')}</span><span>${formatForm(statsHome.form_6)}</span></div>
-                <div class="stat-row"><span class="stat-label">${escapeHtml(match.AwayTeam||'')}</span><span>${formatForm(statsAway.form_6)}</span></div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-title">Performance Domicile/Extérieur</div>
-                <div class="stat-row"><span class="stat-label">${escapeHtml(match.HomeTeam||'')} à domicile</span><span>${formatForm(statsHome.serie_domicile)}</span></div>
-                <div class="stat-row"><span class="stat-label">Buts marqués/encaissés</span><span class="stat-value">${statsHome.buts_dom_marques||0} / ${statsHome.buts_dom_encaisses||0}</span></div>
-
-                <div class="stat-row" style="margin-top:15px;"><span class="stat-label">${escapeHtml(match.AwayTeam||'')} à l'extérieur</span><span>${formatForm(statsAway.serie_exterieur)}</span></div>
-                <div class="stat-row"><span class="stat-label">Buts marqués/encaissés</span><span class="stat-value">${statsAway.buts_ext_marques||0} / ${statsAway.buts_ext_encaisses||0}</span></div>
+                <div class="proba-gradient-bar"></div>
             </div>
         `;
-    }
-
-    function renderProbabilitesTab(match) {
-        const prob = match.Probabilites || match.Probabilites || null;
-        if (!prob) return '<div class="info-box">Aucune probabilité disponible</div>';
-        const oneX2 = (prob['1x2']||prob['1X2']||prob['1x2']||{V1:0,X:0,V2:0});
-        const ou = prob.over_under || {plus_de_0_5:0, plus_de_1_5:0, plus_de_2_5:0, plus_de_3_5:0};
-        const btts = prob.btts || {oui:0, non:0};
-        const scores = prob.scores_probables || {};
-        return `
-            <div class="proba-card"><div class="proba-label">Victoire ${escapeHtml(match.HomeTeam||'')}</div><div class="proba-value">${oneX2.V1||0}%</div></div>
-            <div class="proba-card" style="background: linear-gradient(135deg, rgba(234,179,8,0.2) 0%, rgba(202,138,4,0.1) 100%); border-color: rgba(234,179,8,0.3);"><div class="proba-label">Match Nul</div><div class="proba-value" style="color:#eab308">${oneX2.X||0}%</div></div>
-            <div class="proba-card" style="background: linear-gradient(135deg, rgba(239,68,68,0.2) 0%, rgba(220,38,38,0.1) 100%); border-color: rgba(239,68,68,0.3);"><div class="proba-label">Victoire ${escapeHtml(match.AwayTeam||'')}</div><div class="proba-value" style="color:#ef4444">${oneX2.V2||0}%</div></div>
-
-            <div class="stat-card">
-                <div class="stat-title">Probabilités Over/Under</div>
-                <div class="stat-row"><span class="stat-label">Plus de 0.5 buts</span><span class="stat-value">${ou.plus_de_0_5||0}%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width:${ou.plus_de_0_5||0}%"></div></div>
-                <div class="stat-row" style="margin-top:15px;"><span class="stat-label">Plus de 1.5 buts</span><span class="stat-value">${ou.plus_de_1_5||0}%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width:${ou.plus_de_1_5||0}%"></div></div>
-                <div class="stat-row" style="margin-top:15px;"><span class="stat-label">Plus de 2.5 buts</span><span class="stat-value">${ou.plus_de_2_5||0}%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width:${ou.plus_de_2_5||0}%"></div></div>
-                <div class="stat-row" style="margin-top:15px;"><span class="stat-label">Plus de 3.5 buts</span><span class="stat-value">${ou.plus_de_3_5||0}%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width:${ou.plus_de_3_5||0}%"></div></div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-title">BTTS (Les deux équipes marquent)</div>
-                <div class="stat-row"><span class="stat-label">Oui</span><span class="stat-value">${btts.oui||0}%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width:${btts.oui||0}%"></div></div>
-                <div class="stat-row" style="margin-top:15px;"><span class="stat-label">Non</span><span class="stat-value">${btts.non||0}%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width:${btts.non||0}%"></div></div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-title">Scores Probables</div>
-                ${Object.entries(scores).map(([s,p])=>`<div class="stat-row"><span class="stat-label">${escapeHtml(s)}</span><span class="stat-value">${p}%</span></div>`).join('')}
-            </div>
-        `;
-    }
-
-    function renderPredictionTab(match) {
-        return `
-            <div class="prediction-card">
-                <div class="prediction-title">Prédiction Principale</div>
-                <div class="prediction-result">${escapeHtml(match.prediction_principale || match.prediction || 'N/A')}</div>
-                <div class="prediction-confidence">Confiance : ${Number(match.confiance_pourcentage||match.confiance||50)}%</div>
-            </div>
-
-            ${match.scores_probables ? `<div class="prediction-card" style="background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(5,150,105,0.1)); border-color: rgba(16,185,129,0.3);"><div class="prediction-title">Scores Probables</div><div class="prediction-result" style="color:#10b981">${escapeHtml(JSON.stringify(match.scores_probables))}</div></div>` : ''}
-
-            ${match.analyse_ia ? `<div class="info-box"><div class="info-box-title">🤖 Analyse IA Complète</div><div class="info-box-content">${escapeHtml(match.analyse_ia)}</div></div>` : ''}
-        `;
-    }
-
-    function renderRecentsTab(match) {
-        const renderMatchList = (matches, teamName) => {
-            if (!Array.isArray(matches) || matches.length===0) return '<div class="info-box">Aucun match récent</div>';
-            return matches.map(m => {
-                const isHomeTeam = m.home_team === teamName;
-                let result = 'N/A';
-                if (m.score && m.score.includes('-')) {
-                    const [a,b] = m.score.split('-').map(s=>parseInt(s.trim()));
-                    if (!isNaN(a) && !isNaN(b)) {
-                        if (isHomeTeam) result = a>b ? 'VICTOIRE' : a<b ? 'DÉFAITE' : 'NUL';
-                        else result = b>a ? 'VICTOIRE' : b<a ? 'DÉFAITE' : 'NUL';
-                    }
-                }
-                const resultColor = result==='VICTOIRE' ? '#10b981' : (result==='NUL' ? '#eab308' : '#ef4444');
-                return `
-                    <div class="recent-match">
-                        <div class="recent-match-header"><span class="recent-match-date">${escapeHtml(m.date||'N/A')}</span><span style="font-size:11px;color:${resultColor};font-weight:700">${result}</span></div>
-                        <div class="recent-match-teams"><span class="recent-team">${escapeHtml(m.home_team||'')}</span><span class="recent-score">${escapeHtml(m.score||'N/A')}</span><span class="recent-team">${escapeHtml(m.away_team||'')}</span></div>
-                        ${m.stats && Object.keys(m.stats||{}).length>0 ? `<div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(59,130,246,0.2)">${Object.entries(m.stats).map(([k,v])=>`<div class="stat-row" style="font-size:12px;margin-bottom:5px"><span class="stat-label">${escapeHtml(k)}</span><span class="stat-value">${Array.isArray(v)?escapeHtml(v.join(' - ')):escapeHtml(String(v))}</span></div>`).join('')}</div>` : ''}
-                    </div>
-                `;
-            }).join('');
-        };
-        return `
-            <div class="stat-card"><div class="stat-title">${escapeHtml(match.HomeTeam||'')} - Derniers Matchs</div>${renderMatchList(match.last_matches_home||[], match.HomeTeam)}</div>
-            <div class="stat-card"><div class="stat-title">${escapeHtml(match.AwayTeam||'')} - Derniers Matchs</div>${renderMatchList(match.last_matches_away||[], match.AwayTeam)}</div>
-        `;
-    }
-    
-    function renderCotesTab(match) {
-        const odds = match.odds || {};
-        const h2h = odds.h2h || {};
-        const totals = odds.totals || {};
-        const bookmaker = odds.bookmaker || 'N/A';
-
-        let html = `<div class="stat-card"><div class="stat-title">Bookmaker</div><div class="stat-row"><span class="stat-label">Source</span><span class="stat-value">${escapeHtml(bookmaker)}</span></div></div>`;
-
-        if (Object.keys(h2h).length) {
-            html += `<div class="stat-card"><div class="stat-title">Cotes 1X2</div>`;
-            Object.entries(h2h).forEach(([outcome, cote]) => {
-                html += `<div class="stat-row"><span class="stat-label">${escapeHtml(outcome)}</span><span class="stat-value">${cote}</span></div>`;
+ 
+        if (Object.keys(h2hOdds).length) {
+            const keys = Object.keys(h2hOdds);
+            html += `<div class="r-card"><div class="r-card-title">Cotes moyennes</div><div class="odds-3col">`;
+            keys.slice(0,3).forEach((k,i) => {
+                const sym = i===0?'1':(k.toLowerCase().includes('draw')||k.toLowerCase().includes('nul')?'X':'2');
+                html += `<div class="odds-box"><span class="sym">${sym}</span><span class="num">${h2hOdds[k]}</span></div>`;
             });
-            html += `</div>`;
+            html += `</div></div>`;
         }
-
-        if (Object.keys(totals).length) {
-            html += `<div class="stat-card"><div class="stat-title">Cotes Over/Under 2.5</div>`;
-            Object.entries(totals).forEach(([outcome, cote]) => {
-                html += `<div class="stat-row"><span class="stat-label">${escapeHtml(outcome)}</span><span class="stat-value">${cote}</span></div>`;
-            });
-            html += `</div>`;
-        }
-
-        if (!Object.keys(h2h).length && !Object.keys(totals).length) {
-            html += `<div class="info-box"><div class="info-box-title">Aucune cote disponible</div></div>`;
-        }
-
-        return html;
-    }
-
-    function renderH2HTab(match) {
-        const h2h = match.confrontations_saison_derniere || [];
-        let homeWins = 0, awayWins = 0, draws = 0;
-        h2h.forEach(m => {
-            if (m.score && m.score.includes('-')) {
-                const [a,b] = m.score.split('-').map(s=>parseInt(s.trim()));
-                if (!isNaN(a) && !isNaN(b)) {
-                    const isHomeFirst = (m.team1 === match.HomeTeam);
-                    if (a>b) { if (isHomeFirst) homeWins++; else awayWins++; }
-                    else if (a<b) { if (isHomeFirst) awayWins++; else homeWins++; }
-                    else draws++;
-                }
+ 
+        html += `<div class="r-card"><div class="r-card-title">Plus / Moins de buts</div>`;
+        ['0.5','1.5','2.5','3.5'].forEach(s => {
+            const over = ou[`plus_de_${s}`];
+            if (over !== undefined) {
+                html += `<div class="split-row"><span class="lbl">Plus de ${s} buts</span><span class="val">${over}%</span></div>`;
             }
         });
-        return `
-            <div class="stat-card">
-                <div class="stat-title">Historique des Confrontations</div>
-                <div class="vs-stat">
-                    <div class="vs-stat-team"><div class="vs-stat-value">${homeWins}</div><div class="vs-stat-label">${escapeHtml(match.HomeTeam||'')}</div></div>
-                    <div class="vs-stat-vs">-</div>
-                    <div class="vs-stat-team"><div class="vs-stat-value">${draws}</div><div class="vs-stat-label">Nuls</div></div>
-                    <div class="vs-stat-vs">-</div>
-                    <div class="vs-stat-team"><div class="vs-stat-value">${awayWins}</div><div class="vs-stat-label">${escapeHtml(match.AwayTeam||'')}</div></div>
-                </div>
+        if (Object.keys(totalsOdds).length) {
+            html += `<div style="margin-top:8px; border-top:1px solid rgba(255,255,255,0.08); padding-top:10px;">`;
+            Object.entries(totalsOdds).forEach(([k,v]) => {
+                html += `<div class="split-row"><span class="lbl">${escapeHtml(k)} (cote)</span><span class="val">${v}</span></div>`;
+            });
+            html += `</div>`;
+        }
+        html += `</div>`;
+ 
+        html += `
+            <div class="r-card">
+                <div class="r-card-title">Les deux équipes marquent (BTTS)</div>
+                <div class="split-row"><span class="lbl">Oui</span><span class="val">${btts.oui||0}%</span></div>
+                <div class="split-row"><span class="lbl">Non</span><span class="val">${btts.non||0}%</span></div>
             </div>
-            <div class="stat-card"><div class="stat-title">Dernières Confrontations</div>${h2h.map(m=>`<div class="recent-match"><div class="recent-match-header"><span class="recent-match-date">${escapeHtml(m.date||'N/A')}</span><span style="font-size:11px;color:#fff;font-weight:700">${escapeHtml(m.score||'')}</span></div><div class="recent-match-teams"><span class="recent-team">${escapeHtml(m.team1||'')}</span><span class="recent-score">${escapeHtml(m.score||'')}</span><span class="recent-team">${escapeHtml(m.team2||'')}</span></div></div>`).join('')}</div>
+        `;
+ 
+        if (Object.keys(scores).length) {
+            html += `<div class="r-card"><div class="r-card-title">Scores probables</div>`;
+            Object.entries(scores).slice(0,5).forEach(([s,p]) => {
+                html += `<div class="score-row"><span>${escapeHtml(s)}</span><span>${p}%</span></div>`;
+            });
+            html += `</div>`;
+        }
+ 
+        html += `
+            <div class="r-card">
+                <div class="r-card-title">Forme des équipes</div>
+                <div class="form-strip">${formToChips(statsHome.form_6)}<span class="divider"></span>${formToChips(statsAway.form_6)}</div>
+            </div>
+        `;
+ 
+        return html;
+    }
+ 
+    function renderStatsTab(match) {
+        const sh = match.stats_home || {};
+        const sa = match.stats_away || {};
+        return `
+            <div class="r-card">
+                <div class="r-card-title">Statistiques générales</div>
+                <div class="split-row"><span class="lbl">Buts marqués (moy.)</span><span class="val">${(sh.moyenne_marques||0).toFixed(1)} - ${(sa.moyenne_marques||0).toFixed(1)}</span></div>
+                <div class="split-row"><span class="lbl">Buts encaissés (moy.)</span><span class="val">${(sh.moyenne_encaisses||0).toFixed(1)} - ${(sa.moyenne_encaisses||0).toFixed(1)}</span></div>
+                <div class="split-row"><span class="lbl">Points / 6 matchs</span><span class="val">${sh.total_points_6||0} - ${sa.total_points_6||0}</span></div>
+                <div class="split-row"><span class="lbl">Points / 10 matchs</span><span class="val">${sh.total_points_10||0} - ${sa.total_points_10||0}</span></div>
+            </div>
+            <div class="r-card">
+                <div class="r-card-title">Domicile / Extérieur</div>
+                <div class="split-row"><span class="lbl">${escapeHtml(match.HomeTeam||'')} - buts dom.</span><span class="val">${sh.buts_dom_marques||0} / ${sh.buts_dom_encaisses||0}</span></div>
+                <div class="split-row"><span class="lbl">${escapeHtml(match.AwayTeam||'')} - buts ext.</span><span class="val">${sa.buts_ext_marques||0} / ${sa.buts_ext_encaisses||0}</span></div>
+            </div>
         `;
     }
-
-    function renderClassementsTab(match) {
+ 
+    function renderH2HTab(match) {
+        const h2h = match.confrontations_saison_derniere || [];
+        return `<div class="r-card"><div class="r-card-title">Confrontations directes</div>${
+            h2h.map(m => `<div class="recent-row"><span>${escapeHtml(m.date||'')}</span><span>${escapeHtml(m.team1||'')} ${escapeHtml(m.score||'')} ${escapeHtml(m.team2||'')}</span></div>`).join('') || '<div style="font-size:13px; color:rgba(255,255,255,0.6);">Aucune confrontation récente</div>'
+        }</div>`;
+    }
+ 
+    function renderPredictionTab(match) {
+        return `
+            <div class="prediction-hero">
+                <div class="p-label">Prédiction principale</div>
+                <div class="p-value">${escapeHtml(match.prediction_principale || 'N/A')}</div>
+                <div class="p-conf">Confiance : ${Number(match.confiance_pourcentage||50)}%</div>
+            </div>
+            ${match.analyse_ia ? `<div class="info-box-r">${escapeHtml(match.analyse_ia)}</div>` : ''}
+        `;
+    }
+ 
+    function renderRecentsTab(match) {
+        const list = (matches) => (matches||[]).map(m => `
+            <div class="recent-row"><span>${escapeHtml(m.date||'')}</span><span>${escapeHtml(m.home_team||'')} ${escapeHtml(m.score||'')} ${escapeHtml(m.away_team||'')}</span></div>
+        `).join('') || '<div style="font-size:13px; color:rgba(255,255,255,0.6);">Aucun match récent</div>';
+        return `
+            <div class="r-card"><div class="r-card-title">${escapeHtml(match.HomeTeam||'')}</div>${list(match.last_matches_home)}</div>
+            <div class="r-card"><div class="r-card-title">${escapeHtml(match.AwayTeam||'')}</div>${list(match.last_matches_away)}</div>
+        `;
+    }
+ 
+    function renderClassementTab(match) {
         const classement = match.classement_complet || [];
-        return `
-            <div class="stat-card"><div class="stat-title">Classement ${escapeHtml(match.league||'')}</div>${classement.map(t=>`<div class="ranking-item" style="${(t.team===match.HomeTeam||t.team===match.AwayTeam)?'border:2px solid #3b82f6;background:linear-gradient(135deg, rgba(37,99,235,0.3), rgba(29,78,216,0.2));':''}"><div class="ranking-position">${t.position||''}</div><div class="ranking-team">${escapeHtml(t.team||'')}</div><div class="ranking-points">${t.points||0} pts</div></div>`).join('')}</div>
-
-            <div class="stat-card">
-                <div class="stat-title">Comparaison</div>
-                <div class="stat-row"><span class="stat-label">Position ${escapeHtml(match.HomeTeam||'')}</span><span class="stat-value">${match.classement_home||'N/A'}ᵉ</span></div>
-                <div class="stat-row"><span class="stat-label">Points ${escapeHtml(match.HomeTeam||'')}</span><span class="stat-value">${match.points_classement_home||0} pts</span></div>
-                <div class="stat-row" style="margin-top:15px"><span class="stat-label">Position ${escapeHtml(match.AwayTeam||'')}</span><span class="stat-value">${match.classement_away||'N/A'}ᵉ</span></div>
-                <div class="stat-row"><span class="stat-label">Points ${escapeHtml(match.AwayTeam||'')}</span><span class="stat-value">${match.points_classement_away||0} pts</span></div>
-                <div class="stat-row" style="margin-top:15px"><span class="stat-label">Différence de position</span><span class="stat-value">${Math.abs((match.classement_home||0)-(match.classement_away||0))} places</span></div>
-                <div class="stat-row"><span class="stat-label">Différence de points</span><span class="stat-value">${Math.abs((match.points_classement_home||0)-(match.points_classement_away||0))} points</span></div>
-            </div>
-        `;
+        return `<div class="r-card"><div class="r-card-title">Classement — ${escapeHtml(match.league||'')}</div>${
+            classement.map(t => `<div class="rank-row ${(t.team===match.HomeTeam||t.team===match.AwayTeam)?'highlight':''}"><div class="rank-pos">${t.position||''}</div><div class="rank-team">${escapeHtml(t.team||'')}</div><div class="rank-pts">${t.points||0} pts</div></div>`).join('')
+        }</div>`;
     }
-
+ 
     document.addEventListener('click', function(e) {
         if (e.target.classList && e.target.classList.contains('tab-button')) {
             const tabName = e.target.dataset.tab;
             document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
             e.target.classList.add('active');
             const content = document.getElementById('tab-' + tabName);
             if (content) content.classList.add('active');
             document.querySelector('.tab-contents-wrapper').scrollTop = 0;
         }
     });
-
-    document.getElementById('backButton').addEventListener('click', ()=> {
+ 
+    document.getElementById('backButton').addEventListener('click', () => {
         document.getElementById('detailsPage').classList.remove('active');
     });
-
+ 
+    const sideOverlay = document.getElementById('sideOverlay');
+    const sidePanel = document.getElementById('sidePanel');
+    document.getElementById('menuBtn').addEventListener('click', () => {
+        sideOverlay.classList.add('active');
+        sidePanel.classList.add('active');
+    });
+    sideOverlay.addEventListener('click', () => {
+        sideOverlay.classList.remove('active');
+        sidePanel.classList.remove('active');
+    });
+    document.querySelectorAll('.side-panel-item').forEach(item => {
+        item.addEventListener('click', function() {
+            document.querySelectorAll('.side-panel-item').forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+            const page = this.dataset.page;
+            document.querySelectorAll('.nav-item-f').forEach(n => n.classList.remove('active'));
+            document.querySelector(`.nav-item-f[data-page="${page}"]`)?.classList.add('active');
+            showPage(page);
+            sideOverlay.classList.remove('active');
+            sidePanel.classList.remove('active');
+        });
+    });
+ 
+    function showPage(pageName) {
+        document.getElementById('matchesContainer').style.display = 'none';
+        document.getElementById('liveContainer').style.display = 'none';
+        document.getElementById('scoresContainer').style.display = 'none';
+        document.getElementById('loadingContainer').style.display = 'none';
+        document.getElementById('errorContainer').style.display = 'none';
+        document.getElementById('sectionTitleRow').style.display = 'none';
+ 
+        switch(pageName) {
+            case 'pronostic':
+                document.getElementById('sectionTitleRow').style.display = 'flex';
+                document.getElementById('matchesContainer').style.display = 'block';
+                break;
+            case 'live':
+                document.getElementById('liveContainer').style.display = 'block';
+                break;
+            case 'scores':
+                document.getElementById('sectionTitleRow').style.display = 'flex';
+                document.getElementById('scoresContainer').style.display = 'block';
+                break;
+            case 'profil':
+                showNotification('Fonction Profil non disponible dans la démo');
+                document.getElementById('sectionTitleRow').style.display = 'flex';
+                document.getElementById('matchesContainer').style.display = 'block';
+                break;
+        }
+    }
+ 
+    document.querySelectorAll('.nav-item-f').forEach(item => {
+        item.addEventListener('click', function() {
+            const page = this.dataset.page;
+            document.querySelectorAll('.nav-item-f').forEach(n => n.classList.remove('active'));
+            this.classList.add('active');
+            document.querySelectorAll('.side-panel-item').forEach(i => i.classList.remove('active'));
+            document.querySelector(`.side-panel-item[data-page="${page}"]`)?.classList.add('active');
+            showPage(page);
+        });
+    });
+ 
     async function init() {
         try {
             const data = await loadData();
             renderMatches(data);
             renderScores(data);
         } catch (err) {
-            console.log('Erreur chargement:', err);
             document.getElementById('loadingContainer').style.display = 'none';
             document.getElementById('errorContainer').style.display = 'flex';
             document.getElementById('errorText').textContent = `Erreur de chargement des données pour aujourd'hui (${getTodayDate()}). Vérifiez que le fichier existe sur GitHub.`;
         }
     }
-
-    function showPage(pageName) {
-        const appHeader = document.getElementById('appHeader');
-
-        document.getElementById('matchesContainer').style.display = 'none';
-        document.getElementById('liveContainer').style.display = 'none';
-        document.getElementById('scoresContainer').style.display = 'none';
-        document.getElementById('loadingContainer').style.display = 'none';
-        document.getElementById('errorContainer').style.display = 'none';
-
-        switch(pageName) {
-            case 'pronostic':
-                appHeader.style.display = 'flex';
-                document.getElementById('matchesContainer').style.display = 'block';
-                break;
-            case 'live':
-                // Masquer le header sur la page Live
-                appHeader.style.display = 'none';
-                document.getElementById('liveContainer').style.display = 'flex';
-                break;
-            case 'scores':
-                appHeader.style.display = 'flex';
-                document.getElementById('scoresContainer').style.display = 'block';
-                break;
-            case 'profil':
-                appHeader.style.display = 'flex';
-                showNotification('Fonction Profil non disponible dans la démo');
-                document.getElementById('matchesContainer').style.display = 'block';
-                break;
-        }
-    }
-
-    document.querySelectorAll('.nav-item').forEach(item => {
-        item.addEventListener('click', function() {
-            const page = this.dataset.page;
-            document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-            this.classList.add('active');
-            showPage(page);
-        });
-    });
-
+ 
     init();
     </script>
 </body>
