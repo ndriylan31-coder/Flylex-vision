@@ -14,10 +14,10 @@
         * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
         body { font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color:white; min-height:100vh; }
         .app-shell { max-width:480px; margin:0 auto; min-height:100vh; display:flex; flex-direction:column; position:relative; overflow-x:hidden; }
- 
+
         /* ===== THEME ACCUEIL : NOIR-BLEU ===== */
         .home-shell { background:linear-gradient(160deg, #05070f 0%, #0a1230 45%, #060814 100%); }
- 
+
         .home-topbar { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:16px 16px 4px 16px; }
         .icon-btn { width:44px; height:44px; border-radius:50%; background:rgba(59,130,246,0.12); border:1px solid rgba(96,165,250,0.4); display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; box-shadow:0 0 14px rgba(59,130,246,0.25); }
         .icon-btn svg { width:20px; height:20px; }
@@ -27,13 +27,13 @@
         .slogan-pill .slogan-highlight { color:#60a5fa; }
         .app-logo-round { width:46px; height:46px; border-radius:50%; overflow:hidden; border:2px solid rgba(96,165,250,0.5); box-shadow:0 0 16px rgba(59,130,246,0.4); flex-shrink:0; background:#0a1230; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:800; text-align:center; }
         .app-logo-round img { width:100%; height:100%; object-fit:cover; }
- 
+
         .section-title-row { display:flex; align-items:center; justify-content:space-between; padding:18px 20px 8px 20px; }
         .section-title-row h2 { font-size:19px; font-weight:800; }
         .section-title-row .see-all { font-size:13px; color:#38bdf8; font-weight:600; }
- 
+
         .matches-container { flex:1; padding:0 16px 85px 16px; overflow-y:auto; }
- 
+
         .home-match-card { background:linear-gradient(160deg, rgba(20,30,60,0.85) 0%, rgba(10,15,35,0.9) 100%); border:1px solid rgba(59,130,246,0.18); border-radius:22px; padding:16px; margin-bottom:16px; box-shadow:0 8px 24px rgba(0,0,0,0.35); cursor:pointer; transition:transform .2s ease; }
         .home-match-card:active { transform:scale(0.98); }
         .home-match-row { display:flex; align-items:center; justify-content:space-between; gap:8px; }
@@ -48,13 +48,13 @@
         .home-odds-row { display:flex; gap:6px; margin-top:6px; }
         .odds-chip { font-size:12px; font-weight:700; padding:5px 9px; border-radius:10px; border:1px solid rgba(96,165,250,0.4); background:rgba(59,130,246,0.12); color:#93c5fd; }
         .odds-chip.draw { border-color:rgba(255,255,255,0.2); background:rgba(255,255,255,0.05); color:rgba(255,255,255,0.75); }
- 
+
         .bottom-nav-float { position:fixed; bottom:14px; left:50%; transform:translateX(-50%); width:calc(100% - 40px); max-width:400px; display:flex; justify-content:space-around; align-items:center; padding:7px 5px; background:rgba(10,15,35,0.85); backdrop-filter:blur(16px); border:1px solid rgba(59,130,246,0.3); border-radius:18px; box-shadow:0 8px 22px rgba(0,0,0,0.45); z-index:900; }
         .nav-item-f { display:flex; flex-direction:column; align-items:center; gap:2px; padding:5px 8px; border-radius:11px; cursor:pointer; color:rgba(255,255,255,0.55); flex:1; }
         .nav-item-f svg { width:16px; height:16px; }
         .nav-item-f span { font-size:8px; font-weight:700; text-transform:uppercase; text-align:center; line-height:1.1; }
         .nav-item-f.active { color:#38bdf8; background:rgba(56,189,248,0.12); }
- 
+
         .side-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:1500; display:none; }
         .side-overlay.active { display:block; }
         .side-panel { position:fixed; top:0; left:0; bottom:0; width:34%; min-width:230px; max-width:300px; background:linear-gradient(180deg, #1a0505 0%, #0d0505 60%, #1a0505 100%); border-right:1px solid rgba(239,68,68,0.35); z-index:1600; transform:translateX(-100%); transition:transform .3s ease; display:flex; flex-direction:column; padding:24px 16px; overflow-y:auto; }
@@ -62,7 +62,7 @@
         .side-panel-title { font-size:16px; font-weight:800; margin-bottom:20px; color:#f87171; text-transform:uppercase; letter-spacing:1px; }
         .side-panel-item { padding:13px 10px; border-radius:12px; font-size:14px; font-weight:600; color:rgba(255,255,255,0.85); cursor:pointer; margin-bottom:4px; }
         .side-panel-item:active, .side-panel-item.active { background:rgba(239,68,68,0.18); color:#fca5a5; }
- 
+
         /* ===== THEME DETAILS : NOIR-ROUGE ===== */
         .details-page { position:fixed; inset:0; background:linear-gradient(180deg, #150404 0%, #1c0505 40%, #0c0303 100%); z-index:1000; display:none; flex-direction:column; overflow:hidden; }
         .details-page.active { display:flex; }
@@ -82,7 +82,7 @@
         .details-vs { font-size:26px; font-weight:900; margin:0 10px; }
         .details-time-line { text-align:center; margin-top:8px; font-size:13px; font-weight:700; color:#ef4444; }
         .details-time-line .value { color:white; font-size:16px; margin-left:6px; }
- 
+
         .tabs-container { padding:12px 12px 8px 12px; overflow-x:auto; }
         .tabs-wrapper { display:flex; gap:8px; min-width:min-content; }
         .tab-button { padding:9px 16px; background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.25); border-radius:14px; color:rgba(255,255,255,0.65); font-size:13px; font-weight:700; white-space:nowrap; cursor:pointer; }
@@ -90,7 +90,7 @@
         .tab-contents-wrapper { flex:1; overflow-y:auto; padding-bottom:24px; }
         .tab-content { padding:16px; display:none; }
         .tab-content.active { display:block; }
- 
+
         .r-card { background:rgba(255,255,255,0.04); border:1px solid rgba(239,68,68,0.15); border-radius:18px; padding:18px; margin-bottom:14px; }
         .r-card-title { font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:14px; color:rgba(255,255,255,0.9); }
         .proba-3col { display:flex; gap:10px; margin-bottom:10px; }
@@ -124,30 +124,30 @@
         .rank-pos { font-size:16px; font-weight:900; color:#ef4444; min-width:26px; }
         .rank-team { flex:1; font-size:13px; font-weight:600; }
         .rank-pts { font-size:14px; font-weight:800; color:rgba(255,255,255,0.85); }
- 
+
         .loading-container, .error-container { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:40px; text-align:center; }
         .spinner { width:56px; height:56px; border:4px solid rgba(59,130,246,0.2); border-top:4px solid #3b82f6; border-radius:50%; animation:spin 1s linear infinite; }
         @keyframes spin { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
         .loading-text, .error-text { font-size:14px; color:rgba(255,255,255,0.75); }
         .error-icon { font-size:56px; }
- 
+
         .live-container { flex:1; overflow-y:auto; padding-bottom:85px; }
         .live-iframe-wrapper { width:100%; min-height:1100px; }
         .live-iframe-wrapper iframe { width:100%!important; height:1100px!important; border:none; display:block; }
- 
+
         .scores-container { flex:1; padding:0 16px 85px 16px; overflow-y:auto; }
         .score-home-card { background:linear-gradient(160deg, rgba(20,30,60,0.85), rgba(10,15,35,0.9)); border:1px solid rgba(59,130,246,0.18); border-radius:20px; padding:16px; margin-bottom:14px; }
- 
+
         .notification { position:fixed; bottom:100px; left:50%; transform:translateX(-50%) translateY(100px); opacity:0; background:rgba(0,0,0,0.9); color:white; padding:11px 18px; border-radius:12px; z-index:2000; transition:all .3s ease; pointer-events:none; font-size:13px; }
         .notification.show { transform:translateX(-50%) translateY(0); opacity:1; pointer-events:auto; }
- 
+
         ::-webkit-scrollbar { width:5px; height:5px; }
         ::-webkit-scrollbar-thumb { background:rgba(239,68,68,0.4); border-radius:8px; }
     </style>
 </head>
 <body>
     <div class="app-shell home-shell" id="homeShell">
- 
+
         <div class="home-topbar" id="homeTopbar">
             <div class="icon-btn" id="menuBtn">
                 <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
@@ -158,22 +158,22 @@
             </div>
             <div class="app-logo-round"><img src="icon-192x192.png" alt="Vision Flylex"></div>
         </div>
- 
+
         <div class="section-title-row" id="sectionTitleRow" style="display:none;">
             <h2>Matches du jour</h2>
             <span class="see-all">Voir tout</span>
         </div>
- 
+
         <div class="loading-container" id="loadingContainer">
             <div class="spinner" id="spinner"></div>
             <div class="loading-text" id="loadingText">Chargement des prédictions...</div>
         </div>
- 
+
         <div class="error-container" id="errorContainer" style="display:none;">
             <div class="error-icon">⚠️</div>
             <div class="error-text" id="errorText">Erreur de chargement des données</div>
         </div>
- 
+
         <div class="matches-container" id="matchesContainer" style="display:none;"></div>
         <div class="live-container" id="liveContainer" style="display:none;">
             <div class="live-iframe-wrapper">
@@ -181,7 +181,7 @@
             </div>
         </div>
         <div class="scores-container" id="scoresContainer" style="display:none;"></div>
- 
+
         <div class="bottom-nav-float">
             <div class="nav-item-f active" data-page="pronostic">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5" fill="currentColor"/></svg>
@@ -201,7 +201,7 @@
             </div>
         </div>
     </div>
- 
+
     <div class="side-overlay" id="sideOverlay"></div>
     <div class="side-panel" id="sidePanel">
         <div class="side-panel-title">Vision Flylex</div>
@@ -210,7 +210,7 @@
         <div class="side-panel-item" data-page="live">Live</div>
         <div class="side-panel-item" data-page="profil">Profil</div>
     </div>
- 
+
     <div class="details-page" id="detailsPage">
         <div class="details-header">
             <div class="details-header-row">
@@ -238,20 +238,20 @@
             </div>
             <div class="details-time-line" id="detailsTimeLine"></div>
         </div>
- 
+
         <div class="tabs-container"><div class="tabs-wrapper" id="tabsWrapper"></div></div>
         <div class="tab-contents-wrapper"><div id="tabContentsContainer"></div></div>
     </div>
- 
+
     <div class="notification" id="notification" role="status" aria-live="polite"></div>
- 
+
     <script>
     function showNotification(msg, timeout=2500) {
         const n = document.getElementById('notification');
         n.textContent = msg; n.classList.add('show');
         setTimeout(()=> n.classList.remove('show'), timeout);
     }
- 
+
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
@@ -259,29 +259,29 @@
         js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'scorebat-jssdk'));
- 
+
     function getTodayDate() {
         const d = new Date();
         return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
     }
- 
+
     function formatDate(dateString) {
         const date = new Date(dateString);
         if (isNaN(date.getTime())) return dateString || '';
         return date.toLocaleDateString('fr-FR', { day:'numeric', month:'long', year:'numeric', hour:'2-digit', minute:'2-digit' });
     }
- 
+
     function formatTimeOnly(dateString) {
         const date = new Date(dateString);
         if (isNaN(date.getTime())) return '';
         return date.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
     }
- 
+
     function escapeHtml(str) {
         if (!str) return '';
         return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
     }
- 
+
     function formToChips(form) {
         if (!form || !Array.isArray(form)) return '';
         return form.map(r => {
@@ -290,7 +290,7 @@
             return `<span class="form-chip ${cls}">${l==='W'?'V':(l==='D'?'N':'D')}</span>`;
         }).join('');
     }
- 
+
     async function fetchWithTimeout(url, options = {}, timeout = 8000) {
         const controller = new AbortController();
         const id = setTimeout(() => controller.abort(), timeout);
@@ -300,9 +300,9 @@
             return resp;
         } catch (err) { clearTimeout(id); throw err; }
     }
- 
+
     let globalMatchData = null;
- 
+
     async function loadData() {
         const todayDate = getTodayDate();
         const url = `https://raw.githubusercontent.com/ndriylan31-coder/Flylex-vision/main/prédiction-${todayDate}-analyse-ia.json`;
@@ -323,26 +323,100 @@
         }
         throw new Error('Échec de récupération');
     }
- 
+
     function getDetails(data) {
         return (data && data.statistiques_brutes_avec_ia_hors_montecarlo && data.statistiques_brutes_avec_ia_hors_montecarlo.details)
             || (data && data.statistiques_brutes_avec_ia && data.statistiques_brutes_avec_ia.details) || [];
     }
- 
+
+    function getDemoMatch() {
+        const todayDate = getTodayDate();
+        return {
+            id: 'demo-1',
+            HomeTeam: 'YLAN FC',
+            AwayTeam: 'LÉGENDE FC',
+            league: 'VISION FLYLEX LIGUE',
+            date: `${todayDate}T20:00:00Z`,
+            logo_home: 'logo-ylan-fc.png',
+            logo_away: 'logo-legende-fc.png',
+            odds: {
+                bookmaker: 'Vision Flylex',
+                h2h: { 'YLAN FC': 2.5, 'Draw': 2.0, 'LÉGENDE FC': 2.1 },
+                totals: { 'Over': 1.95, 'Under': 1.85 }
+            },
+            Probabilites: {
+                '1x2': { V1: 40, X: 26, V2: 34 },
+                over_under: { plus_de_0_5: 91, plus_de_1_5: 74, plus_de_2_5: 49, plus_de_3_5: 27 },
+                btts: { oui: 54, non: 46 },
+                scores_probables: { '1-1': 12.4, '2-1': 9.8, '1-0': 9.1, '0-1': 8.3, '2-2': 5.7 }
+            },
+            stats_home: {
+                moyenne_marques: 1.6, moyenne_encaisses: 1.2,
+                form_6: ['W','W','D','L','W','D'],
+                total_points_6: 11, total_points_10: 18,
+                buts_dom_marques: 14, buts_dom_encaisses: 8
+            },
+            stats_away: {
+                moyenne_marques: 1.4, moyenne_encaisses: 1.3,
+                form_6: ['W','D','W','W','L','D'],
+                total_points_6: 12, total_points_10: 17,
+                buts_ext_marques: 9, buts_ext_encaisses: 10
+            },
+            confiance_pourcentage: 71,
+            prediction_principale: 'Victoire domicile (YLAN FC)',
+            analyse_ia: "Aucun match n'est disponible aujourd'hui dans les championnats suivis. Cette carte est un exemple de démonstration : YLAN FC affiche une meilleure forme récente et une meilleure moyenne de buts marqués à domicile que LÉGENDE FC, ce qui en fait le favori de cette rencontre fictive.",
+            last_matches_home: [
+                { date:'Sam 16 Août', home_team:'YLAN FC', away_team:'ETOILE FC', score:'2 - 1' },
+                { date:'Dim 9 Août', home_team:'RACING VISION', away_team:'YLAN FC', score:'0 - 2' },
+                { date:'Sam 2 Août', home_team:'YLAN FC', away_team:'UNION FLYLEX', score:'1 - 1' }
+            ],
+            last_matches_away: [
+                { date:'Ven 15 Août', home_team:'LÉGENDE FC', away_team:'ATLETICO VISION', score:'1 - 1' },
+                { date:'Sam 8 Août', home_team:'OLYMPIA FLYLEX', away_team:'LÉGENDE FC', score:'0 - 1' },
+                { date:'Sam 1 Août', home_team:'LÉGENDE FC', away_team:'RACING VISION', score:'3 - 0' }
+            ],
+            confrontations_saison_derniere: [
+                { date:'12 Mars 2026', team1:'YLAN FC', team2:'LÉGENDE FC', score:'2 - 2' },
+                { date:'20 Octobre 2025', team1:'LÉGENDE FC', team2:'YLAN FC', score:'1 - 0' }
+            ],
+            classement_complet: [
+                { position:1, team:'Real Madrid', points:58 },
+                { position:2, team:'Paris Saint-Germain', points:56 },
+                { position:3, team:'Manchester City', points:54 },
+                { position:4, team:'FC Barcelone', points:52 },
+                { position:5, team:'Bayern Munich', points:50 },
+                { position:6, team:'YLAN FC', points:41 },
+                { position:7, team:'Manchester United', points:39 },
+                { position:8, team:'LÉGENDE FC', points:37 },
+                { position:9, team:'Liverpool', points:35 },
+                { position:10, team:'Juventus', points:33 }
+            ],
+            classement_home: 6, classement_away: 8,
+            points_classement_home: 41, points_classement_away: 37
+        };
+    }
+
     function renderMatches(data) {
         const container = document.getElementById('matchesContainer');
         container.innerHTML = '';
         const details = getDetails(data);
         document.getElementById('sectionTitleRow').style.display = 'flex';
- 
+
+        let displayDetails = details;
+        let isDemo = false;
         if (!Array.isArray(details) || details.length === 0) {
-            document.getElementById('loadingContainer').style.display = 'none';
-            document.getElementById('errorContainer').style.display = 'flex';
-            document.getElementById('errorText').textContent = "Aucun pronostic disponible aujourd'hui.";
-            return;
+            displayDetails = [getDemoMatch()];
+            isDemo = true;
         }
- 
-        details.forEach(match => {
+
+        if (isDemo) {
+            const banner = document.createElement('div');
+            banner.style.cssText = 'text-align:center; font-size:12px; color:rgba(255,255,255,0.55); padding:6px 14px 14px 14px;';
+            banner.textContent = "Aucun match réel aujourd'hui — carte de démonstration ci-dessous";
+            container.appendChild(banner);
+        }
+
+        displayDetails.forEach(match => {
             const card = document.createElement('div');
             card.className = 'home-match-card';
             const odds = match.odds || {};
@@ -377,18 +451,17 @@
             card.addEventListener('click', () => openMatchDetails(match));
             container.appendChild(card);
         });
- 
+
         document.getElementById('loadingContainer').style.display = 'none';
         container.style.display = 'block';
     }
- 
+
     function renderScores(data) {
         const container = document.getElementById('scoresContainer');
         container.innerHTML = '';
-        const details = getDetails(data);
+        let details = getDetails(data);
         if (!Array.isArray(details) || details.length === 0) {
-            container.innerHTML = '<div class="r-card"><div class="r-card-title">Aucun score disponible</div></div>';
-            return;
+            details = [getDemoMatch()];
         }
         const allScores = [];
         details.forEach(match => {
@@ -421,7 +494,7 @@
             container.appendChild(card);
         });
     }
- 
+
     function openMatchDetails(match) {
         document.getElementById('detailsTeam1Name').textContent = match.HomeTeam || 'ÉQUIPE 1';
         document.getElementById('detailsTeam2Name').textContent = match.AwayTeam || 'ÉQUIPE 2';
@@ -429,13 +502,13 @@
         document.getElementById('detailsTeam2LogoImg').src = match.logo_away || '';
         document.getElementById('detailsLeagueName').textContent = match.league || '';
         document.getElementById('detailsTimeLine').innerHTML = `Aujourd'hui <span class="value">${formatTimeOnly(match.date)}</span>`;
- 
+
         const tabs = [{ id:'apercu', label:'Aperçu' }, { id:'stats', label:'Stats' }];
         if (match.confrontations_saison_derniere && match.confrontations_saison_derniere.length) tabs.push({ id:'h2h', label:'H2H' });
         if (match.analyse_ia || match.prediction_principale) tabs.push({ id:'prediction', label:'Prédiction IA' });
         if (match.last_matches_home && match.last_matches_home.length) tabs.push({ id:'recents', label:'Matchs récents' });
         if (match.classement_complet && match.classement_complet.length) tabs.push({ id:'classement', label:'Classement' });
- 
+
         const tabsWrapper = document.getElementById('tabsWrapper');
         tabsWrapper.innerHTML = '';
         tabs.forEach((t,i) => {
@@ -445,12 +518,12 @@
             btn.textContent = t.label;
             tabsWrapper.appendChild(btn);
         });
- 
+
         renderTabContents(match, tabs);
         document.getElementById('detailsPage').classList.add('active');
         document.querySelector('.tab-contents-wrapper').scrollTop = 0;
     }
- 
+
     function renderTabContents(match, tabs) {
         const container = document.getElementById('tabContentsContainer');
         container.innerHTML = '';
@@ -470,7 +543,7 @@
             container.appendChild(div);
         });
     }
- 
+
     function renderApercuTab(match) {
         const prob = match.Probabilites || {};
         const oneX2 = prob['1x2'] || { V1:0, X:0, V2:0 };
@@ -482,7 +555,7 @@
         const totalsOdds = odds.totals || {};
         const statsHome = match.stats_home || {};
         const statsAway = match.stats_away || {};
- 
+
         let html = `
             <div class="r-card">
                 <div class="r-card-title">Probabilités</div>
@@ -494,7 +567,7 @@
                 <div class="proba-gradient-bar"></div>
             </div>
         `;
- 
+
         if (Object.keys(h2hOdds).length) {
             const keys = Object.keys(h2hOdds);
             html += `<div class="r-card"><div class="r-card-title">Cotes moyennes</div><div class="odds-3col">`;
@@ -504,7 +577,7 @@
             });
             html += `</div></div>`;
         }
- 
+
         html += `<div class="r-card"><div class="r-card-title">Plus / Moins de buts</div>`;
         ['0.5','1.5','2.5','3.5'].forEach(s => {
             const over = ou[`plus_de_${s}`];
@@ -520,7 +593,7 @@
             html += `</div>`;
         }
         html += `</div>`;
- 
+
         html += `
             <div class="r-card">
                 <div class="r-card-title">Les deux équipes marquent (BTTS)</div>
@@ -528,7 +601,7 @@
                 <div class="split-row"><span class="lbl">Non</span><span class="val">${btts.non||0}%</span></div>
             </div>
         `;
- 
+
         if (Object.keys(scores).length) {
             html += `<div class="r-card"><div class="r-card-title">Scores probables</div>`;
             Object.entries(scores).slice(0,5).forEach(([s,p]) => {
@@ -536,17 +609,17 @@
             });
             html += `</div>`;
         }
- 
+
         html += `
             <div class="r-card">
                 <div class="r-card-title">Forme des équipes</div>
                 <div class="form-strip">${formToChips(statsHome.form_6)}<span class="divider"></span>${formToChips(statsAway.form_6)}</div>
             </div>
         `;
- 
+
         return html;
     }
- 
+
     function renderStatsTab(match) {
         const sh = match.stats_home || {};
         const sa = match.stats_away || {};
@@ -565,14 +638,14 @@
             </div>
         `;
     }
- 
+
     function renderH2HTab(match) {
         const h2h = match.confrontations_saison_derniere || [];
         return `<div class="r-card"><div class="r-card-title">Confrontations directes</div>${
             h2h.map(m => `<div class="recent-row"><span>${escapeHtml(m.date||'')}</span><span>${escapeHtml(m.team1||'')} ${escapeHtml(m.score||'')} ${escapeHtml(m.team2||'')}</span></div>`).join('') || '<div style="font-size:13px; color:rgba(255,255,255,0.6);">Aucune confrontation récente</div>'
         }</div>`;
     }
- 
+
     function renderPredictionTab(match) {
         return `
             <div class="prediction-hero">
@@ -583,7 +656,7 @@
             ${match.analyse_ia ? `<div class="info-box-r">${escapeHtml(match.analyse_ia)}</div>` : ''}
         `;
     }
- 
+
     function renderRecentsTab(match) {
         const list = (matches) => (matches||[]).map(m => `
             <div class="recent-row"><span>${escapeHtml(m.date||'')}</span><span>${escapeHtml(m.home_team||'')} ${escapeHtml(m.score||'')} ${escapeHtml(m.away_team||'')}</span></div>
@@ -593,14 +666,14 @@
             <div class="r-card"><div class="r-card-title">${escapeHtml(match.AwayTeam||'')}</div>${list(match.last_matches_away)}</div>
         `;
     }
- 
+
     function renderClassementTab(match) {
         const classement = match.classement_complet || [];
         return `<div class="r-card"><div class="r-card-title">Classement — ${escapeHtml(match.league||'')}</div>${
             classement.map(t => `<div class="rank-row ${(t.team===match.HomeTeam||t.team===match.AwayTeam)?'highlight':''}"><div class="rank-pos">${t.position||''}</div><div class="rank-team">${escapeHtml(t.team||'')}</div><div class="rank-pts">${t.points||0} pts</div></div>`).join('')
         }</div>`;
     }
- 
+
     document.addEventListener('click', function(e) {
         if (e.target.classList && e.target.classList.contains('tab-button')) {
             const tabName = e.target.dataset.tab;
@@ -612,11 +685,11 @@
             document.querySelector('.tab-contents-wrapper').scrollTop = 0;
         }
     });
- 
+
     document.getElementById('backButton').addEventListener('click', () => {
         document.getElementById('detailsPage').classList.remove('active');
     });
- 
+
     const sideOverlay = document.getElementById('sideOverlay');
     const sidePanel = document.getElementById('sidePanel');
     document.getElementById('menuBtn').addEventListener('click', () => {
@@ -639,7 +712,7 @@
             sidePanel.classList.remove('active');
         });
     });
- 
+
     function showPage(pageName) {
         document.getElementById('matchesContainer').style.display = 'none';
         document.getElementById('liveContainer').style.display = 'none';
@@ -647,7 +720,7 @@
         document.getElementById('loadingContainer').style.display = 'none';
         document.getElementById('errorContainer').style.display = 'none';
         document.getElementById('sectionTitleRow').style.display = 'none';
- 
+
         switch(pageName) {
             case 'pronostic':
                 document.getElementById('sectionTitleRow').style.display = 'flex';
@@ -667,7 +740,7 @@
                 break;
         }
     }
- 
+
     document.querySelectorAll('.nav-item-f').forEach(item => {
         item.addEventListener('click', function() {
             const page = this.dataset.page;
@@ -678,19 +751,19 @@
             showPage(page);
         });
     });
- 
+
     async function init() {
         try {
             const data = await loadData();
             renderMatches(data);
             renderScores(data);
         } catch (err) {
-            document.getElementById('loadingContainer').style.display = 'none';
-            document.getElementById('errorContainer').style.display = 'flex';
-            document.getElementById('errorText').textContent = `Erreur de chargement des données pour aujourd'hui (${getTodayDate()}). Vérifiez que le fichier existe sur GitHub.`;
+            // Fichier introuvable ou erreur réseau : on affiche la carte de démonstration au lieu du message d'erreur
+            renderMatches({ statistiques_brutes_avec_ia_hors_montecarlo: { details: [] } });
+            renderScores({ statistiques_brutes_avec_ia_hors_montecarlo: { details: [] } });
         }
     }
- 
+
     init();
     </script>
 </body>
