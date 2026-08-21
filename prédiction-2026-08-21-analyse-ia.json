@@ -1,0 +1,1444 @@
+{
+  "metadata": {
+    "date_generation": "2026-08-21 10:34:45",
+    "date_matchs": "2026-08-21",
+    "version_algorithme": "8.3 - STATISTIQUES BRUTES + FORMES 6/10 + POINTS CLASSEMENT + COTES + ANALYSE IA DEEPSEEK ENRICHIE + MATCHS COMPLETS AVEC STATS DÉTAILLÉES + CLASSEMENT COMPLET + H2H ENRICHI AVEC STATS + CONFIANCE EXTRAITE + SCORES + RETRY IA + EXTRACTION AMÉLIORÉE 2 FORMATS + PROBABILITÉS MONTE-CARLO (NON INCLUSES DANS PROMPT IA)",
+    "total_predictions": 3,
+    "mode": "stats_brutes_avec_cotes_et_ia_complete_enrichie_retry_nouvelle_structure_avec_stats_detaillees_h2h_enrichi_confiance_extraite_scores_extraction_amelioree_2_formats_montecarlo_hors_prompt",
+    "note": "Collecte des statistiques brutes complètes : moyennes, formes récentes (6 et 10 matchs), séries domicile/extérieur, classements avec points + cotes des bookmakers + analyse IA DeepSeek ENRICHIE avec matchs détaillés (nouvelle structure objet avec game_id, date, home_team, away_team, score, status, competition + STATS DÉTAILLÉES ESPN) + classement complet + confrontations directes H2H élargies AVEC STATS DÉTAILLÉES + pourcentage confiance EXTRAIT AUTOMATIQUEMENT + 2 scores probables + retry automatique IA + suppression 'match nul' + EXTRACTION AMÉLIORÉE support des 2 formats (**FORMAT** et FORMAT simple) + PROBABILITÉS MONTE-CARLO autonomes (calculées mais NON incluses dans le prompt IA)",
+    "ia_model": "deepseek-r1-distill-llama-70b",
+    "groq_keys_count": 2,
+    "monte_carlo": {
+      "enabled": true,
+      "iterations": 20000,
+      "calibrage": "moyennes_internationales + statistiques_équipes + ajustement_h2h",
+      "probabilites_calculees": [
+        "1x2",
+        "double_chance",
+        "over_under",
+        "btts",
+        "resultat_total",
+        "scores_probables"
+      ],
+      "inclus_dans_prompt_ia": false
+    },
+    "nouveautes_v8_3_modifiees": [
+      "🎲 Module de probabilités Monte-Carlo intégré (20 000 simulations)",
+      "🔢 Calibrage avec moyennes internationales FIFA/UEFA",
+      "🆚 Ajustement automatique selon les confrontations H2H",
+      "📊 Probabilités 1X2, Double Chance, Over/Under (0.5→5.5), BTTS",
+      "🎯 Scores exacts les plus probables calculés statistiquement",
+      "❌ MODIFICIATION : Probabilités Monte-Carlo NON incluses dans le prompt IA",
+      "❌ MODIFICIATION : IA ne prédit plus corners et tirs cadrés (champs gardés dans structure)",
+      "📁 MODIFICIATION : Nom de fichier simplifié prédiction-YYYY-MM-DD-analyse-ia.json",
+      "✅ Maintien de toutes les autres fonctionnalités avancées v8.2"
+    ]
+  },
+  "statistiques_brutes_avec_ia_hors_montecarlo": {
+    "count": 3,
+    "details": [
+      {
+        "id": 1,
+        "HomeTeam": "Petrolul Ploiesti",
+        "AwayTeam": "Rapid",
+        "date": "21 août 2026 à 17:30:00 UTC",
+        "league": "Romania - Liga I",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 0.7,
+          "moyenne_encaisses": 1.4,
+          "form_6": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L",
+            "D"
+          ],
+          "form_10": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L",
+            "D",
+            "D",
+            "L",
+            "W",
+            "L"
+          ],
+          "recent_form": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L",
+            "D"
+          ],
+          "total_points_6": 1,
+          "total_points_10": 5,
+          "total_points": 1,
+          "serie_domicile": [
+            "L",
+            "L",
+            "D",
+            "L",
+            "L"
+          ],
+          "buts_dom_marques": 2,
+          "buts_dom_encaisses": 8,
+          "buts_ext_marques": 5,
+          "buts_ext_encaisses": 6,
+          "total_marques": 7,
+          "total_encaisses": 14
+        },
+        "stats_away": {
+          "moyenne_marques": 1.4,
+          "moyenne_encaisses": 0.8,
+          "form_6": [
+            "W",
+            "L",
+            "D",
+            "W",
+            "W",
+            "D"
+          ],
+          "form_10": [
+            "W",
+            "L",
+            "D",
+            "W",
+            "W",
+            "D",
+            "D",
+            "W",
+            "W",
+            "D"
+          ],
+          "recent_form": [
+            "W",
+            "L",
+            "D",
+            "W",
+            "W",
+            "D"
+          ],
+          "total_points_6": 11,
+          "total_points_10": 19,
+          "total_points": 11,
+          "serie_exterieur": [
+            "W",
+            "D",
+            "W",
+            "D",
+            "W"
+          ],
+          "buts_dom_marques": 8,
+          "buts_dom_encaisses": 6,
+          "buts_ext_marques": 6,
+          "buts_ext_encaisses": 2,
+          "total_marques": 14,
+          "total_encaisses": 8
+        },
+        "last_matches_home": [
+          {
+            "game_id": "744444",
+            "date": "Sat, Sep 27",
+            "home_team": "Petrolul Ploiesti",
+            "away_team": "Rapid Bucuresti",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744444"
+          },
+          {
+            "game_id": "744439",
+            "date": "Sun, Sep 21",
+            "home_team": "Unirea Slobozia",
+            "away_team": "Petrolul Ploiesti",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744439"
+          },
+          {
+            "game_id": "744428",
+            "date": "Mon, Sep 15",
+            "home_team": "Petrolul Ploiesti",
+            "away_team": "Dinamo Bucuresti",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744428"
+          },
+          {
+            "game_id": "744420",
+            "date": "Mon, Sep 01",
+            "home_team": "FC Farul Constanta",
+            "away_team": "Petrolul Ploiesti",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744420"
+          },
+          {
+            "game_id": "744411",
+            "date": "Sun, Aug 24",
+            "home_team": "CSU Craiova",
+            "away_team": "Petrolul Ploiesti",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744411"
+          },
+          {
+            "game_id": "744401",
+            "date": "Sat, Aug 16",
+            "home_team": "Petrolul Ploiesti",
+            "away_team": "Hermannstadt",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744401"
+          },
+          {
+            "game_id": "744393",
+            "date": "Sat, Aug 09",
+            "home_team": "Universitatea Cluj",
+            "away_team": "Petrolul Ploiesti",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744393"
+          },
+          {
+            "game_id": "744386",
+            "date": "Fri, Aug 01",
+            "home_team": "Petrolul Ploiesti",
+            "away_team": "UTA Arad",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744386"
+          },
+          {
+            "game_id": "744380",
+            "date": "Fri, Jul 25",
+            "home_team": "Metaloglobus",
+            "away_team": "Petrolul Ploiesti",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744380"
+          },
+          {
+            "game_id": "744371",
+            "date": "Sat, Jul 19",
+            "home_team": "Petrolul Ploiesti",
+            "away_team": "FCSB",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744371"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "744444",
+            "date": "Sat, Sep 27",
+            "home_team": "Petrolul Ploiesti",
+            "away_team": "Rapid Bucuresti",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744444"
+          },
+          {
+            "game_id": "744438",
+            "date": "Sun, Sep 21",
+            "home_team": "Rapid Bucuresti",
+            "away_team": "Hermannstadt",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744438"
+          },
+          {
+            "game_id": "744430",
+            "date": "Fri, Sep 12",
+            "home_team": "Universitatea Cluj",
+            "away_team": "Rapid Bucuresti",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744430"
+          },
+          {
+            "game_id": "744421",
+            "date": "Fri, Aug 29",
+            "home_team": "Rapid Bucuresti",
+            "away_team": "UTA Arad",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744421"
+          },
+          {
+            "game_id": "744415",
+            "date": "Fri, Aug 22",
+            "home_team": "Metaloglobus",
+            "away_team": "Rapid Bucuresti",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744415"
+          },
+          {
+            "game_id": "744402",
+            "date": "Sun, Aug 17",
+            "home_team": "Rapid Bucuresti",
+            "away_team": "FCSB",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744402"
+          },
+          {
+            "game_id": "744395",
+            "date": "Mon, Aug 11",
+            "home_team": "Otelul Galati",
+            "away_team": "Rapid Bucuresti",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744395"
+          },
+          {
+            "game_id": "744387",
+            "date": "Mon, Aug 04",
+            "home_team": "Rapid Bucuresti",
+            "away_team": "FC Botosani",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744387"
+          },
+          {
+            "game_id": "744378",
+            "date": "Fri, Jul 25",
+            "home_team": "Csíkszereda",
+            "away_team": "Rapid Bucuresti",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744378"
+          },
+          {
+            "game_id": "744372",
+            "date": "Sun, Jul 20",
+            "home_team": "Rapid Bucuresti",
+            "away_team": "CFR Cluj-Napoca",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Romanian Liga 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/744372"
+          }
+        ],
+        "classement": {
+          "Petrolul Ploiesti": null,
+          "Rapid": null
+        },
+        "classement_complet": [],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "711006",
+            "date": "Monday, July 29, 2024",
+            "team1": "Petrolul Ploiesti",
+            "score": "1 - 0",
+            "team2": "Rapid Bucuresti",
+            "title": "Petrolul Ploiesti VS Rapid Bucuresti",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/711006/rapid-bucuresti-petrolul-ploiesti",
+            "source": "Liga I",
+            "stats": {}
+          },
+          {
+            "gameId": "711124",
+            "date": "Friday, November 29, 2024",
+            "team1": "Rapid Bucuresti",
+            "score": "1 - 1",
+            "team2": "Petrolul Ploiesti",
+            "title": "Rapid Bucuresti VS Petrolul Ploiesti",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/711124/petrolul-ploiesti-rapid-bucuresti",
+            "source": "Liga I",
+            "stats": {}
+          },
+          {
+            "gameId": "744444",
+            "date": "Saturday, September 27, 2025",
+            "team1": "Petrolul Ploiesti",
+            "score": "0 - 1",
+            "team2": "Rapid Bucuresti",
+            "title": "Petrolul Ploiesti VS Rapid Bucuresti",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/744444/rapid-bucuresti-petrolul-ploiesti",
+            "source": "Liga I",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://media.api-sports.io/football/teams/2598.png",
+        "logo_away": "https://media.api-sports.io/football/teams/6231.png",
+        "classement_home": null,
+        "classement_away": null,
+        "points_classement_home": null,
+        "points_classement_away": null,
+        "nom_classement_home": null,
+        "nom_classement_away": null,
+        "country_fr": "Romania - Liga I",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.065,
+            "lambda_away": 1.197,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 32.89,
+            "X": 28.33,
+            "V2": 38.78
+          },
+          "double_chance": {
+            "1X": 61.22,
+            "12": 71.67,
+            "X2": 67.11
+          },
+          "over_under": {
+            "plus_de_0.5": 89.84,
+            "moins_de_0.5": 10.15,
+            "plus_de_1.5": 66.11,
+            "moins_de_1.5": 33.89,
+            "plus_de_2.5": 39.44,
+            "moins_de_2.5": 60.56,
+            "plus_de_3.5": 19.5,
+            "moins_de_3.5": 80.5,
+            "plus_de_4.5": 7.99,
+            "moins_de_4.5": 92.01,
+            "plus_de_5.5": 2.86,
+            "moins_de_5.5": 97.14
+          },
+          "btts": {
+            "oui": 45.85,
+            "non": 54.15
+          },
+          "resultat_total": {
+            "V1et+0.5": 32.89,
+            "1Xet+0.5": 51.07,
+            "V2et+0.5": 38.78,
+            "V1et+1.5": 21.66,
+            "1Xet+1.5": 39.84,
+            "V2et+1.5": 26.27,
+            "V1et+2.5": 15.64,
+            "1Xet+2.5": 20.58,
+            "V2et+2.5": 18.86,
+            "V1et+3.5": 6.47,
+            "1Xet+3.5": 11.42,
+            "V2et+3.5": 8.09,
+            "V1et+4.5": 3.3,
+            "1Xet+4.5": 3.97,
+            "V2et+4.5": 4.03,
+            "V1et+5.5": 0.98,
+            "1Xet+5.5": 1.65,
+            "V2et+5.5": 1.21
+          },
+          "scores_probables": {
+            "1-1": 13.23,
+            "0-1": 12.51,
+            "1-0": 11.22,
+            "0-0": 10.15,
+            "1-2": 7.82,
+            "0-2": 7.41,
+            "2-1": 7.03,
+            "2-0": 6.02,
+            "2-2": 4.28,
+            "1-3": 3.22
+          },
+          "buts_moyens_simules": {
+            "home": 1.08,
+            "away": 1.19,
+            "total": 2.27
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Victoire extérieur (Rapid)  \n**CONFIANCE** : 71%  \n**SCORES PROBABLES** : 0‑1 ou 0‑2  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative des forces et faiblesses**  \n|                     | Petrolul Ploiești (domicile) | Rapid București (extérieur) |\n|---------------------|------------------------------|------------------------------|\n| Moyenne buts marqués | 0,70                         | 1,40                         |\n| Moyenne buts encaissés| 1,40                         | 0,80                         |\n| Ratio buts marqués / encaissés | 0,5 (déficit)               | 1,75 (excédent)               |\n| Points domicile (sur 6 derniers) | 1 point (5 défaites, 1 nul) | 11 points (4 victoires, 2 nuls) |\n| Série récente | L‑L‑D‑L‑L (5 matchs à domicile) | W‑D‑W‑D‑W (5 matchs à l’extérieur) |\n\nPetrolul montre une très faible capacité offensive (moins d’un but par match) et une défense qui laisse 1,4 but à domicile. Rapid, à l’inverse, double la production offensive et encaisse moins d’un but par match à l’extérieur.  \n\n**2. Impact du facteur domicile/extérieur**  \n- Petrolul n’a inscrit que **2 buts** à domicile sur les 10 derniers matchs, contre **8 buts encaissés**.  \n- Rapid a marqué **6 buts** et n’en a encaissé que **2** lors de ses 10 dernières sorties.  \nLe déséquilibre est donc clairement en faveur du visiteur.\n\n**3. Forme récente**  \n- **Petrolul** : 5 défaites, 1 nul sur les 6 derniers (0‑5‑1). Aucun point depuis 5 matchs.  \n- **Rapid** : 4 victoires, 2 nuls sur les 6 derniers (8‑2‑0). Une dynamique positive, notamment à l’extérieur (série W‑D‑W‑D‑W).\n\n**4. Confrontations directes** (3 dernières saisons)  \n- 2024‑25 : 1‑0 victoire de Petrolul à domicile.  \n- 2024‑25 (retour) : 1‑1 à l’extérieur.  \n- 2025‑26 (dernière rencontre) : 0‑1 victoire de Rapid à l’extérieur.  \nSur les trois duels, Rapid a 1 victoire, 1 nul, 1 victoire, soit un bilan légèrement favorable (2‑0‑1).  \n\n**5. Tendances de buts**  \n- Total moyen de buts du match (moyenne des deux équipes) : (0,70 + 1,40 + 1,40 + 0,80) / 2 = **2,15**.  \n- Historique des 10 derniers matchs de chaque équipe montre **8 matchs avec ≤ 2 buts** et **4 matchs avec > 2 buts**. La probabilité d’un total inférieur à 2,5 buts est donc supérieure à 50 %.\n\n**6. Absence de cotes**  \nAucune cote n’étant fournie, la décision repose exclusivement sur les indicateurs de performance ci‑dessus.\n\n**7. Synthèse**  \n- Rapid possède à la fois une meilleure attaque et une défense plus solide que Petrolul.  \n- La forme actuelle de Rapid (4 victoires à l’extérieur) contraste fortement avec la mauvaise passe de Petrolul à domicile.  \n- Les confrontations directes récentes donnent un léger avantage à Rapid.  \n- Le nombre moyen de buts attendu (≈ 2,15) suggère un score serré, souvent 1‑0 ou 2‑0 en faveur du visiteur.\n\n**Conclusion** : Le scénario le plus probable est une victoire de Rapid, avec un score de **0‑1** ou **0‑2**.",
+        "confiance_pourcentage": 71,
+        "prediction_principale": "Victoire extérieur (Rapid)",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "0‑1 ou 0‑2"
+      },
+      {
+        "id": 2,
+        "HomeTeam": "Marseille",
+        "AwayTeam": "Strasbourg",
+        "date": "21 août 2026 à 18:45:00 UTC",
+        "league": "France - Ligue 1",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": {
+          "bookmaker": "1xBet",
+          "h2h": {
+            "Marseille": 1.79,
+            "Strasbourg": 4.4,
+            "Draw": 4.37
+          },
+          "totals": {
+            "Over": 2.42,
+            "Under": 1.66
+          }
+        },
+        "stats_home": {
+          "moyenne_marques": 2.0,
+          "moyenne_encaisses": 1.5,
+          "form_6": [
+            "L",
+            "W"
+          ],
+          "form_10": [
+            "L",
+            "W"
+          ],
+          "recent_form": [
+            "L",
+            "W"
+          ],
+          "total_points_6": 3,
+          "total_points_10": 3,
+          "total_points": 3,
+          "serie_domicile": [
+            "L",
+            "W"
+          ],
+          "buts_dom_marques": 4,
+          "buts_dom_encaisses": 3,
+          "buts_ext_marques": 0,
+          "buts_ext_encaisses": 0,
+          "total_marques": 4,
+          "total_encaisses": 3
+        },
+        "stats_away": {
+          "moyenne_marques": 1.3333333333333333,
+          "moyenne_encaisses": 2.3333333333333335,
+          "form_6": [
+            "D",
+            "L",
+            "L"
+          ],
+          "form_10": [
+            "D",
+            "L",
+            "L"
+          ],
+          "recent_form": [
+            "D",
+            "L",
+            "L"
+          ],
+          "total_points_6": 1,
+          "total_points_10": 1,
+          "total_points": 1,
+          "serie_exterieur": [
+            "D",
+            "L",
+            "L"
+          ],
+          "buts_dom_marques": 0,
+          "buts_dom_encaisses": 0,
+          "buts_ext_marques": 4,
+          "buts_ext_encaisses": 7,
+          "total_marques": 4,
+          "total_encaisses": 7
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401900330",
+            "date": "Fri, Aug 14",
+            "home_team": "Marseille",
+            "away_team": "Atlético Madrid",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Club Friendly",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900330"
+          },
+          {
+            "game_id": "401906389",
+            "date": "Sun, Aug 09",
+            "home_team": "Marseille",
+            "away_team": "Athletic Club",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Club Friendly",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401906389"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401905967",
+            "date": "Sun, Aug 16",
+            "home_team": "Newcastle United",
+            "away_team": "Strasbourg",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Club Friendly",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401905967"
+          },
+          {
+            "game_id": "401906422",
+            "date": "Sat, Aug 08",
+            "home_team": "SC Freiburg",
+            "away_team": "Strasbourg",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Club Friendly",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401906422"
+          },
+          {
+            "game_id": "401906704",
+            "date": "Sat, Aug 01",
+            "home_team": "Brighton & Hove Albion",
+            "away_team": "Strasbourg",
+            "score": "4 - 3",
+            "status": "FT",
+            "competition": "Club Friendly",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401906704"
+          }
+        ],
+        "classement": {
+          "Marseille": {
+            "position": 10,
+            "points": 0
+          },
+          "Strasbourg": {
+            "position": 16,
+            "points": 0
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Angers",
+            "points": 0
+          },
+          {
+            "position": 2,
+            "team": "AJ Auxerre",
+            "points": 0
+          },
+          {
+            "position": 3,
+            "team": "Brest",
+            "points": 0
+          },
+          {
+            "position": 4,
+            "team": "Le Havre AC",
+            "points": 0
+          },
+          {
+            "position": 5,
+            "team": "Le Mans",
+            "points": 0
+          },
+          {
+            "position": 6,
+            "team": "Lens",
+            "points": 0
+          },
+          {
+            "position": 7,
+            "team": "Lille",
+            "points": 0
+          },
+          {
+            "position": 8,
+            "team": "Lorient",
+            "points": 0
+          },
+          {
+            "position": 9,
+            "team": "Lyon",
+            "points": 0
+          },
+          {
+            "position": 10,
+            "team": "Marseille",
+            "points": 0
+          },
+          {
+            "position": 11,
+            "team": "AS Monaco",
+            "points": 0
+          },
+          {
+            "position": 12,
+            "team": "Nice",
+            "points": 0
+          },
+          {
+            "position": 13,
+            "team": "Paris FC",
+            "points": 0
+          },
+          {
+            "position": 14,
+            "team": "Paris Saint-Germain",
+            "points": 0
+          },
+          {
+            "position": 15,
+            "team": "Stade Rennais",
+            "points": 0
+          },
+          {
+            "position": 16,
+            "team": "Strasbourg",
+            "points": 0
+          },
+          {
+            "position": 17,
+            "team": "Toulouse",
+            "points": 0
+          },
+          {
+            "position": 18,
+            "team": "Troyes",
+            "points": 0
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "706478",
+            "date": "Sunday, September 29, 2024",
+            "team1": "Strasbourg",
+            "score": "1 - 0",
+            "team2": "Marseille",
+            "title": "Strasbourg VS Marseille",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/706478/marseille-strasbourg",
+            "source": "Ligue 1",
+            "stats": {}
+          },
+          {
+            "gameId": "706585",
+            "date": "Sunday, January 19, 2025",
+            "team1": "Marseille",
+            "score": "1 - 1",
+            "team2": "Strasbourg",
+            "title": "Marseille VS Strasbourg",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/706585/strasbourg-marseille",
+            "source": "Ligue 1",
+            "stats": {}
+          },
+          {
+            "gameId": "746461",
+            "date": "Friday, September 26, 2025",
+            "team1": "Strasbourg",
+            "score": "1 - 2",
+            "team2": "Marseille",
+            "title": "Strasbourg VS Marseille",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/746461/marseille-strasbourg",
+            "source": "Ligue 1",
+            "stats": {}
+          },
+          {
+            "gameId": "746607",
+            "date": "Saturday, February 14, 2026",
+            "team1": "Marseille",
+            "score": "2 - 2",
+            "team2": "Strasbourg",
+            "title": "Marseille VS Strasbourg",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/746607/strasbourg-marseille",
+            "source": "Ligue 1",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://media.api-sports.io/football/teams/81.png",
+        "logo_away": "https://media.api-sports.io/football/teams/95.png",
+        "classement_home": 10,
+        "classement_away": 16,
+        "points_classement_home": 0,
+        "points_classement_away": 0,
+        "nom_classement_home": "Marseille",
+        "nom_classement_away": "Strasbourg",
+        "country_fr": "France - Ligue 1",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.754,
+            "lambda_away": 1.291,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 48.73,
+            "X": 23.48,
+            "V2": 27.78
+          },
+          "double_chance": {
+            "1X": 72.21,
+            "12": 76.52,
+            "X2": 51.27
+          },
+          "over_under": {
+            "plus_de_0.5": 95.48,
+            "moins_de_0.5": 4.52,
+            "plus_de_1.5": 80.91,
+            "moins_de_1.5": 19.09,
+            "plus_de_2.5": 58.54,
+            "moins_de_2.5": 41.46,
+            "plus_de_3.5": 36.56,
+            "moins_de_3.5": 63.43,
+            "plus_de_4.5": 19.71,
+            "moins_de_4.5": 80.3,
+            "plus_de_5.5": 8.8,
+            "moins_de_5.5": 91.2
+          },
+          "btts": {
+            "oui": 60.3,
+            "non": 39.7
+          },
+          "resultat_total": {
+            "V1et+0.5": 48.73,
+            "1Xet+0.5": 67.7,
+            "V2et+0.5": 27.78,
+            "V1et+1.5": 40.29,
+            "1Xet+1.5": 59.26,
+            "V2et+1.5": 21.64,
+            "V1et+2.5": 32.98,
+            "1Xet+2.5": 40.85,
+            "V2et+2.5": 17.7,
+            "V1et+3.5": 19.28,
+            "1Xet+3.5": 27.16,
+            "V2et+3.5": 9.41,
+            "V1et+4.5": 11.9,
+            "1Xet+4.5": 13.68,
+            "V2et+4.5": 6.02,
+            "V1et+5.5": 4.84,
+            "1Xet+5.5": 6.63,
+            "V2et+5.5": 2.17
+          },
+          "scores_probables": {
+            "1-1": 11.1,
+            "2-1": 9.34,
+            "1-0": 8.43,
+            "2-0": 7.32,
+            "1-2": 6.8,
+            "0-1": 6.14,
+            "2-2": 6.08,
+            "3-1": 5.58,
+            "0-0": 4.52,
+            "3-0": 4.36
+          },
+          "buts_moyens_simules": {
+            "home": 1.77,
+            "away": 1.29,
+            "total": 3.06
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Victoire domicile (Marseille)  \n**CONFIANCE** : 68 %  \n**SCORES PROBABLES** : 2‑1 ou 1‑0  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative des équipes**  \n- **Marseille (domicile)** : moyenne 2,00 buts marqués et 1,50 encaissés. En 6 derniers matchs (L W) la forme montre une victoire récente. Sur leurs 2 derniers matchs à domicile (friendly) ils ont inscrit 4 buts et n’en ont encaissé que 3, soit une bonne efficacité offensive à domicile.  \n- **Strasbourg (extérieur)** : moyenne 1,33 buts marqués et 2,33 encaissés. Leur forme à l’extérieur (D‑L‑L) est fragile et ils concèdent en moyenne plus d’un but par match (2,33). En 3 derniers matchs à l’extérieur (friendlies) ils n’ont marqué que 4 buts tout en encaissant 7, ce qui confirme une défense vulnérable.\n\n**2. Impact du facteur domicile/extérieur**  \nLe facteur domicile profite à Marseille : ils marquent davantage à domicile (2 buts/match) et concèdent moins (1,5). Strasbourg, à l’inverse, montre une défense très perméable à l’extérieur (2,33 buts/match). Cette asymétrie favorise nettement le résultat en faveur du domicile.\n\n**3. Formes récentes et tendances**  \n- Marseille : petite série L‑W, mais le dernier match (friendly) s’est soldé par une victoire 3‑1, indiquant une capacité à créer plusieurs occasions.  \n- Strasbourg : série D‑L‑L, le dernier résultat (friendly) était un 1‑1 contre Newcastle, montrant qu’ils peinent à garder la cage inviolée même contre des équipes de niveau moyen.\n\n**4. Contexte du championnat**  \nLe classement actuel (tous les clubs à 0 pts, saison très précoce) ne permet pas de tirer de conclusions fortes, mais la position relative (Marseille 10ᵉ vs Strasbourg 16ᵉ) reflète une différence de qualité perçue. Marseille, même en milieu de tableau, possède un effectif plus stable que Strasbourg, qui lutte en bas de tableau.\n\n**5. Confrontations directes récentes**  \n- 4 rencontres depuis 2024 : 2 victoires Marseille, 1 victoire Strasbourg, 2 nuls.  \n- Sur ces 4 matchs, Marseille a marqué 5 buts (1,25 buts/match) tandis que Strasbourg n’en a inscrit que 4 (1 but/match).  \n- La tendance montre que Marseille obtient généralement au moins un point et réalise souvent la victoire lorsqu’elle se décide.\n\n**6. Évaluation des cotes**  \n- Victoire Marseille à 1,79 indique que le marché la considère comme la plus probable.  \n- Over 2,5 à 2,42 contre Under 2,5 à 1,66 montre que les bookmakers anticipent un match plutôt serré et peu prolifique, ce qui concorde avec une victoire 1‑0 ou 2‑1.\n\n**7. Analyse des statistiques détaillées des matchs passés**  \nMême si les données de possession, tirs et corners ne sont pas disponibles, les indicateurs de buts marqués/encaissés et les tendances de forme suffisent à établir que Marseille possède un léger avantage offensif et une défense plus solide à domicile.\n\n**8. Synthèse**  \n- **Offensive** : Marseille 2,00 buts/match à domicile vs Strasbourg 1,33 buts/match à l’extérieur → avantage de +0,67 but.  \n- **Défensive** : Marseille encaisse 1,50 buts à domicile contre 2,33 buts concédés par Strasbourg à l’extérieur → avantage de -0,83 but.  \n- **Différence nette** : +1,5 buts en faveur de Marseille.\n\nCes éléments convergent vers une victoire de Marseille, très probablement avec une marge d’un seul but (1‑0 ou 2‑1).  \n\n**Conclusion** : La prédiction la plus fiable est donc **Victoire domicile (Marseille)** avec un niveau de confiance de **68 %** et les scores les plus probables **2‑1 ou 1‑0**.",
+        "confiance_pourcentage": 68,
+        "prediction_principale": "Victoire domicile (Marseille)",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "2‑1 ou 1‑0"
+      },
+      {
+        "id": 3,
+        "HomeTeam": "Caracas FC",
+        "AwayTeam": "Carabobo FC",
+        "date": "21 août 2026 à 23:00:00 UTC",
+        "league": "Venezuela - Primera División",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.2,
+          "moyenne_encaisses": 2.0,
+          "form_6": [
+            "W",
+            "L",
+            "L",
+            "D",
+            "L",
+            "L"
+          ],
+          "form_10": [
+            "W",
+            "L",
+            "L",
+            "D",
+            "L",
+            "L",
+            "L",
+            "D",
+            "W",
+            "D"
+          ],
+          "recent_form": [
+            "W",
+            "L",
+            "L",
+            "D",
+            "L",
+            "L"
+          ],
+          "total_points_6": 4,
+          "total_points_10": 9,
+          "total_points": 4,
+          "serie_domicile": [
+            "L",
+            "D",
+            "L",
+            "L",
+            "D"
+          ],
+          "buts_dom_marques": 5,
+          "buts_dom_encaisses": 11,
+          "buts_ext_marques": 7,
+          "buts_ext_encaisses": 9,
+          "total_marques": 12,
+          "total_encaisses": 20
+        },
+        "stats_away": {
+          "moyenne_marques": 1.5,
+          "moyenne_encaisses": 0.7,
+          "form_6": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "form_10": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "W",
+            "W",
+            "L",
+            "D",
+            "W",
+            "W"
+          ],
+          "recent_form": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "total_points_6": 12,
+          "total_points_10": 19,
+          "total_points": 12,
+          "serie_exterieur": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "buts_dom_marques": 6,
+          "buts_dom_encaisses": 2,
+          "buts_ext_marques": 9,
+          "buts_ext_encaisses": 5,
+          "total_marques": 15,
+          "total_encaisses": 7
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401903378",
+            "date": "Sat, Aug 15",
+            "home_team": "UCV FC",
+            "away_team": "Caracas FC",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Venezuelan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401903378"
+          },
+          {
+            "game_id": "401903381",
+            "date": "Mon, Aug 10",
+            "home_team": "Caracas FC",
+            "away_team": "Deportivo La Guaira",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Venezuelan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401903381"
+          },
+          {
+            "game_id": "401903386",
+            "date": "Thu, Aug 06",
+            "home_team": "Academia Puerto Cabello",
+            "away_team": "Caracas FC",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Venezuelan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401903386"
+          },
+          {
+            "game_id": "401902706",
+            "date": "Mon, Aug 03",
+            "home_team": "Caracas FC",
+            "away_team": "Estudiantes de Mérida",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Venezuelan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401902706"
+          },
+          {
+            "game_id": "401874162",
+            "date": "Fri, Jul 31",
+            "home_team": "Caracas FC",
+            "away_team": "Independiente Santa Fe",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401874162"
+          },
+          {
+            "game_id": "401874165",
+            "date": "Fri, Jul 24",
+            "home_team": "Independiente Santa Fe",
+            "away_team": "Caracas FC",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401874165"
+          },
+          {
+            "game_id": "401865453",
+            "date": "Wed, May 27",
+            "home_team": "Caracas FC",
+            "away_team": "Botafogo",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401865453"
+          },
+          {
+            "game_id": "401865446",
+            "date": "Fri, May 22",
+            "home_team": "Racing Club",
+            "away_team": "Caracas FC",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401865446"
+          },
+          {
+            "game_id": "401865429",
+            "date": "Tue, May 05",
+            "home_team": "Independiente Petrolero",
+            "away_team": "Caracas FC",
+            "score": "2 - 3",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401865429"
+          },
+          {
+            "game_id": "401865407",
+            "date": "Wed, Apr 29",
+            "home_team": "Caracas FC",
+            "away_team": "Racing Club",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401865407"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401903374",
+            "date": "Sun, Aug 16",
+            "home_team": "Carabobo",
+            "away_team": "Metropolitanos",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Venezuelan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401903374"
+          },
+          {
+            "game_id": "401903393",
+            "date": "Sat, Aug 08",
+            "home_team": "Monagas SC",
+            "away_team": "Carabobo",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Venezuelan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401903393"
+          },
+          {
+            "game_id": "401903391",
+            "date": "Tue, Aug 04",
+            "home_team": "Carabobo",
+            "away_team": "Trujillanos",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Venezuelan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401903391"
+          },
+          {
+            "game_id": "401902712",
+            "date": "Fri, Jul 31",
+            "home_team": "Portuguesa",
+            "away_team": "Carabobo",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Venezuelan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401902712"
+          },
+          {
+            "game_id": "401874289",
+            "date": "Sun, Jun 07",
+            "home_team": "Carabobo",
+            "away_team": "Academia Puerto Cabello",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Venezuelan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401874289"
+          },
+          {
+            "game_id": "401871044",
+            "date": "Sun, May 31",
+            "home_team": "Metropolitanos",
+            "away_team": "Carabobo",
+            "score": "1 - 5",
+            "status": "FT",
+            "competition": "Venezuelan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401871044"
+          },
+          {
+            "game_id": "401865464",
+            "date": "Thu, May 28",
+            "home_team": "Red Bull Bragantino",
+            "away_team": "Carabobo",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401865464"
+          },
+          {
+            "game_id": "401871039",
+            "date": "Sun, May 24",
+            "home_team": "Carabobo",
+            "away_team": "Deportivo Táchira",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Venezuelan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401871039"
+          },
+          {
+            "game_id": "401865437",
+            "date": "Fri, May 22",
+            "home_team": "Blooming",
+            "away_team": "Carabobo",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401865437"
+          },
+          {
+            "game_id": "401871034",
+            "date": "Sun, May 17",
+            "home_team": "Estudiantes de Mérida",
+            "away_team": "Carabobo",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Venezuelan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401871034"
+          }
+        ],
+        "classement": {
+          "Caracas FC": {
+            "position": 8,
+            "points": 4
+          },
+          "Carabobo FC": {
+            "position": 7,
+            "points": 6
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Deportivo Táchira",
+            "points": 12
+          },
+          {
+            "position": 2,
+            "team": "Deportivo La Guaira",
+            "points": 9
+          },
+          {
+            "position": 3,
+            "team": "Academia Puerto Cabello",
+            "points": 9
+          },
+          {
+            "position": 4,
+            "team": "Metropolitanos",
+            "points": 9
+          },
+          {
+            "position": 5,
+            "team": "Portuguesa",
+            "points": 9
+          },
+          {
+            "position": 6,
+            "team": "Estudiantes de Mérida",
+            "points": 7
+          },
+          {
+            "position": 7,
+            "team": "Carabobo",
+            "points": 6
+          },
+          {
+            "position": 8,
+            "team": "Caracas FC",
+            "points": 4
+          },
+          {
+            "position": 9,
+            "team": "Rayo Zuliano",
+            "points": 3
+          },
+          {
+            "position": 10,
+            "team": "Monagas SC",
+            "points": 3
+          },
+          {
+            "position": 11,
+            "team": "Trujillanos",
+            "points": 3
+          },
+          {
+            "position": 12,
+            "team": "UCV FC",
+            "points": 3
+          },
+          {
+            "position": 13,
+            "team": "Anzoátegui FC",
+            "points": 3
+          },
+          {
+            "position": 14,
+            "team": "Zamora FC",
+            "points": 3
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "698608",
+            "date": "Friday, April 19, 2024",
+            "team1": "Carabobo",
+            "score": "1 - 0",
+            "team2": "Caracas FC",
+            "title": "Carabobo VS Caracas FC",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/698608/caracas-fc-carabobo",
+            "source": "Primera División",
+            "stats": {}
+          },
+          {
+            "gameId": "717891",
+            "date": "Saturday, October 19, 2024",
+            "team1": "Caracas FC",
+            "score": "0 - 0",
+            "team2": "Carabobo",
+            "title": "Caracas FC VS Carabobo",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/717891/carabobo-caracas-fc",
+            "source": "Primera División",
+            "stats": {}
+          },
+          {
+            "gameId": "730285",
+            "date": "Saturday, April 5, 2025",
+            "team1": "Caracas FC",
+            "score": "0 - 1",
+            "team2": "Carabobo",
+            "title": "Caracas FC VS Carabobo",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/730285/carabobo-caracas-fc",
+            "source": "Primera División",
+            "stats": {}
+          },
+          {
+            "gameId": "751444",
+            "date": "Sunday, September 14, 2025",
+            "team1": "Carabobo",
+            "score": "1 - 0",
+            "team2": "Caracas FC",
+            "title": "Carabobo VS Caracas FC",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/751444/caracas-fc-carabobo",
+            "source": "Primera División",
+            "stats": {}
+          },
+          {
+            "gameId": "759974",
+            "date": "Sunday, November 9, 2025",
+            "team1": "Carabobo",
+            "score": "2 - 0",
+            "team2": "Caracas FC",
+            "title": "Carabobo VS Caracas FC",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/759974/caracas-fc-carabobo",
+            "source": "Primera División",
+            "stats": {}
+          },
+          {
+            "gameId": "401850419",
+            "date": "20260227",
+            "team1": "Carabobo",
+            "score": "0 - 0",
+            "team2": "Caracas FC",
+            "title": "Carabobo VS Caracas FC",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/401850419/caracas-fc-carabobo",
+            "source": "Primera División",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://media.api-sports.io/football/teams/2808.png",
+        "logo_away": "https://media.api-sports.io/football/teams/2810.png",
+        "classement_home": 8,
+        "classement_away": 7,
+        "points_classement_home": 4,
+        "points_classement_away": 6,
+        "nom_classement_home": "Caracas FC",
+        "nom_classement_away": "Carabobo",
+        "country_fr": "Venezuela - Primera División",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.15,
+            "lambda_away": 1.27,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 33.52,
+            "X": 27.32,
+            "V2": 39.17
+          },
+          "double_chance": {
+            "1X": 60.83,
+            "12": 72.68,
+            "X2": 66.48
+          },
+          "over_under": {
+            "plus_de_0.5": 90.86,
+            "moins_de_0.5": 9.14,
+            "plus_de_1.5": 69.26,
+            "moins_de_1.5": 30.74,
+            "plus_de_2.5": 43.65,
+            "moins_de_2.5": 56.35,
+            "plus_de_3.5": 22.68,
+            "moins_de_3.5": 77.32,
+            "plus_de_4.5": 9.82,
+            "moins_de_4.5": 90.18,
+            "plus_de_5.5": 3.56,
+            "moins_de_5.5": 96.44
+          },
+          "btts": {
+            "oui": 48.78,
+            "non": 51.22
+          },
+          "resultat_total": {
+            "V1et+0.5": 33.52,
+            "1Xet+0.5": 51.69,
+            "V2et+0.5": 39.17,
+            "V1et+1.5": 23.27,
+            "1Xet+1.5": 41.44,
+            "V2et+1.5": 27.82,
+            "V1et+2.5": 17.42,
+            "1Xet+2.5": 22.9,
+            "V2et+2.5": 20.75,
+            "V1et+3.5": 7.82,
+            "1Xet+3.5": 13.31,
+            "V2et+3.5": 9.38,
+            "V1et+4.5": 4.16,
+            "1Xet+4.5": 4.98,
+            "V2et+4.5": 4.84,
+            "V1et+5.5": 1.32,
+            "1Xet+5.5": 2.14,
+            "V2et+5.5": 1.42
+          },
+          "scores_probables": {
+            "1-1": 12.69,
+            "0-1": 11.35,
+            "1-0": 10.24,
+            "0-0": 9.14,
+            "1-2": 8.29,
+            "2-1": 7.19,
+            "0-2": 7.07,
+            "2-0": 5.86,
+            "2-2": 4.66,
+            "1-3": 3.57
+          },
+          "buts_moyens_simules": {
+            "home": 1.15,
+            "away": 1.26,
+            "total": 2.42
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Victoire extérieur (Carabobo FC)  \n**CONFIANCE** : 73%  \n**SCORES PROBABLES** : 1‑0 ou 2‑0  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative des forces/faiblesses**  \n- **Caracas FC** (domicile) :  \n  - Moyenne buts marqués : 1,20 ; moyenne buts encaissés : 2,00.  \n  - Sur 6 derniers matchs : 1 victoire, 4 défaites, 1 nul → très mauvaise forme.  \n  - À domicile, 5 buts marqués et 11 encaissés : la défense est très fragile.  \n- **Carabobo FC** (extérieur) :  \n  - Moyenne buts marqués : 1,50 ; moyenne buts encaissés : 0,70.  \n  - Sur 6 derniers matchs à l’extérieur : 3 victoires, 2 défaites, 1 nul → forme solide.  \n  - En déplacement, 9 buts marqués et 5 encaissés : attaque efficace, défense très serrée.\n\n**2. Impact du facteur domicile/extérieur**  \nCaracas ne profite pas de son statut de domicile (série à domicile : L‑D‑L‑L‑D). Carabobo, malgré le déplacement, montre une bonne capacité à obtenir des résultats à l’extérieur (série à l’extérieur : L‑L‑W‑L‑W‑W).\n\n**3. Formes récentes et tendances**  \n- **Caracas** : aucune victoire à domicile depuis plus de 10 journées, seulement 2 points sur les 6 derniers matchs.  \n- **Carabobo** : 4 victoires sur les 10 derniers matchs, dont 3 victoires à l’extérieur. Leur attaque a trouvé le chemin des filets régulièrement (ex. 2‑0 contre Trujillanos, 1‑0 contre Metropolitanos).  \n\n**4. Contexte du championnat**  \n- Classement : Carabobo 7ᵉ (6 pts) vs Caracas 8ᵉ (4 pts).  \n- La différence de points est minime, mais Carabobo possède une meilleure différence de buts grâce à une défense qui concède moins de la moitié de celle de Caracas.\n\n**5. Confrontations directes**  \nSur les 6 derniers affrontements (saison 2024‑2025) : Carabobo a gagné 4 fois, Caracas 0 fois, 2 matches nuls. Aucun match n’a vu Caracas marquer plus d’un but contre Carabobo. Cela confirme une supériorité tactique et psychologique de Carabobo.\n\n**6. Analyse des statistiques détaillées des matchs passés**  \nMême si les données de possession, tirs, corners ne sont pas disponibles, les scores récents montrent que Carabobo gagne souvent avec un écart d’un but (1‑0, 2‑0). Caracas, lorsqu’il marque, le fait rarement à domicile et concède souvent plusieurs buts (ex. 1‑2 contre Deportivo La Guaira, 3‑1 contre Academia Puerto Cabello).  \n\n**7. Synthèse**  \n- **Probabilité de victoire de Carabobo** élevée grâce à une attaque supérieure (1,5 g/p) et une défense quasi impénétrable (0,7 g/p).  \n- **BTTS** improbable : Caracas a du mal à marquer contre des défenses solides, et Carabobo concède très peu.  \n- **Moins de 2,5 buts** très probable (les deux dernières rencontres entre les deux équipes se sont soldées par 0‑0, 0‑1, 1‑0, 2‑0).  \n\n**Conclusion** : La combinaison d’une forme récente nettement supérieure, d’un avantage défensif décisif et d’un historique de confrontations en faveur de Carabobo justifie une prédiction de victoire extérieure avec une confiance de **73 %**. Les scores les plus plausibles sont **1‑0** ou **2‑0** en faveur de Carabobo FC.",
+        "confiance_pourcentage": 73,
+        "prediction_principale": "Victoire extérieur (Carabobo FC)",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "1‑0 ou 2‑0"
+      }
+    ]
+  }
+}
