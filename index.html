@@ -191,6 +191,38 @@
 
         .scores-container { flex:1; padding:0 16px 85px 16px; overflow-y:auto; }
         .score-home-card { position:relative; background:linear-gradient(160deg, rgba(147,197,253,0.14) 0%, rgba(30,58,138,0.20) 55%, rgba(10,15,35,0.35) 100%); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border:1px solid rgba(191,219,254,0.35); border-radius:22px; padding:16px; margin-bottom:14px; box-shadow:0 8px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.25); overflow:hidden; }
+
+        /* ===== PAGE PROFIL ===== */
+        .profile-container { flex:1; padding:0 16px 85px 16px; overflow-y:auto; }
+        .profile-head-row { display:flex; align-items:center; gap:16px; padding:10px 4px 22px 4px; }
+        .profile-avatar { width:74px; height:74px; border-radius:50%; overflow:hidden; border:2px solid rgba(191,219,254,0.6); box-shadow:0 0 20px rgba(59,130,246,0.5), inset 0 1px 0 rgba(255,255,255,0.3); flex-shrink:0; background:rgba(147,197,253,0.15); }
+        .profile-avatar img { width:100%; height:100%; object-fit:cover; }
+        .profile-username { font-size:20px; font-weight:800; }
+        .profile-username .edit-hint { display:block; font-size:12px; font-weight:500; color:rgba(219,234,254,0.55); margin-top:3px; }
+
+        .qr-card { position:relative; background:linear-gradient(160deg, rgba(147,197,253,0.10) 0%, rgba(59,130,246,0.08) 55%, rgba(10,15,35,0.14) 100%); backdrop-filter:blur(26px) saturate(140%); -webkit-backdrop-filter:blur(26px) saturate(140%); border:1px solid rgba(219,234,254,0.4); border-radius:28px; padding:34px 20px; margin-bottom:24px; box-shadow:0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+        .qr-frame { position:relative; padding:14px; }
+        .qr-frame img { width:190px; height:190px; border-radius:10px; display:block; }
+        .qr-corner { position:absolute; width:22px; height:22px; border-color:rgba(147,197,253,0.85); }
+        .qr-corner.tl { top:0; left:0; border-top:2px solid; border-left:2px solid; border-radius:6px 0 0 0; }
+        .qr-corner.tr { top:0; right:0; border-top:2px solid; border-right:2px solid; border-radius:0 6px 0 0; }
+        .qr-corner.bl { bottom:0; left:0; border-bottom:2px solid; border-left:2px solid; border-radius:0 0 0 6px; }
+        .qr-corner.br { bottom:0; right:0; border-bottom:2px solid; border-right:2px solid; border-radius:0 0 6px 0; }
+
+        .profile-section-title { font-size:18px; font-weight:800; margin-bottom:14px; }
+        .league-grid { display:flex; gap:10px; overflow-x:auto; padding-bottom:6px; margin-bottom:26px; }
+        .league-tile { flex-shrink:0; width:78px; height:88px; background:linear-gradient(160deg, rgba(147,197,253,0.10), rgba(37,99,235,0.06)); backdrop-filter:blur(16px); border:1px solid rgba(191,219,254,0.3); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:8px 4px; text-align:center; }
+        .league-tile .lt-icon { font-size:22px; }
+        .league-tile .lt-badge { width:38px; height:38px; border-radius:11px; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:13px; box-shadow:0 4px 10px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.25); }
+        .league-tile .lt-name { font-size:9px; font-weight:800; text-transform:uppercase; line-height:1.15; color:rgba(219,234,254,0.9); }
+
+        .contact-row { display:flex; align-items:center; gap:14px; padding:14px; background:linear-gradient(160deg, rgba(147,197,253,0.10), rgba(10,15,35,0.2)); backdrop-filter:blur(16px); border:1px solid rgba(191,219,254,0.25); border-radius:16px; margin-bottom:10px; cursor:pointer; transition:transform .15s ease; }
+        .contact-row:active { transform:scale(0.98); }
+        .contact-icon { width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:19px; flex-shrink:0; }
+        .contact-info { flex:1; }
+        .contact-name { font-size:14px; font-weight:700; }
+        .contact-sub { font-size:11px; color:rgba(219,234,254,0.55); }
+        .contact-chevron { color:rgba(219,234,254,0.5); }
         .score-home-card::before { content:''; position:absolute; top:0; left:0; right:0; height:45%; background:linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0) 100%); pointer-events:none; }
 
         .notification { position:fixed; bottom:100px; left:50%; transform:translateX(-50%) translateY(100px); opacity:0; background:rgba(0,0,0,0.9); color:white; padding:11px 18px; border-radius:12px; z-index:2000; transition:all .3s ease; pointer-events:none; font-size:13px; }
@@ -236,6 +268,7 @@
             </div>
         </div>
         <div class="scores-container" id="scoresContainer" style="display:none;"></div>
+        <div class="profile-container" id="profileContainer" style="display:none;"></div>
 
         <div class="bottom-nav-float">
             <div class="nav-item-f active" data-page="pronostic">
@@ -772,6 +805,7 @@
         document.getElementById('matchesContainer').style.display = 'none';
         document.getElementById('liveContainer').style.display = 'none';
         document.getElementById('scoresContainer').style.display = 'none';
+        document.getElementById('profileContainer').style.display = 'none';
         document.getElementById('loadingContainer').style.display = 'none';
         document.getElementById('errorContainer').style.display = 'none';
         document.getElementById('sectionTitleRow').style.display = 'none';
@@ -789,11 +823,80 @@
                 document.getElementById('scoresContainer').style.display = 'block';
                 break;
             case 'profil':
-                showNotification('Fonction Profil non disponible dans la démo');
-                document.getElementById('sectionTitleRow').style.display = 'flex';
-                document.getElementById('matchesContainer').style.display = 'block';
+                renderProfil();
+                document.getElementById('profileContainer').style.display = 'block';
                 break;
         }
+    }
+
+    function renderProfil() {
+        const container = document.getElementById('profileContainer');
+        if (container.dataset.rendered === '1') return;
+        container.dataset.rendered = '1';
+
+        const username = "Nom d'utilisateur";
+        const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=380x380&data=${encodeURIComponent('QR-A-VENIR')}&bgcolor=0a1230&color=93c5fd&margin=10`;
+
+        const avatarSvg = `
+            <svg viewBox="0 0 100 100" width="100%" height="100%">
+                <rect width="100" height="100" fill="#0f1f4a"/>
+                <circle cx="50" cy="38" r="18" fill="#93c5fd"/>
+                <path d="M12 96c0-24 17-38 38-38s38 14 38 38" fill="#93c5fd"/>
+            </svg>
+        `;
+
+        const leagues = [
+            { name:'LaLiga', icon:'🇪🇸' },
+            { name:'Ligue 1', icon:'🇫🇷' },
+            { name:'Premier League', icon:'🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
+            { name:'Bundesliga', icon:'🇩🇪' },
+            { name:'Serie A', icon:'🇮🇹' }
+        ];
+
+        const contacts = [
+            { name:'TikTok', sub:'Nous contacter', color:'#000000',
+              icon:'<svg viewBox="0 0 48 48" width="24" height="24"><path fill="#25f4ee" d="M33 6c1 5 4 8 9 9v6c-4 0-7-1-9-3v13c0 8-6 13-13 13S7 39 7 31c0-7 5-13 12-13v6c-4 0-6 3-6 7s3 7 7 7 7-3 7-7V6h6z"/><path fill="#fe2c55" d="M31 6c1 5 4 8 9 9v6c-4 0-7-1-9-3v13c0 8-6 13-13 13S5 39 5 31c0-7 5-13 12-13v6c-4 0-6 3-6 7s3 7 7 7 7-3 7-7V6h6z"/><path fill="#ffffff" d="M32 6c1 5 4 8 9 9v6c-4 0-7-1-9-3v13c0 8-6 13-13 13S6 39 6 31c0-7 5-13 12-13v6c-4 0-6 3-6 7s3 7 7 7 7-3 7-7V6h6z"/></svg>' },
+            { name:'WhatsApp', sub:'Nous contacter', color:'#25D366',
+              icon:'<svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.08-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.28 1.18-1.77 1.24-.45.06-1.02.09-1.65-.1-.38-.12-.87-.28-1.5-.55-2.64-1.14-4.36-3.8-4.5-3.98-.13-.18-1.07-1.42-1.07-2.7 0-1.29.68-1.92.92-2.18.24-.26.53-.33.7-.33h.5c.16 0 .38-.03.58.44.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.13.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.28-.12.55.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.27.13.44.2.51.31.07.11.07.65-.15 1.27z"/></svg>' },
+            { name:'Telegram', sub:'Nous contacter', color:'#26A5E4',
+              icon:'<svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M21.5 4.5L2.7 11.9c-1 .4-1 1.6.1 1.9l4.6 1.4 1.8 5.6c.2.7 1 .9 1.6.4l2.6-2.3 4.8 3.5c.7.5 1.7.1 1.9-.7l3.2-15c.2-1-.7-1.8-1.8-1.2zM8.3 14.6l9.2-6.9c.3-.2.6.2.3.4l-7.6 7.5c-.3.3-.5.7-.5 1.1l-.3 2.6-1.1-4.7z"/></svg>' },
+            { name:'NGL', sub:'Nous contacter', color:'linear-gradient(160deg,#f97316,#ec4899)',
+              icon:'<span style="font-family:Arial Black, sans-serif; font-weight:900; font-size:11px; letter-spacing:-0.5px;">NGL</span>' }
+        ];
+
+        container.innerHTML = `
+            <div class="profile-head-row">
+                <div class="profile-avatar">${avatarSvg}</div>
+                <div class="profile-username">${escapeHtml(username)}<span class="edit-hint">Connexion Google bientôt disponible</span></div>
+            </div>
+
+            <div class="qr-card">
+                <div class="qr-frame">
+                    <span class="qr-corner tl"></span><span class="qr-corner tr"></span>
+                    <span class="qr-corner bl"></span><span class="qr-corner br"></span>
+                    <img src="${qrUrl}" alt="QR code">
+                </div>
+            </div>
+
+            <div class="profile-section-title">Championnat</div>
+            <div class="league-grid">
+                ${leagues.map(l => `<div class="league-tile"><div class="lt-icon">${l.icon}</div><div class="lt-name">${escapeHtml(l.name)}</div></div>`).join('')}
+            </div>
+
+            <div class="profile-section-title">Contactez-nous</div>
+            <div class="contact-list">
+                ${contacts.map(c => `
+                    <div class="contact-row" onclick="showNotification('Lien ${escapeHtml(c.name)} à venir')">
+                        <div class="contact-icon" style="background:${c.color};">${c.icon}</div>
+                        <div class="contact-info">
+                            <div class="contact-name">${escapeHtml(c.name)}</div>
+                            <div class="contact-sub">${escapeHtml(c.sub)}</div>
+                        </div>
+                        <svg class="contact-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+                    </div>
+                `).join('')}
+            </div>
+        `;
     }
 
     document.querySelectorAll('.nav-item-f').forEach(item => {
