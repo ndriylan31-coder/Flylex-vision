@@ -213,14 +213,12 @@
         .league-grid { display:flex; gap:10px; overflow-x:auto; padding-bottom:6px; margin-bottom:26px; }
         .league-tile { flex-shrink:0; width:78px; height:88px; background:linear-gradient(160deg, rgba(147,197,253,0.10), rgba(37,99,235,0.06)); backdrop-filter:blur(16px); border:1px solid rgba(191,219,254,0.3); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:8px 4px; text-align:center; }
         .league-tile .lt-icon { font-size:22px; }
-        .league-tile .lt-badge { width:38px; height:38px; border-radius:11px; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:13px; box-shadow:0 4px 10px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.25); overflow:hidden; }
-        .league-tile .lt-badge img { width:100%; height:100%; object-fit:contain; }
+        .league-tile .lt-badge { width:38px; height:38px; border-radius:11px; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:13px; box-shadow:0 4px 10px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.25); }
         .league-tile .lt-name { font-size:9px; font-weight:800; text-transform:uppercase; line-height:1.15; color:rgba(219,234,254,0.9); }
 
         .contact-row { display:flex; align-items:center; gap:14px; padding:14px; background:linear-gradient(160deg, rgba(147,197,253,0.10), rgba(10,15,35,0.2)); backdrop-filter:blur(16px); border:1px solid rgba(191,219,254,0.25); border-radius:16px; margin-bottom:10px; cursor:pointer; transition:transform .15s ease; }
         .contact-row:active { transform:scale(0.98); }
-        .contact-icon { width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:19px; flex-shrink:0; overflow:hidden; }
-        .contact-icon img { width:100%; height:100%; object-fit:contain; }
+        .contact-icon { width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:19px; flex-shrink:0; }
         .contact-info { flex:1; }
         .contact-name { font-size:14px; font-weight:700; }
         .contact-sub { font-size:11px; color:rgba(219,234,254,0.55); }
@@ -243,71 +241,70 @@
         .soon-header-sub { font-size:12px; color:rgba(219,234,254,0.45); margin-top:2px; }
         .soon-card { margin:26px 20px 0 20px; background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.07); border-radius:26px; padding:46px 26px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; }
         .soon-wrench-box { width:76px; height:76px; border-radius:20px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); display:flex; align-items:center; justify-content:center; font-size:32px; }
-        .soon-card-title { font-size:24px; font-weight:800; margin-bottom:8px; }
-        .soon-card-text { font-size:14px; color:rgba(255,255,255,0.65); line-height:1.6; }
+        .soon-card-title { font-size:24px; font-weight:900; }
+        .soon-card-text { font-size:14px; color:rgba(219,234,254,0.55); line-height:1.7; max-width:300px; }
+        .score-home-card::before { content:''; position:absolute; top:0; left:0; right:0; height:45%; background:linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0) 100%); pointer-events:none; }
 
-        .notification { position:fixed; bottom:100px; left:50%; transform:translateX(-50%) translateY(20px); background:rgba(10,18,48,0.95); backdrop-filter:blur(10px); color:white; padding:12px 24px; border-radius:12px; font-size:14px; font-weight:600; box-shadow:0 8px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); border:1px solid rgba(191,219,254,0.3); z-index:2000; opacity:0; visibility:hidden; transition:all .3s cubic-bezier(.16,1,.3,1); }
-        .notification.show { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+        .notification { position:fixed; bottom:100px; left:50%; transform:translateX(-50%) translateY(100px); opacity:0; background:rgba(0,0,0,0.9); color:white; padding:11px 18px; border-radius:12px; z-index:2000; transition:all .3s ease; pointer-events:none; font-size:13px; }
+        .notification.show { transform:translateX(-50%) translateY(0); opacity:1; pointer-events:auto; }
+
+        ::-webkit-scrollbar { width:5px; height:5px; }
+        ::-webkit-scrollbar-thumb { background:rgba(147,197,253,0.4); border-radius:8px; }
     </style>
 </head>
 <body>
-    <div class="app-shell home-shell">
-        <div class="home-topbar">
-            <button class="icon-btn" id="menuBtn">
+    <div class="app-shell home-shell" id="homeShell">
+
+        <div class="home-topbar" id="homeTopbar">
+            <div class="icon-btn" id="menuBtn">
                 <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
-            </button>
-            <div class="slogan-pill">
-                <div class="slogan-main">Vision Flylex</div>
-                <div class="slogan-sub">Vos <span class="slogan-highlight">pronostics</span> IA</div>
             </div>
-            <div class="app-logo-round">VF</div>
+            <div class="slogan-pill">
+                <div class="slogan-main">On y va au talent…</div>
+                <div class="slogan-sub">avec une petite touche de <span class="slogan-highlight">vision</span> ✨</div>
+            </div>
+            <div class="app-logo-round"><img src="icon-192x192.png" alt="Vision Flylex"></div>
         </div>
 
-        <div class="loading-container" id="loadingContainer">
-            <div class="spinner"></div>
-            <div class="loading-text">Chargement des pronostics...</div>
-        </div>
-
-        <div class="error-container" id="errorContainer" style="display:none;">
-            <div class="error-icon">️</div>
-            <div class="error-text">Impossible de charger les données</div>
-            <button class="icon-btn" onclick="location.reload()" style="margin-top:10px;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
-            </button>
-        </div>
-
-        <div id="sectionTitleRow" class="section-title-row" style="display:none;">
-            <h2 id="sectionTitle">Matchs du jour</h2>
+        <div class="section-title-row" id="sectionTitleRow" style="display:none;">
+            <h2>Matches du jour</h2>
             <span class="see-all">Voir tout</span>
         </div>
 
-        <div class="matches-container" id="matchesContainer" style="display:none;"></div>
-
-        <div class="live-container" id="liveContainer" style="display:none;">
-            <div class="live-iframe-wrapper">
-                <iframe src="https://www.scorebat.com/embed/" frameborder="0" allowfullscreen></iframe>
-            </div>
+        <div class="loading-container" id="loadingContainer">
+            <div class="spinner" id="spinner"></div>
+            <div class="loading-text" id="loadingText">Chargement des prédictions...</div>
         </div>
 
-        <div class="scores-container" id="scoresContainer" style="display:none;"></div>
+        <div class="error-container" id="errorContainer" style="display:none;">
+            <div class="error-icon">⚠️</div>
+            <div class="error-text" id="errorText">Erreur de chargement des données</div>
+        </div>
 
+        <div class="matches-container" id="matchesContainer" style="display:none;"></div>
+        <div class="live-container" id="liveContainer" style="display:none;">
+            <div class="live-iframe-wrapper">
+                <iframe src="https://www.scorebat.com/embed/livescore/?token=MjQ3MTI4XzE3NjEzOTc2NTdfNDAzNWJmOWNhNmJkMTA3MWE3M2U0MzNlYjMyOTczZjQ5OWI5M2ViMw==" allowfullscreen allow="autoplay; fullscreen" class="_scorebatEmbeddedPlayer_"></iframe>
+            </div>
+        </div>
+        <div class="scores-container" id="scoresContainer" style="display:none;"></div>
         <div class="profile-container" id="profileContainer" style="display:none;"></div>
 
         <div class="bottom-nav-float">
             <div class="nav-item-f active" data-page="pronostic">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5" fill="currentColor"/></svg>
                 <span>Pronostic<br>1X2</span>
             </div>
             <div class="nav-item-f" data-page="live">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 18a8 8 0 118-8 8 8 0 01-8 8z"/><path d="M12 6v6l4 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M8.5 8.5a5 5 0 000 7"/><path d="M15.5 8.5a5 5 0 010 7"/><path d="M5.5 5.5a9 9 0 000 13"/><path d="M18.5 5.5a9 9 0 010 13"/></svg>
                 <span>Live</span>
             </div>
             <div class="nav-item-f" data-page="scores">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                <span>Pronos<br>Score Exact</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+                <span>Pronos<br>Score exact</span>
             </div>
             <div class="nav-item-f" data-page="profil">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
                 <span>Profil</span>
             </div>
         </div>
@@ -315,21 +312,19 @@
 
     <div class="side-overlay" id="sideOverlay"></div>
     <div class="side-panel" id="sidePanel">
-        <div class="side-panel-title">Menu</div>
-        <div class="side-panel-item active" data-page="pronostic"> Pronostics 1X2</div>
-        <div class="side-panel-item" data-page="live">📺 Matchs en direct</div>
-        <div class="side-panel-item" data-page="scores"> Scores exacts</div>
+        <div class="side-panel-title">Vision Flylex</div>
+        <div class="side-panel-item active" data-page="pronostic">Pronostic 1X2</div>
+        <div class="side-panel-item" data-page="scores">Pronos score exact</div>
+        <div class="side-panel-item" data-page="live">Live</div>
+        <div class="side-panel-item" data-page="profil">Profil</div>
         <div class="side-panel-divider"></div>
-        <div class="side-panel-item" data-page="soon-championnats"> Championnats</div>
-        <div class="side-panel-item" data-page="soon-equipe">👥 Équipe</div>
-        <div class="side-panel-item" data-page="soon-historique">🕐 Historique</div>
-        <div class="side-panel-divider"></div>
-        <div class="side-panel-item" data-page="profil">⚙️ Profil</div>
-        <div class="side-panel-item" data-page="soon-abonnements">💳 Abonnements</div>
-        <div class="side-panel-item" data-page="soon-theme">🎨 Thème</div>
-        <div class="side-panel-divider"></div>
-        <div class="side-panel-item" data-page="soon-aide"> Aide et support</div>
-        <div class="side-panel-item" data-page="soon-apropos">ℹ️ À propos de</div>
+        <div class="side-panel-item" data-page="soon-championnats" data-icon="🏆" data-label="Championnats">🏆 Championnats</div>
+        <div class="side-panel-item" data-page="soon-equipe" data-icon="👥" data-label="Équipe">👥 Équipe</div>
+        <div class="side-panel-item" data-page="soon-historique" data-icon="🕐" data-label="Historique">🕐 Historique</div>
+        <div class="side-panel-item" data-page="soon-abonnements" data-icon="💳" data-label="Abonnements">💳 Abonnements</div>
+        <div class="side-panel-item" data-page="soon-theme" data-icon="🎨" data-label="Thème">🎨 Thème</div>
+        <div class="side-panel-item" data-page="soon-aide" data-icon="🛟" data-label="Aide et support">🛟 Aide et support</div>
+        <div class="side-panel-item" data-page="soon-apropos" data-icon="ℹ️" data-label="À propos de">ℹ️ À propos de</div>
     </div>
 
     <div class="details-page" id="detailsPage">
@@ -468,6 +463,30 @@
         throw new Error('Échec de récupération');
     }
 
+    function getOrderedOdds(match) {
+        const h2h = (match.odds && match.odds.h2h) || {};
+        const keys = Object.keys(h2h);
+        if (!keys.length) return null;
+
+        const norm = s => (s || '').toLowerCase().trim();
+        const findKey = (target) => {
+            const t = norm(target);
+            return keys.find(k => norm(k) === t)
+                || keys.find(k => t.includes(norm(k)) || norm(k).includes(t));
+        };
+
+        const homeKey = findKey(match.HomeTeam);
+        const awayKey = findKey(match.AwayTeam);
+        const drawKey = keys.find(k => norm(k) === 'draw' || norm(k).includes('nul'))
+            || keys.find(k => k !== homeKey && k !== awayKey);
+
+        return {
+            home: homeKey ? h2h[homeKey] : null,
+            draw: drawKey ? h2h[drawKey] : null,
+            away: awayKey ? h2h[awayKey] : null
+        };
+    }
+
     function getDetails(data) {
         return (data && data.statistiques_brutes_avec_ia_hors_montecarlo && data.statistiques_brutes_avec_ia_hors_montecarlo.details)
             || (data && data.statistiques_brutes_avec_ia && data.statistiques_brutes_avec_ia.details) || [];
@@ -563,16 +582,13 @@
         displayDetails.forEach(match => {
             const card = document.createElement('div');
             card.className = 'home-match-card';
-            const odds = match.odds || {};
-            const h2h = odds.h2h || {};
-            const oddsKeys = Object.keys(h2h);
+            const orderedOdds = getOrderedOdds(match);
             let oddsHtml = '';
-            if (oddsKeys.length) {
+            if (orderedOdds) {
                 oddsHtml = '<div class="home-odds-row">';
-                oddsKeys.slice(0,3).forEach(k => {
-                    const isDraw = k.toLowerCase() === 'draw' || k.toLowerCase().includes('nul');
-                    oddsHtml += `<span class="odds-chip ${isDraw?'draw':''}">${h2h[k]}</span>`;
-                });
+                if (orderedOdds.home !== null) oddsHtml += `<span class="odds-chip">${orderedOdds.home}</span>`;
+                if (orderedOdds.draw !== null) oddsHtml += `<span class="odds-chip draw">${orderedOdds.draw}</span>`;
+                if (orderedOdds.away !== null) oddsHtml += `<span class="odds-chip">${orderedOdds.away}</span>`;
                 oddsHtml += '</div>';
             }
             card.innerHTML = `
@@ -712,13 +728,12 @@
             </div>
         `;
 
-        if (Object.keys(h2hOdds).length) {
-            const keys = Object.keys(h2hOdds);
+        const orderedOddsApercu = getOrderedOdds(match);
+        if (orderedOddsApercu) {
             html += `<div class="r-card"><div class="r-card-title">Cotes moyennes</div><div class="odds-3col">`;
-            keys.slice(0,3).forEach((k,i) => {
-                const sym = i===0?'1':(k.toLowerCase().includes('draw')||k.toLowerCase().includes('nul')?'X':'2');
-                html += `<div class="odds-box"><span class="sym">${sym}</span><span class="num">${h2hOdds[k]}</span></div>`;
-            });
+            if (orderedOddsApercu.home !== null) html += `<div class="odds-box"><span class="sym">1</span><span class="num">${orderedOddsApercu.home}</span></div>`;
+            if (orderedOddsApercu.draw !== null) html += `<div class="odds-box"><span class="sym">X</span><span class="num">${orderedOddsApercu.draw}</span></div>`;
+            if (orderedOddsApercu.away !== null) html += `<div class="odds-box"><span class="sym">2</span><span class="num">${orderedOddsApercu.away}</span></div>`;
             html += `</div></div>`;
         }
 
@@ -858,10 +873,10 @@
     });
 
     const SOON_PAGES = {
-        'soon-championnats': { icon:'', title:'Championnats', sub:'Sélection en préparation', text:"Nous rassemblons les plus grands championnats du monde pour vous permettre de filtrer vos pronostics par ligue. Le classement complet arrive très bientôt." },
+        'soon-championnats': { icon:'🏆', title:'Championnats', sub:'Sélection en préparation', text:"Nous rassemblons les plus grands championnats du monde pour vous permettre de filtrer vos pronostics par ligue. Le classement complet arrive très bientôt." },
         'soon-equipe': { icon:'👥', title:'Équipe', sub:'Profils en construction', text:"Chaque équipe aura bientôt sa propre fiche : effectif, historique, forme récente et bien plus encore." },
         'soon-historique': { icon:'🕐', title:'Historique', sub:'Archives en cours de création', text:"Retrouvez prochainement l'historique complet de vos prédictions passées, avec les scores réels pour comparer." },
-        'soon-abonnements': { icon:'', title:'Abonnements', sub:'Offres en préparation', text:"Des formules premium arrivent bientôt pour débloquer des analyses encore plus poussées et des fonctionnalités exclusives." },
+        'soon-abonnements': { icon:'💳', title:'Abonnements', sub:'Offres en préparation', text:"Des formules premium arrivent bientôt pour débloquer des analyses encore plus poussées et des fonctionnalités exclusives." },
         'soon-theme': { icon:'🎨', title:'Thème', sub:'Personnalisation à venir', text:"Choisissez bientôt parmi plusieurs thèmes visuels pour personnaliser Vision Flylex selon vos goûts." },
         'soon-aide': { icon:'🛟', title:'Aide et support', sub:"Centre d'aide en construction", text:"Un espace dédié à vos questions et à l'assistance sera disponible très prochainement." },
         'soon-apropos': { icon:'ℹ️', title:'À propos de', sub:'Page en cours de rédaction', text:"Découvrez bientôt l'histoire de Vision Flylex et l'équipe derrière l'application." }
@@ -928,65 +943,19 @@
         const qrData = encodeURIComponent(window.location.href);
         const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=380x380&data=${qrData}&bgcolor=0a1230&color=93c5fd&margin=10`;
 
-        // ✅ LOGOS OFFICIELS DES CHAMPIONNATS (URLs Wikimedia)
         const leagues = [
-            { 
-                name:'LaLiga', 
-                logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/LaLiga.svg/1200px-LaLiga.svg.png',
-                bgColor: 'linear-gradient(135deg, #FF4E4E 0%, #FFD700 100%)'
-            },
-            { 
-                name:'Ligue 1', 
-                logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ligue_1_Logo.svg/1200px-Ligue_1_Logo.svg.png',
-                bgColor: 'linear-gradient(135deg, #00B0D8 0%, #005A9C 100%)'
-            },
-            { 
-                name:'Premier League', 
-                logoUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Premier_League.svg/1200px-Premier_League.svg.png',
-                bgColor: 'linear-gradient(135deg, #37003C 0%, #00FF87 50%, #E90052 100%)'
-            },
-            { 
-                name:'Bundesliga', 
-                logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Bundesliga_Logo_2017.svg/1200px-Bundesliga_Logo_2017.svg.png',
-                bgColor: 'linear-gradient(135deg, #D20515 0%, #000000 100%)'
-            },
-            { 
-                name:'Serie A', 
-                logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Serie_A_logo_2019.svg/1200px-Serie_A_logo_2019.svg.png',
-                bgColor: 'linear-gradient(135deg, #024494 0%, #00AEEF 100%)'
-            }
+            { icon:'🇪🇸', name:'LaLiga' },
+            { icon:'🇫🇷', name:'Ligue 1' },
+            { icon:'🏴', name:'Premier League' },
+            { icon:'🇩🇪', name:'Bundesliga' },
+            { icon:'🇮🇹', name:'Serie A' }
         ];
 
-        // ✅ LOGOS OFFICIELS DES PLATEFORMES (URLs Wikimedia)
         const contacts = [
-            { 
-                name:'TikTok', 
-                sub:'Nous contacter', 
-                href:'#', 
-                logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/TikTok_logo.svg/1200px-TikTok_logo.svg.png',
-                bgColor: 'linear-gradient(135deg, #000000 0%, #25F4EE 50%, #FE2C55 100%)'
-            },
-            { 
-                name:'WhatsApp', 
-                sub:'Nous contacter', 
-                href:'#', 
-                logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png',
-                bgColor: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)'
-            },
-            { 
-                name:'Telegram', 
-                sub:'Nous contacter', 
-                href:'#', 
-                logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1200px-Telegram_logo.svg.png',
-                bgColor: 'linear-gradient(135deg, #0088cc 0%, #00a8e8 100%)'
-            },
-            { 
-                name:'NGL', 
-                sub:'Nous contacter', 
-                href:'#', 
-                logoUrl: 'https://play-lh.googleusercontent.com/NGl-app-icon.png',
-                bgColor: 'linear-gradient(135deg, #FF4081 0%, #FF6B35 100%)'
-            }
+            { name:'TikTok', sub:'Nous contacter', color:'#111', href:'#', icon:'♪' },
+            { name:'WhatsApp', sub:'Nous contacter', color:'#22c55e', href:'#', icon:'☎' },
+            { name:'Telegram', sub:'Nous contacter', color:'#0ea5e9', href:'#', icon:'✈' },
+            { name:'NGL', sub:'Nous contacter', color:'#ec4899', href:'#', icon:'?' }
         ];
 
         container.innerHTML = `
@@ -1005,23 +974,14 @@
 
             <div class="profile-section-title">Championnat</div>
             <div class="league-grid">
-                ${leagues.map(l => `
-                    <div class="league-tile">
-                        <div class="lt-badge" style="background:${l.bgColor}; padding:6px; border-radius:10px; display:flex; align-items:center; justify-content:center;">
-                            <img src="${l.logoUrl}" alt="${escapeHtml(l.name)}" onerror="this.parentElement.innerHTML='<span style=\'font-size:24px;\'>⚽</span>'">
-                        </div>
-                        <div class="lt-name">${escapeHtml(l.name)}</div>
-                    </div>
-                `).join('')}
+                ${leagues.map(l => `<div class="league-tile"><div class="lt-icon">${l.icon}</div><div class="lt-name">${escapeHtml(l.name)}</div></div>`).join('')}
             </div>
 
             <div class="profile-section-title">Contactez-nous</div>
             <div class="contact-list">
                 ${contacts.map(c => `
                     <div class="contact-row" onclick="showNotification('Lien ${escapeHtml(c.name)} à venir')">
-                        <div class="contact-icon" style="background:${c.bgColor}; padding:8px; border-radius:12px; display:flex; align-items:center; justify-content:center;">
-                            <img src="${c.logoUrl}" alt="${escapeHtml(c.name)}" onerror="this.parentElement.innerHTML='<span style=\'font-size:24px; color:white;\'>📱</span>'">
-                        </div>
+                        <div class="contact-icon" style="background:${c.color}; color:white;">${c.icon}</div>
                         <div class="contact-info">
                             <div class="contact-name">${escapeHtml(c.name)}</div>
                             <div class="contact-sub">${escapeHtml(c.sub)}</div>
@@ -1050,6 +1010,7 @@
             renderMatches(data);
             renderScores(data);
         } catch (err) {
+            // Fichier introuvable ou erreur réseau : on affiche la carte de démonstration au lieu du message d'erreur
             renderMatches({ statistiques_brutes_avec_ia_hors_montecarlo: { details: [] } });
             renderScores({ statistiques_brutes_avec_ia_hors_montecarlo: { details: [] } });
         }
@@ -1058,4 +1019,5 @@
     init();
     </script>
 </body>
+</html>
 </html>
