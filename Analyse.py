@@ -3232,6 +3232,8 @@ def get_today_matches_filtered():
                          logo_home=logo_home, logo_away=logo_away, résultats=résultats,
                          league_id=league_id, season=season
                      )
+                     import time
+                     time.sleep(2)
                 else:
                     if home_espn in teams_urls:
                         process_team(home_api)
