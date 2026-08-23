@@ -3204,6 +3204,7 @@ def get_today_matches_filtered():
             league_id = match['league']['id']
             league = match['league']['name']
             country = match['league']['country']
+            season = match['league'].get('season')
             home_api = match['teams']['home']['name']
             away_api = match['teams']['away']['name']
             logo_home = match['teams']['home']['logo']
