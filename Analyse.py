@@ -2243,6 +2243,19 @@ def call_deepseek_analysis(prompt, max_retries=5):
         try:
             print(f"🧠 Tentative {attempt}/{max_retries} avec clé {(groq_key_index - 1) % len(groq_keys) + 1}...")
             response = requests.post("https://api.groq.com/openai/v1/chat/completions", headers=headers, json=data)
+
+            # ✅ NOUVEAU : gestion dédiée du 429 (trop de requêtes) avec backoff progressif
+            if response.status_code == 429:
+                retry_after = response.headers.get("Retry-After")
+                if retry_after:
+                    wait = float(retry_after) + 1
+                else:
+                    wait = min(60, 3 * (2 ** (attempt - 1)))  # 3s, 6s, 12s, 24s, 48s (plafonné à 60s)
+                print(f"⏳ Limite de requêtes atteinte (429) sur cette clé, pause de {wait:.0f}s avant nouvelle tentative...")
+                import time
+                time.sleep(wait)
+                continue
+
             response.raise_for_status()
             result = response.json()["choices"][0]["message"]["content"].strip()
             print(f"✅ Analyse IA réussie à la tentative {attempt}")
@@ -2250,14 +2263,15 @@ def call_deepseek_analysis(prompt, max_retries=5):
         except Exception as e:
             print(f"❌ Erreur DeepSeek (tentative {attempt}/{max_retries}) : {str(e)}")
             if attempt < max_retries:
-                print("🔄 Nouvel essai dans 2 secondes...")
+                wait = min(30, 2 * (2 ** (attempt - 1)))  # 2s, 4s, 8s, 16s
+                print(f"🔄 Nouvel essai dans {wait:.0f}s...")
                 import time
-                time.sleep(2)  # Petite pause avant retry
+                time.sleep(wait)
             else:
                 error_msg = f"❌ Échec définitif après {max_retries} tentatives. Dernière erreur : {str(e)}"
                 print(error_msg)
                 return error_msg
-
+                
 # 🎯 MODULE MONTE-CARLO : Probabilités vraies (autonome, sans IA ni cotes)
 def ajuster_lambda_h2h(lambda_home, lambda_away, h2h_data):
     """
