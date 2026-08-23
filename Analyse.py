@@ -3498,15 +3498,15 @@ def compare_teams_basic_stats(
         return
 
     # 🏆 Récupération classement des équipes via API-Football (fiable, saison exacte)
-full_standings = get_standings_api_football(league_id, season) if league_id and season else []
-pos_home, nom_classement_home, pts_home = get_team_position_in_standings(full_standings, name1)
-pos_away, nom_classement_away, pts_away = get_team_position_in_standings(full_standings, name2)
-full_standings_home = full_standings
-full_standings_away = full_standings
+    full_standings = get_standings_api_football(league_id, season) if league_id and season else []
+    pos_home, nom_classement_home, pts_home = get_team_position_in_standings(full_standings, name1)
+    pos_away, nom_classement_away, pts_away = get_team_position_in_standings(full_standings, name2)
+    full_standings_home = full_standings
+    full_standings_away = full_standings
 
-if pos_home:
+    if pos_home:
         print(f"📌 Classement de {nom_classement_home} : {pos_home}ᵉ avec {pts_home} points")
-if pos_away:
+    if pos_away:
         print(f"📌 Classement de {nom_classement_away} : {pos_away}ᵉ avec {pts_away} points")
 
     # 💰 Récupération des cotes
