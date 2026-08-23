@@ -3504,7 +3504,7 @@ pos_away, nom_classement_away, pts_away = get_team_position_in_standings(full_st
 full_standings_home = full_standings
 full_standings_away = full_standings
 
-    if pos_home:
+if pos_home:
         print(f"📌 Classement de {nom_classement_home} : {pos_home}ᵉ avec {pts_home} points")
     if pos_away:
         print(f"📌 Classement de {nom_classement_away} : {pos_away}ᵉ avec {pts_away} points")
