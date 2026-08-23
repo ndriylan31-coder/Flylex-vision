@@ -3228,9 +3228,10 @@ def get_today_matches_filtered():
                     if team1_stats: team1_stats['nom'] = home_espn
                     if team2_stats: team2_stats['nom'] = away_espn
                     compare_teams_basic_stats(
-                        team1_stats, team2_stats, home_api, away_api, date, time, league, country,
-                        logo_home=logo_home, logo_away=logo_away, résultats=résultats
-                    )
+                         team1_stats, team2_stats, home_api, away_api, date, time, league, country,
+                         logo_home=logo_home, logo_away=logo_away, résultats=résultats,
+                         league_id=league_id, season=season
+                     )
                 else:
                     if home_espn in teams_urls:
                         process_team(home_api)
