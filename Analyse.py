@@ -3012,6 +3012,64 @@ class ClassementScraper:
         return self.full_standings
         
 # 🧠 Fonction utilitaire get_team_classement_position (modifiée pour retourner le classement complet)
+def get_standings_api_football(league_id, season):
+    """
+    VERSION CORRIGÉE : récupère le classement via l'API-Football (déjà authentifiée
+    et fiable pour les matchs) au lieu du scraping/API JSON ESPN, qui pouvait renvoyer
+    un classement incomplet ou décalé (mauvaise phase de saison, groupe partiel, etc.)
+    """
+    url = "https://v3.football.api-sports.io/standings"
+    params = {"league": league_id, "season": season}
+    try:
+        response = requests.get(url, headers=api_headers, params=params, timeout=15)
+        response.raise_for_status()
+        data = response.json()
+    except Exception as e:
+        print(f"❌ Erreur API-Football standings (league={league_id}, season={season}) : {e}")
+        return []
+
+    try:
+        groups = data["response"][0]["league"]["standings"]
+    except (IndexError, KeyError, TypeError):
+        print(f"⚠️ Aucun classement disponible pour league={league_id} saison={season}")
+        return []
+
+    if not groups:
+        return []
+
+    # Certaines compétitions ont plusieurs groupes (phases de poules) : on prend le groupe principal
+    entries = groups[0]
+    full_standings = []
+    for entry in entries:
+        full_standings.append({
+            "position": entry.get("rank"),
+            "team": entry.get("team", {}).get("name", "N/A"),
+            "points": entry.get("points", 0)
+        })
+
+    print(f"🏆 Classement API-Football récupéré pour league={league_id} saison={season} : {len(full_standings)} équipes")
+    return full_standings
+
+
+def get_team_position_in_standings(full_standings, team_name):
+    """
+    Cherche une équipe dans un classement déjà récupéré (liste de dicts position/team/points).
+    Utilise le mapping de noms existant pour matcher les variantes de nom.
+    """
+    mapped = team_name_mapping.get(team_name, team_name)
+    mapped_lower = mapped.lower()
+
+    for entry in full_standings:
+        team_lower = entry["team"].lower()
+        if team_lower == mapped_lower:
+            return entry["position"], entry["team"], entry["points"]
+
+    for entry in full_standings:
+        team_lower = entry["team"].lower()
+        if mapped_lower in team_lower or team_lower in mapped_lower:
+            return entry["position"], entry["team"], entry["points"]
+
+    return None, None, None
 def get_team_classement_position(country, league, team_name):
     league_info = classement_ligue_mapping.get(country, {}).get(league)
     if not league_info:
