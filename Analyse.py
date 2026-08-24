@@ -2325,9 +2325,15 @@ def simulation_match_montecarlo(stats_home, stats_away, h2h_data=None, n=20000):
     lambda_home = (stats_home["moyenne_marques"] + stats_away["moyenne_encaisses"]) / 2
     lambda_away = (stats_away["moyenne_marques"] + stats_home["moyenne_encaisses"]) / 2
     
-    # Normalisation par la moyenne internationale
-    lambda_home = (lambda_home + base_home_avg) / 2
-    lambda_away = (lambda_away + base_away_avg) / 2
+    # ✅ CORRIGÉ : léger ancrage vers la moyenne internationale (15% au lieu de 50%)
+    # pour préserver l'écart de niveau réel entre les deux équipes au lieu de l'aplatir
+    poids_base_int = 0.15
+    lambda_home = (1 - poids_base_int) * lambda_home + poids_base_int * base_home_avg
+    lambda_away = (1 - poids_base_int) * lambda_away + poids_base_int * base_away_avg
+
+    # Garde-fous pour éviter des valeurs irréalistes (proche de 0 ou trop extrêmes)
+    lambda_home = max(0.2, min(4.5, lambda_home))
+    lambda_away = max(0.2, min(4.5, lambda_away))
 
     print(f"🔢 λ initial: Home={lambda_home:.2f}, Away={lambda_away:.2f}")
     
