@@ -2316,16 +2316,48 @@ def simulation_match_montecarlo(stats_home, stats_away, h2h_data=None, n=20000):
     Retourne les probabilités 1X2, double chance, over/under, résultat+total.
     """
     print(f"🎲 Démarrage simulation Monte-Carlo avec {n} itérations...")
-    
+
     # ⚽ Moyennes de buts internationales (pondérées FIFA/UEFA)
     base_home_avg = 1.52
     base_away_avg = 1.18
-    
-    # ⚙️ Calibrage selon les stats des équipes
+
+    # ⚙️ Calibrage selon les stats des équipes (moyennes générales, dom+ext confondus)
     lambda_home = (stats_home["moyenne_marques"] + stats_away["moyenne_encaisses"]) / 2
     lambda_away = (stats_away["moyenne_marques"] + stats_home["moyenne_encaisses"]) / 2
-    
-    # ✅ CORRIGÉ : léger ancrage vers la moyenne internationale (15% au lieu de 50%)
+
+    # 🏠 AVANTAGE DOMICILE HYBRIDE :
+    # 1) Si on a assez de matchs à domicile/extérieur spécifiquement (>=3), on utilise
+    #    directement les moyennes réelles domicile/extérieur de chaque équipe (plus fidèle
+    #    que d'appliquer le même bonus à tout le monde).
+    # 2) Sinon (données insuffisantes), on applique un petit bonus multiplicatif générique
+    #    en filet de sécurité, pour ne pas perdre l'effet domicile connu du football.
+    nb_matchs_domicile = len(stats_home.get("serie_domicile", []))
+    nb_matchs_exterieur = len(stats_away.get("serie_exterieur", []))
+
+    moy_dom_marques = moy_dom_encaisses = moy_ext_marques = moy_ext_encaisses = None
+
+    if nb_matchs_domicile >= 3:
+        moy_dom_marques = stats_home.get("buts_dom_marques", 0) / nb_matchs_domicile
+        moy_dom_encaisses = stats_home.get("buts_dom_encaisses", 0) / nb_matchs_domicile
+        print(f"🏠 Stats domicile réelles utilisées ({nb_matchs_domicile} matchs) : {moy_dom_marques:.2f} marqués / {moy_dom_encaisses:.2f} encaissés")
+
+    if nb_matchs_exterieur >= 3:
+        moy_ext_marques = stats_away.get("buts_ext_marques", 0) / nb_matchs_exterieur
+        moy_ext_encaisses = stats_away.get("buts_ext_encaisses", 0) / nb_matchs_exterieur
+        print(f"✈️ Stats extérieur réelles utilisées ({nb_matchs_exterieur} matchs) : {moy_ext_marques:.2f} marqués / {moy_ext_encaisses:.2f} encaissés")
+
+    if moy_dom_marques is not None and moy_ext_marques is not None:
+        # On a assez de données des deux côtés : on remplace entièrement le calibrage
+        # générique par les moyennes réelles domicile/extérieur.
+        lambda_home = (moy_dom_marques + moy_ext_encaisses) / 2
+        lambda_away = (moy_ext_marques + moy_dom_encaisses) / 2
+    else:
+        # Filet de sécurité : petit bonus multiplicatif générique pour l'équipe à domicile
+        bonus_domicile = 1.08
+        lambda_home *= bonus_domicile
+        print(f"🏠 Données domicile/extérieur insuffisantes -> bonus générique x{bonus_domicile} appliqué à l'équipe à domicile")
+
+    # ✅ Léger ancrage vers la moyenne internationale (15% au lieu de 50%)
     # pour préserver l'écart de niveau réel entre les deux équipes au lieu de l'aplatir
     poids_base_int = 0.15
     lambda_home = (1 - poids_base_int) * lambda_home + poids_base_int * base_home_avg
