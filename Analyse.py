@@ -3603,7 +3603,7 @@ def scrape_team_data(team_name, action):
 def compare_teams_basic_stats(
     t1, t2, name1, name2, match_date="N/A", match_time="N/A",
     league="N/A", country="N/A", logo_home=None, logo_away=None, résultats=None,
-    league_id=None, season=None
+    league_slug=None
 ):
     if not t1 or not t2:
         print("⚠️ Données insuffisantes pour la comparaison.")
