@@ -3089,6 +3089,69 @@ def get_standings_api_football(league_id, season):
     return full_standings
 
 
+def get_standings_espn(league_slug):
+    """
+    VERSION CORRIGÉE (v2) : récupère le classement via le BON endpoint JSON ESPN
+    (le précédent essai utilisait site.web.api.espn.com/apis/v2/... qui renvoie
+    des données vides/incomplètes). Le bon endpoint est :
+    https://site.api.espn.com/apis/v2/sports/soccer/{league_slug}/standings
+    Remplace la dépendance à API-Football (clé régulièrement suspendue).
+    """
+    if not league_slug:
+        return []
+
+    url = f"https://site.api.espn.com/apis/v2/sports/soccer/{league_slug}/standings"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                      "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+    }
+
+    try:
+        response = requests.get(url, headers=headers, timeout=15)
+        response.raise_for_status()
+        data = response.json()
+    except Exception as e:
+        print(f"❌ Erreur classement ESPN (league={league_slug}) : {e}")
+        return []
+
+    entries = []
+    try:
+        # La structure peut varier : soit "standings" directement, soit via "children"
+        if "standings" in data and "entries" in data.get("standings", {}):
+            entries = data["standings"]["entries"]
+        elif "children" in data and data["children"]:
+            entries = data["children"][0].get("standings", {}).get("entries", [])
+    except (KeyError, IndexError, TypeError):
+        entries = []
+
+    if not entries:
+        print(f"⚠️ Aucun classement disponible pour league={league_slug}")
+        return []
+
+    full_standings = []
+    for i, entry in enumerate(entries, start=1):
+        team_name = entry.get("team", {}).get("displayName", "N/A")
+        stats = entry.get("stats", [])
+        points = None
+        for stat in stats:
+            if stat.get("name") == "points" or stat.get("abbreviation") == "PTS":
+                try:
+                    points = int(float(stat.get("value", 0)))
+                except (ValueError, TypeError):
+                    points = None
+                break
+
+        if team_name and points is not None:
+            full_standings.append({
+                "position": i,
+                "team": team_name,
+                "points": points
+            })
+
+    print(f"🏆 Classement ESPN récupéré pour league={league_slug} : {len(full_standings)} équipes")
+    return full_standings
+
+
 def get_team_position_in_standings(full_standings, team_name):
     """
     Cherche une équipe dans un classement déjà récupéré (liste de dicts position/team/points).
@@ -3098,8 +3161,7 @@ def get_team_position_in_standings(full_standings, team_name):
     mapped_lower = mapped.lower()
 
     for entry in full_standings:
-        team_lower = entry["team"].lower()
-        if team_lower == mapped_lower:
+        if entry["team"].lower() == mapped_lower:
             return entry["position"], entry["team"], entry["points"]
 
     for entry in full_standings:
