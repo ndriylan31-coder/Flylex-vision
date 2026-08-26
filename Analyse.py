@@ -3220,45 +3220,73 @@ def get_h2h_confrontations(home_team_espn, away_team_espn):
     return confrontations
 
 def get_today_matches_filtered():
-    today = datetime.now().strftime('%Y-%m-%d')
-    url = "https://v3.football.api-sports.io/fixtures"
-    params = {
-        "date": today,
-        "timezone": "Africa/Abidjan"
-    }
-    allowed_league_ids = [72, 265, 281, 218, 113, 129, 250, 252, 299, 283, 43, 239, 61, 144, 39, 88, 94, 140, 197, 203, 98, 383, 207, 169, 235, 262, 307, 71, 253, 78, 135]
+    """
+    VERSION CORRIGÉE : récupère les matchs du jour via l'API JSON ESPN (scoreboard,
+    un appel par ligue autorisée), en remplacement d'API-Football dont la clé
+    est régulièrement suspendue. Ne dépend donc plus de API_FOOTBALL_KEY.
+    """
+    today_espn = datetime.now().strftime('%Y%m%d')   # format attendu par ESPN : YYYYMMDD
+    today = datetime.now().strftime('%Y-%m-%d')       # format utilisé partout ailleurs dans le script
     résultats = []
-    try:
-        response = requests.get(url, headers=api_headers, params=params)
-        response.raise_for_status()
-        data = response.json()
-        print("🐛 DEBUG - Statut HTTP:", response.status_code)
-        print("🐛 DEBUG - Clés du JSON:", list(data.keys()))
-        print("🐛 DEBUG - results/errors:", data.get("results"), "|", data.get("errors"))
-        print("🐛 DEBUG - Nombre de matchs bruts:", len(data.get("response", [])))
-        print("🐛 DEBUG - Paramètres:", params)
-        print(f"\n📅 Matchs du jour ({today}) :\n")
-        for match in data.get("response", []):
-            league_id = match['league']['id']
-            league = match['league']['name']
-            country = match['league']['country']
-            season = match['league'].get('season')
-            home_api = match['teams']['home']['name']
-            away_api = match['teams']['away']['name']
-            logo_home = match['teams']['home']['logo']
-            logo_away = match['teams']['away']['logo']
-            time = match['fixture']['date'][11:16]
-            date = match['fixture']['date'][:10]
-            heure, minute = map(int, time.split(":"))
-            if heure < 8:
+    headers_espn = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                      "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+    }
+
+    print(f"\n📅 Matchs du jour ({today}) via API JSON ESPN (scoreboard par ligue) :\n")
+
+    for country, leagues in classement_ligue_mapping.items():
+        for league_name, league_info in leagues.items():
+            slug = extract_league_slug_from_url(league_info.get("url"))
+            if not slug:
                 continue
 
-            if league_id in allowed_league_ids:
-                print(f"🏆 [{country}] {league} : {home_api} vs {away_api} à {time}")
-                # Utiliser le mapping pour les noms ESPN
+            url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}/scoreboard"
+            params = {"dates": today_espn}
+
+            try:
+                response = requests.get(url, headers=headers_espn, params=params, timeout=15)
+                response.raise_for_status()
+                data = response.json()
+            except Exception as e:
+                print(f"❌ Erreur scoreboard ESPN ({slug}) : {e}")
+                continue
+
+            events = data.get("events", [])
+            if not events:
+                continue
+
+            for ev in events:
+                comp = ev.get("competitions", [{}])[0]
+                competitors = comp.get("competitors", [])
+                if len(competitors) < 2:
+                    continue
+
+                home = next((c for c in competitors if c.get("homeAway") == "home"), competitors[0])
+                away = next((c for c in competitors if c.get("homeAway") == "away"), competitors[1])
+
+                home_api = home.get("team", {}).get("displayName", "N/A")
+                away_api = away.get("team", {}).get("displayName", "N/A")
+                logo_home = home.get("team", {}).get("logo", "")
+                logo_away = away.get("team", {}).get("logo", "")
+
+                date_iso = ev.get("date", "")
+                try:
+                    dt = datetime.strptime(date_iso, "%Y-%m-%dT%H:%MZ")
+                except Exception:
+                    continue
+
+                if dt.hour < 8:
+                    continue
+
+                time_str = dt.strftime("%H:%M")
+                date_str = dt.strftime("%Y-%m-%d")
+
+                print(f"🏆 [{country}] {league_name} : {home_api} vs {away_api} à {time_str}")
+
                 home_espn = get_espn_name(home_api)
                 away_espn = get_espn_name(away_api)
-                
+
                 if home_espn in teams_urls and away_espn in teams_urls:
                     print(f"\n🔎 Analyse automatique pour : {home_espn} & {away_espn}")
                     team1_stats = process_team(home_api, return_data=True)
@@ -3266,12 +3294,12 @@ def get_today_matches_filtered():
                     if team1_stats: team1_stats['nom'] = home_espn
                     if team2_stats: team2_stats['nom'] = away_espn
                     compare_teams_basic_stats(
-                         team1_stats, team2_stats, home_api, away_api, date, time, league, country,
-                         logo_home=logo_home, logo_away=logo_away, résultats=résultats,
-                         league_id=league_id, season=season
-                     )
-                    import time
-                    time.sleep(2)
+                        team1_stats, team2_stats, home_api, away_api, date_str, time_str, league_name, country,
+                        logo_home=logo_home, logo_away=logo_away, résultats=résultats,
+                        league_slug=slug
+                    )
+                    import time as _time
+                    _time.sleep(2)  # pause anti-429 entre chaque match analysé
                 else:
                     if home_espn in teams_urls:
                         process_team(home_api)
@@ -3281,18 +3309,15 @@ def get_today_matches_filtered():
                         process_team(away_api)
                     else:
                         FAILED_TEAMS.add(away_api)
-        
-        # ✅ CORRECTION 1 : Récupérer le chemin retourné par sauvegarder_stats_brutes_json
-        if résultats:
-            chemin = sauvegarder_stats_brutes_json(résultats, today)  # ✅ Récupérer le chemin
-            git_commit_and_push(chemin)  # ✅ Utiliser le bon chemin
-        
-        if FAILED_TEAMS:
-            save_failed_teams_json(FAILED_TEAMS, today)
-        if IGNORED_ZERO_FORM_TEAMS:
-            save_ignored_teams_json(IGNORED_ZERO_FORM_TEAMS, today)
-    except Exception as e:
-        print(f"❌ Erreur lors de la récupération des matchs : {e}")
+
+    if résultats:
+        chemin = sauvegarder_stats_brutes_json(résultats, today)
+        git_commit_and_push(chemin)
+
+    if FAILED_TEAMS:
+        save_failed_teams_json(FAILED_TEAMS, today)
+    if IGNORED_ZERO_FORM_TEAMS:
+        save_ignored_teams_json(IGNORED_ZERO_FORM_TEAMS, today)
 
 def get_match_result_for_team(team_name, score, team1, team2):
     try:
