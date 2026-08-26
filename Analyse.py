@@ -3303,7 +3303,7 @@ def get_today_matches_filtered():
             if not slug:
                 continue
 
-            url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}/scoreboard"
+            url = f"https://site.web.api.espn.com/apis/site/v2/sports/soccer/{slug}/scoreboard"
             params = {"dates": today_espn}
 
             try:
