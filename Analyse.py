@@ -3623,7 +3623,7 @@ def compare_teams_basic_stats(
         return
 
     # 🏆 Récupération classement des équipes via API-Football (fiable, saison exacte)
-    full_standings = get_standings_api_football(league_id, season) if league_id and season else []
+    full_standings = get_standings_espn(league_slug) if league_slug else []
     pos_home, nom_classement_home, pts_home = get_team_position_in_standings(full_standings, name1)
     pos_away, nom_classement_away, pts_away = get_team_position_in_standings(full_standings, name2)
     full_standings_home = full_standings
