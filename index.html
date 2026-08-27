@@ -307,6 +307,37 @@
 
         ::-webkit-scrollbar { width:5px; height:5px; }
         ::-webkit-scrollbar-thumb { background:rgba(var(--a1),0.4); border-radius:8px; }
+        
+        /* ===== PAGE CHAMPIONNATS ===== */
+        .champ-page { position:fixed; inset:0; z-index:1250; background:linear-gradient(175deg, rgba(var(--a2),0.14) 0%, rgba(var(--a2),0.22) 35%, rgba(var(--a2),0.36) 65%, rgba(var(--a2),0.55) 100%), #05060c; display:flex; flex-direction:column; overflow:hidden; opacity:0; visibility:hidden; transform:translateY(18px); transition:opacity .32s cubic-bezier(.16,1,.3,1), transform .32s cubic-bezier(.16,1,.3,1), visibility .32s; }
+        .champ-page.active { opacity:1; visibility:visible; transform:translateY(0); }
+        .champ-page::before { content:''; position:absolute; width:160%; height:75%; left:-35%; bottom:-22%; background:radial-gradient(ellipse at 60% 40%, rgba(var(--a1),0.60) 0%, rgba(var(--a2),0.34) 30%, rgba(10,20,60,0) 65%); transform:rotate(-16deg); filter:blur(2px); pointer-events:none; z-index:0; }
+        .champ-topbar { display:flex; align-items:center; gap:14px; padding:16px 16px 6px 16px; position:relative; z-index:2; }
+        .champ-back-btn { width:40px; height:40px; border-radius:50%; background:linear-gradient(160deg, rgba(var(--a1),0.20), rgba(var(--a2),0.10)); border:1px solid rgba(var(--ab),0.4); display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; }
+        .champ-back-btn svg { width:20px; height:20px; }
+        .champ-title-block { flex:1; }
+        .champ-title-block h2 { font-size:20px; font-weight:800; }
+        .champ-title-block p { font-size:12px; color:rgba(219,234,254,0.6); margin-top:2px; }
+        .champ-body { flex:1; overflow-y:auto; padding:8px 16px 30px 16px; position:relative; z-index:2; }
+
+        .champ-league-card { display:flex; align-items:center; gap:14px; background:linear-gradient(160deg, rgba(var(--a1),0.10) 0%, rgba(var(--a2),0.08) 55%, rgba(10,15,35,0.14) 100%); backdrop-filter:blur(26px) saturate(140%); border:1px solid rgba(219,234,254,0.4); border-radius:18px; padding:14px; margin-bottom:12px; cursor:pointer; transition:transform .18s ease; box-shadow:0 8px 28px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.3); }
+        .champ-league-card:active { transform:scale(0.97); }
+        .champ-league-flag { font-size:28px; flex-shrink:0; width:44px; text-align:center; }
+        .champ-league-info { flex:1; min-width:0; }
+        .champ-league-info .lname { font-size:15px; font-weight:800; }
+        .champ-league-info .lcountry { font-size:12px; color:rgba(219,234,254,0.6); margin-top:2px; }
+        .champ-league-arrow { font-size:18px; color:rgba(219,234,254,0.5); flex-shrink:0; }
+
+        .champ-teams-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+        .champ-team-card { display:flex; flex-direction:column; align-items:center; gap:8px; background:linear-gradient(160deg, rgba(var(--a1),0.10) 0%, rgba(var(--a2),0.08) 55%, rgba(10,15,35,0.14) 100%); backdrop-filter:blur(26px); border:1px solid rgba(219,234,254,0.35); border-radius:16px; padding:14px 8px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.3); }
+        .champ-team-logo { width:54px; height:54px; border-radius:50%; background:rgba(255,255,255,0.92); display:flex; align-items:center; justify-content:center; overflow:hidden; box-shadow:0 4px 14px rgba(var(--a2),0.35); border:1px solid rgba(var(--ab),0.5); }
+        .champ-team-logo img { width:100%; height:100%; object-fit:contain; }
+        .champ-team-name { font-size:12px; font-weight:700; line-height:1.2; }
+        .champ-team-stats { font-size:10px; color:rgba(219,234,254,0.6); }
+        .champ-team-rank { font-size:10px; font-weight:800; color:#60a5fa; }
+        .champ-loading { text-align:center; padding:40px 20px; color:rgba(219,234,254,0.7); }
+        .champ-loading .spinner { width:34px; height:34px; margin:0 auto 14px; border:4px solid rgba(255,255,255,0.15); border-top-color:#38bdf8; border-radius:50%; animation:spin 0.8s linear infinite; }
+        .champ-empty { text-align:center; padding:40px 20px; color:rgba(219,234,254,0.5); font-size:13px; }
     </style>
 </head>
 <body>
