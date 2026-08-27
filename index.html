@@ -549,6 +549,13 @@
     function closeChampPage() {
         document.getElementById('champPage').classList.remove('active');
     }
+    document.getElementById('champBackBtn').addEventListener('click', () => {
+    if (document.getElementById('champTitle').textContent === 'Championnats') {
+        closeChampPage();
+    } else {
+        renderChampLeagues();
+    }
+    });
     function renderChampLeagues() {
         document.getElementById('champTitle').textContent = 'Championnats';
         document.getElementById('champSub').textContent = 'Tous les championnats pris en charge';
