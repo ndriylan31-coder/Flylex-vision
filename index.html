@@ -498,6 +498,114 @@
         n.textContent = msg; n.classList.add('show');
         setTimeout(()=> n.classList.remove('show'), timeout);
     }
+    const CHAMP_LEAGUES = [
+    {flag:"🏴", country:"England", name:"Premier League", slug:"eng.1"},
+    {flag:"🏴", country:"England", name:"National League", slug:"eng.5"},
+    {flag:"🇪🇸", country:"Espagne", name:"La Liga", slug:"esp.1"},
+    {flag:"🇮🇹", country:"Italie", name:"Serie A", slug:"ita.1"},
+    {flag:"🇩🇪", country:"Allemagne", name:"Bundesliga", slug:"ger.1"},
+    {flag:"🇫🇷", country:"France", name:"Ligue 1", slug:"fra.1"},
+    {flag:"🇵🇹", country:"Portugal", name:"Primeira Liga", slug:"por.1"},
+    {flag:"🇳🇱", country:"Pays-Bas", name:"Eredivisie", slug:"ned.1"},
+    {flag:"🇧🇪", country:"Belgique", name:"Jupiler Pro League", slug:"bel.1"},
+    {flag:"🇦🇹", country:"Autriche", name:"Bundesliga", slug:"aut.1"},
+    {flag:"🇨🇭", country:"Suisse", name:"Super League", slug:"sui.1"},
+    {flag:"🇹🇷", country:"Turquie", name:"Süper Lig", slug:"tur.1"},
+    {flag:"🇬🇷", country:"Grèce", name:"Super League 1", slug:"gre.1"},
+    {flag:"🇷🇴", country:"Roumanie", name:"Liga I", slug:"rou.1"},
+    {flag:"🇷🇺", country:"Russie", name:"Premier League", slug:"rus.1"},
+    {flag:"🇸🇪", country:"Suède", name:"Allsvenskan", slug:"swe.1"},
+    {flag:"🇧🇷", country:"Brésil", name:"Serie A", slug:"bra.1"},
+    {flag:"🇧🇷", country:"Brésil", name:"Serie B", slug:"bra.2"},
+    {flag:"🇦🇷", country:"Argentine", name:"Primera Nacional", slug:"arg.2"},
+    {flag:"🇨🇱", country:"Chili", name:"Primera División", slug:"chi.1"},
+    {flag:"🇵🇪", country:"Pérou", name:"Primera División", slug:"per.1"},
+    {flag:"🇨🇴", country:"Colombie", name:"Primera A", slug:"col.1"},
+    {flag:"🇵🇾", country:"Paraguay", name:"Division Profesional", slug:"par.1"},
+    {flag:"🇻🇪", country:"Venezuela", name:"Primera División", slug:"ven.1"},
+    {flag:"🇲🇽", country:"Mexique", name:"Liga MX", slug:"mex.1"},
+    {flag:"🇺🇸", country:"USA", name:"Major League Soccer", slug:"usa.1"},
+    {flag:"🇯🇵", country:"Japon", name:"J1 League", slug:"jpn.1"},
+    {flag:"🇨🇳", country:"Chine", name:"Super League", slug:"chn.1"},
+    {flag:"🇸🇦", country:"Arabie Saoudite", name:"Pro League", slug:"ksa.1"}
+    ];
+
+    function openChampPage() {
+        document.getElementById('champPage').classList.add('active');
+        renderChampLeagues();
+    }
+    function closeChampPage() {
+        document.getElementById('champPage').classList.remove('active');
+    }
+    function renderChampLeagues() {
+        document.getElementById('champTitle').textContent = 'Championnats';
+        document.getElementById('champSub').textContent = 'Tous les championnats pris en charge';
+        const body = document.getElementById('champBody');
+        body.innerHTML = CHAMP_LEAGUES.map((l,i) => `
+            <div class="champ-league-card" onclick="openChampLeague('${l.slug}', ${i})">
+                <div class="champ-league-flag">${l.flag}</div>
+                <div class="champ-league-info">
+                    <div class="lname">${l.name}</div>
+                    <div class="lcountry">${l.country}</div>
+                </div>
+                <div class="champ-league-arrow">›</div>
+            </div>
+        `).join('');
+    }
+    async function openChampLeague(slug, idx) {
+        const league = CHAMP_LEAGUES[idx];
+        document.getElementById('champTitle').textContent = league.flag + ' ' + league.name;
+        document.getElementById('champSub').textContent = league.country;
+        const body = document.getElementById('champBody');
+        body.innerHTML = `<div class="champ-loading"><div class="spinner"></div>Chargement des équipes...</div>`;
+        const url = (y) => `https://site.web.api.espn.com/apis/v2/sports/soccer/${slug}/standings?seasontype=1&sort=rank&region=us&lang=en&contentorigin=espn&season=${y}`;
+        let entries = null;
+        for (const year of [2026, 2025, 2024]) {
+            try {
+                const res = await fetch(url(year));
+                const data = await res.json();
+                const ch = data.children && data.children[0];
+                const e = ch && ch.standings && ch.standings.entries;
+                if (e && e.length) { entries = e; break; }
+            } catch (err) {}
+        }
+        if (!entries || !entries.length) {
+            body.innerHTML = `<div class="champ-empty">Aucune équipe disponible pour ce championnat pour le moment.</div>`;
+        return;
+        }
+        body.innerHTML = `<div class="champ-teams-grid">` + entries.map(e => {
+            const t = e.team || {};
+            const logo = (t.logos && t.logos[0] && t.logos[0].href) || '';
+            const name = t.displayName || t.name || '';
+            const stats = e.stats || [];
+            const get = (n) => { const s = stats.find(x => x.name === n); return s ? s.displayValue : ''; };
+            const rank = get('rank');
+            const pts = get('points');
+            const summary = get('overall') || '';
+            return `
+                <div class="champ-team-card">
+                <div class="champ-team-logo">${logo ? `<img src="${logo}" alt="${name}" loading="lazy">` : ''}</div>
+                <div class="champ-team-name">${name}</div>
+                <div class="champ-team-rank">${rank ? '#' + rank : ''}</div>
+                <div class="champ-team-stats">${summary ? summary + ' · ' : ''}${pts ? pts + ' pts' : ''}</div>
+          </div>
+           `;
+        }).join('') + `</div>`;
+    }
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('champBackBtn').addEventListener('click', () => {
+        const body = document.getElementById('champBody');
+        if (document.getElementById('champTitle').textContent === 'Championnats') {
+            closeChampPage();
+        } else {
+            renderChampLeagues();
+        }
+    });
+    document.querySelectorAll('[data-page="championnats"]').forEach(el => {
+        el.addEventListener('click', openChampPage);
+    });
+});
 
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
