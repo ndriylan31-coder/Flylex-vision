@@ -1232,5 +1232,36 @@
 
     init();
     </script>
+    <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+  import {
+    getAuth,
+    GoogleAuthProvider,
+    signInWithPopup,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+  } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDuLWFXB5mPDWkk8xGRE4x2ZRVcb4nk9Cg",
+    authDomain: "vision-flylex.firebaseapp.com",
+    projectId: "vision-flylex",
+    storageBucket: "vision-flylex.firebasestorage.app",
+    messagingSenderId: "388515784837",
+    appId: "1:388515784837:web:ae477450fa9f978ef121ec"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  window.firebaseAuth = {
+    auth, provider,
+    signInWithPopup, createUserWithEmailAndPassword,
+    signInWithEmailAndPassword, onAuthStateChanged, signOut
+  };
+</script>
 </body>
 </html>
