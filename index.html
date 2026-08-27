@@ -22,23 +22,23 @@
 
         /* ===== THEME ACCUEIL : VERRE LIQUIDE BLEU-NOIR ===== */
         .home-shell {
-            background: linear-gradient(175deg, #050b1f 0%, #071230 30%, #0a1c42 60%, #123166 100%);
-            position:relative;
-            overflow:hidden;
+    background: linear-gradient(175deg, rgba(var(--a2),0.14) 0%, rgba(var(--a2),0.22) 35%, rgba(var(--a2),0.36) 65%, rgba(var(--a2),0.55) 100%), #05060c;
+    position:relative;
+    overflow:hidden;
         }
         .home-shell::before {
-            content:'';
-            position:absolute;
-            width:160%;
-            height:75%;
-            left:-35%;
-            bottom:-22%;
-            background:
-                radial-gradient(ellipse at 60% 40%, rgba(56,189,248,0.55) 0%, rgba(var(--a2),0.28) 30%, rgba(10,20,60,0) 65%);
-            transform:rotate(-16deg);
-            filter:blur(2px);
-            pointer-events:none;
-            z-index:0;
+    content:'';
+    position:absolute;
+    width:160%;
+    height:75%;
+    left:-35%;
+    bottom:-22%;
+    background:
+        radial-gradient(ellipse at 60% 40%, rgba(var(--a1),0.70) 0%, rgba(var(--a2),0.42) 30%, rgba(10,20,60,0) 65%);
+    transform:rotate(-16deg);
+    filter:blur(2px);
+    pointer-events:none;
+    z-index:0;
         }
         .home-shell::after {
             content:'';
