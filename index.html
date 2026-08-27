@@ -1370,10 +1370,12 @@
       toggleAuthMode();
     });
 
-    // Affiche la page AUTH immédiatement au chargement
-    showAuthPage();
+    document.body.style.visibility = 'hidden';
 
     onAuthStateChanged(auth, (user) => {
+      document.getElementById('loading-screen').style.display = 'none';
+      document.body.style.visibility = 'visible';
+
       if (user) {
         hideAuthPage();
         console.log('Connecté:', user.email);
