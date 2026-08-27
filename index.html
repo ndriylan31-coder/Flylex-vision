@@ -1293,5 +1293,83 @@
     signInWithEmailAndPassword, onAuthStateChanged, signOut
   };
 </script>
+<script>
+  let isLoginMode = true;
+
+  function openAuthModal() {
+    document.getElementById('auth-modal').style.display = 'flex';
+  }
+  function closeAuthModal() {
+    document.getElementById('auth-modal').style.display = 'none';
+  }
+
+  function toggleAuthMode() {
+    isLoginMode = !isLoginMode;
+    document.getElementById('auth-title').textContent = isLoginMode ? 'Connexion' : 'Créer un compte';
+    document.getElementById('auth-subtitle').textContent = isLoginMode ? 'Connectez-vous à Vision Flylex' : 'Inscrivez-vous gratuitement';
+    document.getElementById('auth-submit').textContent = isLoginMode ? 'Se connecter' : "S'inscrire";
+    document.getElementById('auth-toggle-text').textContent = isLoginMode ? 'Pas de compte ?' : 'Déjà un compte ?';
+    document.getElementById('auth-toggle-link').textContent = isLoginMode ? 'Créer un compte' : 'Se connecter';
+    document.getElementById('auth-error').style.display = 'none';
+  }
+
+  function showAuthError(msg) {
+    const el = document.getElementById('auth-error');
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+
+  // Attendre que Firebase soit chargé
+  window.addEventListener('load', () => {
+    const { auth, provider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } = window.firebaseAuth;
+
+    // Google
+    document.getElementById('google-btn').addEventListener('click', async () => {
+      try {
+        await signInWithPopup(auth, provider);
+        closeAuthModal();
+      } catch (e) {
+        showAuthError('Erreur Google: ' + e.message);
+      }
+    });
+
+    // Email/password
+    document.getElementById('auth-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email-input').value;
+      const password = document.getElementById('password-input').value;
+      try {
+        if (isLoginMode) {
+          await signInWithEmailAndPassword(auth, email, password);
+        } else {
+          await createUserWithEmailAndPassword(auth, email, password);
+        }
+        closeAuthModal();
+      } catch (e) {
+        showAuthError(e.message);
+      }
+    });
+
+    // Toggle login/register
+    document.getElementById('auth-toggle-link').addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleAuthMode();
+    });
+
+    // Fermer
+    document.getElementById('auth-close').addEventListener('click', closeAuthModal);
+
+    // État auth
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log('Connecté:', user.email);
+        // TODO: afficher le contenu protégé
+      } else {
+        console.log('Déconnecté');
+        openAuthModal();
+      }
+    });
+  });
+</script>
 </body>
 </html>
