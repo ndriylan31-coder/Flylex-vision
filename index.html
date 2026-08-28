@@ -1979,22 +1979,29 @@ function renderHistorique(results) {
   const hasAny = results.some(r => r.matches.length);
   if (!hasAny) { body.innerHTML = `<div class="champ-empty">Aucune prédiction trouvée sur les 5 derniers jours.</div>`; return; }
   let html = '';
+  const now = new Date();
   for (const day of results) {
     if (!day.matches.length) continue;
     let v = 0, f = 0, p = 0;
     const cards = day.matches.map(m => {
       const d = m.det, res = m.result;
       let scoreHtml, badgeClass, badgeText;
+      
+      // Match terminé avec score disponible
       if (res && res.completed && !isNaN(res.homeScore) && !isNaN(res.awayScore)) {
         scoreHtml = `${res.homeScore} - ${res.awayScore}`;
         const cmp = histoCompare(d.prediction_principale, res.homeScore, res.awayScore);
         if (cmp === 'correct') { badgeClass = 'valid'; badgeText = '✓ Validé'; v++; }
         else if (cmp === 'incorrect') { badgeClass = 'fail'; badgeText = '✕ Échec'; f++; }
         else { badgeClass = 'pending'; badgeText = 'N/A'; p++; }
-      } else if (res && !res.completed) {
+      } 
+      // Match pas encore joué (date dans le futur OU statut non terminé)
+      else if (!res || !res.completed || (d.date && new Date(d.date) > now)) {
         scoreHtml = '<span class="histo-score pending">À venir</span>';
         badgeClass = 'pending'; badgeText = 'En attente'; p++;
-      } else {
+      } 
+      // Match terminé mais score indisponible
+      else {
         scoreHtml = '<span class="histo-score pending">—</span>';
         badgeClass = 'pending'; badgeText = 'Indispo.'; p++;
       }
