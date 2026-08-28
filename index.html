@@ -618,6 +618,183 @@
         renderChampLeagues();
     }
     });
+    let EQUIPE_TEAMS = [];
+let currentEquipeView = 'list';
+
+function openEquipePage() {
+    document.getElementById('equipePage').classList.add('active');
+    currentEquipeView = 'list';
+    document.getElementById('equipeTitle').textContent = 'Équipes';
+    document.getElementById('equipeSub').textContent = 'Toutes les équipes (ordre alphabétique)';
+    document.querySelector('#equipePage .equipe-search-wrap').style.display = 'block';
+    if (!EQUIPE_TEAMS.length) loadAllEquipes();
+    else renderEquipeList(EQUIPE_TEAMS);
+}
+
+function closeEquipePage() {
+    document.getElementById('equipePage').classList.remove('active');
+}
+
+async function loadAllEquipes() {
+    const list = document.getElementById('equipeList');
+    list.innerHTML = `<div class="champ-loading"><div class="spinner"></div>Chargement des équipes...</div>`;
+    const teams = [];
+    await Promise.all(CHAMP_LEAGUES.map(async (lg) => {
+        const url = (y) => `https://site.web.api.espn.com/apis/v2/sports/soccer/${lg.slug}/standings?seasontype=1&sort=rank&region=us&lang=en&contentorigin=espn&season=${y}`;
+        for (const year of [2026, 2025, 2024]) {
+            try {
+                const res = await fetch(url(year));
+                const data = await res.json();
+                const ch = data.children && data.children[0];
+                const entries = ch && ch.standings && ch.standings.entries;
+                if (entries && entries.length) {
+                    entries.forEach(e => {
+                        const t = e.team || {};
+                        const logo = (t.logos && t.logos[0] && t.logos[0].href) || '';
+                        const stats = e.stats || [];
+                        const get = (n) => { const s = stats.find(x => x.name === n); return s ? s.displayValue : ''; };
+                        teams.push({
+                            id: t.id,
+                            name: t.displayName || t.shortDisplayName || t.abbreviation || t.name || '',
+                            shortName: t.shortDisplayName || t.abbreviation || t.displayName || '',
+                            logo,
+                            leagueSlug: lg.slug,
+                            leagueName: lg.name,
+                            country: lg.country,
+                            flag: lg.flag,
+                            rank: get('rank'), gp: get('gamesPlayed'),
+                            w: get('wins'), d: get('ties'), l: get('losses'),
+                            gd: get('pointDifferential'), pts: get('points')
+                        });
+                    });
+                    break;
+                }
+            } catch (err) {}
+        }
+    }));
+    const seen = new Set();
+    EQUIPE_TEAMS = teams.filter(t => { if (!t.id || seen.has(t.id)) return false; seen.add(t.id); return true; });
+    EQUIPE_TEAMS.sort((a, b) => a.name.localeCompare(b.name, 'fr', { sensitivity: 'base' }));
+    renderEquipeList(EQUIPE_TEAMS);
+}
+
+function renderEquipeList(teams) {
+    const list = document.getElementById('equipeList');
+    if (!teams.length) { list.innerHTML = `<div class="champ-empty">Aucune équipe trouvée.</div>`; return; }
+    list.innerHTML = teams.map(t => `
+        <div class="equipe-card" data-id="${t.id}">
+            <div class="equipe-card-logo">${t.logo ? `<img src="${t.logo}" alt="${escapeHtml(t.name)}" loading="lazy">` : ''}</div>
+            <div class="equipe-card-info">
+                <div class="equipe-card-name">${escapeHtml(t.name)}</div>
+                <div class="equipe-card-league">${t.flag} ${escapeHtml(t.leagueName)}</div>
+            </div>
+            <svg class="equipe-card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+    `).join('');
+    list.querySelectorAll('.equipe-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const t = EQUIPE_TEAMS.find(x => String(x.id) === card.dataset.id);
+            if (t) openEquipeTeam(t);
+        });
+    });
+}
+
+function filterEquipes(q) {
+    const query = (q || '').trim().toLowerCase();
+    if (!query) { renderEquipeList(EQUIPE_TEAMS); return; }
+    renderEquipeList(EQUIPE_TEAMS.filter(t =>
+        t.name.toLowerCase().includes(query) || (t.leagueName || '').toLowerCase().includes(query)
+    ));
+}
+
+async function openEquipeTeam(t) {
+    currentEquipeView = 'team';
+    document.getElementById('equipeTitle').textContent = t.shortName || t.name;
+    document.getElementById('equipeSub').textContent = `${t.flag} ${t.leagueName}`;
+    document.querySelector('#equipePage .equipe-search-wrap').style.display = 'none';
+    const list = document.getElementById('equipeList');
+    list.innerHTML = `<div class="champ-loading"><div class="spinner"></div>Chargement des résultats...</div>`;
+    const base = `https://site.api.espn.com/apis/site/v2/sports/soccer/${t.leagueSlug}/teams/${t.id}/schedule`;
+    let events = [];
+    for (const season of [2026, 2025]) {
+        try {
+            const r = await fetch(base + `?season=${season}`);
+            const d = await r.json();
+            if (d.events) events = events.concat(d.events);
+        } catch (e) {}
+    }
+    const past = events
+        .filter(e => e.competitions && e.competitions[0] && e.competitions[0].status && e.competitions[0].status.type && e.competitions[0].status.type.completed)
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .slice(0, 8);
+    renderEquipeTeamDetail(t, past);
+}
+
+function renderEquipeTeamDetail(t, past) {
+    const list = document.getElementById('equipeList');
+    const statsHtml = `
+        <div class="equipe-stats">
+            <div class="equipe-stat"><span class="es-val">${t.rank || '-'}</span><span class="es-lbl">Rang</span></div>
+            <div class="equipe-stat"><span class="es-val">${t.pts || '-'}</span><span class="es-lbl">Pts</span></div>
+            <div class="equipe-stat"><span class="es-val">${t.gp || '-'}</span><span class="es-lbl">J</span></div>
+            <div class="equipe-stat"><span class="es-val">${t.w || '-'}</span><span class="es-lbl">V</span></div>
+            <div class="equipe-stat"><span class="es-val">${t.d || '-'}</span><span class="es-lbl">N</span></div>
+            <div class="equipe-stat"><span class="es-val">${t.l || '-'}</span><span class="es-lbl">D</span></div>
+        </div>`;
+    let resultsHtml = '';
+    if (!past.length) {
+        resultsHtml = `<div class="champ-empty">Aucun résultat récent disponible.</div>`;
+    } else {
+        resultsHtml = `<div class="equipe-results-title">Derniers matchs</div><div class="equipe-results">` + past.map(ev => {
+            const comp = ev.competitions[0];
+            const comps = comp.competitors || [];
+            const home = comps.find(c => c.homeAway === 'home');
+            const away = comps.find(c => c.homeAway === 'away');
+            const myIsHome = home && String(home.id) === String(t.id);
+            const me = myIsHome ? home : away;
+            const opp = myIsHome ? away : home;
+            const myScore = me && me.score ? me.score.displayValue : '-';
+            const oppScore = opp && opp.score ? opp.score.displayValue : '-';
+            let chip = 'n';
+            if (me && me.winner) chip = 'w';
+            else if (opp && opp.winner) chip = 'l';
+            const oppName = opp && opp.team ? (opp.team.shortDisplayName || opp.team.abbreviation || opp.team.displayName) : '';
+            const oppLogo = opp && opp.team && opp.team.logos && opp.team.logos[0] ? opp.team.logos[0].href : '';
+            return `
+                <div class="equipe-result">
+                    <span class="form-chip ${chip}">${chip === 'w' ? 'V' : (chip === 'l' ? 'D' : 'N')}</span>
+                    <span class="er-date">${formatDate(ev.date)}</span>
+                    <span class="er-venue">${myIsHome ? 'Dom' : 'Ext'}</span>
+                    <div class="er-match">
+                        <span class="er-opp">${oppLogo ? `<img src="${oppLogo}" alt="" loading="lazy">` : ''}<span>${escapeHtml(oppName)}</span></span>
+                        <span class="er-score">${myScore} - ${oppScore}</span>
+                    </div>
+                </div>`;
+        }).join('') + `</div>`;
+    }
+    list.innerHTML = `
+        <div class="equipe-detail-head">
+            <div class="equipe-detail-logo">${t.logo ? `<img src="${t.logo}" alt="${escapeHtml(t.name)}">` : ''}</div>
+            <div class="equipe-detail-name">${escapeHtml(t.name)}</div>
+            <div class="equipe-detail-league">${t.flag} ${escapeHtml(t.leagueName)}${t.country ? ' · ' + escapeHtml(t.country) : ''}</div>
+        </div>
+        ${statsHtml}
+        ${resultsHtml}`;
+}
+
+document.getElementById('equipeBackBtn').addEventListener('click', () => {
+    if (currentEquipeView === 'team') {
+        currentEquipeView = 'list';
+        document.getElementById('equipeTitle').textContent = 'Équipes';
+        document.getElementById('equipeSub').textContent = 'Toutes les équipes (ordre alphabétique)';
+        document.querySelector('#equipePage .equipe-search-wrap').style.display = 'block';
+        renderEquipeList(EQUIPE_TEAMS);
+    } else {
+        closeEquipePage();
+    }
+});
+
+document.getElementById('equipeSearch').addEventListener('input', (e) => filterEquipes(e.target.value));
     function renderChampLeagues() {
         document.getElementById('champTitle').textContent = 'Championnats';
         document.getElementById('champSub').textContent = 'Tous les championnats pris en charge';
