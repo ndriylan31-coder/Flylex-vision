@@ -1863,7 +1863,15 @@ const HISTO_SLUGS = {
   'italy':'ita.1','italie':'ita.1','germany':'ger.1','allemagne':'ger.1',
   'france':'fra.1','portugal':'por.1','netherlands':'ned.1','pays-bas':'ned.1',
   'belgium':'bel.1','belgique':'bel.1','austria':'aut.1','autriche':'aut.1',
-  'switzerland':'sui.1','suisse':'sui.1','turkey':'tur.1','turquie':'tur.1'
+  'switzerland':'sui.1','suisse':'sui.1','turkey':'tur.1','turquie':'tur.1',
+  // Brésil
+  'brazil - serie a':'bra.1','bresil - serie a':'bra.1',
+  'brazil - serie b':'bra.2','bresil - serie b':'bra.2',
+  // Argentine
+  'argentina - primera division':'arg.1',
+  'argentina - primera nacional':'arg.2',
+  // Israël
+  'israel - ligat ha\'al':'isr.1','israel':'isr.1'
 };
 const HISTO_SB_CACHE = {};
 
@@ -1875,8 +1883,9 @@ function closeHistoriquePage() {
   document.getElementById('histoPage').classList.remove('active');
 }
 function histoSlug(leagueStr) {
-  const c = (leagueStr || '').split(' - ')[0].toLowerCase().trim();
-  return HISTO_SLUGS[c] || null;
+  const raw = (leagueStr || '').toLowerCase().trim();
+  const country = raw.split(' - ')[0].trim();
+  return HISTO_SLUGS[raw] || HISTO_SLUGS[country] || null;
 }
 function histoNorm(s) {
   return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,'').trim().replace(/\s+/g,' ');
