@@ -1854,6 +1854,172 @@ document.getElementById('equipeSearch').addEventListener('input', (e) => filterE
       }
     });
   });
+  /* ===== HISTORIQUE ===== */
+const HISTO_SLUGS = {
+  'spain':'esp.1','espagne':'esp.1','england':'eng.1','angleterre':'eng.1',
+  'italy':'ita.1','italie':'ita.1','germany':'ger.1','allemagne':'ger.1',
+  'france':'fra.1','portugal':'por.1','netherlands':'ned.1','pays-bas':'ned.1',
+  'belgium':'bel.1','belgique':'bel.1','austria':'aut.1','autriche':'aut.1',
+  'switzerland':'sui.1','suisse':'sui.1','turkey':'tur.1','turquie':'tur.1'
+};
+const HISTO_SB_CACHE = {};
+
+function openHistoriquePage() {
+  document.getElementById('histoPage').classList.add('active');
+  loadHistorique();
+}
+function closeHistoriquePage() {
+  document.getElementById('histoPage').classList.remove('active');
+}
+function histoSlug(leagueStr) {
+  const c = (leagueStr || '').split(' - ')[0].toLowerCase().trim();
+  return HISTO_SLUGS[c] || null;
+}
+function histoNorm(s) {
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,'').trim().replace(/\s+/g,' ');
+}
+function histoTeamsMatch(a, b) {
+  const na = histoNorm(a), nb = histoNorm(b);
+  return na === nb || na.includes(nb) || nb.includes(na);
+}
+function histoFmtDate(d) {
+  const days = ['dim','lun','mar','mer','jeu','ven','sam'];
+  const months = ['jan','fév','mar','avr','mai','juin','juil','août','sept','oct','nov','déc'];
+  return `${days[d.getDay()]} ${d.getDate()} ${months[d.getMonth()]}`;
+}
+function histoCompare(pred, hs, as) {
+  const p = (pred||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[*_]/g,'').trim();
+  const total = hs + as;
+  let m;
+  m = p.match(/plus de (\d+[.,]?\d*)\s*buts?/);
+  if (m) { const t = parseFloat(m[1].replace(',','.')); return total > t ? 'correct' : 'incorrect'; }
+  m = p.match(/moins de (\d+[.,]?\d*)\s*buts?/);
+  if (m) { const t = parseFloat(m[1].replace(',','.')); return total < t ? 'correct' : 'incorrect'; }
+  if (p.includes('btts') || p.includes('deux equipes marquent') || p.includes('les deux equipes marquent')) {
+    const both = hs > 0 && as > 0;
+    if (p.includes('non')) return !both ? 'correct' : 'incorrect';
+    return both ? 'correct' : 'incorrect';
+  }
+  if (p.includes('double chance')) {
+    if (p.includes('1x')) return hs >= as ? 'correct' : 'incorrect';
+    if (p.includes('x2')) return as >= hs ? 'correct' : 'incorrect';
+    if (p.includes('12')) return hs !== as ? 'correct' : 'incorrect';
+  }
+  if (p.includes('victoire domicile')) return hs > as ? 'correct' : 'incorrect';
+  if (p.includes('victoire exterieur')) return as > hs ? 'correct' : 'incorrect';
+  if (p.includes('match nul') || p === 'nul') return hs === as ? 'correct' : 'incorrect';
+  return null;
+}
+async function histoGetScoreboard(slug, dateESPN) {
+  const key = `${slug}|${dateESPN}`;
+  if (HISTO_SB_CACHE[key] !== undefined) return HISTO_SB_CACHE[key];
+  try {
+    const r = await fetch(`https://site.api.espn.com/apis/site/v2/sports/soccer/${slug}/scoreboard?dates=${dateESPN}`);
+    const d = await r.json();
+    HISTO_SB_CACHE[key] = d.events || [];
+  } catch(e) { HISTO_SB_CACHE[key] = []; }
+  return HISTO_SB_CACHE[key];
+}
+function histoFindResult(events, homeTeam, awayTeam) {
+  for (const ev of events) {
+    for (const c of (ev.competitions || [])) {
+      const cs = c.competitors || [];
+      const eh = cs.find(x => x.homeAway === 'home');
+      const ea = cs.find(x => x.homeAway === 'away');
+      if (!eh || !ea) continue;
+      const ehName = eh.team && (eh.team.displayName || eh.team.shortDisplayName);
+      const eaName = ea.team && (ea.team.displayName || ea.team.shortDisplayName);
+      const normal = histoTeamsMatch(homeTeam, ehName) && histoTeamsMatch(awayTeam, eaName);
+      const swapped = histoTeamsMatch(homeTeam, eaName) && histoTeamsMatch(awayTeam, ehName);
+      if (!normal && !swapped) continue;
+      const completed = c.status && c.status.type && c.status.type.completed;
+      const rh = swapped ? ea : eh;
+      const ra = swapped ? eh : ea;
+      return { completed, homeScore: parseInt(rh.score), awayScore: parseInt(ra.score) };
+    }
+  }
+  return null;
+}
+async function loadHistorique() {
+  const body = document.getElementById('histoBody');
+  body.innerHTML = `<div class="champ-loading"><div class="spinner"></div>Chargement de l'historique...</div>`;
+  const today = new Date();
+  const days = [];
+  for (let i = 0; i < 5; i++) { const d = new Date(today); d.setDate(d.getDate() - i); days.push(d); }
+  const results = [];
+  await Promise.all(days.map(async (d) => {
+    const iso = d.toISOString().slice(0, 10);
+    const dateESPN = iso.replace(/-/g, '');
+    try {
+      const r = await fetch('./' + encodeURIComponent(`prédiction-${iso}-analyse-ia.json`));
+      if (!r.ok) return;
+      const data = await r.json();
+      const details = (data.statistiques_brutes_avec_ia_hors_montecarlo && data.statistiques_brutes_avec_ia_hors_montecarlo.details) || [];
+      const matches = [];
+      for (const det of details) {
+        const slug = histoSlug(det.league || det.country_fr);
+        let result = null;
+        if (slug) {
+          const events = await histoGetScoreboard(slug, dateESPN);
+          result = histoFindResult(events, det.HomeTeam, det.AwayTeam);
+        }
+        matches.push({ det, result });
+      }
+      results.push({ date: d, matches });
+    } catch(e) {}
+  }));
+  results.sort((a, b) => new Date(b.date) - new Date(a.date));
+  renderHistorique(results);
+}
+function renderHistorique(results) {
+  const body = document.getElementById('histoBody');
+  const hasAny = results.some(r => r.matches.length);
+  if (!hasAny) { body.innerHTML = `<div class="champ-empty">Aucune prédiction trouvée sur les 5 derniers jours.</div>`; return; }
+  let html = '';
+  for (const day of results) {
+    if (!day.matches.length) continue;
+    let v = 0, f = 0, p = 0;
+    const cards = day.matches.map(m => {
+      const d = m.det, res = m.result;
+      let scoreHtml, badgeClass, badgeText;
+      if (res && res.completed && !isNaN(res.homeScore) && !isNaN(res.awayScore)) {
+        scoreHtml = `${res.homeScore} - ${res.awayScore}`;
+        const cmp = histoCompare(d.prediction_principale, res.homeScore, res.awayScore);
+        if (cmp === 'correct') { badgeClass = 'valid'; badgeText = '✓ Validé'; v++; }
+        else if (cmp === 'incorrect') { badgeClass = 'fail'; badgeText = '✕ Échec'; f++; }
+        else { badgeClass = 'pending'; badgeText = 'N/A'; p++; }
+      } else if (res && !res.completed) {
+        scoreHtml = '<span class="histo-score pending">À venir</span>';
+        badgeClass = 'pending'; badgeText = 'En attente'; p++;
+      } else {
+        scoreHtml = '<span class="histo-score pending">—</span>';
+        badgeClass = 'pending'; badgeText = 'Indispo.'; p++;
+      }
+      const conf = d.confiance_pourcentage != null ? ` <span class="histo-conf">· ${d.confiance_pourcentage}%</span>` : '';
+      const pred = (d.prediction_principale || '').replace(/\*\*/g, '').trim();
+      return `
+        <div class="histo-card">
+          <div class="histo-teams">
+            <div class="histo-team home"><span class="histo-team-name">${escapeHtml(d.HomeTeam||'')}</span>${d.logo_home?`<img src="${d.logo_home}" alt="" loading="lazy">`:''}</div>
+            <div class="histo-score">${scoreHtml}</div>
+            <div class="histo-team away">${d.logo_away?`<img src="${d.logo_away}" alt="" loading="lazy">`:''}<span class="histo-team-name">${escapeHtml(d.AwayTeam||'')}</span></div>
+          </div>
+          <div class="histo-pred">
+            <span class="histo-pred-label">Prédiction${conf}</span>
+            <span class="histo-pred-val">${escapeHtml(pred)}</span>
+            <span class="histo-badge ${badgeClass}">${badgeText}</span>
+          </div>
+        </div>`;
+    }).join('');
+    const sum = [];
+    if (v) sum.push(`<span style="color:#4ade80">${v} validé${v>1?'s':''}</span>`);
+    if (f) sum.push(`<span style="color:#f87171">${f} échec${f>1?'s':''}</span>`);
+    if (p) sum.push(`<span style="color:rgba(255,255,255,.5)">${p} en attente</span>`);
+    html += `<div class="histo-day"><div class="histo-day-header">${histoFmtDate(day.date)} <span class="histo-day-count">${sum.join(' · ')}</span></div>${cards}</div>`;
+  }
+  body.innerHTML = html;
+}
+document.getElementById('histoBackBtn').addEventListener('click', closeHistoriquePage);
 </script>
 </body>
 </html>
