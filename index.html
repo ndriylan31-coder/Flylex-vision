@@ -1917,7 +1917,7 @@ async function histoGetScoreboard(slug, dateESPN) {
   const key = `${slug}|${dateESPN}`;
   if (HISTO_SB_CACHE[key] !== undefined) return HISTO_SB_CACHE[key];
   try {
-    const r = await fetch(`https://site.api.espn.com/apis/site/v2/sports/soccer/${slug}/scoreboard?dates=${dateESPN}`);
+    const r = await fetch(`https://site.web.api.espn.com/apis/site/v2/sports/soccer/${slug}/scoreboard?dates=${dateESPN}`);
     const d = await r.json();
     HISTO_SB_CACHE[key] = d.events || [];
   } catch(e) { HISTO_SB_CACHE[key] = []; }
