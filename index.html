@@ -1960,14 +1960,17 @@ async function loadHistorique() {
       const details = (data.statistiques_brutes_avec_ia_hors_montecarlo && data.statistiques_brutes_avec_ia_hors_montecarlo.details) || [];
       const matches = [];
       for (const det of details) {
-        const slug = histoSlug(det.league || det.country_fr);
-        let result = null;
-        if (slug) {
-          const events = await histoGetScoreboard(slug, dateESPN);
-          result = histoFindResult(events, det.HomeTeam, det.AwayTeam);
-        }
-        matches.push({ det, result });
-      }
+  const slug = histoSlug(det.league || det.country_fr);
+  let result = null;
+  console.log('[HISTO]', det.HomeTeam, 'vs', det.AwayTeam, '| league:', det.league, '| slug:', slug);
+  if (slug) {
+    const events = await histoGetScoreboard(slug, dateESPN);
+    console.log('[HISTO] events count:', events.length);
+    result = histoFindResult(events, det.HomeTeam, det.AwayTeam);
+    console.log('[HISTO] result:', result);
+  }
+  matches.push({ det, result });
+}
       results.push({ date: d, matches });
     } catch(e) {}
   }));
