@@ -1962,14 +1962,14 @@ async function loadHistorique() {
       for (const det of details) {
   const slug = histoSlug(det.league || det.country_fr);
   let result = null;
-  console.log('[HISTO]', det.HomeTeam, 'vs', det.AwayTeam, '| league:', det.league, '| slug:', slug);
+  let dbg = `league="${det.league}" slug=${slug}`;
   if (slug) {
     const events = await histoGetScoreboard(slug, dateESPN);
-    console.log('[HISTO] events count:', events.length);
+    dbg += ` events=${events.length}`;
     result = histoFindResult(events, det.HomeTeam, det.AwayTeam);
-    console.log('[HISTO] result:', result);
+    dbg += ` result=${result ? result.homeScore+'-'+result.awayScore : 'null'}`;
   }
-  matches.push({ det, result });
+  matches.push({ det, result, _dbg: dbg });
 }
       results.push({ date: d, matches });
     } catch(e) {}
