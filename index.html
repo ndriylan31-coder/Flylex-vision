@@ -1982,7 +1982,7 @@ async function loadHistorique() {
   body.innerHTML = `<div class="champ-loading"><div class="spinner"></div>Chargement de l'historique...</div>`;
   const today = new Date();
   const days = [];
-  for (let i = 0; i < 5; i++) { const d = new Date(today); d.setDate(d.getDate() - i); days.push(d); }
+  for (let i = 0; i < 15; i++) { const d = new Date(today); d.setDate(d.getDate() - i); days.push(d); }
   const results = [];
   await Promise.all(days.map(async (d) => {
     const iso = d.toISOString().slice(0, 10);
