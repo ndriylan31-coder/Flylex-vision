@@ -1857,126 +1857,89 @@ document.getElementById('equipeSearch').addEventListener('input', (e) => filterE
       }
     });
   });
-  /* ===== HISTORIQUE ===== */
-const HISTO_SLUGS = {
-  // ===== Europe =====
-  'spain':'esp.1','espagne':'esp.1',
-  'england':'eng.1','angleterre':'eng.1',
-  'england - premier league':'eng.1','angleterre - premier league':'eng.1',
-  'england - national league':'eng.5','angleterre - national league':'eng.5',
-  'italy':'ita.1','italie':'ita.1',
-  'germany':'ger.1','allemagne':'ger.1',
-  'france':'fra.1',
-  'portugal':'por.1',
-  'netherlands':'ned.1','pays-bas':'ned.1',
-  'belgium':'bel.1','belgique':'bel.1',
-  'austria':'aut.1','autriche':'aut.1',
-  'switzerland':'sui.1','suisse':'sui.1',
-  'turkey':'tur.1','turquie':'tur.1',
-  'greece':'gre.1','grece':'gre.1',
-  'romania':'rou.1','roumanie':'rou.1',
-  'russia':'rus.1','russie':'rus.1',
-  'sweden':'swe.1','suede':'swe.1',
-  // ===== Amériques =====
-  'brazil':'bra.1','bresil':'bra.1',
-  'brazil - serie a':'bra.1','bresil - serie a':'bra.1',
-  'brazil - serie b':'bra.2','bresil - serie b':'bra.2',
-  'argentina':'arg.1','argentine':'arg.1',
-  'argentina - primera division':'arg.1','argentine - primera division':'arg.1',
-  'argentina - primera nacional':'arg.2','argentine - primera nacional':'arg.2',
-  'chile':'chi.1','chili':'chi.1',
-  'peru':'per.1','perou':'per.1',
-  'colombia':'col.1','colombie':'col.1',
-  'paraguay':'par.1',
-  'venezuela':'ven.1',
-  'mexico':'mex.1','mexique':'mex.1',
-  'usa':'usa.1','etats-unis':'usa.1','etats unis':'usa.1',
-  // ===== Asie / Moyen-Orient =====
-  'japan':'jpn.1','japon':'jpn.1',
-  'china':'chn.1','chine':'chn.1',
-  'saudi arabia':'ksa.1','arabie saoudite':'ksa.1',
-  'israel':'isr.1','israel - ligat ha\'al':'isr.1'
-};
-const HISTO_SB_CACHE = {};
+  /* ===== HISTORIQUE — FIX date-range + matching robuste ===== */
 
-function openHistoriquePage() {
-  document.getElementById('histoPage').classList.add('active');
-  loadHistorique();
-}
-function closeHistoriquePage() {
-  document.getElementById('histoPage').classList.remove('active');
-}
-function histoSlug(leagueStr) {
-  const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
-  const raw = norm(leagueStr);
-  const country = raw.split(' - ')[0].trim();
-  return HISTO_SLUGS[raw] || HISTO_SLUGS[country] || null;
-}
+// Matching de noms d'équipes : normalisé + tokens + fuzzy (translittération)
 function histoNorm(s) {
-  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,'').trim().replace(/\s+/g,' ');
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-z0-9 ]/g,'').trim().replace(/\s+/g,' ');
+}
+function histoLev(a, b) {
+  const m=a.length, n=b.length;
+  if(!m) return n; if(!n) return m;
+  const dp = Array.from({length:m+1},(_,i)=>[i]);
+  for(let j=0;j<=n;j++) dp[0][j]=j;
+  for(let i=1;i<=m;i++) for(let j=1;j<=n;j++){
+    const c = a[i-1]===b[j-1]?0:1;
+    dp[i][j] = Math.min(dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1][j-1]+c);
+  }
+  return dp[m][n];
 }
 function histoTeamsMatch(a, b) {
   const na = histoNorm(a), nb = histoNorm(b);
-  return na === nb || na.includes(nb) || nb.includes(na);
-}
-function histoFmtDate(d) {
-  const days = ['dim','lun','mar','mer','jeu','ven','sam'];
-  const months = ['jan','fév','mar','avr','mai','juin','juil','août','sept','oct','nov','déc'];
-  return `${days[d.getDay()]} ${d.getDate()} ${months[d.getMonth()]}`;
-}
-function histoCompare(pred, hs, as) {
-  const p = (pred||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[*_]/g,'').trim();
-  const total = hs + as;
-  let m;
-  m = p.match(/plus de (\d+[.,]?\d*)\s*buts?/);
-  if (m) { const t = parseFloat(m[1].replace(',','.')); return total > t ? 'correct' : 'incorrect'; }
-  m = p.match(/moins de (\d+[.,]?\d*)\s*buts?/);
-  if (m) { const t = parseFloat(m[1].replace(',','.')); return total < t ? 'correct' : 'incorrect'; }
-  if (p.includes('btts') || p.includes('deux equipes marquent') || p.includes('les deux equipes marquent')) {
-    const both = hs > 0 && as > 0;
-    if (p.includes('non')) return !both ? 'correct' : 'incorrect';
-    return both ? 'correct' : 'incorrect';
+  if (!na || !nb) return false;
+  if (na === nb) return true;
+  if (na.includes(nb) || nb.includes(na)) return true;
+  // tokens sans articles/préfixes courants
+  const stop = new Set(['al','fc','sc','cf','ac','ss','club','de','del','la','el','the','cd']);
+  const ta = na.split(' ').filter(t=>!stop.has(t) && t.length>=3);
+  const tb = nb.split(' ').filter(t=>!stop.has(t) && t.length>=3);
+  if (ta.length && tb.length) {
+    const [short,long] = ta.length<=tb.length?[ta,tb]:[tb,ta];
+    if (short.every(t => long.includes(t))) return true;
   }
-  if (p.includes('double chance')) {
-    if (p.includes('1x')) return hs >= as ? 'correct' : 'incorrect';
-    if (p.includes('x2')) return as >= hs ? 'correct' : 'incorrect';
-    if (p.includes('12')) return hs !== as ? 'correct' : 'incorrect';
-  }
-  if (p.includes('victoire domicile')) return hs > as ? 'correct' : 'incorrect';
-  if (p.includes('victoire exterieur')) return as > hs ? 'correct' : 'incorrect';
-  if (p.includes('match nul') || p === 'nul') return hs === as ? 'correct' : 'incorrect';
-  return null;
+  // fuzzy : distance d'édition faible (translittération proche)
+  const ca = na.replace(/ /g,''), cb = nb.replace(/ /g,'');
+  const minLen = Math.min(ca.length, cb.length);
+  if (minLen >= 5 && histoLev(ca, cb) <= Math.max(1, Math.floor(minLen/4))) return true;
+  return false;
 }
-async function histoGetScoreboard(slug, dateESPN) {
-  const key = `${slug}|${dateESPN}`;
-  if (HISTO_SB_CACHE[key] !== undefined) return HISTO_SB_CACHE[key];
+
+// Scoreboard sur une PLAGE de dates (±2 jours) + cache
+const HISTO_SB_CACHE = {};
+async function histoGetScoreboard(slug, dateRange) {
+  const key = slug + '|' + dateRange;
+  if (HISTO_SB_CACHE[key]) return HISTO_SB_CACHE[key];
+  const url = `https://site.web.api.espn.com/apis/site/v2/sports/soccer/${slug}/scoreboard?dates=${dateRange}`;
   try {
-    const r = await fetch(`https://site.web.api.espn.com/apis/site/v2/sports/soccer/${slug}/scoreboard?dates=${dateESPN}`);
+    const r = await fetch(url);
+    if (!r.ok) { HISTO_SB_CACHE[key] = []; return []; }
     const d = await r.json();
-    HISTO_SB_CACHE[key] = d.events || [];
-  } catch(e) { HISTO_SB_CACHE[key] = []; }
-  return HISTO_SB_CACHE[key];
+    const events = d.events || [];
+    HISTO_SB_CACHE[key] = events;
+    return events;
+  } catch(e) { HISTO_SB_CACHE[key] = []; return []; }
 }
+
+// Trouve le résultat d'un match dans les events (home/away dans les deux sens)
 function histoFindResult(events, homeTeam, awayTeam) {
   for (const ev of events) {
-    for (const c of (ev.competitions || [])) {
-      const cs = c.competitors || [];
-      const eh = cs.find(x => x.homeAway === 'home');
-      const ea = cs.find(x => x.homeAway === 'away');
-      if (!eh || !ea) continue;
-      const ehName = eh.team && (eh.team.displayName || eh.team.shortDisplayName);
-      const eaName = ea.team && (ea.team.displayName || ea.team.shortDisplayName);
-      const normal = histoTeamsMatch(homeTeam, ehName) && histoTeamsMatch(awayTeam, eaName);
-      const swapped = histoTeamsMatch(homeTeam, eaName) && histoTeamsMatch(awayTeam, ehName);
-      if (!normal && !swapped) continue;
-      const completed = c.status && c.status.type && c.status.type.completed;
-      const rh = swapped ? ea : eh;
-      const ra = swapped ? eh : ea;
-      return { completed, homeScore: parseInt(rh.score), awayScore: parseInt(ra.score) };
-    }
+    const c = ev.competitions && ev.competitions[0];
+    if (!c) continue;
+    const cs = c.competitors || [];
+    const eh = cs.find(x => x.homeAway === 'home');
+    const ea = cs.find(x => x.homeAway === 'away');
+    if (!eh || !ea) continue;
+    const eHome = eh.team.displayName, eAway = ea.team.displayName;
+    const orderOk  = histoTeamsMatch(homeTeam, eHome) && histoTeamsMatch(awayTeam, eAway);
+    const swapOk   = histoTeamsMatch(homeTeam, eAway) && histoTeamsMatch(awayTeam, eHome);
+    if (!orderOk && !swapOk) continue;
+    const completed = !!(c.status && c.status.type && c.status.type.completed);
+    const hs = orderOk ? Number(eh.score) : Number(ea.score);
+    const as = orderOk ? Number(ea.score) : Number(eh.score);
+    return { completed, homeScore: hs, awayScore: as };
   }
   return null;
 }
+
+// Construit une plage YYYYMMDD-YYYYMMDD de ±2 jours autour d'une date
+function histoDateRange(d, pad=2) {
+  const fmt = x => x.toISOString().slice(0,10).replace(/-/g,'');
+  const s = new Date(d); s.setDate(s.getDate()-pad);
+  const e = new Date(d); e.setDate(e.getDate()+pad);
+  return `${fmt(s)}-${fmt(e)}`;
+}
+
 async function loadHistorique() {
   const body = document.getElementById('histoBody');
   body.innerHTML = `<div class="champ-loading"><div class="spinner"></div>Chargement de l'historique...</div>`;
@@ -1986,7 +1949,7 @@ async function loadHistorique() {
   const results = [];
   await Promise.all(days.map(async (d) => {
     const iso = d.toISOString().slice(0, 10);
-    const dateESPN = iso.replace(/-/g, '');
+    const dateRange = histoDateRange(d, 2);   // ← PLAGE au lieu d'une date unique
     try {
       const r = await fetch('./' + encodeURIComponent(`prédiction-${iso}-analyse-ia.json`));
       if (!r.ok) return;
@@ -1994,17 +1957,14 @@ async function loadHistorique() {
       const details = (data.statistiques_brutes_avec_ia_hors_montecarlo && data.statistiques_brutes_avec_ia_hors_montecarlo.details) || [];
       const matches = [];
       for (const det of details) {
-  const slug = histoSlug(det.league || det.country_fr);
-  let result = null;
-  let dbg = `league="${det.league}" slug=${slug}`;
-  if (slug) {
-    const events = await histoGetScoreboard(slug, dateESPN);
-    dbg += ` events=${events.length}`;
-    result = histoFindResult(events, det.HomeTeam, det.AwayTeam);
-    dbg += ` result=${result ? result.homeScore+'-'+result.awayScore : 'null'}`;
-  }
-  matches.push({ det, result, _dbg: dbg });
-}
+        const slug = histoSlug(det.league || det.country_fr);
+        let result = null;
+        if (slug) {
+          const events = await histoGetScoreboard(slug, dateRange);
+          result = histoFindResult(events, det.HomeTeam, det.AwayTeam);
+        }
+        matches.push({ det, result });
+      }
       results.push({ date: d, matches });
     } catch(e) {}
   }));
