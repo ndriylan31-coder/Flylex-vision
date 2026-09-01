@@ -2219,7 +2219,7 @@ def get_match_stats(game_id):
         return {}
 
 # 🧠 Fonction DeepSeek avec alternance automatique des clés et retry automatique (VERSION AMÉLIORÉE)
-def call_deepseek_analysis(prompt, max_retries=5):
+def call_deepseek_analysis(prompt, max_retries=5, temperature=0.5):
     global groq_key_index
 
     for attempt in range(1, max_retries + 1):
