@@ -3385,6 +3385,25 @@ def get_today_matches_filtered():
         print(f"\n📊 Total analysé : {len(résultats)} matchs | Retenus : {len(top_7)} matchs (top fiabilité)")
         for i, r in enumerate(top_7, 1):
             print(f"  {i}. {r.get('HomeTeam','?')} vs {r.get('AwayTeam','?')} — {r.get('confiance_pourcentage','N/A')}%")
+    if résultats:
+        # 🔢 Étape 1 : Sélection des 7 matchs les plus fiables
+        avec_confiance = [r for r in résultats if r.get('confiance_pourcentage') is not None]
+        sans_confiance = [r for r in résultats if r.get('confiance_pourcentage') is None]
+        triés = sorted(avec_confiance, key=lambda x: x['confiance_pourcentage'], reverse=True)
+        top_7 = triés[:7]
+        if len(top_7) < 7 and sans_confiance:
+            top_7.extend(sans_confiance[:7 - len(top_7)])
+
+        print(f"\n📊 Total analysé : {len(résultats)} matchs | Retenus : {len(top_7)} matchs (top fiabilité)")
+        for i, r in enumerate(top_7, 1):
+            print(f"  {i}. {r.get('HomeTeam','?')} vs {r.get('AwayTeam','?')} — {r.get('confiance_pourcentage','N/A')}%")
+
+        # 🔬 Étape 2 : Seconde analyse approfondie sur les 7 retenus
+        if top_7:
+            top_7 = analyse_profonde_top7(top_7)
+
+        chemin = sauvegarder_stats_brutes_json(top_7, today)
+        git_commit_and_push(chemin)
         chemin = sauvegarder_stats_brutes_json(top_7, today)
         git_commit_and_push(chemin)
 
