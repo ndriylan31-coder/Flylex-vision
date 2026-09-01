@@ -3809,6 +3809,94 @@ def process_team(team_name, return_data=False):
     return data if return_data else None
 
 # ✅ MODIFIÉ : Fonction de sauvegarde avec NOUVEAU nom de fichier simple
+def generate_prompt_analyse_profonde(prediction_obj):
+    """Prompt concentré pour la seconde analyse : inclut la 1re analyse + données clés pour affiner."""
+    home = prediction_obj["HomeTeam"]
+    away = prediction_obj["AwayTeam"]
+    sh = prediction_obj["stats_home"]
+    sa = prediction_obj["stats_away"]
+    odds = prediction_obj.get("odds", {})
+    pos_h = prediction_obj.get("classement_home")
+    pts_h = prediction_obj.get("points_classement_home")
+    pos_a = prediction_obj.get("classement_away")
+    pts_a = prediction_obj.get("points_classement_away")
+    league = prediction_obj["league"]
+    date = prediction_obj["date"]
+    premiere = prediction_obj.get("analyse_ia", "")
+    conf_init = prediction_obj.get("confiance_pourcentage")
+    pred_init = prediction_obj.get("prediction_principale")
+    probs_mc = prediction_obj.get("Probabilites", {})
+
+    prompt = f"""
+ANALYSE APPROFONDIE - SECONDE PASSE - {date}
+{league}
+{home} (DOMICILE) vs {away} (EXTÉRIEUR)
+
+📊 DONNÉES CLÉS :
+- {home} : {pos_h}ᵉ ({pts_h} pts) | Buts {sh['moyenne_marques']:.2f}/{sh['moyenne_encaisses']:.2f} | Forme 6 : {' '.join(sh['form_6'])} ({sh.get('total_points_6',0)} pts)
+- {away} : {pos_a}ᵉ ({pts_a} pts) | Buts {sa['moyenne_marques']:.2f}/{sa['moyenne_encaisses']:.2f} | Forme 6 : {' '.join(sa['form_6'])} ({sa.get('total_points_6',0)} pts)
+
+🎲 COTES : {json.dumps(odds, ensure_ascii=False) if odds else 'N/A'}
+📈 MONTE-CARLO (20000 sim) : {json.dumps(probs_mc, ensure_ascii=False) if probs_mc else 'N/A'}
+
+📝 PREMIÈRE ANALYSE IA :
+{premiere}
+
+🎯 PREMIÈRE PRÉDICTION : {pred_init} (confiance {conf_init}%)
+═══ MISSION SECONDE ANALYSE ═══
+Tu as la 1re analyse + TOUTES les données. Mission :
+1. CONFIRMER ou CORRIGER la 1re prédiction — raisonnement précis et concentré.
+2. Focus sur les 3-4 facteurs les plus décisifs (forme, classement, H2H, cotes).
+3. Proposer UNE prédiction finale parmi : victoire domicile, victoire extérieur, +2.5 buts, -2.5 buts, BTTS oui, BTTS non, double chance (1X ou X2).
+4. Ne JAMAIS prédire 'match nul' — utilise 'double chance 1X' ou 'double chance X2'.
+5. Donner un POURCENTAGE DE CONFIANCE FINAL (0-100%).
+
+Format OBLIGATOIRE :
+PRÉDICTION FINALE : [ta prédiction]
+CONFIANCE : [XX]%
+SCORES PROBABLES : [score1, score2]
+RAISONNEMENT : [3-4 lignes max, facteurs décisifs uniquement]
+"""
+    return prompt
+
+
+def analyse_profonde_top7(top_7):
+    """Seconde analyse IA ciblée sur les 7 matchs les plus fiables pour affiner la précision."""
+    print(f"\n{'='*60}")
+    print(f"🔬 SECONDE ANALYSE APPROFONDIE sur {len(top_7)} matchs (top fiabilité)")
+    print(f"{'='*60}")
+
+    for i, pred in enumerate(top_7, 1):
+        home = pred.get("HomeTeam", "?")
+        away = pred.get("AwayTeam", "?")
+        print(f"\n🔍 [{i}/{len(top_7)}] Seconde analyse : {home} vs {away}")
+
+        prompt = generate_prompt_analyse_profonde(pred)
+        # temperature=0.3 → plus déterministe et précis
+        analyse_profonde = call_deepseek_analysis(prompt, max_retries=5, temperature=0.3)
+
+        confiance_finale = extract_confidence_percentage(analyse_profonde)
+        prediction_finale = extract_prediction_principale(analyse_profonde)
+        scores_finaux = extract_scores_probables(analyse_profonde)
+
+        # Stocker la seconde analyse sans écraser la première
+        pred["analyse_ia_profonde"] = analyse_profonde
+        pred["confiance_pourcentage_final"] = confiance_finale
+        pred["prediction_principale_finale"] = prediction_finale
+        pred["scores_probables_finaux"] = scores_finaux
+
+        # La confiance finale devient la référence principale
+        if confiance_finale is not None:
+            pred["confiance_pourcentage"] = confiance_finale
+        if prediction_finale:
+            pred["prediction_principale"] = prediction_finale
+
+        print(f"  ✅ Confiance finale : {confiance_finale}% | Prédiction : {prediction_finale}")
+
+        import time as _time
+        _time.sleep(2)  # anti-429
+
+    return top_7
 def sauvegarder_stats_brutes_json(predictions_simples, date_str):
     total_predictions = len(predictions_simples)
 
