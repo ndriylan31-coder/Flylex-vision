@@ -2879,6 +2879,41 @@ def extract_scores_probables(analyse_ia):
             scores = match.group(1).strip()
             print(f"⚽ Scores probables extraits (format **) : {scores}")
             return scores
+def extract_mi_temps(analyse_ia):
+    """Extrait la prédiction mi-temps de l'analyse IA"""
+    if not analyse_ia or isinstance(analyse_ia, str) and analyse_ia.startswith("❌"):
+        return None
+    patterns = [
+        r'\*\*MI[-\s]?TEMPS\*\*\s*:\s*([^\n\r]+)',
+        r'MI[-\s]?TEMPS\s*:\s*([^\n\r]+)',
+        r'Mi[-\s]?temps\s*:\s*([^\n\r]+)',
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, analyse_ia, re.IGNORECASE)
+        if match:
+            mi_temps = match.group(1).strip()
+            print(f"⏱️ Mi-temps extraite : {mi_temps}")
+            return mi_temps
+    print("⚠️ Prédiction mi-temps non trouvée")
+    return None
+
+def extract_option_nul(analyse_ia):
+    """Extrait l'option risque nul de l'analyse IA"""
+    if not analyse_ia or isinstance(analyse_ia, str) and analyse_ia.startswith("❌"):
+        return None
+    patterns = [
+        r'\*\*OPTION RISQUE NUL\*\*\s*:\s*([^\n\r]+)',
+        r'OPTION RISQUE NUL\s*:\s*([^\n\r]+)',
+        r'Option risque nul\s*:\s*([^\n\r]+)',
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, analyse_ia, re.IGNORECASE)
+        if match:
+            option = match.group(1).strip()
+            print(f"🎲 Option risque nul extraite : {option}")
+            return option
+    print("⚠️ Option risque nul non trouvée")
+    return None
     
     # Puis essayer les patterns simples
     for pattern in patterns_simple:
