@@ -3838,6 +3838,8 @@ def compare_teams_basic_stats(
     prediction_obj["corners_prevu"] = corners_prevu  # ✅ Gardé mais IA ne prédit plus
     prediction_obj["tirs_cadres_prevu"] = tirs_cadres_prevu  # ✅ Gardé mais IA ne prédit plus
     prediction_obj["scores_probables"] = scores_probables  # ✅ Nouveau champ
+    prediction_obj["mi_temps"] = extract_mi_temps(analyse_ia)
+    prediction_obj["option_nul"] = extract_option_nul(analyse_ia)
     
     print(f"\n🧠 Analyse IA DeepSeek :\n{'='*60}")
     print(analyse_ia)
