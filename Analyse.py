@@ -2237,7 +2237,7 @@ def call_deepseek_analysis(prompt, max_retries=5, temperature=0.5):
                 {"role": "system", "content": "Tu es un expert en paris sportifs. Ton rôle est de faire une analyse complète du match en fonction des données fournies, puis de proposer UNE prédiction fiable parmi : victoire domicile, victoire extérieur, +2.5 buts, -2.5 buts, BTTS oui, BTTS non, double chance (1X ou X2). Tu dois aussi donner un pourcentage de confiance (0-100%) et les 2 scores les plus probables. ATTENTION : Ne jamais prédire 'match nul' - utilise plutôt 'double chance 1X' ou 'double chance X2'. Ta mission Faire la prédiction la plus probable et précise."},
                 {"role": "user", "content": prompt}
             ],
-            "temperature": 0.5
+            "temperature": temperature
         }
 
         try:
