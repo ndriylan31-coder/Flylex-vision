@@ -2634,7 +2634,9 @@ MISSION :
 8. Prédiction finale claire : UNE SEULE recommandation parmi :
    - "Victoire domicile" ({home})
    - "Victoire extérieur" ({away})
+   - "Plus de 1.5 buts"
    - "Plus de 2.5 buts"
+   - "Moins de 1.5 buts"
    - "Moins de 2.5 buts"
    - "BTTS oui" (Both Teams To Score)
    - "BTTS non"
@@ -2644,9 +2646,16 @@ MISSION :
 9. ✨ NOUVEAUTÉS OBLIGATOIRES :
    - POURCENTAGE DE CONFIANCE (0-100%) pour ta prédiction principale
    - LES 2 SCORES LES PLUS PROBABLES (ex: "1-0 ou 2-1")
+   - PRÉDICTION MI-TEMPS parmi : "Mi-temps victoire domicile", "Mi-temps victoire extérieur", "Mi-temps match nul", "Mi-temps +1.5 buts", "Mi-temps -1.5 buts"
+   - OPTION RISQUE NUL : si le match est pressenti comme match nul (probabilité élevée de nul), indique "Match nul" suivi du pourcentage estimé. Sinon mets "Non applicable". Cette option ne remplace JAMAIS la prédiction principale.
+
+⚠️ RÈGLE DE SÉLECTION (fiabilité vs gain) :
+- Pour les buts : choisis +1.5 OU +2.5 (et -1.5 OU -2.5) selon ce qui est le plus fiable. Si forte proba de +2.5 → mets +2.5. Si +1.5 sûr mais +2.5 incertain → mets +1.5.
+- Pour les résultats : si une équipe est clairement favorite → "Victoire domicile/extérieur". Si match serré → "Double chance 1X" ou "X2". Ne JAMAIS prédire "Match nul" comme prédiction principale.
+- L'OPTION RISQUE NUL est une exception : elle s'affiche en dessous pour les matchs pressentis nuls, comme précision de choix à risque.
 
 ⚠️ IMPORTANT : 
-- Ne JAMAIS prédire "Match nul" - utilise "Double chance 1X" ou "Double chance X2" à la place.
+- Ne JAMAIS prédire "Match nul" comme prédiction principale - utilise "Double chance 1X" ou "Double chance X2" à la place.
 
 Justifie ta prédiction avec toutes les données statistiques fournies, en tenant compte particulièrement des matchs récents détaillés avec leurs statistiques complètes, du contexte du classement, des confrontations directes avec leurs stats détaillées.
 
@@ -2654,6 +2663,8 @@ FORMAT DE RÉPONSE OBLIGATOIRE :
 - PRÉDICTION PRINCIPALE : [ta prédiction]
 - CONFIANCE : [X]%
 - SCORES PROBABLES : [Score1] ou [Score2]
+- MI-TEMPS : [ta prédiction mi-temps]
+- OPTION RISQUE NUL : [Match nul - X%] ou [Non applicable]
 - JUSTIFICATION : [ton analyse détaillée]
 """
     return prompt
