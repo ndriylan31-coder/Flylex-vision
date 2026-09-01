@@ -3945,6 +3945,16 @@ def analyse_profonde_top7(top_7):
         confiance_finale = extract_confidence_percentage(analyse_profonde)
         prediction_finale = extract_prediction_principale(analyse_profonde)
         scores_finaux = extract_scores_probables(analyse_profonde)
+        mi_temps_final = extract_mi_temps(analyse_profonde)
+        option_nul_finale = extract_option_nul(analyse_profonde)
+
+        pred["mi_temps_final"] = mi_temps_final
+        pred["option_nul_final"] = option_nul_finale
+
+        if mi_temps_final:
+            pred["mi_temps"] = mi_temps_final
+        if option_nul_finale and option_nul_finale.lower() != "non applicable":
+            pred["option_nul"] = option_nul_finale
 
         # Stocker la seconde analyse sans écraser la première
         pred["analyse_ia_profonde"] = analyse_profonde
