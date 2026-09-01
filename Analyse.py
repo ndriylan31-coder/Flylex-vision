@@ -3373,7 +3373,19 @@ def get_today_matches_filtered():
                         FAILED_TEAMS.add(away_api)
 
     if résultats:
-        chemin = sauvegarder_stats_brutes_json(résultats, today)
+        # 🔢 Limite à 7 matchs/jour : on garde les plus fiables (confiance la plus élevée)
+        avec_confiance = [r for r in résultats if r.get('confiance_pourcentage') is not None]
+        sans_confiance = [r for r in résultats if r.get('confiance_pourcentage') is None]
+        # Tri décroissant par confiance
+        triés = sorted(avec_confiance, key=lambda x: x['confiance_pourcentage'], reverse=True)
+        top_7 = triés[:7]
+        # Compléter si moins de 7 avec confiance
+        if len(top_7) < 7 and sans_confiance:
+            top_7.extend(sans_confiance[:7 - len(top_7)])
+        print(f"\n📊 Total analysé : {len(résultats)} matchs | Retenus : {len(top_7)} matchs (top fiabilité)")
+        for i, r in enumerate(top_7, 1):
+            print(f"  {i}. {r.get('HomeTeam','?')} vs {r.get('AwayTeam','?')} — {r.get('confiance_pourcentage','N/A')}%")
+        chemin = sauvegarder_stats_brutes_json(top_7, today)
         git_commit_and_push(chemin)
 
     if FAILED_TEAMS:
