@@ -1,0 +1,2816 @@
+{
+  "metadata": {
+    "date_generation": "2026-09-27 01:09:16",
+    "date_matchs": "2026-09-27",
+    "version_algorithme": "8.3 - STATISTIQUES BRUTES + FORMES 6/10 + POINTS CLASSEMENT + COTES + ANALYSE IA DEEPSEEK ENRICHIE + MATCHS COMPLETS AVEC STATS DÉTAILLÉES + CLASSEMENT COMPLET + H2H ENRICHI AVEC STATS + CONFIANCE EXTRAITE + SCORES + RETRY IA + EXTRACTION AMÉLIORÉE 2 FORMATS + PROBABILITÉS MONTE-CARLO (NON INCLUSES DANS PROMPT IA)",
+    "total_predictions": 6,
+    "mode": "stats_brutes_avec_cotes_et_ia_complete_enrichie_retry_nouvelle_structure_avec_stats_detaillees_h2h_enrichi_confiance_extraite_scores_extraction_amelioree_2_formats_montecarlo_hors_prompt",
+    "note": "Collecte des statistiques brutes complètes : moyennes, formes récentes (6 et 10 matchs), séries domicile/extérieur, classements avec points + cotes des bookmakers + analyse IA DeepSeek ENRICHIE avec matchs détaillés (nouvelle structure objet avec game_id, date, home_team, away_team, score, status, competition + STATS DÉTAILLÉES ESPN) + classement complet + confrontations directes H2H élargies AVEC STATS DÉTAILLÉES + pourcentage confiance EXTRAIT AUTOMATIQUEMENT + 2 scores probables + retry automatique IA + suppression 'match nul' + EXTRACTION AMÉLIORÉE support des 2 formats (**FORMAT** et FORMAT simple) + PROBABILITÉS MONTE-CARLO autonomes (calculées mais NON incluses dans le prompt IA)",
+    "ia_model": "deepseek-r1-distill-llama-70b",
+    "groq_keys_count": 2,
+    "monte_carlo": {
+      "enabled": true,
+      "iterations": 20000,
+      "calibrage": "moyennes_internationales + statistiques_équipes + ajustement_h2h",
+      "probabilites_calculees": [
+        "1x2",
+        "double_chance",
+        "over_under",
+        "btts",
+        "resultat_total",
+        "scores_probables"
+      ],
+      "inclus_dans_prompt_ia": false
+    },
+    "nouveautes_v8_3_modifiees": [
+      "🎲 Module de probabilités Monte-Carlo intégré (20 000 simulations)",
+      "🔢 Calibrage avec moyennes internationales FIFA/UEFA",
+      "🆚 Ajustement automatique selon les confrontations H2H",
+      "📊 Probabilités 1X2, Double Chance, Over/Under (0.5→5.5), BTTS",
+      "🎯 Scores exacts les plus probables calculés statistiquement",
+      "❌ MODIFICIATION : Probabilités Monte-Carlo NON incluses dans le prompt IA",
+      "❌ MODIFICIATION : IA ne prédit plus corners et tirs cadrés (champs gardés dans structure)",
+      "📁 MODIFICIATION : Nom de fichier simplifié prédiction-YYYY-MM-DD-analyse-ia.json",
+      "✅ Maintien de toutes les autres fonctionnalités avancées v8.2"
+    ]
+  },
+  "statistiques_brutes_avec_ia_hors_montecarlo": {
+    "count": 6,
+    "details": [
+      {
+        "id": 2,
+        "HomeTeam": "Fortaleza",
+        "AwayTeam": "Athletic",
+        "date": "27 septembre 2026 à 21:30:00 UTC",
+        "league": "Brazil - Serie B",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.3,
+          "moyenne_encaisses": 0.7,
+          "form_6": [
+            "W",
+            "D",
+            "W",
+            "W",
+            "D",
+            "W"
+          ],
+          "form_10": [
+            "W",
+            "D",
+            "W",
+            "W",
+            "D",
+            "W",
+            "D",
+            "D",
+            "D",
+            "W"
+          ],
+          "recent_form": [
+            "W",
+            "D",
+            "W",
+            "W",
+            "D",
+            "W"
+          ],
+          "total_points_6": 14,
+          "total_points_10": 20,
+          "total_points": 14,
+          "serie_domicile": [
+            "D",
+            "W",
+            "D",
+            "D",
+            "W"
+          ],
+          "buts_dom_marques": 7,
+          "buts_dom_encaisses": 5,
+          "buts_ext_marques": 6,
+          "buts_ext_encaisses": 2,
+          "total_marques": 13,
+          "total_encaisses": 7
+        },
+        "stats_away": {
+          "moyenne_marques": 1.6,
+          "moyenne_encaisses": 1.4,
+          "form_6": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "form_10": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "L",
+            "L",
+            "L",
+            "W",
+            "W",
+            "D"
+          ],
+          "recent_form": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "total_points_6": 7,
+          "total_points_10": 14,
+          "total_points": 7,
+          "serie_exterieur": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "D"
+          ],
+          "buts_dom_marques": 9,
+          "buts_dom_encaisses": 7,
+          "buts_ext_marques": 7,
+          "buts_ext_encaisses": 7,
+          "total_marques": 16,
+          "total_encaisses": 14
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401860348",
+            "date": "Sun, Sep 20",
+            "home_team": "Londrina",
+            "away_team": "Fortaleza",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860348"
+          },
+          {
+            "game_id": "401860341",
+            "date": "Sun, Sep 13",
+            "home_team": "Fortaleza",
+            "away_team": "Ceará",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860341"
+          },
+          {
+            "game_id": "401860331",
+            "date": "Wed, Sep 09",
+            "home_team": "Fortaleza",
+            "away_team": "Avaí",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860331"
+          },
+          {
+            "game_id": "401860319",
+            "date": "Sat, Sep 05",
+            "home_team": "Goiás",
+            "away_team": "Fortaleza",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860319"
+          },
+          {
+            "game_id": "401860311",
+            "date": "Mon, Aug 31",
+            "home_team": "Fortaleza",
+            "away_team": "Operário PR",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860311"
+          },
+          {
+            "game_id": "401860298",
+            "date": "Sun, Aug 23",
+            "home_team": "Criciúma",
+            "away_team": "Fortaleza",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860298"
+          },
+          {
+            "game_id": "401860287",
+            "date": "Wed, Aug 19",
+            "home_team": "Fortaleza",
+            "away_team": "São Bernardo",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860287"
+          },
+          {
+            "game_id": "401860276",
+            "date": "Sat, Aug 15",
+            "home_team": "Juventude",
+            "away_team": "Fortaleza",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860276"
+          },
+          {
+            "game_id": "401860268",
+            "date": "Sun, Aug 09",
+            "home_team": "Cuiabá",
+            "away_team": "Fortaleza",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860268"
+          },
+          {
+            "game_id": "401874099",
+            "date": "Thu, Aug 06",
+            "home_team": "Fortaleza",
+            "away_team": "Palmeiras",
+            "score": "3 - 2",
+            "status": "FT",
+            "competition": "Copa do Brasil",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401874099"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401860342",
+            "date": "Sat, Sep 19",
+            "home_team": "Athletic",
+            "away_team": "Botafogo-SP",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860342"
+          },
+          {
+            "game_id": "401860340",
+            "date": "Sun, Sep 13",
+            "home_team": "Juventude",
+            "away_team": "Athletic",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860340"
+          },
+          {
+            "game_id": "401860327",
+            "date": "Tue, Sep 08",
+            "home_team": "Cuiabá",
+            "away_team": "Athletic",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860327"
+          },
+          {
+            "game_id": "401860320",
+            "date": "Fri, Sep 04",
+            "home_team": "Athletic",
+            "away_team": "Vila Nova",
+            "score": "5 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860320"
+          },
+          {
+            "game_id": "401860310",
+            "date": "Fri, Aug 28",
+            "home_team": "Náutico",
+            "away_team": "Athletic",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860310"
+          },
+          {
+            "game_id": "401860301",
+            "date": "Mon, Aug 24",
+            "home_team": "Athletic",
+            "away_team": "Novorizontino",
+            "score": "1 - 4",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860301"
+          },
+          {
+            "game_id": "401860286",
+            "date": "Thu, Aug 20",
+            "home_team": "Athletic",
+            "away_team": "CRB",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860286"
+          },
+          {
+            "game_id": "401860281",
+            "date": "Sun, Aug 16",
+            "home_team": "América Mineiro",
+            "away_team": "Athletic",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860281"
+          },
+          {
+            "game_id": "401860262",
+            "date": "Sun, Aug 09",
+            "home_team": "Athletic",
+            "away_team": "Criciúma",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860262"
+          },
+          {
+            "game_id": "401860261",
+            "date": "Tue, Jul 28",
+            "home_team": "Ponte Preta",
+            "away_team": "Athletic",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401860261"
+          }
+        ],
+        "classement": {
+          "Fortaleza": null,
+          "Athletic": null
+        },
+        "classement_complet": [],
+        "confrontations_saison_derniere": [],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/6272.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/20851.png",
+        "classement_home": null,
+        "classement_away": null,
+        "points_classement_home": null,
+        "points_classement_away": null,
+        "nom_classement_home": null,
+        "nom_classement_away": null,
+        "country_fr": "Brazil - Serie B",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.418,
+            "lambda_away": 1.197,
+            "ajustement_h2h": false
+          },
+          "1x2": {
+            "V1": 41.91,
+            "X": 25.81,
+            "V2": 32.28
+          },
+          "double_chance": {
+            "1X": 67.72,
+            "12": 74.19,
+            "X2": 58.09
+          },
+          "over_under": {
+            "plus_de_0.5": 92.76,
+            "moins_de_0.5": 7.24,
+            "plus_de_1.5": 73.57,
+            "moins_de_1.5": 26.43,
+            "plus_de_2.5": 49.0,
+            "moins_de_2.5": 51.0,
+            "plus_de_3.5": 26.64,
+            "moins_de_3.5": 73.36,
+            "plus_de_4.5": 12.44,
+            "moins_de_4.5": 87.56,
+            "plus_de_5.5": 4.88,
+            "moins_de_5.5": 95.12
+          },
+          "btts": {
+            "oui": 52.82,
+            "non": 47.18
+          },
+          "resultat_total": {
+            "V1et+0.5": 41.91,
+            "1Xet+0.5": 60.48,
+            "V2et+0.5": 32.28,
+            "V1et+1.5": 31.65,
+            "1Xet+1.5": 50.22,
+            "V2et+1.5": 23.36,
+            "V1et+2.5": 24.54,
+            "1Xet+2.5": 30.88,
+            "V2et+2.5": 18.11,
+            "V1et+3.5": 12.0,
+            "1Xet+3.5": 18.35,
+            "V2et+3.5": 8.29,
+            "V1et+4.5": 6.64,
+            "1Xet+4.5": 7.81,
+            "V2et+4.5": 4.62,
+            "V1et+5.5": 2.18,
+            "1Xet+5.5": 3.36,
+            "V2et+5.5": 1.53
+          },
+          "scores_probables": {
+            "1-1": 12.22,
+            "1-0": 10.26,
+            "2-1": 8.96,
+            "0-1": 8.92,
+            "1-2": 7.44,
+            "0-0": 7.24,
+            "2-0": 7.11,
+            "0-2": 5.24,
+            "2-2": 5.18,
+            "3-1": 4.08
+          },
+          "buts_moyens_simules": {
+            "home": 1.41,
+            "away": 1.2,
+            "total": 2.62
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Plus de 1.5 buts  \n**CONFIANCE** : 78%  \n**SCORES PROBABLES** : 2‑1 ou 1‑1  \n**MI‑TEMPS** : Mi‑temps match nul (0‑0)  \n**OPTION RISQUE NUL** : Match nul – 33%  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative des équipes**  \n- **Fortaleza (domicile)** : moyenne 1,30 buts marqués et 0,70 buts encaissés. La défense est l’une des plus solides de la Série B (moins d’un but concédé en moyenne). En 10 matchs à domicile, ils n’ont encaissé que 5 buts (0,5 bpg) et ont marqué 7 (0,7 bpg).  \n- **Athletic (extérieur)** : moyenne 1,60 buts marqués et 1,40 buts encaissés. Loin d’être une défense fiable (plus d’un but concédé par match) mais capable de marquer, même à l’extérieur.\n\n**2. Impact du facteur domicile/extérieur**  \nFortaleza bénéficie d’un avantage maison évident : ils ne concèdent que 0,70 buts en moyenne à domicile, alors que les équipes adverses en moyenne marquent 1,40 buts lorsqu’elles viennent à l’extérieur (statistique d’Athletic). Cette asymétrie pousse le match vers un scénario où Fortaleza garde son but, mais Athletic a de bonnes chances de le trouver.\n\n**3. Forme récente**  \n- **Fortaleza** : 6 derniers matchs – W D W W D W (14 pts). Aucun revers récent, seulement deux nuls, tous à faible score (1‑1, 1‑1, 0‑0).  \n- **Athletic** : 6 derniers matchs – D W L W L L (7 pts). Deux victoires (dont 5‑0 à domicile, 2‑0 à l’extérieur) mais quatre défaites ou nuls, montrant une irrégularité offensive/defensive.\n\n**4. Tendances des 10 derniers matchs**  \n- **Fortaleza à domicile** : 7 buts marqués, 5 encaissés → total de 12 buts (1,2 buts/match). La plupart des rencontres se sont soldées par 0‑0, 1‑0 ou 1‑1.  \n- **Athletic à l’extérieur** : 7 buts marqués, 7 encaissés → total de 14 buts (1,4 buts/match). Les scores à l’extérieur varient de 5‑0 à 0‑4, mais la moyenne reste proche de 1,4 buts/match.\n\n**5. Probabilité de BTTS et de plus de 1.5 buts**  \n- **BTTS** : Fortaleza concède rarement (0,70), mais Athletic a une moyenne de 1,60 buts à l’extérieur. La probabilité que les deux équipes marquent dépasse les 60 %.  \n- **+1.5 buts** : La somme moyenne attendue (1,30 + 1,60 = 2,90 buts) indique que le seuil de 1,5 buts est très probable. Le seuil de 2,5 buts reste incertain à cause de la solidité défensive de Fortaleza.\n\n**6. Absence de classement complet et de H2H**  \nLe classement n’est pas fourni, mais la forme actuelle et les statistiques de buts montrent que Fortaleza est en meilleure dynamique que Athletic. Aucun affrontement direct n’est disponible, ce qui ne change pas la tendance observée.\n\n**7. Synthèse**  \n- Fortaleza a la capacité de garder sa cage inviolée, mais Athletic possède la puissance offensive suffisante pour marquer au moins une fois.  \n- Le total de buts attendu se situe autour de 2 buts, rendant le pari **+1.5 buts** le plus fiable.  \n- Le scénario le plus plausible en termes de score est 2‑1 (Athletic marque) ou 1‑1 (BTTS sans victoire nette).  \n- La mi‑temps devrait rester vierge (0‑0) compte tenu du rythme lent des buts à domicile de Fortaleza et de la tendance d’Athletic à marquer souvent en seconde période.\n\n**Conclusion** : Le pari le plus sûr, en équilibrant probabilité élevée et rendement, est **Plus de 1.5 buts** avec une confiance de **78 %**. La possibilité d’un match nul reste non négligeable (≈33 %), d’où l’option risque nul affichée.",
+        "confiance_pourcentage": 68,
+        "prediction_principale": "Plus de 1.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "2‑1 ou 1‑1",
+        "mi_temps": null,
+        "option_nul": "Match nul – 33%",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance 1X  \n**CONFIANCE** : 68%  \n**SCORES PROBABLES** : 1‑1, 1‑0  \n\n**RAISONNEMENT** :  \n- Monte‑Carlo indique 67,7 % de chances que Fortaleza ne perde pas (1X), bien au‑dessus des probabilités de victoire simple (42 %).  \n- La forme à domicile de Fortaleza (W D W W D W) et sa défense solide (0,70 buts encaissés/match) renforcent la probabilité d’au moins un point.  \n- Les scores les plus fréquents (1‑1, 1‑0) montrent un match à faible/moyen total de buts, compatible avec le double chance 1X.",
+        "confiance_pourcentage_final": 68,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "1‑1, 1‑0"
+      },
+      {
+        "id": 1,
+        "HomeTeam": "Fortaleza CEIF",
+        "AwayTeam": "Deportes Tolima",
+        "date": "27 septembre 2026 à 23:05:00 UTC",
+        "league": "Colombia - Primera A",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.1,
+          "moyenne_encaisses": 1.6,
+          "form_6": [
+            "L",
+            "D",
+            "D",
+            "L",
+            "D",
+            "L"
+          ],
+          "form_10": [
+            "L",
+            "D",
+            "D",
+            "L",
+            "D",
+            "L",
+            "W",
+            "L",
+            "D",
+            "D"
+          ],
+          "recent_form": [
+            "L",
+            "D",
+            "D",
+            "L",
+            "D",
+            "L"
+          ],
+          "total_points_6": 3,
+          "total_points_10": 8,
+          "total_points": 3,
+          "serie_domicile": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "D"
+          ],
+          "buts_dom_marques": 5,
+          "buts_dom_encaisses": 8,
+          "buts_ext_marques": 6,
+          "buts_ext_encaisses": 8,
+          "total_marques": 11,
+          "total_encaisses": 16
+        },
+        "stats_away": {
+          "moyenne_marques": 1.0,
+          "moyenne_encaisses": 1.3,
+          "form_6": [
+            "D",
+            "L",
+            "L",
+            "W",
+            "W",
+            "L"
+          ],
+          "form_10": [
+            "D",
+            "L",
+            "L",
+            "W",
+            "W",
+            "L",
+            "D",
+            "L",
+            "W",
+            "L"
+          ],
+          "recent_form": [
+            "D",
+            "L",
+            "L",
+            "W",
+            "W",
+            "L"
+          ],
+          "total_points_6": 7,
+          "total_points_10": 11,
+          "total_points": 7,
+          "serie_exterieur": [
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "buts_dom_marques": 7,
+          "buts_dom_encaisses": 7,
+          "buts_ext_marques": 3,
+          "buts_ext_encaisses": 6,
+          "total_marques": 10,
+          "total_encaisses": 13
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401878045",
+            "date": "Sun, Sep 20",
+            "home_team": "Fortaleza CEIF",
+            "away_team": "Atlético Junior",
+            "score": "1 - 4",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878045"
+          },
+          {
+            "game_id": "401878026",
+            "date": "Fri, Sep 11",
+            "home_team": "Jaguares de Córdoba",
+            "away_team": "Fortaleza CEIF",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878026"
+          },
+          {
+            "game_id": "401877843",
+            "date": "Sat, Sep 05",
+            "home_team": "Independiente Santa Fe",
+            "away_team": "Fortaleza CEIF",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877843"
+          },
+          {
+            "game_id": "401878055",
+            "date": "Wed, Sep 02",
+            "home_team": "Fortaleza CEIF",
+            "away_team": "Once Caldas",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878055"
+          },
+          {
+            "game_id": "401878025",
+            "date": "Wed, Aug 26",
+            "home_team": "Boyacá Chicó FC",
+            "away_team": "Fortaleza CEIF",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878025"
+          },
+          {
+            "game_id": "401878016",
+            "date": "Sun, Aug 23",
+            "home_team": "Fortaleza CEIF",
+            "away_team": "Atlético Nacional",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878016"
+          },
+          {
+            "game_id": "401877866",
+            "date": "Sat, Aug 08",
+            "home_team": "Fortaleza CEIF",
+            "away_team": "Cúcuta Deportivo",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877866"
+          },
+          {
+            "game_id": "401878000",
+            "date": "Tue, Aug 04",
+            "home_team": "Llaneros FC",
+            "away_team": "Fortaleza CEIF",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878000"
+          },
+          {
+            "game_id": "401877856",
+            "date": "Sat, Aug 01",
+            "home_team": "Fortaleza CEIF",
+            "away_team": "Deportivo Pereira",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877856"
+          },
+          {
+            "game_id": "401877853",
+            "date": "Sun, Jul 26",
+            "home_team": "Alianza FC",
+            "away_team": "Fortaleza CEIF",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877853"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401878037",
+            "date": "Sun, Sep 20",
+            "home_team": "Deportes Tolima",
+            "away_team": "América de Cali",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878037"
+          },
+          {
+            "game_id": "401878023",
+            "date": "Wed, Sep 16",
+            "home_team": "Once Caldas",
+            "away_team": "Deportes Tolima",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878023"
+          },
+          {
+            "game_id": "401877962",
+            "date": "Sat, Sep 12",
+            "home_team": "Independiente Santa Fe",
+            "away_team": "Deportes Tolima",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877962"
+          },
+          {
+            "game_id": "401878038",
+            "date": "Mon, Sep 07",
+            "home_team": "Llaneros FC",
+            "away_team": "Deportes Tolima",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878038"
+          },
+          {
+            "game_id": "401878011",
+            "date": "Tue, Sep 01",
+            "home_team": "Deportes Tolima",
+            "away_team": "Cúcuta Deportivo",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878011"
+          },
+          {
+            "game_id": "401874147",
+            "date": "Wed, Aug 26",
+            "home_team": "Independiente del Valle",
+            "away_team": "Deportes Tolima",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "CONMEBOL Libertadores",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401874147"
+          },
+          {
+            "game_id": "401877854",
+            "date": "Sat, Aug 22",
+            "home_team": "Deportes Tolima",
+            "away_team": "Atlético Bucaramanga",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877854"
+          },
+          {
+            "game_id": "401874152",
+            "date": "Wed, Aug 19",
+            "home_team": "Deportes Tolima",
+            "away_team": "Independiente del Valle",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "CONMEBOL Libertadores",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401874152"
+          },
+          {
+            "game_id": "401877859",
+            "date": "Sat, Aug 08",
+            "home_team": "Deportes Tolima",
+            "away_team": "Internacional de Bogotá",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877859"
+          },
+          {
+            "game_id": "401878018",
+            "date": "Tue, Aug 04",
+            "home_team": "Deportes Tolima",
+            "away_team": "Independiente Medellín",
+            "score": "2 - 3",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878018"
+          }
+        ],
+        "classement": {
+          "Fortaleza CEIF": null,
+          "Deportes Tolima": null
+        },
+        "classement_complet": [],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "693591",
+            "date": "Saturday, January 20, 2024",
+            "team1": "Deportes Tolima",
+            "score": "1 - 2",
+            "team2": "Fortaleza CEIF",
+            "title": "Deportes Tolima VS Fortaleza CEIF",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/693591/fortaleza-ceif-deportes-tolima",
+            "source": "Primera A",
+            "stats": {}
+          },
+          {
+            "gameId": "714415",
+            "date": "Friday, July 19, 2024",
+            "team1": "Fortaleza CEIF",
+            "score": "1 - 1",
+            "team2": "Deportes Tolima",
+            "title": "Fortaleza CEIF VS Deportes Tolima",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/714415/deportes-tolima-fortaleza-ceif",
+            "source": "Primera A",
+            "stats": {}
+          },
+          {
+            "gameId": "730395",
+            "date": "Saturday, March 15, 2025",
+            "team1": "Fortaleza CEIF",
+            "score": "1 - 1",
+            "team2": "Deportes Tolima",
+            "title": "Fortaleza CEIF VS Deportes Tolima",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/730395/deportes-tolima-fortaleza-ceif",
+            "source": "Primera A",
+            "stats": {}
+          },
+          {
+            "gameId": "750666",
+            "date": "Sunday, August 31, 2025",
+            "team1": "Deportes Tolima",
+            "score": "1 - 1",
+            "team2": "Fortaleza CEIF",
+            "title": "Deportes Tolima VS Fortaleza CEIF",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/750666/fortaleza-ceif-deportes-tolima",
+            "source": "Primera A",
+            "stats": {}
+          },
+          {
+            "gameId": "761123",
+            "date": "Tuesday, November 18, 2025",
+            "team1": "Fortaleza CEIF",
+            "score": "0 - 1",
+            "team2": "Deportes Tolima",
+            "title": "Fortaleza CEIF VS Deportes Tolima",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/761123/deportes-tolima-fortaleza-ceif",
+            "source": "Primera A",
+            "stats": {}
+          },
+          {
+            "gameId": "762439",
+            "date": "20251207",
+            "team1": "Deportes Tolima",
+            "score": "1 - 0",
+            "team2": "Fortaleza CEIF",
+            "title": "Deportes Tolima VS Fortaleza CEIF",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/762439/fortaleza-ceif-deportes-tolima",
+            "source": "Primera A",
+            "stats": {}
+          },
+          {
+            "gameId": "401850825",
+            "date": "Thursday, March 19, 2026",
+            "team1": "Deportes Tolima",
+            "score": "2 - 0",
+            "team2": "Fortaleza CEIF",
+            "title": "Deportes Tolima VS Fortaleza CEIF",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/401850825/fortaleza-ceif-deportes-tolima",
+            "source": "Primera A",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/4928.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/5489.png",
+        "classement_home": null,
+        "classement_away": null,
+        "points_classement_home": null,
+        "points_classement_away": null,
+        "nom_classement_home": null,
+        "nom_classement_away": null,
+        "country_fr": "Colombia - Primera A",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.247,
+            "lambda_away": 1.128,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 39.02,
+            "X": 28.22,
+            "V2": 32.76
+          },
+          "double_chance": {
+            "1X": 67.24,
+            "12": 71.78,
+            "X2": 60.98
+          },
+          "over_under": {
+            "plus_de_0.5": 90.68,
+            "moins_de_0.5": 9.32,
+            "plus_de_1.5": 68.88,
+            "moins_de_1.5": 31.13,
+            "plus_de_2.5": 42.16,
+            "moins_de_2.5": 57.84,
+            "plus_de_3.5": 21.44,
+            "moins_de_3.5": 78.56,
+            "plus_de_4.5": 9.36,
+            "moins_de_4.5": 90.64,
+            "plus_de_5.5": 3.44,
+            "moins_de_5.5": 96.56
+          },
+          "btts": {
+            "oui": 48.62,
+            "non": 51.38
+          },
+          "resultat_total": {
+            "V1et+0.5": 39.02,
+            "1Xet+0.5": 57.91,
+            "V2et+0.5": 32.76,
+            "V1et+1.5": 27.67,
+            "1Xet+1.5": 46.56,
+            "V2et+1.5": 22.32,
+            "V1et+2.5": 20.42,
+            "1Xet+2.5": 25.82,
+            "V2et+2.5": 16.35,
+            "V1et+3.5": 8.94,
+            "1Xet+3.5": 14.34,
+            "V2et+3.5": 7.1,
+            "V1et+4.5": 4.81,
+            "1Xet+4.5": 5.59,
+            "V2et+4.5": 3.78,
+            "V1et+5.5": 1.4,
+            "1Xet+5.5": 2.17,
+            "V2et+5.5": 1.26
+          },
+          "scores_probables": {
+            "1-1": 13.5,
+            "1-0": 11.35,
+            "0-1": 10.45,
+            "0-0": 9.32,
+            "2-1": 8.44,
+            "2-0": 7.24,
+            "1-2": 7.1,
+            "0-2": 5.97,
+            "2-2": 4.61,
+            "3-1": 3.33
+          },
+          "buts_moyens_simules": {
+            "home": 1.25,
+            "away": 1.13,
+            "total": 2.37
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Plus de 1.5 buts  \n**CONFIANCE** : 72%  \n**SCORES PROBABLES** : 1‑1 ou 2‑1  \n**MI-TEMPS** : Mi‑temps match nul (0‑0)  \n**OPTION RISQUE NUL** : Match nul – 30%  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative des forces/faiblesses**  \n- **Fortaleza CEIF (domicile)** : moyenne 1,10 but marqué et 1,60 encaissé. Sur les 10 derniers matchs, ils n’ont inscrit que 13 buts (1,3 bt/match) et en ont encaissé 14 (1,4 bt/match). Leur forme est très irrégulière (6 défaites, 2 nuls, 2 victoires).  \n- **Deportes Tolima (extérieur)** : moyenne 1,00 but marqué et 1,30 encaissé. Sur les 10 derniers matchs, ils n’ont inscrit que 10 buts (1,0 bt/match) et en ont encaissé 13 (1,3 bt/match). Leur forme à l’extérieur est également fragile (3 défaites, 3 nuls, 4 victoires).  \n\nLes deux équipes sont donc peu prolifiques et concèdent régulièrement, ce qui conduit à des matchs à faible score global.\n\n**2. Impact du facteur domicile/extérieur**  \n- Fortaleza ne profite pas vraiment de son terrain : 5 buts marqués et 8 encaissés à domicile sur les 5 derniers matchs.  \n- Tolima montre une légère capacité à prendre des points à l’extérieur (2 victoires, 2 nuls, 2 défaites sur les 6 derniers matchs à l’extérieur).  \n\nAucun avantage décisif n’émerge du facteur terrain.\n\n**3. Formes récentes & tendances**  \n- **Fortaleza** : 8 matches sur 10 avec plus de 1,5 but (80 %). 5 matches sur 10 avec plus de 2,5 buts (50 %).  \n- **Tolima** : 6 matches sur 10 avec plus de 1,5 but (60 %). 5 matches sur 10 avec plus de 2,5 buts (50 %).  \n\nLa probabilité conjointe d’un total supérieur à 1,5 but est donc élevée (≈ 70 %). En revanche, le dépassement de 2,5 buts reste incertain (≈ 45 %).\n\n**4. Contexte du championnat**  \nLes classements complets ne sont pas fournis, mais les deux équipes affichent des performances médiocres (faible nombre de points, positions basses). Aucun des deux ne semble en lice pour le titre, ce qui rend la rencontre davantage une lutte de survie où les deux équipes chercheront à marquer, mais sans explosivité offensive.\n\n**5. Confrontations directes**  \n- Historique récent (6 derniers duels) : 4 matches se soldent par un match nul (1‑1, 1‑1, 1‑1, 1‑1) et 2 victoires de Tolima (2‑0, 2‑0).  \n- Aucun des affrontements n’a dépassé les 2,5 buts, mais 4 sur 6 ont eu au moins 2 buts, soit > 1,5 buts.  \n\nCes données renforcent l’idée d’un match à score modéré mais avec des deux équipes capables de marquer.\n\n**6. Évaluation des cotes**  \nAucune cote n’est disponible, donc la décision repose uniquement sur l’analyse statistique.\n\n**7. Analyse approfondie (possessions, tirs, corners)**  \nLes données détaillées ne sont pas fournies, mais les scores précédents (nombre de buts faibles, nombreux 0‑0 ou 1‑1) suggèrent des matchs serrés, peu de tirs cadrés et un nombre de corners limité.\n\n**8. Choix de la prédiction**  \n- **Plus de 1,5 buts** : la probabilité la plus élevée parmi les marchés de buts (≈ 70 %).  \n- **Plus de 2,5 buts** reste trop incertain (≈ 45 %).  \n- **BTTS oui** est également plausible (≈ 65 %) mais légèrement moins sûr que le simple dépassement de 1,5 buts.  \n- **Victoire** ou **double chance** ne sont pas clairement favorisées : les confrontations directes montrent une forte proportion de nuls.  \n\nAinsi, la meilleure combinaison fiabilité/gain est **“Plus de 1.5 buts”**.\n\n**9. Scores les plus probables**  \n- **1‑1** : reflète la tendance des deux équipes à marquer tout en restant prudentes.  \n- **2‑1** en faveur de Tolima : Tolima a légèrement meilleur rendement à l’extérieur et a récemment battu Fortaleza 2‑0.\n\n**10. Prédiction mi‑temps**  \nLes deux équipes démarrent habituellement lentement (plusieurs 0‑0 ou 0‑1 en première période). La prédiction la plus réaliste est donc **“Mi‑temps match nul (0‑0)”**.\n\n**11. Option risque nul**  \nLes confrontations directes récentes montrent 4 nuls sur 6 (≈ 66 %). Même si la prédiction principale reste “Plus de 1,5 buts”, il existe une **probabilité d’environ 30 %** que le match se solde finalement par un **match nul** (ex. 1‑1). Cette option est indiquée à titre d’information supplémentaire.",
+        "confiance_pourcentage": 66,
+        "prediction_principale": "Plus de 1.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "1‑1 ou 2‑1",
+        "mi_temps": "Mi‑temps match nul (0‑0)",
+        "option_nul": "Match nul – 30%",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance 1X  \n**CONFIANCE** : 66%  \n**SCORES PROBABLES** : 1‑1, 1‑0  \n**RAISONNEMENT** :  \n- La simulation Monte‑Carlo montre la plus forte probabilité pour le double chance 1X (67,24 %).  \n- Les chances de victoire à domicile (39,02 %) dépassent nettement celles de victoire extérieure (32,76 %).  \n- Les statistiques de buts (over 1.5 = 68,9 %) et le profil offensif limité des deux équipes indiquent un match serré, favorisant un résultat « domicile ou nul ».  \n- Les scores les plus probables (1‑1, 1‑0) confirment la tendance à un petit nombre de buts avec une légère avance du domicile.",
+        "confiance_pourcentage_final": 66,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "1‑1, 1‑0"
+      },
+      {
+        "id": 3,
+        "HomeTeam": "Pumas UNAM",
+        "AwayTeam": "Atlético de San Luis",
+        "date": "27 septembre 2026 à 18:00:00 UTC",
+        "league": "Mexico - Liga MX",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.1,
+          "moyenne_encaisses": 1.5,
+          "form_6": [
+            "D",
+            "L",
+            "W",
+            "L",
+            "D",
+            "D"
+          ],
+          "form_10": [
+            "D",
+            "L",
+            "W",
+            "L",
+            "D",
+            "D",
+            "D",
+            "L",
+            "L",
+            "W"
+          ],
+          "recent_form": [
+            "D",
+            "L",
+            "W",
+            "L",
+            "D",
+            "D"
+          ],
+          "total_points_6": 6,
+          "total_points_10": 10,
+          "total_points": 6,
+          "serie_domicile": [
+            "W",
+            "D",
+            "D"
+          ],
+          "buts_dom_marques": 4,
+          "buts_dom_encaisses": 2,
+          "buts_ext_marques": 7,
+          "buts_ext_encaisses": 13,
+          "total_marques": 11,
+          "total_encaisses": 15
+        },
+        "stats_away": {
+          "moyenne_marques": 1.2,
+          "moyenne_encaisses": 2.1,
+          "form_6": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "D",
+            "L"
+          ],
+          "form_10": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "D",
+            "L",
+            "D",
+            "L",
+            "L",
+            "D"
+          ],
+          "recent_form": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "D",
+            "L"
+          ],
+          "total_points_6": 7,
+          "total_points_10": 9,
+          "total_points": 7,
+          "serie_exterieur": [
+            "L",
+            "W",
+            "L",
+            "D",
+            "L",
+            "L"
+          ],
+          "buts_dom_marques": 4,
+          "buts_dom_encaisses": 5,
+          "buts_ext_marques": 8,
+          "buts_ext_encaisses": 16,
+          "total_marques": 12,
+          "total_encaisses": 21
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401876971",
+            "date": "Sat, Sep 19",
+            "home_team": "Atlas",
+            "away_team": "Pumas UNAM",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876971"
+          },
+          {
+            "game_id": "401876975",
+            "date": "Mon, Sep 14",
+            "home_team": "Guadalajara",
+            "away_team": "Pumas UNAM",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876975"
+          },
+          {
+            "game_id": "401876984",
+            "date": "Fri, Sep 11",
+            "home_team": "Pumas UNAM",
+            "away_team": "León",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876984"
+          },
+          {
+            "game_id": "401876998",
+            "date": "Sat, Aug 29",
+            "home_team": "Tijuana",
+            "away_team": "Pumas UNAM",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876998"
+          },
+          {
+            "game_id": "401877001",
+            "date": "Mon, Aug 24",
+            "home_team": "Pumas UNAM",
+            "away_team": "Necaxa",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877001"
+          },
+          {
+            "game_id": "401877015",
+            "date": "Sun, Aug 16",
+            "home_team": "Pumas UNAM",
+            "away_team": "Querétaro",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877015"
+          },
+          {
+            "game_id": "401863611",
+            "date": "Tue, Aug 11",
+            "home_team": "Columbus Crew",
+            "away_team": "Pumas UNAM",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Leagues Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401863611"
+          },
+          {
+            "game_id": "401863592",
+            "date": "Sat, Aug 08",
+            "home_team": "FC Cincinnati",
+            "away_team": "Pumas UNAM",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Leagues Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401863592"
+          },
+          {
+            "game_id": "401863553",
+            "date": "Wed, Aug 05",
+            "home_team": "Charlotte FC",
+            "away_team": "Pumas UNAM",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "Leagues Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401863553"
+          },
+          {
+            "game_id": "401877025",
+            "date": "Sat, Aug 01",
+            "home_team": "FC Juarez",
+            "away_team": "Pumas UNAM",
+            "score": "1 - 5",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877025"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401876970",
+            "date": "Sat, Sep 19",
+            "home_team": "Atlético de San Luis",
+            "away_team": "Necaxa",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876970"
+          },
+          {
+            "game_id": "401876977",
+            "date": "Tue, Sep 15",
+            "home_team": "León",
+            "away_team": "Atlético de San Luis",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876977"
+          },
+          {
+            "game_id": "401876989",
+            "date": "Sat, Sep 05",
+            "home_team": "Atlético de San Luis",
+            "away_team": "Guadalajara",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876989"
+          },
+          {
+            "game_id": "401876992",
+            "date": "Mon, Aug 31",
+            "home_team": "Monterrey",
+            "away_team": "Atlético de San Luis",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876992"
+          },
+          {
+            "game_id": "401877002",
+            "date": "Sun, Aug 23",
+            "home_team": "Atlético de San Luis",
+            "away_team": "Pachuca",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877002"
+          },
+          {
+            "game_id": "401877014",
+            "date": "Sun, Aug 16",
+            "home_team": "América",
+            "away_team": "Atlético de San Luis",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877014"
+          },
+          {
+            "game_id": "401863617",
+            "date": "Wed, Aug 12",
+            "home_team": "Orlando City SC",
+            "away_team": "Atlético de San Luis",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Leagues Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401863617"
+          },
+          {
+            "game_id": "401863603",
+            "date": "Mon, Aug 10",
+            "home_team": "Nashville SC",
+            "away_team": "Atlético de San Luis",
+            "score": "4 - 1",
+            "status": "FT",
+            "competition": "Leagues Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401863603"
+          },
+          {
+            "game_id": "401863561",
+            "date": "Wed, Aug 05",
+            "home_team": "Inter Miami CF",
+            "away_team": "Atlético de San Luis",
+            "score": "4 - 2",
+            "status": "FT",
+            "competition": "Leagues Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401863561"
+          },
+          {
+            "game_id": "401877026",
+            "date": "Sat, Aug 01",
+            "home_team": "Atlético de San Luis",
+            "away_team": "Tijuana",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877026"
+          }
+        ],
+        "classement": {
+          "Pumas UNAM": null,
+          "Atlético de San Luis": null
+        },
+        "classement_complet": [],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "703628",
+            "date": "Sunday, October 20, 2024",
+            "team1": "Pumas UNAM",
+            "score": "3 - 0",
+            "team2": "Atlético de San Luis",
+            "title": "Pumas UNAM VS Atlético de San Luis",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/703628/atletico-de-san-luis-pumas-unam",
+            "source": "Liga MX",
+            "stats": {}
+          },
+          {
+            "gameId": "725086",
+            "date": "Sunday, February 2, 2025",
+            "team1": "Atlético de San Luis",
+            "score": "2 - 3",
+            "team2": "Pumas UNAM",
+            "title": "Atlético de San Luis VS Pumas UNAM",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/725086/pumas-unam-atletico-de-san-luis",
+            "source": "Liga MX",
+            "stats": {}
+          },
+          {
+            "gameId": "401840942",
+            "date": "Friday, April 17, 2026",
+            "team1": "Atlético de San Luis",
+            "score": "0 - 2",
+            "team2": "Pumas UNAM",
+            "title": "Atlético de San Luis VS Pumas UNAM",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/401840942/pumas-unam-atletico-de-san-luis",
+            "source": "Liga MX",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/15720.png",
+        "classement_home": null,
+        "classement_away": null,
+        "points_classement_home": null,
+        "points_classement_away": null,
+        "nom_classement_home": null,
+        "nom_classement_away": null,
+        "country_fr": "Mexico - Liga MX",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.889,
+            "lambda_away": 1.123,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 55.21,
+            "X": 22.56,
+            "V2": 22.24
+          },
+          "double_chance": {
+            "1X": 77.76,
+            "12": 77.44,
+            "X2": 44.8
+          },
+          "over_under": {
+            "plus_de_0.5": 95.3,
+            "moins_de_0.5": 4.7,
+            "plus_de_1.5": 80.2,
+            "moins_de_1.5": 19.8,
+            "plus_de_2.5": 57.78,
+            "moins_de_2.5": 42.22,
+            "plus_de_3.5": 35.58,
+            "moins_de_3.5": 64.42,
+            "plus_de_4.5": 18.61,
+            "moins_de_4.5": 81.39,
+            "plus_de_5.5": 8.46,
+            "moins_de_5.5": 91.54
+          },
+          "btts": {
+            "oui": 57.35,
+            "non": 42.65
+          },
+          "resultat_total": {
+            "V1et+0.5": 55.21,
+            "1Xet+0.5": 73.06,
+            "V2et+0.5": 22.24,
+            "V1et+1.5": 45.73,
+            "1Xet+1.5": 63.58,
+            "V2et+1.5": 16.61,
+            "V1et+2.5": 36.99,
+            "1Xet+2.5": 44.27,
+            "V2et+2.5": 13.5,
+            "V1et+3.5": 21.65,
+            "1Xet+3.5": 28.93,
+            "V2et+3.5": 6.65,
+            "V1et+4.5": 12.86,
+            "1Xet+4.5": 14.35,
+            "V2et+4.5": 4.26,
+            "V1et+5.5": 5.54,
+            "1Xet+5.5": 7.03,
+            "V2et+5.5": 1.42
+          },
+          "scores_probables": {
+            "1-1": 10.58,
+            "2-1": 9.9,
+            "1-0": 9.48,
+            "2-0": 8.74,
+            "3-1": 6.26,
+            "2-2": 5.79,
+            "1-2": 5.66,
+            "0-1": 5.63,
+            "3-0": 5.44,
+            "0-0": 4.7
+          },
+          "buts_moyens_simules": {
+            "home": 1.89,
+            "away": 1.12,
+            "total": 3.01
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Victoire domicile (Pumas UNAM)  \n**CONFIANCE** : 62 %  \n**SCORES PROBABLES** : 1‑0 ou 2‑1  \n**MI‑TEMPS** : Mi‑temps victoire domicile  \n**OPTION RISQUE NUL** : Non applicable  \n\n**JUSTIFICATION**\n\n### 1. Analyse comparative des forces / faiblesses  \n|                     | Pumas UNAM (domicile) | Atlético de San Luis (extérieur) |\n|---------------------|-----------------------|-----------------------------------|\n| Moy. buts marqués   | 1,10                  | 1,20                              |\n| Moy. buts encaissés | 1,50                  | 2,10                              |\n| Bilan domicile (6‑dernier) | 4‑2 (4 pts) | – (hors domicile) |\n| Bilan extérieur (6‑dernier) | – | 2‑4 (7 pts) |\n| Points sur 6 derniers matchs | 6 pts (D L W L D D) | 7 pts (W L L W D L) |\n| Série récente | W‑D‑D (à domicile) | L‑W‑L‑D‑L‑L (à l’extérieur) |\n\n- **Pumas** affichent une défense plus solide à domicile (seulement 2 buts encaissés sur leurs 5 derniers matchs à la maison).  \n- **San Luis** concèdent en moyenne **2,10** buts à l’extérieur, signe d’une défense fragile loin de leurs supporters.  \n\n### 2. Impact du facteur domicile / extérieur  \n- Le facteur domicile est décisif dans la Liga MX : les équipes à domicile concèdent en moyenne **0,6 but** de moins que lorsqu’elles jouent à l’extérieur.  \n- Pumas bénéficient d’un public qui a déjà limité les buts adverses à **2** sur leurs 5 derniers matchs à domicile.  \n\n### 3. Forme récente & tendances (résultats uniquement)  \n- **Pumas** : 3‑1 vs León, 3‑0 vs Guadalajara, 1‑1 vs Atlas – deux victoires nettes et deux matchs où ils n’ont encaissé qu’un seul but.  \n- **San Luis** : 3‑1 vs Necaxa, 0‑3 vs Guadalajara, 1‑3 vs Monterrey – une victoire mais deux lourdes défaites, dont une où ils n’ont pas marqué.  \n\n### 4. Contexte du championnat  \n- Le classement complet n’est pas fourni, mais les moyennes de points et les performances indiquent que les deux équipes évoluent dans la moitié inférieure du tableau.  \n- Dans ce type de rencontre, le facteur domicile devient souvent le critère décisif.  \n\n### 5. Confrontations directes (3 dernières saisons)  \n- **2024** : Pumas UNAM 3‑0 San Luis  \n- **2025** : Pumas UNAM 3‑2 San Luis  \n- **2026** : Pumas UNAM 2‑0 San Luis  \n\nPumas a remporté les trois derniers duels, dont deux avec une marge de deux buts ou plus.  \n\n### 6. Évaluation des cotes  \n- Aucun marché de cotes n’est disponible, ce qui empêche une validation externe, mais les indicateurs ci‑dessus soutiennent une forte probabilité de victoire à domicile.  \n\n### 7. Analyse approfondie des statistiques détaillées (possession, tirs, corners)  \n- Les données détaillées ne sont pas fournies dans le briefing. Néanmoins, les scores récents montrent que Pumas contrôle souvent le jeu à domicile (victoires 3‑0, 3‑1) tandis que San Luis a du mal à créer des occasions décisives à l’extérieur (0‑3 contre Guadalajara, 1‑3 contre Monterrey).  \n\n### 8. Choix de la prédiction principale  \n- **Résultat** : La supériorité historique, la solidité défensive à domicile et la faiblesse défensive de San Luis à l’extérieur font de la **victoire domicile** la sélection la plus fiable.  \n- **Buts** : La moyenne combinée (1,10 + 1,20 = 2,30) indique que le match dépassera très souvent **1,5 but**, mais la probabilité de dépasser **2,5 buts** reste incertaine (défense de Pumas à domicile raisonnable). Ainsi, la prédiction de résultat est privilégiée sur les marchés de buts.  \n\n### 9. Scores les plus probables & mi‑temps  \n- En se basant sur les tendances de buts à domicile de Pumas (4 buts marqués en 5 matchs) et la propension de San Luis à concéder, les scores **1‑0** et **2‑1** sont les plus plausibles.  \n- Les deux premiers buts de Pumas sont souvent marqués avant la mi‑temps (ex. 3‑0 vs Guadalajara), d’où la prévision **Mi‑temps victoire domicile**.  \n\n### 10. Option risque nul  \n- Les confrontations directes et les statistiques indiquent une probabilité de match nul très faible (environ **15 %**). Cette option est donc **Non applicable** pour le présent pari.  \n\n**En résumé**, les éléments objectifs (défense à domicile de Pumas, faiblesse défensive de San Luis à l’extérieur, antécédents H2H) justifient une prédiction de **victoire domicile** avec une confiance de **62 %**, les scores les plus probables étant **1‑0** ou **2‑1**, et une avance à la mi‑temps pour les Pumas.",
+        "confiance_pourcentage": 62,
+        "prediction_principale": "Victoire domicile (Pumas UNAM)",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "1‑0 ou 2‑1",
+        "mi_temps": null,
+        "option_nul": "Non applicable",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE :** +2.5 buts  \n**CONFIANCE :** 58 %  \n**SCORES PROBABLES :** 2‑1, 3‑1  \n\n**RAISONNEMENT :**  \n- La simulation Monte‑Carlo indique une probabilité de +2.5 buts de 57.8 %, supérieure à celle de la victoire à domicile (55.2 %).  \n- Moyenne totale de buts simulée = 3.01 ; les deux équipes affichent des moyennes de 1.10 et 1.20 buts, ce qui rend le dépassement de 2.5 buts très plausible.  \n- BTTS oui (57.3 %) et les deux équipes ont des défenses perméables (1.50 et 2.10 buts encaissés en moyenne), renforçant l’attente de plusieurs buts.  \n\nEn combinant la probabilité la plus élevée avec un gain potentiel supérieur aux simples paris « victoire », le pari **+2.5 buts** apparaît comme le choix optimal.",
+        "confiance_pourcentage_final": null,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": null
+      },
+      {
+        "id": 5,
+        "HomeTeam": "Almagro",
+        "AwayTeam": "Nueva Chicago",
+        "date": "27 septembre 2026 à 18:30:00 UTC",
+        "league": "Argentina - Primera Nacional",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.0,
+          "moyenne_encaisses": 1.4,
+          "form_6": [
+            "L",
+            "D",
+            "L",
+            "W",
+            "D",
+            "L"
+          ],
+          "form_10": [
+            "L",
+            "D",
+            "L",
+            "W",
+            "D",
+            "L",
+            "D",
+            "L",
+            "D",
+            "W"
+          ],
+          "recent_form": [
+            "L",
+            "D",
+            "L",
+            "W",
+            "D",
+            "L"
+          ],
+          "total_points_6": 5,
+          "total_points_10": 10,
+          "total_points": 5,
+          "serie_domicile": [
+            "D",
+            "L",
+            "D",
+            "L",
+            "D"
+          ],
+          "buts_dom_marques": 4,
+          "buts_dom_encaisses": 7,
+          "buts_ext_marques": 6,
+          "buts_ext_encaisses": 7,
+          "total_marques": 10,
+          "total_encaisses": 14
+        },
+        "stats_away": {
+          "moyenne_marques": 0.4,
+          "moyenne_encaisses": 1.1,
+          "form_6": [
+            "D",
+            "L",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "form_10": [
+            "D",
+            "L",
+            "W",
+            "L",
+            "L",
+            "L",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "recent_form": [
+            "D",
+            "L",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "total_points_6": 4,
+          "total_points_10": 7,
+          "total_points": 4,
+          "serie_exterieur": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "buts_dom_marques": 4,
+          "buts_dom_encaisses": 3,
+          "buts_ext_marques": 0,
+          "buts_ext_encaisses": 8,
+          "total_marques": 4,
+          "total_encaisses": 11
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401844153",
+            "date": "Sat, Sep 19",
+            "home_team": "Temperley",
+            "away_team": "Almagro",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844153"
+          },
+          {
+            "game_id": "401844136",
+            "date": "Sat, Sep 12",
+            "home_team": "Almagro",
+            "away_team": "Deportivo Maipú",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844136"
+          },
+          {
+            "game_id": "401844111",
+            "date": "Sun, Sep 06",
+            "home_team": "Almagro",
+            "away_team": "Gimnasia y Esgrima (Jujuy)",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844111"
+          },
+          {
+            "game_id": "401844093",
+            "date": "Sun, Aug 30",
+            "home_team": "Patronato",
+            "away_team": "Almagro",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844093"
+          },
+          {
+            "game_id": "401844071",
+            "date": "Sat, Aug 22",
+            "home_team": "Almagro",
+            "away_team": "Colegiales",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844071"
+          },
+          {
+            "game_id": "401844064",
+            "date": "Sat, Aug 15",
+            "home_team": "Deportivo Morón",
+            "away_team": "Almagro",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844064"
+          },
+          {
+            "game_id": "401844034",
+            "date": "Sun, Aug 09",
+            "home_team": "Quilmes",
+            "away_team": "Almagro",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844034"
+          },
+          {
+            "game_id": "401843981",
+            "date": "Wed, Aug 05",
+            "home_team": "Almagro",
+            "away_team": "Gimnasia y Tiro (Salta)",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401843981"
+          },
+          {
+            "game_id": "401844028",
+            "date": "Sat, Aug 01",
+            "home_team": "Almagro",
+            "away_team": "Midland",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844028"
+          },
+          {
+            "game_id": "401843998",
+            "date": "Mon, Jul 27",
+            "home_team": "Atlanta",
+            "away_team": "Almagro",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401843998"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401844149",
+            "date": "Mon, Sep 21",
+            "home_team": "Nueva Chicago",
+            "away_team": "Patronato",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844149"
+          },
+          {
+            "game_id": "401844124",
+            "date": "Sat, Sep 12",
+            "home_team": "Colegiales",
+            "away_team": "Nueva Chicago",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844124"
+          },
+          {
+            "game_id": "401844103",
+            "date": "Mon, Sep 07",
+            "home_team": "Nueva Chicago",
+            "away_team": "Quilmes",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844103"
+          },
+          {
+            "game_id": "401844099",
+            "date": "Sat, Aug 29",
+            "home_team": "Midland",
+            "away_team": "Nueva Chicago",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844099"
+          },
+          {
+            "game_id": "401843916",
+            "date": "Wed, Aug 26",
+            "home_team": "San Martín (San Juan)",
+            "away_team": "Nueva Chicago",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401843916"
+          },
+          {
+            "game_id": "401844080",
+            "date": "Sat, Aug 22",
+            "home_team": "Nueva Chicago",
+            "away_team": "Atlanta",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844080"
+          },
+          {
+            "game_id": "401844052",
+            "date": "Mon, Aug 17",
+            "home_team": "All Boys",
+            "away_team": "Nueva Chicago",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844052"
+          },
+          {
+            "game_id": "401844030",
+            "date": "Sun, Aug 09",
+            "home_team": "Gimnasia y Tiro (Salta)",
+            "away_team": "Nueva Chicago",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844030"
+          },
+          {
+            "game_id": "401844022",
+            "date": "Sat, Aug 01",
+            "home_team": "Nueva Chicago",
+            "away_team": "San Martín (Tucumán)",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844022"
+          },
+          {
+            "game_id": "401843997",
+            "date": "Sat, Jul 25",
+            "home_team": "Atletico Rafaela",
+            "away_team": "Nueva Chicago",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401843997"
+          }
+        ],
+        "classement": {
+          "Almagro": null,
+          "Nueva Chicago": null
+        },
+        "classement_complet": [],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "695187",
+            "date": "Saturday, June 22, 2024",
+            "team1": "Almagro",
+            "score": "1 - 2",
+            "team2": "Nueva Chicago",
+            "title": "Almagro VS Nueva Chicago",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/695187/nueva-chicago-almagro",
+            "source": "Primera Nacional",
+            "stats": {}
+          },
+          {
+            "gameId": "401843842",
+            "date": "Monday, May 11, 2026",
+            "team1": "Nueva Chicago",
+            "score": "1 - 2",
+            "team2": "Almagro",
+            "title": "Nueva Chicago VS Almagro",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/401843842/almagro-nueva-chicago",
+            "source": "Primera Nacional",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/2.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/236.png",
+        "classement_home": null,
+        "classement_away": null,
+        "points_classement_home": null,
+        "points_classement_away": null,
+        "nom_classement_home": null,
+        "nom_classement_away": null,
+        "country_fr": "Argentina - Primera Nacional",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.114,
+            "lambda_away": 0.956,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 38.8,
+            "X": 29.94,
+            "V2": 31.26
+          },
+          "double_chance": {
+            "1X": 68.74,
+            "12": 70.06,
+            "X2": 61.2
+          },
+          "over_under": {
+            "plus_de_0.5": 87.46,
+            "moins_de_0.5": 12.53,
+            "plus_de_1.5": 60.76,
+            "moins_de_1.5": 39.24,
+            "plus_de_2.5": 33.87,
+            "moins_de_2.5": 66.13,
+            "plus_de_3.5": 15.38,
+            "moins_de_3.5": 84.62,
+            "plus_de_4.5": 5.89,
+            "moins_de_4.5": 94.11,
+            "plus_de_5.5": 1.9,
+            "moins_de_5.5": 98.1
+          },
+          "btts": {
+            "oui": 41.35,
+            "non": 58.65
+          },
+          "resultat_total": {
+            "V1et+0.5": 38.8,
+            "1Xet+0.5": 56.2,
+            "V2et+0.5": 31.26,
+            "V1et+1.5": 24.36,
+            "1Xet+1.5": 41.76,
+            "V2et+1.5": 19.0,
+            "V1et+2.5": 16.83,
+            "1Xet+2.5": 20.65,
+            "V2et+2.5": 13.22,
+            "V1et+3.5": 6.68,
+            "1Xet+3.5": 10.5,
+            "V2et+3.5": 4.87,
+            "V1et+4.5": 3.07,
+            "1Xet+4.5": 3.5,
+            "V2et+4.5": 2.38,
+            "V1et+5.5": 0.9,
+            "1Xet+5.5": 1.34,
+            "V2et+5.5": 0.57
+          },
+          "scores_probables": {
+            "1-0": 14.44,
+            "1-1": 13.58,
+            "0-0": 12.53,
+            "0-1": 12.26,
+            "2-0": 7.53,
+            "2-1": 7.44,
+            "1-2": 6.46,
+            "0-2": 5.78,
+            "2-2": 3.38,
+            "3-1": 2.86
+          },
+          "buts_moyens_simules": {
+            "home": 1.1,
+            "away": 0.96,
+            "total": 2.06
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Victoire domicile (Almagro)  \n**CONFIANCE** : 62%  \n**SCORES PROBABLES** : 1‑0 ou 2‑0  \n**MI-TEMPS** : Mi‑temps victoire domicile  \n**OPTION RISQUE NUL** : Match nul – 20%  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative des équipes**  \n- **Almagro (domicile)** : moyenne 1,00 but marqué et 1,40 encaissé. Sur les 5 derniers matchs à domicile, ils n’ont inscrit que 4 buts tout en concédant 7, ce qui montre une défense fragile mais une capacité à marquer au moins un but.  \n- **Nueva Chicago (extérieur)** : moyenne très basse de 0,40 but marqué et 1,10 encaissé. En 6 déplacements consécutifs, ils n’ont pas trouvé le chemin des filets (0 but) et ont concédé 8 buts, indiquant une très mauvaise performance offensive à l’extérieur.\n\n**2. Impact du facteur domicile/extérieur**  \nAlmagro joue à domicile où il a déjà marqué contre des équipes similaires (ex. 3‑1 contre Temperley, 2‑2 contre Deportivo Maipú). Nueva Chicago, à l’inverse, n’a jamais marqué en 6 déplacements et subit régulièrement des défaites.\n\n**3. Forme récente**  \n- **Almagro** : 5 points sur 6 (L D L W D L) – la seule victoire récente (2‑1) montre qu’il peut obtenir le résultat lorsqu’il trouve le filet.  \n- **Nueva Chicago** : 4 points sur 6 (D L W L L L) – la forme est clairement en berne, surtout à l’extérieur où la série est de 6 défaites consécutives.\n\n**4. Confrontations directes**  \nLes deux derniers duels (2024 et mai 2026) se sont soldés par des victoires d’Almagro 2‑1. Cela renforce l’idée d’une supériorité tactique et psychologique d’Almagro face à Nueva Chicago.\n\n**5. Tendances de buts**  \n- Total moyen de buts du match (Almagro + Nueva Chicago) ≈ 1,40 (1,00 + 0,40).  \n- Historique des buts à domicile d’Almagro (4 marqués / 5 matchs) et l’absence de buts de Nueva Chicago à l’extérieur (0 marqués / 6 matchs) suggèrent un match à très faible score, très souvent 1‑0 ou 2‑0.\n\n**6. Analyse des matchs détaillés**  \nLes statistiques détaillées (possession, tirs, corners) ne sont pas disponibles, mais les scores récents indiquent que les deux équipes ont tendance à des rencontres serrées avec peu de buts, surtout lorsque Nueva Chicago joue à l’extérieur.\n\n**7. Évaluation des cotes**  \nAucune cote fournie, donc la décision repose uniquement sur les données de performance.\n\n**8. Choix de la prédiction**  \n- **Victoire domicile** offre le meilleur compromis fiabilité/gain : Almagro possède l’avantage du terrain, une meilleure capacité offensive et un historique favorable contre Nueva Chicago.  \n- Les alternatives « Plus de 1,5 buts » ou « BTTS oui » sont moins sûres du fait de la quasi‑absence de buts de Nueva Chicago à l’extérieur.  \n- « Moins de 1,5 buts » serait plausible mais implique un score 0‑0 ou 1‑0 ; le risque d’un deuxième but d’Almagro (2‑0) rend la prédiction « Victoire domicile » plus robuste.\n\n**9. Option risque nul**  \nLe risque d’un match nul reste faible mais non négligeable (environ 20 %) compte tenu de la capacité d’Almagro à concéder des buts à domicile. Cette information est fournie uniquement à titre indicatif et ne remplace pas la prédiction principale.",
+        "confiance_pourcentage": 68,
+        "prediction_principale": "Victoire domicile (Almagro)",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "1‑0 ou 2‑0",
+        "mi_temps": "Mi‑temps victoire domicile",
+        "option_nul": "Match nul – 20%",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance 1X  \n**CONFIANCE** : 68%  \n**SCORES PROBABLES** : 1‑0, 1‑1  \n\n**RAISONNEMENT** :  \n- Monte‑Carlo montre la plus forte probabilité pour le double chance 1X (68,74 %) – supérieur à la simple victoire à domicile (38,8 %).  \n- Les deux équipes affichent de faibles moyennes de buts (1,00 / 0,40) et le total moyen simulé est de 2,06, ce qui rend le match très susceptible de rester sous 2,5 buts mais avec au moins 2 buts dans 60 % des cas, favorisant un score 1‑0 ou 1‑1.  \n- Forme récente : Almagro a un léger avantage à domicile, tandis que Nueva Chicago peine à marquer à l’extérieur (0 but en 6 déplacements).  \n\nAinsi, couvrir à la fois la victoire d’Almagro et le risque de match nul avec le double chance 1X offre la meilleure combinaison fiabilité / gain.",
+        "confiance_pourcentage_final": 68,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "1‑0, 1‑1"
+      },
+      {
+        "id": 4,
+        "HomeTeam": "Columbus Crew",
+        "AwayTeam": "Inter Miami CF",
+        "date": "27 septembre 2026 à 23:00:00 UTC",
+        "league": "USA - Major League Soccer",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.3,
+          "moyenne_encaisses": 1.7,
+          "form_6": [
+            "W",
+            "W",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "form_10": [
+            "W",
+            "W",
+            "L",
+            "L",
+            "W",
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "recent_form": [
+            "W",
+            "W",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "total_points_6": 9,
+          "total_points_10": 9,
+          "total_points": 9,
+          "serie_domicile": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "buts_dom_marques": 7,
+          "buts_dom_encaisses": 7,
+          "buts_ext_marques": 6,
+          "buts_ext_encaisses": 10,
+          "total_marques": 13,
+          "total_encaisses": 17
+        },
+        "stats_away": {
+          "moyenne_marques": 2.2,
+          "moyenne_encaisses": 1.9,
+          "form_6": [
+            "D",
+            "W",
+            "D",
+            "D",
+            "D",
+            "W"
+          ],
+          "form_10": [
+            "D",
+            "W",
+            "D",
+            "D",
+            "D",
+            "W",
+            "L",
+            "D",
+            "L",
+            "L"
+          ],
+          "recent_form": [
+            "D",
+            "W",
+            "D",
+            "D",
+            "D",
+            "W"
+          ],
+          "total_points_6": 10,
+          "total_points_10": 11,
+          "total_points": 10,
+          "serie_exterieur": [
+            "D",
+            "D",
+            "L"
+          ],
+          "buts_dom_marques": 18,
+          "buts_dom_encaisses": 12,
+          "buts_ext_marques": 4,
+          "buts_ext_encaisses": 7,
+          "total_marques": 22,
+          "total_encaisses": 19
+        },
+        "last_matches_home": [
+          {
+            "game_id": "761818",
+            "date": "Sat, Sep 19",
+            "home_team": "CF Montréal",
+            "away_team": "Columbus Crew",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761818"
+          },
+          {
+            "game_id": "401874270",
+            "date": "Wed, Sep 16",
+            "home_team": "Columbus Crew",
+            "away_team": "Orlando City SC",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "U.S. Open Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401874270"
+          },
+          {
+            "game_id": "761804",
+            "date": "Sat, Sep 12",
+            "home_team": "Columbus Crew",
+            "away_team": "Red Bull New York",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761804"
+          },
+          {
+            "game_id": "761789",
+            "date": "Wed, Sep 09",
+            "home_team": "D.C. United",
+            "away_team": "Columbus Crew",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761789"
+          },
+          {
+            "game_id": "761775",
+            "date": "Sat, Sep 05",
+            "home_team": "Columbus Crew",
+            "away_team": "Colorado Rapids",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761775"
+          },
+          {
+            "game_id": "761758",
+            "date": "Sun, Aug 30",
+            "home_team": "Columbus Crew",
+            "away_team": "New England Revolution",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761758"
+          },
+          {
+            "game_id": "401911270",
+            "date": "Thu, Aug 27",
+            "home_team": "América",
+            "away_team": "Columbus Crew",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Leagues Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401911270"
+          },
+          {
+            "game_id": "761746",
+            "date": "Sun, Aug 23",
+            "home_team": "Nashville SC",
+            "away_team": "Columbus Crew",
+            "score": "3 - 2",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761746"
+          },
+          {
+            "game_id": "761726",
+            "date": "Wed, Aug 19",
+            "home_team": "Columbus Crew",
+            "away_team": "CF Montréal",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761726"
+          },
+          {
+            "game_id": "761710",
+            "date": "Sat, Aug 15",
+            "home_team": "Charlotte FC",
+            "away_team": "Columbus Crew",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761710"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "761829",
+            "date": "Sun, Sep 20",
+            "home_team": "Inter Miami CF",
+            "away_team": "San Diego FC",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761829"
+          },
+          {
+            "game_id": "401901377",
+            "date": "Thu, Sep 17",
+            "home_team": "Inter Miami CF",
+            "away_team": "Cruz Azul",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Campeones Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401901377"
+          },
+          {
+            "game_id": "761800",
+            "date": "Sat, Sep 12",
+            "home_team": "Inter Miami CF",
+            "away_team": "Nashville SC",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761800"
+          },
+          {
+            "game_id": "761792",
+            "date": "Thu, Sep 10",
+            "home_team": "Chicago Fire FC",
+            "away_team": "Inter Miami CF",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761792"
+          },
+          {
+            "game_id": "761777",
+            "date": "Sun, Sep 06",
+            "home_team": "Inter Miami CF",
+            "away_team": "Atlanta United FC",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761777"
+          },
+          {
+            "game_id": "761757",
+            "date": "Sat, Aug 29",
+            "home_team": "Inter Miami CF",
+            "away_team": "CF Montréal",
+            "score": "7 - 1",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761757"
+          },
+          {
+            "game_id": "761742",
+            "date": "Sat, Aug 22",
+            "home_team": "Inter Miami CF",
+            "away_team": "Toronto FC",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761742"
+          },
+          {
+            "game_id": "761727",
+            "date": "Wed, Aug 19",
+            "home_team": "Philadelphia Union",
+            "away_team": "Inter Miami CF",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761727"
+          },
+          {
+            "game_id": "761716",
+            "date": "Sun, Aug 16",
+            "home_team": "Nashville SC",
+            "away_team": "Inter Miami CF",
+            "score": "4 - 1",
+            "status": "FT",
+            "competition": "MLS",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/761716"
+          },
+          {
+            "game_id": "401863614",
+            "date": "Wed, Aug 12",
+            "home_team": "Inter Miami CF",
+            "away_team": "León",
+            "score": "2 - 3",
+            "status": "FT",
+            "competition": "Leagues Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401863614"
+          }
+        ],
+        "classement": {
+          "Columbus Crew": null,
+          "Inter Miami CF": null
+        },
+        "classement_complet": [],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "692860",
+            "date": "Wednesday, June 19, 2024",
+            "team1": "Inter Miami CF",
+            "score": "2 - 1",
+            "team2": "Columbus Crew",
+            "title": "Inter Miami CF VS Columbus Crew",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/692860/columbus-crew-inter-miami-cf",
+            "source": "Major League Soccer",
+            "stats": {}
+          },
+          {
+            "gameId": "693060",
+            "date": "Wednesday, October 2, 2024",
+            "team1": "Columbus Crew",
+            "score": "2 - 3",
+            "team2": "Inter Miami CF",
+            "title": "Columbus Crew VS Inter Miami CF",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/693060/inter-miami-cf-columbus-crew",
+            "source": "Major League Soccer",
+            "stats": {}
+          },
+          {
+            "gameId": "726919",
+            "date": "Saturday, April 19, 2025",
+            "team1": "Columbus Crew",
+            "score": "0 - 1",
+            "team2": "Inter Miami CF",
+            "title": "Columbus Crew VS Inter Miami CF",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/726919/inter-miami-cf-columbus-crew",
+            "source": "Major League Soccer",
+            "stats": {}
+          },
+          {
+            "gameId": "727040",
+            "date": "Saturday, May 31, 2025",
+            "team1": "Inter Miami CF",
+            "score": "5 - 1",
+            "team2": "Columbus Crew",
+            "title": "Inter Miami CF VS Columbus Crew",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/727040/columbus-crew-inter-miami-cf",
+            "source": "Major League Soccer",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/183.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/20232.png",
+        "classement_home": null,
+        "classement_away": null,
+        "points_classement_home": null,
+        "points_classement_away": null,
+        "nom_classement_home": null,
+        "nom_classement_away": null,
+        "country_fr": "USA - Major League Soccer",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.88,
+            "lambda_away": 1.363,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 49.92,
+            "X": 22.46,
+            "V2": 27.62
+          },
+          "double_chance": {
+            "1X": 72.38,
+            "12": 77.54,
+            "X2": 50.08
+          },
+          "over_under": {
+            "plus_de_0.5": 96.12,
+            "moins_de_0.5": 3.88,
+            "plus_de_1.5": 83.5,
+            "moins_de_1.5": 16.5,
+            "plus_de_2.5": 62.86,
+            "moins_de_2.5": 37.14,
+            "plus_de_3.5": 40.34,
+            "moins_de_3.5": 59.66,
+            "plus_de_4.5": 22.38,
+            "moins_de_4.5": 77.62,
+            "plus_de_5.5": 10.87,
+            "moins_de_5.5": 89.13
+          },
+          "btts": {
+            "oui": 63.04,
+            "non": 36.96
+          },
+          "resultat_total": {
+            "V1et+0.5": 49.92,
+            "1Xet+0.5": 68.5,
+            "V2et+0.5": 27.62,
+            "V1et+1.5": 42.52,
+            "1Xet+1.5": 61.1,
+            "V2et+1.5": 22.4,
+            "V1et+2.5": 35.42,
+            "1Xet+2.5": 44.07,
+            "V2et+2.5": 18.8,
+            "V1et+3.5": 21.33,
+            "1Xet+3.5": 29.98,
+            "V2et+3.5": 10.36,
+            "V1et+4.5": 13.56,
+            "1Xet+4.5": 15.75,
+            "V2et+4.5": 6.63,
+            "V1et+5.5": 5.97,
+            "1Xet+5.5": 8.15,
+            "V2et+5.5": 2.72
+          },
+          "scores_probables": {
+            "1-1": 9.93,
+            "2-1": 9.72,
+            "1-0": 7.4,
+            "2-0": 7.1,
+            "1-2": 6.82,
+            "2-2": 6.46,
+            "3-1": 5.92,
+            "0-1": 5.22,
+            "3-0": 4.36,
+            "0-0": 3.88
+          },
+          "buts_moyens_simules": {
+            "home": 1.88,
+            "away": 1.36,
+            "total": 3.23
+          }
+        },
+        "analyse_ia": "❌ Échec définitif après 5 tentatives. Dernière erreur : 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions",
+        "confiance_pourcentage": 71,
+        "prediction_principale": null,
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": null,
+        "mi_temps": null,
+        "option_nul": null,
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance 1X  \n**CONFIANCE** : 71%  \n**SCORES PROBABLES** : 1‑1, 2‑1  \n\n**RAISONNEMENT** :  \n- Le modèle Monte‑Carlo indique une probabilité de 49,9 % de victoire à domicile et 22,5 % de match nul, soit 72,4 % pour le double chance 1X, la plus forte des options proposées.  \n- Les deux équipes affichent des moyennes de buts élevées (1,88 à domicile, 1,36 à l’extérieur) et le « over 2.5 » atteint 62,9 %, montrant que le match sera très ouvert, ce qui renforce la probabilité d’un résultat au moins à égalité pour Columbus.  \n- La forme récente de Columbus (3 victoires sur 6) combinée à un léger avantage historique à domicile contre une Inter Miami en bonne forme mais souvent vulnérable en défense (moins de 2 buts encaissés en moyenne) soutient l’idée d’un résultat non perdant pour le club hôte.",
+        "confiance_pourcentage_final": 71,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "1‑1, 2‑1"
+      },
+      {
+        "id": 6,
+        "HomeTeam": "Atlanta",
+        "AwayTeam": "Agropecuario",
+        "date": "27 septembre 2026 à 18:30:00 UTC",
+        "league": "Argentina - Primera Nacional",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 0.9,
+          "moyenne_encaisses": 1.3,
+          "form_6": [
+            "D",
+            "W",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "form_10": [
+            "D",
+            "W",
+            "W",
+            "L",
+            "L",
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "recent_form": [
+            "D",
+            "W",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "total_points_6": 10,
+          "total_points_10": 13,
+          "total_points": 10,
+          "serie_domicile": [
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "buts_dom_marques": 4,
+          "buts_dom_encaisses": 4,
+          "buts_ext_marques": 5,
+          "buts_ext_encaisses": 9,
+          "total_marques": 9,
+          "total_encaisses": 13
+        },
+        "stats_away": {
+          "moyenne_marques": 1.2,
+          "moyenne_encaisses": 1.0,
+          "form_6": [
+            "W",
+            "L",
+            "W",
+            "D",
+            "L",
+            "W"
+          ],
+          "form_10": [
+            "W",
+            "L",
+            "W",
+            "D",
+            "L",
+            "W",
+            "W",
+            "L",
+            "W",
+            "D"
+          ],
+          "recent_form": [
+            "W",
+            "L",
+            "W",
+            "D",
+            "L",
+            "W"
+          ],
+          "total_points_6": 10,
+          "total_points_10": 17,
+          "total_points": 10,
+          "serie_exterieur": [
+            "L",
+            "D",
+            "L",
+            "L",
+            "D"
+          ],
+          "buts_dom_marques": 9,
+          "buts_dom_encaisses": 1,
+          "buts_ext_marques": 3,
+          "buts_ext_encaisses": 9,
+          "total_marques": 12,
+          "total_encaisses": 10
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401844138",
+            "date": "Mon, Sep 21",
+            "home_team": "Tristán Suárez",
+            "away_team": "Atlanta",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844138"
+          },
+          {
+            "game_id": "401844122",
+            "date": "Sat, Sep 12",
+            "home_team": "Atlanta",
+            "away_team": "Güemes",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844122"
+          },
+          {
+            "game_id": "401844113",
+            "date": "Sat, Sep 05",
+            "home_team": "Chacarita Juniors",
+            "away_team": "Atlanta",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844113"
+          },
+          {
+            "game_id": "401844085",
+            "date": "Sun, Aug 30",
+            "home_team": "Atlanta",
+            "away_team": "San Martín (San Juan)",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844085"
+          },
+          {
+            "game_id": "401843989",
+            "date": "Wed, Aug 26",
+            "home_team": "Patronato",
+            "away_team": "Atlanta",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401843989"
+          },
+          {
+            "game_id": "401844080",
+            "date": "Sat, Aug 22",
+            "home_team": "Nueva Chicago",
+            "away_team": "Atlanta",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844080"
+          },
+          {
+            "game_id": "401844055",
+            "date": "Sat, Aug 15",
+            "home_team": "Ferro Carril Oeste",
+            "away_team": "Atlanta",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844055"
+          },
+          {
+            "game_id": "401844040",
+            "date": "Sun, Aug 09",
+            "home_team": "Atlanta",
+            "away_team": "Temperley",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844040"
+          },
+          {
+            "game_id": "401844025",
+            "date": "Sun, Aug 02",
+            "home_team": "Deportivo Maipú",
+            "away_team": "Atlanta",
+            "score": "4 - 2",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844025"
+          },
+          {
+            "game_id": "401843998",
+            "date": "Mon, Jul 27",
+            "home_team": "Atlanta",
+            "away_team": "Almagro",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401843998"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401844143",
+            "date": "Sun, Sep 20",
+            "home_team": "Agropecuario",
+            "away_team": "Gimnasia y Tiro (Salta)",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844143"
+          },
+          {
+            "game_id": "401844120",
+            "date": "Sun, Sep 13",
+            "home_team": "San Martín (Tucumán)",
+            "away_team": "Agropecuario",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844120"
+          },
+          {
+            "game_id": "401844110",
+            "date": "Sun, Sep 06",
+            "home_team": "Agropecuario",
+            "away_team": "Atletico Rafaela",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844110"
+          },
+          {
+            "game_id": "401844098",
+            "date": "Tue, Sep 01",
+            "home_team": "Gimnasia y Esgrima (Jujuy)",
+            "away_team": "Agropecuario",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844098"
+          },
+          {
+            "game_id": "401844074",
+            "date": "Sat, Aug 22",
+            "home_team": "Tristán Suárez",
+            "away_team": "Agropecuario",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844074"
+          },
+          {
+            "game_id": "401844053",
+            "date": "Sat, Aug 15",
+            "home_team": "Agropecuario",
+            "away_team": "Ciudad de Bolívar",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844053"
+          },
+          {
+            "game_id": "401844037",
+            "date": "Sat, Aug 08",
+            "home_team": "Agropecuario",
+            "away_team": "Güemes",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844037"
+          },
+          {
+            "game_id": "401844015",
+            "date": "Sun, Aug 02",
+            "home_team": "Chacarita Juniors",
+            "away_team": "Agropecuario",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844015"
+          },
+          {
+            "game_id": "401844000",
+            "date": "Sun, Jul 26",
+            "home_team": "Agropecuario",
+            "away_team": "San Martín (San Juan)",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844000"
+          },
+          {
+            "game_id": "401843988",
+            "date": "Fri, Jul 17",
+            "home_team": "Nueva Chicago",
+            "away_team": "Agropecuario",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401843988"
+          }
+        ],
+        "classement": {
+          "Atlanta": null,
+          "Agropecuario": null
+        },
+        "classement_complet": [],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "401843837",
+            "date": "Sunday, May 10, 2026",
+            "team1": "Agropecuario",
+            "score": "0 - 0",
+            "team2": "Atlanta",
+            "title": "Agropecuario VS Atlanta",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/401843837/atlanta-agropecuario",
+            "source": "Primera Nacional",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/10146.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/13913.png",
+        "classement_home": null,
+        "classement_away": null,
+        "points_classement_home": null,
+        "points_classement_away": null,
+        "nom_classement_home": null,
+        "nom_classement_away": null,
+        "country_fr": "Argentina - Primera Nacional",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.205,
+            "lambda_away": 0.728,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 47.66,
+            "X": 30.13,
+            "V2": 22.2
+          },
+          "double_chance": {
+            "1X": 77.8,
+            "12": 69.87,
+            "X2": 52.34
+          },
+          "over_under": {
+            "plus_de_0.5": 85.24,
+            "moins_de_0.5": 14.76,
+            "plus_de_1.5": 57.79,
+            "moins_de_1.5": 42.2,
+            "plus_de_2.5": 30.76,
+            "moins_de_2.5": 69.24,
+            "plus_de_3.5": 12.78,
+            "moins_de_3.5": 87.22,
+            "plus_de_4.5": 4.67,
+            "moins_de_4.5": 95.33,
+            "plus_de_5.5": 1.44,
+            "moins_de_5.5": 98.56
+          },
+          "btts": {
+            "oui": 36.03,
+            "non": 63.97
+          },
+          "resultat_total": {
+            "V1et+0.5": 47.66,
+            "1Xet+0.5": 63.04,
+            "V2et+0.5": 22.2,
+            "V1et+1.5": 30.52,
+            "1Xet+1.5": 45.89,
+            "V2et+1.5": 11.9,
+            "V1et+2.5": 19.69,
+            "1Xet+2.5": 22.62,
+            "V2et+2.5": 8.14,
+            "V1et+3.5": 7.41,
+            "1Xet+3.5": 10.34,
+            "V2et+3.5": 2.44,
+            "V1et+4.5": 3.14,
+            "1Xet+4.5": 3.46,
+            "V2et+4.5": 1.21,
+            "V1et+5.5": 0.84,
+            "1Xet+5.5": 1.16,
+            "V2et+5.5": 0.28
+          },
+          "scores_probables": {
+            "1-0": 17.14,
+            "0-0": 14.76,
+            "1-1": 12.44,
+            "2-0": 10.83,
+            "0-1": 10.3,
+            "2-1": 7.91,
+            "1-2": 4.72,
+            "3-0": 4.37,
+            "0-2": 3.76,
+            "3-1": 3.11
+          },
+          "buts_moyens_simules": {
+            "home": 1.21,
+            "away": 0.72,
+            "total": 1.93
+          }
+        },
+        "analyse_ia": "❌ Échec définitif après 5 tentatives. Dernière erreur : 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions",
+        "confiance_pourcentage": 78,
+        "prediction_principale": null,
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": null,
+        "mi_temps": null,
+        "option_nul": null,
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance 1X  \n**CONFIANCE** : 78%  \n**SCORES PROBABLES** : 1‑0, 0‑0  \n\n**RAISONNEMENT** : Atlanta possède une attaque légèrement supérieure (λ = 1.205) et bénéficie d’un avantage maison, ce qui lui donne 47,7 % de chances de gagner contre 30 % de match nul (Monte‑Carlo). Les simulations indiquent un total de buts faible (under 2.5 à 69 %). La combinaison du meilleur rendement de l’équipe à domicile et de la probabilité élevée d’un résultat sans défaite rend le pari « double chance 1X » le plus fiable.",
+        "confiance_pourcentage_final": 78,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "1‑0, 0‑0"
+      }
+    ]
+  }
+}
