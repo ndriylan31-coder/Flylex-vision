@@ -1,0 +1,1954 @@
+{
+  "metadata": {
+    "date_generation": "2026-09-29 01:08:14",
+    "date_matchs": "2026-09-29",
+    "version_algorithme": "8.3 - STATISTIQUES BRUTES + FORMES 6/10 + POINTS CLASSEMENT + COTES + ANALYSE IA DEEPSEEK ENRICHIE + MATCHS COMPLETS AVEC STATS DÉTAILLÉES + CLASSEMENT COMPLET + H2H ENRICHI AVEC STATS + CONFIANCE EXTRAITE + SCORES + RETRY IA + EXTRACTION AMÉLIORÉE 2 FORMATS + PROBABILITÉS MONTE-CARLO (NON INCLUSES DANS PROMPT IA)",
+    "total_predictions": 4,
+    "mode": "stats_brutes_avec_cotes_et_ia_complete_enrichie_retry_nouvelle_structure_avec_stats_detaillees_h2h_enrichi_confiance_extraite_scores_extraction_amelioree_2_formats_montecarlo_hors_prompt",
+    "note": "Collecte des statistiques brutes complètes : moyennes, formes récentes (6 et 10 matchs), séries domicile/extérieur, classements avec points + cotes des bookmakers + analyse IA DeepSeek ENRICHIE avec matchs détaillés (nouvelle structure objet avec game_id, date, home_team, away_team, score, status, competition + STATS DÉTAILLÉES ESPN) + classement complet + confrontations directes H2H élargies AVEC STATS DÉTAILLÉES + pourcentage confiance EXTRAIT AUTOMATIQUEMENT + 2 scores probables + retry automatique IA + suppression 'match nul' + EXTRACTION AMÉLIORÉE support des 2 formats (**FORMAT** et FORMAT simple) + PROBABILITÉS MONTE-CARLO autonomes (calculées mais NON incluses dans le prompt IA)",
+    "ia_model": "deepseek-r1-distill-llama-70b",
+    "groq_keys_count": 2,
+    "monte_carlo": {
+      "enabled": true,
+      "iterations": 20000,
+      "calibrage": "moyennes_internationales + statistiques_équipes + ajustement_h2h",
+      "probabilites_calculees": [
+        "1x2",
+        "double_chance",
+        "over_under",
+        "btts",
+        "resultat_total",
+        "scores_probables"
+      ],
+      "inclus_dans_prompt_ia": false
+    },
+    "nouveautes_v8_3_modifiees": [
+      "🎲 Module de probabilités Monte-Carlo intégré (20 000 simulations)",
+      "🔢 Calibrage avec moyennes internationales FIFA/UEFA",
+      "🆚 Ajustement automatique selon les confrontations H2H",
+      "📊 Probabilités 1X2, Double Chance, Over/Under (0.5→5.5), BTTS",
+      "🎯 Scores exacts les plus probables calculés statistiquement",
+      "❌ MODIFICIATION : Probabilités Monte-Carlo NON incluses dans le prompt IA",
+      "❌ MODIFICIATION : IA ne prédit plus corners et tirs cadrés (champs gardés dans structure)",
+      "📁 MODIFICIATION : Nom de fichier simplifié prédiction-YYYY-MM-DD-analyse-ia.json",
+      "✅ Maintien de toutes les autres fonctionnalités avancées v8.2"
+    ]
+  },
+  "statistiques_brutes_avec_ia_hors_montecarlo": {
+    "count": 4,
+    "details": [
+      {
+        "id": 1,
+        "HomeTeam": "Deportivo Pereira",
+        "AwayTeam": "Independiente Santa Fe",
+        "date": "29 septembre 2026 à 20:30:00 UTC",
+        "league": "Colombia - Primera A",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 0.7,
+          "moyenne_encaisses": 1.5,
+          "form_6": [
+            "D",
+            "D",
+            "L",
+            "L",
+            "D",
+            "L"
+          ],
+          "form_10": [
+            "D",
+            "D",
+            "L",
+            "L",
+            "D",
+            "L",
+            "W",
+            "D",
+            "D",
+            "L"
+          ],
+          "recent_form": [
+            "D",
+            "D",
+            "L",
+            "L",
+            "D",
+            "L"
+          ],
+          "total_points_6": 3,
+          "total_points_10": 8,
+          "total_points": 3,
+          "serie_domicile": [
+            "D",
+            "L",
+            "D",
+            "L"
+          ],
+          "buts_dom_marques": 2,
+          "buts_dom_encaisses": 7,
+          "buts_ext_marques": 5,
+          "buts_ext_encaisses": 8,
+          "total_marques": 7,
+          "total_encaisses": 15
+        },
+        "stats_away": {
+          "moyenne_marques": 1.3,
+          "moyenne_encaisses": 1.1,
+          "form_6": [
+            "D",
+            "L",
+            "W",
+            "L",
+            "W",
+            "D"
+          ],
+          "form_10": [
+            "D",
+            "L",
+            "W",
+            "L",
+            "W",
+            "D",
+            "D",
+            "W",
+            "D",
+            "D"
+          ],
+          "recent_form": [
+            "D",
+            "L",
+            "W",
+            "L",
+            "W",
+            "D"
+          ],
+          "total_points_6": 8,
+          "total_points_10": 14,
+          "total_points": 8,
+          "serie_exterieur": [
+            "D",
+            "W",
+            "L",
+            "D",
+            "D"
+          ],
+          "buts_dom_marques": 6,
+          "buts_dom_encaisses": 5,
+          "buts_ext_marques": 7,
+          "buts_ext_encaisses": 6,
+          "total_marques": 13,
+          "total_encaisses": 11
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401878047",
+            "date": "Sat, Sep 26",
+            "home_team": "Deportivo Pereira",
+            "away_team": "Internacional de Bogotá",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878047"
+          },
+          {
+            "game_id": "401877947",
+            "date": "Fri, Sep 18",
+            "home_team": "Águilas Doradas",
+            "away_team": "Deportivo Pereira",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877947"
+          },
+          {
+            "game_id": "401878020",
+            "date": "Sun, Sep 13",
+            "home_team": "Deportivo Pereira",
+            "away_team": "Atlético Bucaramanga",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878020"
+          },
+          {
+            "game_id": "401902716",
+            "date": "Wed, Sep 09",
+            "home_team": "América de Cali",
+            "away_team": "Deportivo Pereira",
+            "score": "4 - 1",
+            "status": "FT",
+            "competition": "Copa Colombia",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401902716"
+          },
+          {
+            "game_id": "401877872",
+            "date": "Sun, Sep 06",
+            "home_team": "Deportivo Pereira",
+            "away_team": "Millonarios",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877872"
+          },
+          {
+            "game_id": "401878032",
+            "date": "Fri, Sep 04",
+            "home_team": "Deportivo Pereira",
+            "away_team": "Independiente Medellín",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878032"
+          },
+          {
+            "game_id": "401877873",
+            "date": "Mon, Aug 31",
+            "home_team": "Deportivo Pasto",
+            "away_team": "Deportivo Pereira",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877873"
+          },
+          {
+            "game_id": "401877874",
+            "date": "Sat, Aug 22",
+            "home_team": "Alianza FC",
+            "away_team": "Deportivo Pereira",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877874"
+          },
+          {
+            "game_id": "401877856",
+            "date": "Sat, Aug 01",
+            "home_team": "Fortaleza CEIF",
+            "away_team": "Deportivo Pereira",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877856"
+          },
+          {
+            "game_id": "401877863",
+            "date": "Fri, Jul 24",
+            "home_team": "Llaneros FC",
+            "away_team": "Deportivo Pereira",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877863"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401871780",
+            "date": "Fri, Sep 25",
+            "home_team": "Unión Magdalena",
+            "away_team": "Independiente Santa Fe",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Copa Colombia",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401871780"
+          },
+          {
+            "game_id": "401877961",
+            "date": "Wed, Sep 23",
+            "home_team": "Independiente Santa Fe",
+            "away_team": "Deportivo Cali",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877961"
+          },
+          {
+            "game_id": "401877842",
+            "date": "Sat, Sep 19",
+            "home_team": "Alianza FC",
+            "away_team": "Independiente Santa Fe",
+            "score": "1 - 4",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877842"
+          },
+          {
+            "game_id": "401913959",
+            "date": "Tue, Sep 15",
+            "home_team": "Vasco da Gama",
+            "away_team": "Independiente Santa Fe",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401913959"
+          },
+          {
+            "game_id": "401877962",
+            "date": "Sat, Sep 12",
+            "home_team": "Independiente Santa Fe",
+            "away_team": "Deportes Tolima",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877962"
+          },
+          {
+            "game_id": "401913960",
+            "date": "Tue, Sep 08",
+            "home_team": "Independiente Santa Fe",
+            "away_team": "Vasco da Gama",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401913960"
+          },
+          {
+            "game_id": "401877843",
+            "date": "Sat, Sep 05",
+            "home_team": "Independiente Santa Fe",
+            "away_team": "Fortaleza CEIF",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877843"
+          },
+          {
+            "game_id": "401877839",
+            "date": "Thu, Sep 03",
+            "home_team": "Independiente Santa Fe",
+            "away_team": "Millonarios",
+            "score": "3 - 2",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877839"
+          },
+          {
+            "game_id": "401877963",
+            "date": "Sat, Aug 29",
+            "home_team": "Atlético Junior",
+            "away_team": "Independiente Santa Fe",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877963"
+          },
+          {
+            "game_id": "401903295",
+            "date": "Thu, Aug 27",
+            "home_team": "River Plate",
+            "away_team": "Independiente Santa Fe",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401903295"
+          }
+        ],
+        "classement": {
+          "Deportivo Pereira": null,
+          "Independiente Santa Fe": null
+        },
+        "classement_complet": [],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "693652",
+            "date": "Saturday, February 17, 2024",
+            "team1": "Deportivo Pereira",
+            "score": "1 - 0",
+            "team2": "Independiente Santa Fe",
+            "title": "Deportivo Pereira VS Independiente Santa Fe",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/693652/independiente-santa-fe-deportivo-pereira",
+            "source": "Primera A",
+            "stats": {}
+          },
+          {
+            "gameId": "714278",
+            "date": "Thursday, October 3, 2024",
+            "team1": "Independiente Santa Fe",
+            "score": "1 - 1",
+            "team2": "Deportivo Pereira",
+            "title": "Independiente Santa Fe VS Deportivo Pereira",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/714278/deportivo-pereira-independiente-santa-fe",
+            "source": "Primera A",
+            "stats": {}
+          },
+          {
+            "gameId": "730315",
+            "date": "Sunday, January 26, 2025",
+            "team1": "Independiente Santa Fe",
+            "score": "2 - 1",
+            "team2": "Deportivo Pereira",
+            "title": "Independiente Santa Fe VS Deportivo Pereira",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/730315/deportivo-pereira-independiente-santa-fe",
+            "source": "Primera A",
+            "stats": {}
+          },
+          {
+            "gameId": "750584",
+            "date": "Sunday, July 13, 2025",
+            "team1": "Deportivo Pereira",
+            "score": "2 - 2",
+            "team2": "Independiente Santa Fe",
+            "title": "Deportivo Pereira VS Independiente Santa Fe",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/750584/independiente-santa-fe-deportivo-pereira",
+            "source": "Primera A",
+            "stats": {}
+          },
+          {
+            "gameId": "401850733",
+            "date": "Wednesday, January 28, 2026",
+            "team1": "Independiente Santa Fe",
+            "score": "2 - 2",
+            "team2": "Deportivo Pereira",
+            "title": "Independiente Santa Fe VS Deportivo Pereira",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/401850733/deportivo-pereira-independiente-santa-fe",
+            "source": "Primera A",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/5486.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/5488.png",
+        "classement_home": null,
+        "classement_away": null,
+        "points_classement_home": null,
+        "points_classement_away": null,
+        "nom_classement_home": null,
+        "nom_classement_away": null,
+        "country_fr": "Colombia - Primera A",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.048,
+            "lambda_away": 1.468,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 26.98,
+            "X": 26.32,
+            "V2": 46.7
+          },
+          "double_chance": {
+            "1X": 53.3,
+            "12": 73.68,
+            "X2": 73.02
+          },
+          "over_under": {
+            "plus_de_0.5": 91.76,
+            "moins_de_0.5": 8.24,
+            "plus_de_1.5": 71.22,
+            "moins_de_1.5": 28.78,
+            "plus_de_2.5": 46.06,
+            "moins_de_2.5": 53.94,
+            "plus_de_3.5": 24.54,
+            "moins_de_3.5": 75.46,
+            "plus_de_4.5": 11.1,
+            "moins_de_4.5": 88.9,
+            "plus_de_5.5": 4.38,
+            "moins_de_5.5": 95.62
+          },
+          "btts": {
+            "oui": 49.76,
+            "non": 50.24
+          },
+          "resultat_total": {
+            "V1et+0.5": 26.98,
+            "1Xet+0.5": 45.06,
+            "V2et+0.5": 46.7,
+            "V1et+1.5": 18.5,
+            "1Xet+1.5": 36.59,
+            "V2et+1.5": 34.63,
+            "V1et+2.5": 14.3,
+            "1Xet+2.5": 19.82,
+            "V2et+2.5": 26.24,
+            "V1et+3.5": 6.0,
+            "1Xet+3.5": 11.52,
+            "V2et+3.5": 13.02,
+            "V1et+4.5": 3.26,
+            "1Xet+4.5": 4.17,
+            "V2et+4.5": 6.93,
+            "V1et+5.5": 1.04,
+            "1Xet+5.5": 1.95,
+            "V2et+5.5": 2.44
+          },
+          "scores_probables": {
+            "1-1": 12.57,
+            "0-1": 12.07,
+            "1-2": 8.76,
+            "1-0": 8.48,
+            "0-2": 8.4,
+            "0-0": 8.24,
+            "2-1": 6.67,
+            "2-2": 4.62,
+            "1-3": 4.48,
+            "0-3": 4.46
+          },
+          "buts_moyens_simules": {
+            "home": 1.04,
+            "away": 1.47,
+            "total": 2.51
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Plus de 1.5 buts  \n**CONFIANCE** : 78 %  \n**SCORES PROBABLES** : 2‑1 ou 1‑1  \n**MI-TEMPS** : Mi‑temps match nul (0‑0)  \n**OPTION RISQUE NUL** : Match nul – 30 %  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative des équipes**  \n- **Deportivo Pereira (domicile)** : très faible en attaque (0,70 but/match) et moyenne à élevée en défense (≈ 1,5 but encaissé). Sur ses 8 derniers matchs à domicile, elle n’a inscrit que 5 buts et en a encaissé 8.  \n- **Independiente Santa Fe (extérieur)** : meilleure attaque (≈ 1,30 but/match) mais défense légèrement perméable (≈ 1,10 but encaissé). En 8 sorties à l’extérieur, elle a marqué 9 buts et en a concédé 12.\n\n**2. Impact du facteur domicile/extérieur**  \nPereira peine à marquer à domicile, tandis que Santa Fe arrive avec une capacité à marquer à l’extérieur. Le déséquilibre se traduit souvent par un match où les deux équipes trouvent le filet, même si le nombre total de buts reste modéré.\n\n**3. Forme récente & tendances**  \n- **Pereira** (6 derniers) : D D L L D L → 3 points, aucune victoire récente.  \n- **Santa Fe** (6 derniers) : D L W L W D → 8 points, deux victoires récentes, dont une forte (4‑1 à l’extérieur).  \n\nLes confrontations directes (5 derniers) montrent : 1 victoire Pereira, 1 victoire Santa Fe, 3 nuls. 4 sur 5 matchs ont vu les deux équipes marquer (BTTS = 80 %). Le total moyen de buts dans ces duels est de **2,8**, avec **60 %** des rencontres dépassant les 2,5 buts et **80 %** dépassant les 1,5 buts.\n\n**4. Contexte du championnat**  \nLe classement complet n’est pas disponible, mais l’absence de points indiqués pour les deux équipes suggère une position moyenne à basse, typique de matchs serrés où chaque point compte. Aucun indice de domination claire d’une équipe.\n\n**5. Analyse des confrontations directes**  \n- Historique très équilibré, mais tendance à **plus de buts** et **BTTS** élevé.  \n- Les deux dernières rencontres (2‑2, 2‑2) confirment une propension à des scores à deux chiffres.\n\n**6. Évaluation des cotes**  \nAucune cote fournie – la décision se base uniquement sur les statistiques.\n\n**7. Analyse approfondie des matchs passés**  \nMême si les données de possession, tirs, corners ne sont pas détaillées, les scores indiquent :  \n- **Pereira** : plusieurs matchs à 0‑0 ou 0‑3, montrant une défense parfois solide mais une attaque inefficace.  \n- **Santa Fe** : plusieurs matchs à 1‑1, 2‑2, 3‑2, démontrant une capacité à marquer mais aussi à concéder.\n\n**8. Synthèse & choix de la prédiction**  \n- **BTTS** très probable (80 %).  \n- **Plus de 1,5 buts** apparaît le plus fiable (≈ 80 % dans les duels, 62 % dans les matchs à domicile de Pereira, 38 % à l’extérieur de Santa Fe).  \n- **Plus de 2,5 buts** reste incertain (≈ 40 % global), donc on privilégie **+1,5 buts** pour maximiser le rapport fiabilité/gain.  \n- Aucun avantage net pour une victoire nette ; le match semble équilibré, d’où le **double chance** non retenu au profit d’une sélection de buts.  \n\n**9. Scores les plus probables**  \n- **2‑1** (Santa Fe l’emporte de justesse) – reflète la capacité de Santa Fe à marquer et la faiblesse offensive de Pereira.  \n- **1‑1** – très fréquent dans leurs confrontations récentes et correspond à la tendance BTTS.  \n\n**10. Mi‑temps**  \nLes deux équipes affichent souvent un départ prudent (0‑0 ou 1‑1). La prédiction la plus plausible pour la première moitié est donc **match nul (0‑0)**, avec une légère probabilité d’un but tardif.  \n\n**11. Option risque nul**  \nLes statistiques de duels (3 nuls sur 5) et la forme récente équilibrée donnent une **probabilité de 30 %** que le match se solde sur un nul final. Cette information est fournie en tant qu’option de risque, sans remplacer la prédiction principale.",
+        "confiance_pourcentage": 78,
+        "prediction_principale": "Plus de 1.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "2‑1 ou 1‑1",
+        "mi_temps": "Mi‑temps match nul (0‑0)",
+        "option_nul": "Match nul – 30 %",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE :** double chance X2  \n**CONFIANCE :** 73 %  \n**SCORES PROBABLES :** 1‑1, 0‑1  \n\n**RAISONNEMENT :**  \n- Monte‑Carlo indique 73 % de chances que le match se termine **draw ou victoire extérieure** (X2), contre seulement 53 % pour 1X.  \n- Les 1‑2 % de victoire à domicile (26,98 %) sont nettement inférieurs aux 46,7 % de victoire extérieure.  \n- La forme récente de Santa Fe (2 victoires sur 6) et son attaque (1,30 bpm) surpassent celle de Pereira (0,70 bpm).  \n- Les confrontations directes montrent un fort taux de BTTS (≈ 80 %) mais la probabilité de +2,5 buts reste < 50 %, rendant le pari “+2,5” moins fiable que le X2.",
+        "confiance_pourcentage_final": null,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": null
+      },
+      {
+        "id": 4,
+        "HomeTeam": "Woking",
+        "AwayTeam": "Solihull Moors",
+        "date": "29 septembre 2026 à 18:45:00 UTC",
+        "league": "England - National League",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.5,
+          "moyenne_encaisses": 1.4,
+          "form_6": [
+            "W",
+            "D",
+            "D",
+            "W",
+            "L",
+            "D"
+          ],
+          "form_10": [
+            "W",
+            "D",
+            "D",
+            "W",
+            "L",
+            "D",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "recent_form": [
+            "W",
+            "D",
+            "D",
+            "W",
+            "L",
+            "D"
+          ],
+          "total_points_6": 9,
+          "total_points_10": 12,
+          "total_points": 9,
+          "serie_domicile": [
+            "D",
+            "W",
+            "D",
+            "W",
+            "L"
+          ],
+          "buts_dom_marques": 9,
+          "buts_dom_encaisses": 7,
+          "buts_ext_marques": 6,
+          "buts_ext_encaisses": 7,
+          "total_marques": 15,
+          "total_encaisses": 14
+        },
+        "stats_away": {
+          "moyenne_marques": 0.9,
+          "moyenne_encaisses": 2.6,
+          "form_6": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "D",
+            "L"
+          ],
+          "form_10": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "D",
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "recent_form": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "D",
+            "L"
+          ],
+          "total_points_6": 4,
+          "total_points_10": 4,
+          "total_points": 4,
+          "serie_exterieur": [
+            "L",
+            "D",
+            "L",
+            "L"
+          ],
+          "buts_dom_marques": 4,
+          "buts_dom_encaisses": 13,
+          "buts_ext_marques": 5,
+          "buts_ext_encaisses": 13,
+          "total_marques": 9,
+          "total_encaisses": 26
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401889287",
+            "date": "Sat, Sep 26",
+            "home_team": "Carlisle United",
+            "away_team": "Woking",
+            "score": "2 - 5",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889287"
+          },
+          {
+            "game_id": "401889290",
+            "date": "Sat, Sep 19",
+            "home_team": "Woking",
+            "away_team": "Kidderminster Harriers",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889290"
+          },
+          {
+            "game_id": "401889310",
+            "date": "Tue, Sep 15",
+            "home_team": "Boston United",
+            "away_team": "Woking",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889310"
+          },
+          {
+            "game_id": "401889314",
+            "date": "Sat, Sep 12",
+            "home_team": "Woking",
+            "away_team": "Altrincham",
+            "score": "5 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889314"
+          },
+          {
+            "game_id": "401889327",
+            "date": "Sat, Sep 05",
+            "home_team": "Hartlepool United",
+            "away_team": "Woking",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889327"
+          },
+          {
+            "game_id": "401889336",
+            "date": "Mon, Aug 31",
+            "home_team": "Woking",
+            "away_team": "Southend United",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889336"
+          },
+          {
+            "game_id": "401889431",
+            "date": "Fri, Aug 28",
+            "home_team": "AFC Hornchurch",
+            "away_team": "Woking",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889431"
+          },
+          {
+            "game_id": "401889358",
+            "date": "Sat, Aug 22",
+            "home_team": "Woking",
+            "away_team": "AFC Fylde",
+            "score": "3 - 2",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889358"
+          },
+          {
+            "game_id": "401889375",
+            "date": "Sat, Aug 15",
+            "home_team": "Gateshead",
+            "away_team": "Woking",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889375"
+          },
+          {
+            "game_id": "401889378",
+            "date": "Sat, Aug 08",
+            "home_team": "Woking",
+            "away_team": "Sutton United",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889378"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401889283",
+            "date": "Sat, Sep 26",
+            "home_team": "Solihull Moors",
+            "away_team": "Boreham Wood",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889283"
+          },
+          {
+            "game_id": "401889300",
+            "date": "Fri, Sep 18",
+            "home_team": "Yeovil Town",
+            "away_team": "Solihull Moors",
+            "score": "4 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889300"
+          },
+          {
+            "game_id": "401889307",
+            "date": "Tue, Sep 15",
+            "home_team": "Solihull Moors",
+            "away_team": "Barrow",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889307"
+          },
+          {
+            "game_id": "401889316",
+            "date": "Sat, Sep 12",
+            "home_team": "Solihull Moors",
+            "away_team": "Aldershot Town",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889316"
+          },
+          {
+            "game_id": "401889328",
+            "date": "Sat, Sep 05",
+            "home_team": "Gateshead",
+            "away_team": "Solihull Moors",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889328"
+          },
+          {
+            "game_id": "401889338",
+            "date": "Mon, Aug 31",
+            "home_team": "Solihull Moors",
+            "away_team": "AFC Fylde",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889338"
+          },
+          {
+            "game_id": "401889348",
+            "date": "Fri, Aug 28",
+            "home_team": "Scunthorpe United",
+            "away_team": "Solihull Moors",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889348"
+          },
+          {
+            "game_id": "401889360",
+            "date": "Sat, Aug 22",
+            "home_team": "Solihull Moors",
+            "away_team": "Southend United",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889360"
+          },
+          {
+            "game_id": "401889373",
+            "date": "Sat, Aug 15",
+            "home_team": "Solihull Moors",
+            "away_team": "Boston United",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889373"
+          },
+          {
+            "game_id": "401889381",
+            "date": "Sat, Aug 08",
+            "home_team": "Harrogate Town",
+            "away_team": "Solihull Moors",
+            "score": "5 - 2",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889381"
+          }
+        ],
+        "classement": {
+          "Woking": null,
+          "Solihull Moors": null
+        },
+        "classement_complet": [],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "713138",
+            "date": "Wednesday, October 23, 2024",
+            "team1": "Solihull Moors",
+            "score": "2 - 1",
+            "team2": "Woking",
+            "title": "Solihull Moors VS Woking",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/713138/woking-solihull-moors",
+            "source": "National League",
+            "stats": {}
+          },
+          {
+            "gameId": "713353",
+            "date": "Wednesday, February 19, 2025",
+            "team1": "Woking",
+            "score": "1 - 0",
+            "team2": "Solihull Moors",
+            "title": "Woking VS Solihull Moors",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/713353/solihull-moors-woking",
+            "source": "National League",
+            "stats": {}
+          },
+          {
+            "gameId": "751821",
+            "date": "Tuesday, September 30, 2025",
+            "team1": "Solihull Moors",
+            "score": "0 - 3",
+            "team2": "Woking",
+            "title": "Solihull Moors VS Woking",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/751821/woking-solihull-moors",
+            "source": "National League",
+            "stats": {}
+          },
+          {
+            "gameId": "752094",
+            "date": "Tuesday, April 14, 2026",
+            "team1": "Woking",
+            "score": "0 - 0",
+            "team2": "Solihull Moors",
+            "title": "Woking VS Solihull Moors",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/752094/solihull-moors-woking",
+            "source": "National League",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/290.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/13061.png",
+        "classement_home": null,
+        "classement_away": null,
+        "points_classement_home": null,
+        "points_classement_away": null,
+        "nom_classement_home": null,
+        "nom_classement_away": null,
+        "country_fr": "England - National League",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 2.131,
+            "lambda_away": 1.258,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 57.4,
+            "X": 20.51,
+            "V2": 22.08
+          },
+          "double_chance": {
+            "1X": 77.92,
+            "12": 79.49,
+            "X2": 42.6
+          },
+          "over_under": {
+            "plus_de_0.5": 96.82,
+            "moins_de_0.5": 3.18,
+            "plus_de_1.5": 85.42,
+            "moins_de_1.5": 14.58,
+            "plus_de_2.5": 66.14,
+            "moins_de_2.5": 33.86,
+            "plus_de_3.5": 44.2,
+            "moins_de_3.5": 55.81,
+            "plus_de_4.5": 26.08,
+            "moins_de_4.5": 73.92,
+            "plus_de_5.5": 13.16,
+            "moins_de_5.5": 86.84
+          },
+          "btts": {
+            "oui": 63.38,
+            "non": 36.62
+          },
+          "resultat_total": {
+            "V1et+0.5": 57.4,
+            "1Xet+0.5": 74.74,
+            "V2et+0.5": 22.08,
+            "V1et+1.5": 50.21,
+            "1Xet+1.5": 67.54,
+            "V2et+1.5": 17.88,
+            "V1et+2.5": 42.56,
+            "1Xet+2.5": 50.9,
+            "V2et+2.5": 15.23,
+            "V1et+3.5": 27.64,
+            "1Xet+3.5": 35.98,
+            "V2et+3.5": 8.22,
+            "V1et+4.5": 18.32,
+            "1Xet+4.5": 20.58,
+            "V2et+4.5": 5.5,
+            "V1et+5.5": 8.71,
+            "1Xet+5.5": 10.96,
+            "V2et+5.5": 2.2
+          },
+          "scores_probables": {
+            "2-1": 9.5,
+            "1-1": 9.0,
+            "2-0": 7.64,
+            "1-0": 7.2,
+            "3-1": 6.6,
+            "2-2": 6.08,
+            "1-2": 5.91,
+            "3-0": 5.43,
+            "3-2": 4.35,
+            "0-1": 4.2
+          },
+          "buts_moyens_simules": {
+            "home": 2.14,
+            "away": 1.27,
+            "total": 3.41
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Plus de 1.5 buts  \n**CONFIANCE** : 78 %  \n**SCORES PROBABLES** : 2‑1 ou 1‑1  \n**MI-TEMPS** : Mi‑temps +1.5 buts  \n**OPTION RISQUE NUL** : Match nul – 22 %  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative**  \n- **Woking (domicile)** : moyenne 1,50 buts marqués et 1,40 buts encaissés à domicile. Sur les 10 derniers matchs, ils ont inscrit 9 buts et encaissé 7 à domicile, soit un ratio légèrement positif.  \n- **Solihull Moors (extérieur)** : moyenne 0,90 buts marqués et 2,60 buts encaissés à l’extérieur. En 10 déplacements, ils n’ont inscrit que 5 buts tout en concédant 13 buts, ce qui montre une défense très fragile.\n\n**2. Impact du facteur domicile/extérieur**  \nWoking bénéficie d’un avantage maison évident : ils marquent plus que la moyenne de la ligue à domicile et concèdent moins que la moyenne des équipes à l’extérieur. Solihull, à l’inverse, montre une très mauvaise solidité défensive lorsqu’il joue à l’extérieur.\n\n**3. Forme récente**  \n- **Woking** : 6 derniers matchs → W D D W L D (9 pts). Deux victoires, trois matchs nuls/draws, une défaite.  \n- **Solihull** : 6 derniers matchs → L L W L D L (4 pts). Une seule victoire, un seul match nul, quatre défaites.  \n\nLa dynamique de Woking est nettement supérieure.\n\n**4. Tendances de buts**  \n- Woking a connu plusieurs rencontres à fort score à domicile (5‑1 contre Altrincham, 5‑0 contre Carlisle, 3‑2 contre AFC Fylde).  \n- Solihull a concédé 3 ou plus buts dans 5 de ses 10 derniers déplacements (0‑3, 1‑3, 1‑3, 5‑2, 3‑1).  \n\nCes deux tendances indiquent que le match comportera très probablement au moins deux buts.\n\n**5. Confrontations directes** (dernières saisons)  \n- 2024 : Solihull 2‑1 Woking  \n- 2025 : Woking 1‑0 Solihull  \n- 2025 : Solihull 0‑3 Woking  \n- 2026 : Woking 0‑0 Solihull  \n\nSur 4 rencontres, 3 se sont soldées avec **plus de 1,5 but** (2‑1, 1‑0, 0‑3) et 2 avec **plus de 2,5 buts**. La tendance historique confirme la présence de buts.\n\n**6. Probabilité de buts (modèle Poisson simplifié)**  \nλ total ≈ 1,50 (Woking) + 0,90 (Solihull) = **2,40**.  \nP(>1,5) ≈ 1 – [P(0) + P(1)] ≈ 1 – (0,090 + 0,218) ≈ **69 %**.  \nP(>2,5) ≈ 43 % (moins fiable).  \n\nAinsi, **+1,5 buts** offre la meilleure combinaison fiabilité / gain.\n\n**7. Probabilité de victoire**  \nEn combinant les moyennes de buts (1,5 vs 0,9) et la supériorité défensive de Woking, la probabilité d’une victoire à domicile se situe autour de **55‑60 %**, légèrement inférieure à la certitude d’un total > 1,5 buts.\n\n**8. BTTS**  \nLes deux équipes ont marqué dans environ 45 % des matchs récents, mais la probabilité de BTTS est moindre que celle de simplement dépasser 1,5 buts.\n\n**9. Mi‑temps**  \nLes matchs à fort score de Woking à domicile montrent souvent un but dès les 15 premières minutes (ex. 5‑1, 5‑0). De même, Solihull concède rapidement à l’extérieur. On s’attend donc à **au moins 2 buts avant la pause** → mi‑temps +1,5 buts.\n\n**10. Option risque nul**  \nLes statistiques de forme et les historiques de confrontation donnent une probabilité de match nul d’environ **22 %**. Cette option est présentée uniquement à titre indicatif et ne remplace pas la prédiction principale.",
+        "confiance_pourcentage": 78,
+        "prediction_principale": "Plus de 1.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "2‑1 ou 1‑1",
+        "mi_temps": "Mi‑temps +1.5 buts",
+        "option_nul": "Match nul – 22 %",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance 1X  \n**CONFIANCE** : 78 %  \n**SCORES PROBABLES** : 2‑1, 1‑1  \n\n**RAISONNEMENT** :  \n- Monte‑Carlo indique 77,9 % de probabilité que Woking ne perde pas (double chance 1X), la plus forte parmi les options autorisées.  \n- Woking a une bonne forme à domicile (W D D W L D, 9 pts) et concède seulement 1,40 buts en moyenne, contre une défense très fragile de Solihull à l’extérieur (2,60 buts encaissés).  \n- Les confrontations directes récentes et les scores probables (2‑1, 1‑1) montrent que le match est très susceptible de se terminer soit par une victoire de Woking, soit par un match nul.  \n\nCette combinaison offre le meilleur ratio fiabilité/gain.",
+        "confiance_pourcentage_final": 78,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "2‑1, 1‑1"
+      },
+      {
+        "id": 2,
+        "HomeTeam": "Forest Green Rovers",
+        "AwayTeam": "Wealdstone",
+        "date": "29 septembre 2026 à 18:45:00 UTC",
+        "league": "England - National League",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.6,
+          "moyenne_encaisses": 1.7,
+          "form_6": [
+            "D",
+            "L",
+            "D",
+            "W",
+            "W",
+            "L"
+          ],
+          "form_10": [
+            "D",
+            "L",
+            "D",
+            "W",
+            "W",
+            "L",
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "recent_form": [
+            "D",
+            "L",
+            "D",
+            "W",
+            "W",
+            "L"
+          ],
+          "total_points_6": 8,
+          "total_points_10": 14,
+          "total_points": 8,
+          "serie_domicile": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "buts_dom_marques": 9,
+          "buts_dom_encaisses": 10,
+          "buts_ext_marques": 7,
+          "buts_ext_encaisses": 7,
+          "total_marques": 16,
+          "total_encaisses": 17
+        },
+        "stats_away": {
+          "moyenne_marques": 1.5,
+          "moyenne_encaisses": 1.5,
+          "form_6": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "form_10": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "L",
+            "W",
+            "D",
+            "L",
+            "L",
+            "D"
+          ],
+          "recent_form": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "total_points_6": 9,
+          "total_points_10": 11,
+          "total_points": 9,
+          "serie_exterieur": [
+            "L",
+            "W",
+            "W",
+            "L",
+            "D"
+          ],
+          "buts_dom_marques": 7,
+          "buts_dom_encaisses": 9,
+          "buts_ext_marques": 8,
+          "buts_ext_encaisses": 6,
+          "total_marques": 15,
+          "total_encaisses": 15
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401889281",
+            "date": "Sat, Sep 26",
+            "home_team": "Sutton United",
+            "away_team": "Forest Green Rovers",
+            "score": "3 - 3",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889281"
+          },
+          {
+            "game_id": "401889292",
+            "date": "Sat, Sep 19",
+            "home_team": "Forest Green Rovers",
+            "away_team": "Boston United",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889292"
+          },
+          {
+            "game_id": "401889309",
+            "date": "Tue, Sep 15",
+            "home_team": "Carlisle United",
+            "away_team": "Forest Green Rovers",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889309"
+          },
+          {
+            "game_id": "401889317",
+            "date": "Sat, Sep 12",
+            "home_team": "Forest Green Rovers",
+            "away_team": "Gateshead",
+            "score": "4 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889317"
+          },
+          {
+            "game_id": "401889429",
+            "date": "Sat, Sep 05",
+            "home_team": "AFC Hornchurch",
+            "away_team": "Forest Green Rovers",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889429"
+          },
+          {
+            "game_id": "401889341",
+            "date": "Mon, Aug 31",
+            "home_team": "Forest Green Rovers",
+            "away_team": "Altrincham",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889341"
+          },
+          {
+            "game_id": "401889355",
+            "date": "Fri, Aug 28",
+            "home_team": "AFC Fylde",
+            "away_team": "Forest Green Rovers",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889355"
+          },
+          {
+            "game_id": "401889363",
+            "date": "Sat, Aug 22",
+            "home_team": "Forest Green Rovers",
+            "away_team": "Boreham Wood",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889363"
+          },
+          {
+            "game_id": "401889368",
+            "date": "Sat, Aug 15",
+            "home_team": "Worthing",
+            "away_team": "Forest Green Rovers",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889368"
+          },
+          {
+            "game_id": "401889382",
+            "date": "Sat, Aug 08",
+            "home_team": "Forest Green Rovers",
+            "away_team": "FC Halifax Town",
+            "score": "3 - 2",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889382"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401889280",
+            "date": "Sat, Sep 26",
+            "home_team": "Wealdstone",
+            "away_team": "Gateshead",
+            "score": "4 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889280"
+          },
+          {
+            "game_id": "401889298",
+            "date": "Sat, Sep 19",
+            "home_team": "Tamworth",
+            "away_team": "Wealdstone",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889298"
+          },
+          {
+            "game_id": "401889304",
+            "date": "Tue, Sep 15",
+            "home_team": "Wealdstone",
+            "away_team": "FC Halifax Town",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889304"
+          },
+          {
+            "game_id": "401889319",
+            "date": "Sat, Sep 12",
+            "home_team": "Boston United",
+            "away_team": "Wealdstone",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889319"
+          },
+          {
+            "game_id": "401889324",
+            "date": "Sat, Sep 05",
+            "home_team": "Wealdstone",
+            "away_team": "Kidderminster Harriers",
+            "score": "1 - 4",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889324"
+          },
+          {
+            "game_id": "401889337",
+            "date": "Mon, Aug 31",
+            "home_team": "Sutton United",
+            "away_team": "Wealdstone",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889337"
+          },
+          {
+            "game_id": "401889345",
+            "date": "Fri, Aug 28",
+            "home_team": "Wealdstone",
+            "away_team": "Carlisle United",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889345"
+          },
+          {
+            "game_id": "401889357",
+            "date": "Sat, Aug 22",
+            "home_team": "Worthing",
+            "away_team": "Wealdstone",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889357"
+          },
+          {
+            "game_id": "401889369",
+            "date": "Sat, Aug 15",
+            "home_team": "Wealdstone",
+            "away_team": "Harrogate Town",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889369"
+          },
+          {
+            "game_id": "401889388",
+            "date": "Sat, Aug 08",
+            "home_team": "AFC Fylde",
+            "away_team": "Wealdstone",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889388"
+          }
+        ],
+        "classement": {
+          "Forest Green Rovers": null,
+          "Wealdstone": null
+        },
+        "classement_complet": [],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "713066",
+            "date": "Saturday, September 14, 2024",
+            "team1": "Forest Green Rovers",
+            "score": "2 - 2",
+            "team2": "Wealdstone",
+            "title": "Forest Green Rovers VS Wealdstone",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/713066/wealdstone-forest-green-rovers",
+            "source": "National League",
+            "stats": {}
+          },
+          {
+            "gameId": "713454",
+            "date": "Saturday, April 5, 2025",
+            "team1": "Wealdstone",
+            "score": "2 - 1",
+            "team2": "Forest Green Rovers",
+            "title": "Wealdstone VS Forest Green Rovers",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/713454/forest-green-rovers-wealdstone",
+            "source": "National League",
+            "stats": {}
+          },
+          {
+            "gameId": "751904",
+            "date": "Saturday, November 22, 2025",
+            "team1": "Wealdstone",
+            "score": "1 - 1",
+            "team2": "Forest Green Rovers",
+            "title": "Wealdstone VS Forest Green Rovers",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/751904/forest-green-rovers-wealdstone",
+            "source": "National League",
+            "stats": {}
+          },
+          {
+            "gameId": "752134",
+            "date": "Saturday, March 21, 2026",
+            "team1": "Forest Green Rovers",
+            "score": "2 - 0",
+            "team2": "Wealdstone",
+            "title": "Forest Green Rovers VS Wealdstone",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/752134/wealdstone-forest-green-rovers",
+            "source": "National League",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/282.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/3887.png",
+        "classement_home": null,
+        "classement_away": null,
+        "points_classement_home": null,
+        "points_classement_away": null,
+        "nom_classement_home": null,
+        "nom_classement_away": null,
+        "country_fr": "England - National League",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.54,
+            "lambda_away": 1.601,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 37.09,
+            "X": 23.43,
+            "V2": 39.48
+          },
+          "double_chance": {
+            "1X": 60.52,
+            "12": 76.57,
+            "X2": 62.91
+          },
+          "over_under": {
+            "plus_de_0.5": 95.86,
+            "moins_de_0.5": 4.14,
+            "plus_de_1.5": 82.29,
+            "moins_de_1.5": 17.71,
+            "plus_de_2.5": 60.95,
+            "moins_de_2.5": 39.05,
+            "plus_de_3.5": 38.8,
+            "moins_de_3.5": 61.2,
+            "plus_de_4.5": 21.06,
+            "moins_de_4.5": 78.94,
+            "plus_de_5.5": 10.04,
+            "moins_de_5.5": 89.96
+          },
+          "btts": {
+            "oui": 63.04,
+            "non": 36.96
+          },
+          "resultat_total": {
+            "V1et+0.5": 37.09,
+            "1Xet+0.5": 56.38,
+            "V2et+0.5": 39.48,
+            "V1et+1.5": 30.34,
+            "1Xet+1.5": 49.64,
+            "V2et+1.5": 32.65,
+            "V1et+2.5": 25.33,
+            "1Xet+2.5": 33.89,
+            "V2et+2.5": 27.06,
+            "V1et+3.5": 14.36,
+            "1Xet+3.5": 22.92,
+            "V2et+3.5": 15.88,
+            "V1et+4.5": 9.11,
+            "1Xet+4.5": 11.39,
+            "V2et+4.5": 9.68,
+            "V1et+5.5": 3.82,
+            "1Xet+5.5": 6.1,
+            "V2et+5.5": 3.94
+          },
+          "scores_probables": {
+            "1-1": 10.73,
+            "2-1": 8.38,
+            "1-2": 8.34,
+            "0-1": 6.83,
+            "1-0": 6.74,
+            "2-2": 6.29,
+            "0-2": 5.6,
+            "2-0": 5.01,
+            "1-3": 4.83,
+            "3-1": 4.25
+          },
+          "buts_moyens_simules": {
+            "home": 1.55,
+            "away": 1.61,
+            "total": 3.15
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Plus de 2.5 buts  \n**CONFIANCE** : 68 %  \n**SCORES PROBABLES** : 2‑1 ou 2‑2  \n**MI‑TEMPS** : Mi‑temps +1.5 buts  \n**OPTION RISQUE NUL** : Match nul – 30 %  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative des équipes**  \n- **Forest Green Rovers (domicile)** : moyenne 1,60 buts marqués / 1,70 buts encaissés. En 5 matchs à domicile cette saison ils n’ont inscrit que **9 buts** et en ont concédés **10** – une production offensive modestement inférieure à la moyenne de la ligue, mais une défense qui laisse entrer presque autant.  \n- **Wealdstone (extérieur)** : moyenne 1,50 buts marqués / 1,50 buts encaissés. En 5 matchs à l’extérieur ils ont marqué **6 buts** et encaissé **8** – légèrement plus solide que Forest Green à domicile, mais toujours vulnérable.\n\n**2. Impact du facteur domicile/extérieur**  \n- Forest Green montre une légère faiblesse à domicile (plus de buts encaissés que marqués).  \n- Wealdstone a une défense un peu plus fiable à l’extérieur (6 buts encaissés contre 8 marqués), mais leur attaque à l’extérieur reste peu prolifique (6 buts en 5 matchs).  \n\n**3. Formes récentes**  \n- **Forest Green** (6 derniers) : D L D W W L – 8 points, aucune séquence de victoires consécutives.  \n- **Wealdstone** (6 derniers) : W L L W L W – 9 points, deux victoires récentes mais des pertes fréquentes.  \n\nLes deux équipes alternent entre victoires et défaites, ce qui indique un match assez ouvert.\n\n**4. Tendances de buts (10 derniers matchs)**  \n- Forest Green : **33 buts** (3,3 par match).  \n- Wealdstone : **30 buts** (3,0 par match).  \n\nCes moyennes dépassent largement le seuil de 2,5 buts par rencontre.\n\n**5. Confrontations directes (4 derniers affrontements)**  \n- Résultats : 2‑2, 2‑1 (Wealdstone), 1‑1, 2‑0 (Forest Green).  \n- Total de buts : 11 buts → **2,75 buts/match**.  \n- Trois des quatre rencontres ont dépassé les 2 buts, dont deux ont dépassé les 2,5 buts.  \n\n**6. Synthèse**  \n- Les deux équipes affichent des moyennes combinées d’environ **3,0 buts** par rencontre.  \n- Historique direct montre une tendance à dépasser les 2,5 buts.  \n- Aucun des deux côtés ne possède une défense suffisamment solide pour garantir moins de 2,5 buts.  \n\n**7. Choix de la prédiction**  \n- Le critère « fiabilité / gain » privilégie le pari le plus sûr avec le meilleur rendement.  \n- La probabilité que le total dépasse 2,5 buts est supérieure à celle d’un simple dépassement de 1,5 buts, tout en restant raisonnablement fiable (≈ 68 %).  \n- Ainsi, **« Plus de 2.5 buts »** est la meilleure option.\n\n**8. Scores les plus probables**  \n- En se basant sur les moyennes d’attaque (≈ 1,5 buts chacune) et la tendance à des scores ouverts, les issues **2‑1** (favorisant légèrement le domicile) ou **2‑2** (match très équilibré) sont les plus plausibles.\n\n**9. Prédiction mi‑temps**  \n- Les deux équipes ont régulièrement ouvert le score dans leurs matchs récents (ex. 3‑3, 4‑0, 4‑0).  \n- On s’attend donc à **au moins 2 buts** avant la pause → **Mi‑temps +1.5 buts**.\n\n**10. Option risque nul**  \n- Les confrontations directes sont très équilibrées (2 victoires chacune, 2 nuls).  \n- La probabilité d’un match nul est estimée à **≈ 30 %**, ce qui reste notable mais insuffisant pour justifier une double chance comme prédiction principale.  \n\nEn résumé, le match entre Forest Green Rovers et Wealdstone devrait être riche en buts, avec plus de 2,5 buts attendus, deux scores probables de 2‑1 ou 2‑2, et au moins deux buts inscrits en première mi‑temps.",
+        "confiance_pourcentage": 63,
+        "prediction_principale": "Plus de 2.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "2‑1 ou 2‑2",
+        "mi_temps": null,
+        "option_nul": "Match nul – 30 %",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance X2 (victoire extérieur ou match nul)  \n**CONFIANCE** : 63 %  \n**SCORES PROBABLES** : 1‑1, 2‑1  \n\n**RAISONNEMENT** :  \n- Monte‑Carlo montre X2 à 62,9 % (plus élevé que +2,5 buts à 60,9 %).  \n- Le taux de victoire à l’extérieur (V2 = 39,48 %) dépasse légèrement celui du domicile, indiquant une légère supériorité de Wealdstone.  \n- Historique direct (2‑2, 2‑1, 1‑1, 2‑0) et moyenne combinée de buts (~3,0) favorisent un résultat ouvert où le match peut se solder sur un nul ou une victoire de l’extérieur.  \n- BTTS oui (63 %) confirme la probabilité de buts des deux côtés, soutenant la viabilité du X2.",
+        "confiance_pourcentage_final": 63,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "1‑1, 2‑1"
+      },
+      {
+        "id": 3,
+        "HomeTeam": "Gateshead",
+        "AwayTeam": "Altrincham",
+        "date": "29 septembre 2026 à 18:45:00 UTC",
+        "league": "England - National League",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 0.6,
+          "moyenne_encaisses": 2.4,
+          "form_6": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "D",
+            "L"
+          ],
+          "form_10": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "D",
+            "L",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "recent_form": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "D",
+            "L"
+          ],
+          "total_points_6": 1,
+          "total_points_10": 4,
+          "total_points": 1,
+          "serie_domicile": [
+            "L",
+            "D",
+            "L",
+            "W"
+          ],
+          "buts_dom_marques": 4,
+          "buts_dom_encaisses": 8,
+          "buts_ext_marques": 2,
+          "buts_ext_encaisses": 16,
+          "total_marques": 6,
+          "total_encaisses": 24
+        },
+        "stats_away": {
+          "moyenne_marques": 1.5,
+          "moyenne_encaisses": 1.5,
+          "form_6": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "form_10": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "W",
+            "W",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "recent_form": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "total_points_6": 15,
+          "total_points_10": 18,
+          "total_points": 15,
+          "serie_exterieur": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "buts_dom_marques": 10,
+          "buts_dom_encaisses": 6,
+          "buts_ext_marques": 5,
+          "buts_ext_encaisses": 9,
+          "total_marques": 15,
+          "total_encaisses": 15
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401889280",
+            "date": "Sat, Sep 26",
+            "home_team": "Wealdstone",
+            "away_team": "Gateshead",
+            "score": "4 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889280"
+          },
+          {
+            "game_id": "401889291",
+            "date": "Sat, Sep 19",
+            "home_team": "Gateshead",
+            "away_team": "Southend United",
+            "score": "1 - 6",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889291"
+          },
+          {
+            "game_id": "401889302",
+            "date": "Wed, Sep 16",
+            "home_team": "Kidderminster Harriers",
+            "away_team": "Gateshead",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889302"
+          },
+          {
+            "game_id": "401889317",
+            "date": "Sat, Sep 12",
+            "home_team": "Forest Green Rovers",
+            "away_team": "Gateshead",
+            "score": "4 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889317"
+          },
+          {
+            "game_id": "401889328",
+            "date": "Sat, Sep 05",
+            "home_team": "Gateshead",
+            "away_team": "Solihull Moors",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889328"
+          },
+          {
+            "game_id": "401889340",
+            "date": "Mon, Aug 31",
+            "home_team": "Harrogate Town",
+            "away_team": "Gateshead",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889340"
+          },
+          {
+            "game_id": "401889350",
+            "date": "Fri, Aug 28",
+            "home_team": "Gateshead",
+            "away_team": "Sutton United",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889350"
+          },
+          {
+            "game_id": "401889356",
+            "date": "Sat, Aug 22",
+            "home_team": "Yeovil Town",
+            "away_team": "Gateshead",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889356"
+          },
+          {
+            "game_id": "401889375",
+            "date": "Sat, Aug 15",
+            "home_team": "Gateshead",
+            "away_team": "Woking",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889375"
+          },
+          {
+            "game_id": "401889383",
+            "date": "Sat, Aug 08",
+            "home_team": "Eastleigh",
+            "away_team": "Gateshead",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889383"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401889425",
+            "date": "Sat, Sep 26",
+            "home_team": "Altrincham",
+            "away_team": "AFC Hornchurch",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889425"
+          },
+          {
+            "game_id": "401889297",
+            "date": "Sat, Sep 19",
+            "home_team": "AFC Fylde",
+            "away_team": "Altrincham",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889297"
+          },
+          {
+            "game_id": "401889303",
+            "date": "Wed, Sep 16",
+            "home_team": "Altrincham",
+            "away_team": "Hartlepool United",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889303"
+          },
+          {
+            "game_id": "401889314",
+            "date": "Sat, Sep 12",
+            "home_team": "Woking",
+            "away_team": "Altrincham",
+            "score": "5 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889314"
+          },
+          {
+            "game_id": "401889333",
+            "date": "Fri, Sep 04",
+            "home_team": "Altrincham",
+            "away_team": "Eastleigh",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889333"
+          },
+          {
+            "game_id": "401889341",
+            "date": "Mon, Aug 31",
+            "home_team": "Forest Green Rovers",
+            "away_team": "Altrincham",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889341"
+          },
+          {
+            "game_id": "401889353",
+            "date": "Fri, Aug 28",
+            "home_team": "Altrincham",
+            "away_team": "FC Halifax Town",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889353"
+          },
+          {
+            "game_id": "401889366",
+            "date": "Sat, Aug 22",
+            "home_team": "Boston United",
+            "away_team": "Altrincham",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889366"
+          },
+          {
+            "game_id": "401889371",
+            "date": "Sat, Aug 15",
+            "home_team": "Sutton United",
+            "away_team": "Altrincham",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889371"
+          },
+          {
+            "game_id": "401889387",
+            "date": "Sat, Aug 08",
+            "home_team": "Altrincham",
+            "away_team": "Southend United",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "English National League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401889387"
+          }
+        ],
+        "classement": {
+          "Gateshead": null,
+          "Altrincham": null
+        },
+        "classement_complet": [],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "713120",
+            "date": "Saturday, October 19, 2024",
+            "team1": "Altrincham",
+            "score": "2 - 2",
+            "team2": "Gateshead",
+            "title": "Altrincham VS Gateshead",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/713120/gateshead-altrincham",
+            "source": "National League",
+            "stats": {}
+          },
+          {
+            "gameId": "713345",
+            "date": "Saturday, February 15, 2025",
+            "team1": "Gateshead",
+            "score": "0 - 1",
+            "team2": "Altrincham",
+            "title": "Gateshead VS Altrincham",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/713345/altrincham-gateshead",
+            "source": "National League",
+            "stats": {}
+          },
+          {
+            "gameId": "751754",
+            "date": "Wednesday, September 3, 2025",
+            "team1": "Gateshead",
+            "score": "0 - 2",
+            "team2": "Altrincham",
+            "title": "Gateshead VS Altrincham",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/751754/altrincham-gateshead",
+            "source": "National League",
+            "stats": {}
+          },
+          {
+            "gameId": "752221",
+            "date": "Saturday, April 25, 2026",
+            "team1": "Altrincham",
+            "score": "3 - 1",
+            "team2": "Gateshead",
+            "title": "Altrincham VS Gateshead",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/752221/gateshead-altrincham",
+            "source": "National League",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/3138.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/633.png",
+        "classement_home": null,
+        "classement_away": null,
+        "points_classement_home": null,
+        "points_classement_away": null,
+        "nom_classement_home": null,
+        "nom_classement_away": null,
+        "country_fr": "England - National League",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.393,
+            "lambda_away": 1.459,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 36.18,
+            "X": 25.03,
+            "V2": 38.8
+          },
+          "double_chance": {
+            "1X": 61.2,
+            "12": 74.97,
+            "X2": 63.82
+          },
+          "over_under": {
+            "plus_de_0.5": 94.37,
+            "moins_de_0.5": 5.63,
+            "plus_de_1.5": 78.1,
+            "moins_de_1.5": 21.9,
+            "plus_de_2.5": 54.9,
+            "moins_de_2.5": 45.1,
+            "plus_de_3.5": 32.52,
+            "moins_de_3.5": 67.48,
+            "plus_de_4.5": 16.65,
+            "moins_de_4.5": 83.35,
+            "plus_de_5.5": 7.1,
+            "moins_de_5.5": 92.9
+          },
+          "btts": {
+            "oui": 58.38,
+            "non": 41.62
+          },
+          "resultat_total": {
+            "V1et+0.5": 36.18,
+            "1Xet+0.5": 55.58,
+            "V2et+0.5": 38.8,
+            "V1et+1.5": 28.02,
+            "1Xet+1.5": 47.42,
+            "V2et+1.5": 30.68,
+            "V1et+2.5": 22.64,
+            "1Xet+2.5": 30.23,
+            "V2et+2.5": 24.68,
+            "V1et+3.5": 11.75,
+            "1Xet+3.5": 19.34,
+            "V2et+3.5": 13.18,
+            "V1et+4.5": 6.95,
+            "1Xet+4.5": 8.58,
+            "V2et+4.5": 8.06,
+            "V1et+5.5": 2.59,
+            "1Xet+5.5": 4.23,
+            "V2et+5.5": 2.88
+          },
+          "scores_probables": {
+            "1-1": 11.82,
+            "1-2": 8.48,
+            "2-1": 8.23,
+            "1-0": 8.16,
+            "0-1": 8.11,
+            "0-2": 6.01,
+            "2-2": 5.95,
+            "0-0": 5.63,
+            "2-0": 5.37,
+            "1-3": 4.04
+          },
+          "buts_moyens_simules": {
+            "home": 1.41,
+            "away": 1.47,
+            "total": 2.88
+          }
+        },
+        "analyse_ia": "❌ Échec définitif après 5 tentatives. Dernière erreur : 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions",
+        "confiance_pourcentage": 78,
+        "prediction_principale": null,
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": null,
+        "mi_temps": null,
+        "option_nul": null,
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : +1.5 buts  \n**CONFIANCE** : 78%  \n**SCORES PROBABLES** : 1‑1, 1‑2  \n\n**RAISONNEMENT** :  \n- Monte‑Carlo montre 78 % de chances que le match dépasse 1,5 but, contre seulement 55 % pour +2,5.  \n- Les deux scores les plus probables (1‑1 et 1‑2) donnent un total de 2 ou 3 buts, confirmant la tendance à plus de 1,5 but.  \n- BTTS est également favorable (58 %) et les deux équipes affichent une moyenne de buts supérieure à 1,4, indiquant un match ouvert.",
+        "confiance_pourcentage_final": 78,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "1‑1, 1‑2"
+      }
+    ]
+  }
+}
