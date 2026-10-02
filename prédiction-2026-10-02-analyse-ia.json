@@ -1,0 +1,1177 @@
+{
+  "metadata": {
+    "date_generation": "2026-10-02 01:06:21",
+    "date_matchs": "2026-10-02",
+    "version_algorithme": "8.3 - STATISTIQUES BRUTES + FORMES 6/10 + POINTS CLASSEMENT + COTES + ANALYSE IA DEEPSEEK ENRICHIE + MATCHS COMPLETS AVEC STATS DÉTAILLÉES + CLASSEMENT COMPLET + H2H ENRICHI AVEC STATS + CONFIANCE EXTRAITE + SCORES + RETRY IA + EXTRACTION AMÉLIORÉE 2 FORMATS + PROBABILITÉS MONTE-CARLO (NON INCLUSES DANS PROMPT IA)",
+    "total_predictions": 2,
+    "mode": "stats_brutes_avec_cotes_et_ia_complete_enrichie_retry_nouvelle_structure_avec_stats_detaillees_h2h_enrichi_confiance_extraite_scores_extraction_amelioree_2_formats_montecarlo_hors_prompt",
+    "note": "Collecte des statistiques brutes complètes : moyennes, formes récentes (6 et 10 matchs), séries domicile/extérieur, classements avec points + cotes des bookmakers + analyse IA DeepSeek ENRICHIE avec matchs détaillés (nouvelle structure objet avec game_id, date, home_team, away_team, score, status, competition + STATS DÉTAILLÉES ESPN) + classement complet + confrontations directes H2H élargies AVEC STATS DÉTAILLÉES + pourcentage confiance EXTRAIT AUTOMATIQUEMENT + 2 scores probables + retry automatique IA + suppression 'match nul' + EXTRACTION AMÉLIORÉE support des 2 formats (**FORMAT** et FORMAT simple) + PROBABILITÉS MONTE-CARLO autonomes (calculées mais NON incluses dans le prompt IA)",
+    "ia_model": "deepseek-r1-distill-llama-70b",
+    "groq_keys_count": 2,
+    "monte_carlo": {
+      "enabled": true,
+      "iterations": 20000,
+      "calibrage": "moyennes_internationales + statistiques_équipes + ajustement_h2h",
+      "probabilites_calculees": [
+        "1x2",
+        "double_chance",
+        "over_under",
+        "btts",
+        "resultat_total",
+        "scores_probables"
+      ],
+      "inclus_dans_prompt_ia": false
+    },
+    "nouveautes_v8_3_modifiees": [
+      "🎲 Module de probabilités Monte-Carlo intégré (20 000 simulations)",
+      "🔢 Calibrage avec moyennes internationales FIFA/UEFA",
+      "🆚 Ajustement automatique selon les confrontations H2H",
+      "📊 Probabilités 1X2, Double Chance, Over/Under (0.5→5.5), BTTS",
+      "🎯 Scores exacts les plus probables calculés statistiquement",
+      "❌ MODIFICIATION : Probabilités Monte-Carlo NON incluses dans le prompt IA",
+      "❌ MODIFICIATION : IA ne prédit plus corners et tirs cadrés (champs gardés dans structure)",
+      "📁 MODIFICIATION : Nom de fichier simplifié prédiction-YYYY-MM-DD-analyse-ia.json",
+      "✅ Maintien de toutes les autres fonctionnalités avancées v8.2"
+    ]
+  },
+  "statistiques_brutes_avec_ia_hors_montecarlo": {
+    "count": 2,
+    "details": [
+      {
+        "id": 2,
+        "HomeTeam": "Ferro Carril Oeste",
+        "AwayTeam": "Deportivo Madryn",
+        "date": "2 octobre 2026 à 22:00:00 UTC",
+        "league": "Argentina - Primera Nacional",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.1,
+          "moyenne_encaisses": 1.1,
+          "form_6": [
+            "W",
+            "W",
+            "D",
+            "D",
+            "D",
+            "W"
+          ],
+          "form_10": [
+            "W",
+            "W",
+            "D",
+            "D",
+            "D",
+            "W",
+            "W",
+            "W",
+            "L",
+            "L"
+          ],
+          "recent_form": [
+            "W",
+            "W",
+            "D",
+            "D",
+            "D",
+            "W"
+          ],
+          "total_points_6": 12,
+          "total_points_10": 18,
+          "total_points": 12,
+          "serie_domicile": [
+            "W",
+            "D",
+            "W",
+            "W",
+            "L"
+          ],
+          "buts_dom_marques": 6,
+          "buts_dom_encaisses": 4,
+          "buts_ext_marques": 5,
+          "buts_ext_encaisses": 7,
+          "total_marques": 11,
+          "total_encaisses": 11
+        },
+        "stats_away": {
+          "moyenne_marques": 1.7,
+          "moyenne_encaisses": 0.6,
+          "form_6": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "form_10": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "L",
+            "W",
+            "W",
+            "D",
+            "W",
+            "W"
+          ],
+          "recent_form": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "total_points_6": 10,
+          "total_points_10": 20,
+          "total_points": 10,
+          "serie_exterieur": [
+            "L",
+            "L",
+            "D",
+            "W"
+          ],
+          "buts_dom_marques": 13,
+          "buts_dom_encaisses": 1,
+          "buts_ext_marques": 4,
+          "buts_ext_encaisses": 5,
+          "total_marques": 17,
+          "total_encaisses": 6
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401844156",
+            "date": "Sun, Sep 27",
+            "home_team": "Defensores de Belgrano",
+            "away_team": "Ferro Carril Oeste",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844156"
+          },
+          {
+            "game_id": "401844147",
+            "date": "Sat, Sep 19",
+            "home_team": "Ferro Carril Oeste",
+            "away_team": "Ciudad de Bolívar",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844147"
+          },
+          {
+            "game_id": "401844121",
+            "date": "Sun, Sep 13",
+            "home_team": "Almirante Brown",
+            "away_team": "Ferro Carril Oeste",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844121"
+          },
+          {
+            "game_id": "401844101",
+            "date": "Fri, Sep 04",
+            "home_team": "Ferro Carril Oeste",
+            "away_team": "Mitre (Santiago del Estero)",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844101"
+          },
+          {
+            "game_id": "401844090",
+            "date": "Sun, Aug 30",
+            "home_team": "Estudiantes (Buenos Aires)",
+            "away_team": "Ferro Carril Oeste",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844090"
+          },
+          {
+            "game_id": "401844082",
+            "date": "Mon, Aug 24",
+            "home_team": "Ferro Carril Oeste",
+            "away_team": "All Boys",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844082"
+          },
+          {
+            "game_id": "401844055",
+            "date": "Sat, Aug 15",
+            "home_team": "Ferro Carril Oeste",
+            "away_team": "Atlanta",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844055"
+          },
+          {
+            "game_id": "401844032",
+            "date": "Sun, Aug 09",
+            "home_team": "Los Andes",
+            "away_team": "Ferro Carril Oeste",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844032"
+          },
+          {
+            "game_id": "401844024",
+            "date": "Sat, Aug 01",
+            "home_team": "Ferro Carril Oeste",
+            "away_team": "Godoy Cruz Antonio Tomba",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844024"
+          },
+          {
+            "game_id": "401843995",
+            "date": "Sun, Jul 26",
+            "home_team": "Deportivo Morón",
+            "away_team": "Ferro Carril Oeste",
+            "score": "4 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401843995"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401844155",
+            "date": "Sat, Sep 26",
+            "home_team": "Deportivo Madryn",
+            "away_team": "Central Norte",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844155"
+          },
+          {
+            "game_id": "401844137",
+            "date": "Sun, Sep 20",
+            "home_team": "Deportivo Madryn",
+            "away_team": "Racing (Córdoba)",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844137"
+          },
+          {
+            "game_id": "401844125",
+            "date": "Mon, Sep 14",
+            "home_team": "Defensores de Belgrano",
+            "away_team": "Deportivo Madryn",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844125"
+          },
+          {
+            "game_id": "401844117",
+            "date": "Sun, Sep 06",
+            "home_team": "Deportivo Madryn",
+            "away_team": "Ciudad de Bolívar",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844117"
+          },
+          {
+            "game_id": "401844100",
+            "date": "Sun, Aug 30",
+            "home_team": "Almirante Brown",
+            "away_team": "Deportivo Madryn",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844100"
+          },
+          {
+            "game_id": "401843984",
+            "date": "Tue, Aug 25",
+            "home_team": "Deportivo Madryn",
+            "away_team": "Godoy Cruz Antonio Tomba",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401843984"
+          },
+          {
+            "game_id": "401844065",
+            "date": "Fri, Aug 21",
+            "home_team": "Deportivo Madryn",
+            "away_team": "Mitre (Santiago del Estero)",
+            "score": "4 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844065"
+          },
+          {
+            "game_id": "401844061",
+            "date": "Sun, Aug 16",
+            "home_team": "San Martín (Tucumán)",
+            "away_team": "Deportivo Madryn",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844061"
+          },
+          {
+            "game_id": "401844045",
+            "date": "Sat, Aug 08",
+            "home_team": "Estudiantes (Buenos Aires)",
+            "away_team": "Deportivo Madryn",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844045"
+          },
+          {
+            "game_id": "401844026",
+            "date": "Sun, Aug 02",
+            "home_team": "Deportivo Madryn",
+            "away_team": "All Boys",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Argentine Nacional B",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401844026"
+          }
+        ],
+        "classement": {
+          "Ferro Carril Oeste": {
+            "position": 5,
+            "points": 61
+          },
+          "Deportivo Madryn": {
+            "position": 16,
+            "points": 50
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Colón (Santa Fe)",
+            "points": 49
+          },
+          {
+            "position": 2,
+            "team": "Los Andes",
+            "points": 40
+          },
+          {
+            "position": 3,
+            "team": "Godoy Cruz Antonio Tomba",
+            "points": 53
+          },
+          {
+            "position": 4,
+            "team": "Almirante Brown",
+            "points": 46
+          },
+          {
+            "position": 5,
+            "team": "Ferro Carril Oeste",
+            "points": 61
+          },
+          {
+            "position": 6,
+            "team": "All Boys",
+            "points": 33
+          },
+          {
+            "position": 7,
+            "team": "San Miguel",
+            "points": 31
+          },
+          {
+            "position": 8,
+            "team": "Acassuso",
+            "points": 29
+          },
+          {
+            "position": 9,
+            "team": "Defensores de Belgrano",
+            "points": 36
+          },
+          {
+            "position": 10,
+            "team": "Deportivo Morón",
+            "points": 55
+          },
+          {
+            "position": 11,
+            "team": "San Telmo",
+            "points": 34
+          },
+          {
+            "position": 12,
+            "team": "Chaco For Ever",
+            "points": 36
+          },
+          {
+            "position": 13,
+            "team": "Mitre (Santiago del Estero)",
+            "points": 32
+          },
+          {
+            "position": 14,
+            "team": "Central Norte",
+            "points": 32
+          },
+          {
+            "position": 15,
+            "team": "Estudiantes (Buenos Aires)",
+            "points": 45
+          },
+          {
+            "position": 16,
+            "team": "Deportivo Madryn",
+            "points": 50
+          },
+          {
+            "position": 17,
+            "team": "Racing (Córdoba)",
+            "points": 36
+          },
+          {
+            "position": 18,
+            "team": "Ciudad de Bolívar",
+            "points": 42
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "728324",
+            "date": "Sunday, March 16, 2025",
+            "team1": "Deportivo Madryn",
+            "score": "1 - 0",
+            "team2": "Ferro Carril Oeste",
+            "title": "Deportivo Madryn VS Ferro Carril Oeste",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/728324/ferro-carril-oeste-deportivo-madryn",
+            "source": "Primera Nacional",
+            "stats": {}
+          },
+          {
+            "gameId": "728625",
+            "date": "Saturday, July 19, 2025",
+            "team1": "Ferro Carril Oeste",
+            "score": "1 - 1",
+            "team2": "Deportivo Madryn",
+            "title": "Ferro Carril Oeste VS Deportivo Madryn",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/728625/deportivo-madryn-ferro-carril-oeste",
+            "source": "Primera Nacional",
+            "stats": {}
+          },
+          {
+            "gameId": "401843849",
+            "date": "Sunday, May 17, 2026",
+            "team1": "Deportivo Madryn",
+            "score": "0 - 1",
+            "team2": "Ferro Carril Oeste",
+            "title": "Deportivo Madryn VS Ferro Carril Oeste",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/401843849/ferro-carril-oeste-deportivo-madryn",
+            "source": "Primera Nacional",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/9743.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/18260.png",
+        "classement_home": 5,
+        "classement_away": 16,
+        "points_classement_home": 61,
+        "points_classement_away": 50,
+        "nom_classement_home": "Ferro Carril Oeste",
+        "nom_classement_away": "Deportivo Madryn",
+        "country_fr": "Argentina - Primera Nacional",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.179,
+            "lambda_away": 0.901,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 41.98,
+            "X": 29.88,
+            "V2": 28.14
+          },
+          "double_chance": {
+            "1X": 71.86,
+            "12": 70.12,
+            "X2": 58.02
+          },
+          "over_under": {
+            "plus_de_0.5": 87.42,
+            "moins_de_0.5": 12.58,
+            "plus_de_1.5": 61.14,
+            "moins_de_1.5": 38.86,
+            "plus_de_2.5": 34.36,
+            "moins_de_2.5": 65.64,
+            "plus_de_3.5": 15.83,
+            "moins_de_3.5": 84.17,
+            "plus_de_4.5": 6.07,
+            "moins_de_4.5": 93.93,
+            "plus_de_5.5": 2.09,
+            "moins_de_5.5": 97.91
+          },
+          "btts": {
+            "oui": 41.3,
+            "non": 58.7
+          },
+          "resultat_total": {
+            "V1et+0.5": 41.98,
+            "1Xet+0.5": 59.29,
+            "V2et+0.5": 28.14,
+            "V1et+1.5": 27.09,
+            "1Xet+1.5": 44.4,
+            "V2et+1.5": 16.74,
+            "V1et+2.5": 18.57,
+            "1Xet+2.5": 22.6,
+            "V2et+2.5": 11.76,
+            "V1et+3.5": 7.5,
+            "1Xet+3.5": 11.54,
+            "V2et+3.5": 4.3,
+            "V1et+4.5": 3.48,
+            "1Xet+4.5": 3.98,
+            "V2et+4.5": 2.08,
+            "V1et+5.5": 1.06,
+            "1Xet+5.5": 1.57,
+            "V2et+5.5": 0.52
+          },
+          "scores_probables": {
+            "1-0": 14.89,
+            "1-1": 13.28,
+            "0-0": 12.58,
+            "0-1": 11.39,
+            "2-0": 8.52,
+            "2-1": 7.9,
+            "1-2": 5.95,
+            "0-2": 4.99,
+            "2-2": 3.53,
+            "3-0": 3.17
+          },
+          "buts_moyens_simules": {
+            "home": 1.17,
+            "away": 0.91,
+            "total": 2.08
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Plus de 1.5 buts  \n**CONFIANCE** : 68%  \n**SCORES PROBABLES** : 1‑1 ou 2‑1  \n**MI-TEMPS** : Mi‑temps match nul (ex. 0‑0 ou 1‑1)  \n**OPTION RISQUE NUL** : Match nul – 30%  \n\n**JUSTIFICATION**  \n\n**1. Analyse comparative (forces / faiblesses)**  \n- **Ferro Carril Oeste (domicile)** : 5ᵉ du classement (61 pts). Moyenne : 1,10 but marqué et 1,10 but encaissé. En 6 matchs à domicile, ils ont inscrit 6 buts et encaissé 4 → 0,67 buts marqués et 0,67 buts concédés par match. Leur défense à domicile est solide mais pas hermétique.  \n- **Deportivo Madryn (extérieur)** : 16ᵉ (50 pts). Moyenne : 1,70 but marqué et 0,60 but encaissé (global). En déplacement, ils ont marqué 4 buts et encaissé 5 → 0,80 buts marqués et 1,00 buts concédés par match. Leur attaque se montre plus efficace à domicile qu’à l’extérieur, tandis que la défense s’affaiblit légèrement hors de leurs bases.  \n\n**2. Impact du facteur domicile / extérieur**  \n- Le facteur domicile donne à Ferro un léger avantage (meilleure position au classement, meilleure forme à domicile).  \n- Madryn a montré une certaine fragilité à l’extérieur (2 défaites, 1 nul, 1 victoire sur leurs 4 derniers déplacements).  \n\n**3. Forme récente & tendances**  \n- **Ferro** (6 derniers) : W W D D D W – 12 pts, aucune défaite récente. Leur défense reste stable (4 buts encaissés en 6 matchs à domicile).  \n- **Madryn** (6 derniers) : D W L W L W – 10 pts, alternance victoire/défaite. Leurs matchs à l’extérieur comportent souvent un but encaissé (ex. 2‑0, 4‑0, 2‑0, 0‑0).  \n\n**4. Contexte du championnat**  \n- Ferro évolue dans le top 5, loin du danger de relégation.  \n- Madryn, bien que 16ᵉ, reste à plus de 10 points du bas du tableau, ce qui limite la pression de la nécessité de points immédiats.  \n\n**5. Confrontations directes** (3 derniers matchs)  \n- 1‑0 victoire de Madryn (2025)  \n- 1‑1 match nul (2025)  \n- 0‑1 victoire de Ferro (2026)  \nCes rencontres sont très serrées, aucune équipe ne domine clairement.  \n\n**6. Analyse des buts attendus**  \n- Moyenne combinée attendue : 1,10 (Ferro domicile) + 0,80 (Madryn à l’extérieur) ≈ **1,9 buts** par match.  \n- Cette valeur se situe **au‑dessus du seuil de 1,5** mais **en dessous de 2,5**.  \n- Les matchs récents montrent plusieurs scores 0‑0, 1‑0, 2‑0, mais aussi quelques rencontres à 3‑1 ou 4‑0. La probabilité d’au moins **deux buts** (soit +1,5) est donc nettement supérieure à celle d’un total inférieur à 1,5.  \n\n**7. Pourquoi pas BTTS / +2.5**  \n- BTTS (Both Teams To Score) : Ferro ne marque que 6 buts en 6 matchs à domicile (0,67 bt/match) tandis que Madryn ne marque que 4 buts en 5 déplacements (0,80 bt/match). La probabilité que les deux équipes marquent simultanément reste modérée (~35 %).  \n- +2,5 buts : Le total moyen attendu (1,9) rend cette option incertaine ; les seules rencontres à plus de 2,5 buts sont des exceptions (ex. 4‑0).  \n\n**8. Choix de la prédiction**  \n- **Plus de 1,5 buts** offre le meilleur compromis fiabilité/gain : la probabilité d’un total ≥ 2 est élevée (≈ 68 %) alors que le risque de rester sous 1,5 est plus faible.  \n- La victoire nette de l’une ou l’autre équipe est moins certaine (équilibre H2H, forme similaire), d’où le rejet d’une prédiction « Victoire domicile » ou « Double chance ».  \n\n**9. Prédiction mi‑temps**  \n- Les deux équipes affichent des débuts souvent prudents (0‑0, 0‑1). Une mi‑temps à l’équilibre (match nul) est la plus plausible.  \n\n**10. Option risque nul**  \n- Bien que le match ne soit pas clairement orienté vers un nul, la combinaison d’une défense solide (Ferro) et d’une attaque modérée à l’extérieur (Madryn) laisse une **probabilité de match nul d’environ 30 %**. Cette information est fournie en tant qu’« Option risque nul ».",
+        "confiance_pourcentage": 68,
+        "prediction_principale": "Plus de 1.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "1‑1 ou 2‑1",
+        "mi_temps": "Mi‑temps match nul (ex. 0‑0 ou 1‑1)",
+        "option_nul": "Match nul – 30%",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "❌ Échec définitif après 5 tentatives. Dernière erreur : 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions",
+        "confiance_pourcentage_final": null,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": null
+      },
+      {
+        "id": 1,
+        "HomeTeam": "São Paulo",
+        "AwayTeam": "Santos",
+        "date": "2 octobre 2026 à 23:00:00 UTC",
+        "league": "Brazil - Serie A",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.1,
+          "moyenne_encaisses": 0.9,
+          "form_6": [
+            "W",
+            "D",
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "form_10": [
+            "W",
+            "D",
+            "L",
+            "L",
+            "W",
+            "W",
+            "L",
+            "W",
+            "D",
+            "D"
+          ],
+          "recent_form": [
+            "W",
+            "D",
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "total_points_6": 10,
+          "total_points_10": 15,
+          "total_points": 10,
+          "serie_domicile": [
+            "W",
+            "D",
+            "W",
+            "W",
+            "W",
+            "D"
+          ],
+          "buts_dom_marques": 10,
+          "buts_dom_encaisses": 4,
+          "buts_ext_marques": 1,
+          "buts_ext_encaisses": 5,
+          "total_marques": 11,
+          "total_encaisses": 9
+        },
+        "stats_away": {
+          "moyenne_marques": 1.1,
+          "moyenne_encaisses": 1.3,
+          "form_6": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "D",
+            "L"
+          ],
+          "form_10": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "D",
+            "L",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "recent_form": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "D",
+            "L"
+          ],
+          "total_points_6": 10,
+          "total_points_10": 13,
+          "total_points": 10,
+          "serie_exterieur": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "buts_dom_marques": 3,
+          "buts_dom_encaisses": 2,
+          "buts_ext_marques": 8,
+          "buts_ext_encaisses": 11,
+          "total_marques": 11,
+          "total_encaisses": 13
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401841243",
+            "date": "Sun, Sep 20",
+            "home_team": "São Paulo",
+            "away_team": "Internacional",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841243"
+          },
+          {
+            "game_id": "401912524",
+            "date": "Wed, Sep 16",
+            "home_team": "São Paulo",
+            "away_team": "Boca Juniors",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401912524"
+          },
+          {
+            "game_id": "401841234",
+            "date": "Sat, Sep 12",
+            "home_team": "Palmeiras",
+            "away_team": "São Paulo",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841234"
+          },
+          {
+            "game_id": "401912542",
+            "date": "Wed, Sep 09",
+            "home_team": "Boca Juniors",
+            "away_team": "São Paulo",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401912542"
+          },
+          {
+            "game_id": "401841226",
+            "date": "Sat, Sep 05",
+            "home_team": "São Paulo",
+            "away_team": "Atlético-MG",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841226"
+          },
+          {
+            "game_id": "401841209",
+            "date": "Sat, Aug 29",
+            "home_team": "São Paulo",
+            "away_team": "Red Bull Bragantino",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841209"
+          },
+          {
+            "game_id": "401841199",
+            "date": "Sun, Aug 23",
+            "home_team": "Chapecoense",
+            "away_team": "São Paulo",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841199"
+          },
+          {
+            "game_id": "401903294",
+            "date": "Wed, Aug 19",
+            "home_team": "São Paulo",
+            "away_team": "Bolívar",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401903294"
+          },
+          {
+            "game_id": "401841189",
+            "date": "Sun, Aug 16",
+            "home_team": "São Paulo",
+            "away_team": "Coritiba",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841189"
+          },
+          {
+            "game_id": "401903296",
+            "date": "Wed, Aug 12",
+            "home_team": "Bolívar",
+            "away_team": "São Paulo",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401903296"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401876961",
+            "date": "Sun, Sep 27",
+            "home_team": "Santos",
+            "away_team": "Pachuca",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876961"
+          },
+          {
+            "game_id": "401876966",
+            "date": "Mon, Sep 21",
+            "home_team": "Toluca",
+            "away_team": "Santos",
+            "score": "2 - 3",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876966"
+          },
+          {
+            "game_id": "401876976",
+            "date": "Mon, Sep 14",
+            "home_team": "Santos",
+            "away_team": "FC Juárez",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876976"
+          },
+          {
+            "game_id": "401876983",
+            "date": "Sun, Sep 06",
+            "home_team": "Cruz Azul",
+            "away_team": "Santos",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876983"
+          },
+          {
+            "game_id": "401876994",
+            "date": "Sun, Aug 30",
+            "home_team": "Santos",
+            "away_team": "Tigres UANL",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876994"
+          },
+          {
+            "game_id": "401877009",
+            "date": "Sun, Aug 23",
+            "home_team": "Puebla",
+            "away_team": "Santos",
+            "score": "3 - 2",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877009"
+          },
+          {
+            "game_id": "401877013",
+            "date": "Mon, Aug 17",
+            "home_team": "Santos",
+            "away_team": "Guadalajara",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Mexican Liga BBVA MX",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877013"
+          },
+          {
+            "game_id": "401863622",
+            "date": "Thu, Aug 13",
+            "home_team": "Philadelphia Union",
+            "away_team": "Santos",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Leagues Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401863622"
+          },
+          {
+            "game_id": "401863605",
+            "date": "Mon, Aug 10",
+            "home_team": "Chicago Fire FC",
+            "away_team": "Santos",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Leagues Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401863605"
+          },
+          {
+            "game_id": "401863568",
+            "date": "Thu, Aug 06",
+            "home_team": "New York City FC",
+            "away_team": "Santos",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Leagues Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401863568"
+          }
+        ],
+        "classement": {
+          "São Paulo": {
+            "position": 11,
+            "points": 36
+          },
+          "Santos": {
+            "position": 8,
+            "points": 38
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Flamengo",
+            "points": 60
+          },
+          {
+            "position": 2,
+            "team": "Palmeiras",
+            "points": 57
+          },
+          {
+            "position": 3,
+            "team": "Athletico Paranaense",
+            "points": 49
+          },
+          {
+            "position": 4,
+            "team": "Fluminense",
+            "points": 48
+          },
+          {
+            "position": 5,
+            "team": "Bahia",
+            "points": 46
+          },
+          {
+            "position": 6,
+            "team": "Cruzeiro",
+            "points": 45
+          },
+          {
+            "position": 7,
+            "team": "Atlético-MG",
+            "points": 40
+          },
+          {
+            "position": 8,
+            "team": "Santos",
+            "points": 38
+          },
+          {
+            "position": 9,
+            "team": "Coritiba",
+            "points": 38
+          },
+          {
+            "position": 10,
+            "team": "Red Bull Bragantino",
+            "points": 36
+          },
+          {
+            "position": 11,
+            "team": "São Paulo",
+            "points": 36
+          },
+          {
+            "position": 12,
+            "team": "Botafogo",
+            "points": 35
+          },
+          {
+            "position": 13,
+            "team": "Vitória",
+            "points": 33
+          },
+          {
+            "position": 14,
+            "team": "Corinthians",
+            "points": 32
+          },
+          {
+            "position": 15,
+            "team": "Mirassol",
+            "points": 32
+          },
+          {
+            "position": 16,
+            "team": "Vasco da Gama",
+            "points": 31
+          },
+          {
+            "position": 17,
+            "team": "Grêmio",
+            "points": 29
+          },
+          {
+            "position": 18,
+            "team": "Internacional",
+            "points": 28
+          },
+          {
+            "position": 19,
+            "team": "Remo",
+            "points": 23
+          },
+          {
+            "position": 20,
+            "team": "Chapecoense",
+            "points": 18
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "732633",
+            "date": "Sunday, April 20, 2025",
+            "team1": "São Paulo",
+            "score": "2 - 1",
+            "team2": "Santos",
+            "title": "São Paulo VS Santos",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/732633/santos-sao-paulo",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "732827",
+            "date": "Sunday, September 21, 2025",
+            "team1": "Santos",
+            "score": "1 - 0",
+            "team2": "São Paulo",
+            "title": "Santos VS São Paulo",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/732827/sao-paulo-santos",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "401840986",
+            "date": "Wednesday, February 4, 2026",
+            "team1": "Santos",
+            "score": "1 - 1",
+            "team2": "São Paulo",
+            "title": "Santos VS São Paulo",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/401840986/sao-paulo-santos",
+            "source": "Serie A",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/2026.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/2674.png",
+        "classement_home": 11,
+        "classement_away": 8,
+        "points_classement_home": 36,
+        "points_classement_away": 38,
+        "nom_classement_home": "São Paulo",
+        "nom_classement_away": "Santos",
+        "country_fr": "Brazil - Serie A",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.658,
+            "lambda_away": 0.973,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 53.44,
+            "X": 24.5,
+            "V2": 22.06
+          },
+          "double_chance": {
+            "1X": 77.94,
+            "12": 75.5,
+            "X2": 46.56
+          },
+          "over_under": {
+            "plus_de_0.5": 92.78,
+            "moins_de_0.5": 7.22,
+            "plus_de_1.5": 74.08,
+            "moins_de_1.5": 25.92,
+            "plus_de_2.5": 48.92,
+            "moins_de_2.5": 51.08,
+            "plus_de_3.5": 26.84,
+            "moins_de_3.5": 73.16,
+            "plus_de_4.5": 12.22,
+            "moins_de_4.5": 87.78,
+            "plus_de_5.5": 4.84,
+            "moins_de_5.5": 95.16
+          },
+          "btts": {
+            "oui": 49.96,
+            "non": 50.04
+          },
+          "resultat_total": {
+            "V1et+0.5": 53.44,
+            "1Xet+0.5": 70.72,
+            "V2et+0.5": 22.06,
+            "V1et+1.5": 41.49,
+            "1Xet+1.5": 58.78,
+            "V2et+1.5": 15.3,
+            "V1et+2.5": 31.51,
+            "1Xet+2.5": 37.1,
+            "V2et+2.5": 11.81,
+            "V1et+3.5": 16.13,
+            "1Xet+3.5": 21.72,
+            "V2et+3.5": 5.12,
+            "V1et+4.5": 8.49,
+            "1Xet+4.5": 9.35,
+            "V2et+4.5": 2.87,
+            "V1et+5.5": 3.2,
+            "1Xet+5.5": 4.06,
+            "V2et+5.5": 0.77
+          },
+          "scores_probables": {
+            "1-0": 11.94,
+            "1-1": 11.7,
+            "2-0": 9.98,
+            "2-1": 9.38,
+            "0-0": 7.22,
+            "0-1": 6.76,
+            "3-0": 6.0,
+            "3-1": 5.5,
+            "1-2": 5.5,
+            "2-2": 4.73
+          },
+          "buts_moyens_simules": {
+            "home": 1.66,
+            "away": 0.97,
+            "total": 2.62
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Plus de 2.5 buts  \n**CONFIANCE** : 62 %  \n**SCORES PROBABLES** : 2‑1 ou 1‑2  \n**MI‑TEMPS** : Mi‑temps victoire domicile  \n**OPTION RISQUE NUL** : Match nul – 25 %  \n\n**JUSTIFICATION**  \n\n**1. Analyse comparative**  \n- **Attaque** : São Paulo et Santos affichent la même moyenne de buts marqués (1,10). En domicile, São Paulo a inscrit 10 buts en 6 matchs (≈ 1,67 buts/match) contre 8 buts marqués par Santos à l’extérieur (≈ 1,33 buts/match).  \n- **Défense** : São Paulo concède très peu à domicile (4 buts en 6 matchs ≈ 0,67 buts/match). Santos, en revanche, laisse entrer 11 buts à l’extérieur (≈ 1,83 buts/match). Cette différence indique que São Paulo pourra limiter les tentatives adverses, mais que Santos a tendance à être vulnérable en déplacement.  \n\n**2. Impact du facteur domicile/extérieur**  \n- Le facteur domicile favorise São Paulo : solide en défense à domicile et une série récente de 4 victoires ou nuls sur leurs 6 derniers matchs à domicile.  \n- Santos montre une forme irrégulière à l’extérieur (alternance W‑L‑L‑W‑L‑L) et une défense qui laisse passer presque 2 buts par match à l’extérieur.  \n\n**3. Forme récente**  \n- **São Paulo (6 derniers)** : W D L L W W – 4 points sur les 6 derniers (les deux dernières rencontres sont des victoires).  \n- **Santos (6 derniers)** : W W W L D L – 4 points sur les 6 derniers, mais les 3 premiers matchs ont été des victoires, montrant une capacité offensive élevée lorsqu’ils sont en forme.  \n\n**4. Contexte du championnat**  \n- Classement très serré autour de la 8ᵉ et 11ᵉ place (Santos 38 pts, São Paulo 36 pts). Les deux équipes se battent pour les places de coupe continentale, ce qui les incite à jouer de manière offensive.  \n\n**5. Confrontations directes** (saison 2025‑2026)  \n- 2‑1 victoire São Paulo, 1‑0 victoire Santos, 1‑1 match nul. Les trois derniers duels ont produit au moins 2 buts, dont deux rencontres avec 3 buts. Cela confirme une tendance à des matchs assez ouverts entre les deux clubs.  \n\n**6. Analyse des buts attendus**  \n- **Prévision de buts marqués** : São Paulo (≈ 1,6) + Santos (≈ 1,3) ≈ **2,9 buts** attendus.  \n- **Prévision de buts encaissés** : São Paulo (≈ 0,7) + Santos (≈ 1,8) ≈ **2,5 buts** attendus.  \n- La somme des deux estimations dépasse largement 2,5, ce qui rend la probabilité d’un total supérieur à 2,5 buts élevée.  \n\n**7. Choix de la prédiction**  \n- La probabilité d’« + 2,5 buts » est supérieure à celle de « + 1,5 buts » tout en restant raisonnable (pas de risque de sur‑estimation comme avec +3,5).  \n- Aucun indicateur ne justifie une prédiction de victoire nette (les confrontations directes et la forme récente sont trop équilibrées). Une double chance aurait été plus sûre, mais le nombre de buts attendus est la caractéristique la plus fiable.  \n\n**8. Option risque nul**  \n- Historique des confrontations (1‑1) et la proximité au classement laissent une petite chance de match nul (≈ 25 %). Cette option est présentée uniquement à titre d’information et ne remplace pas la prédiction principale.  \n\nEn résumé, le match devrait être riche en buts, avec un total supérieur à 2,5, São Paulo partant légèrement favori en première période grâce à son avantage domicile.",
+        "confiance_pourcentage": 62,
+        "prediction_principale": "Plus de 2.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "2‑1 ou 1‑2",
+        "mi_temps": null,
+        "option_nul": "Match nul – 25 %",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE :** double chance 1X  \n**CONFIANCE :** 78 %  \n**SCORES PROBABLES :** 1‑0, 1‑1  \n\n**RAISONNEMENT :**  \n- Monte‑Carlo montre 53 % de victoire domicile et 24,5 % de match nul → 77,9 % pour 1X, bien au‑dessus des 48,9 % pour +2,5 buts.  \n- São Paulo concède seulement 0,67 but/match à domicile contre 1,83 but/match encaissés par Santos à l’extérieur, ce qui favorise un résultat au moins partagé.  \n- Les confrontations récentes (2‑1, 1‑0, 1‑1) indiquent peu de domination nette, mais un léger avantage de São Paulo.  \n\n**Option risque nul (information) :** match nul ≈ 25 % (non utilisée comme prédiction principale).",
+        "confiance_pourcentage_final": null,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": null
+      }
+    ]
+  }
+}
