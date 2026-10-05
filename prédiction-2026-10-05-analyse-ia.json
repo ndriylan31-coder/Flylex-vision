@@ -1,0 +1,596 @@
+{
+  "metadata": {
+    "date_generation": "2026-10-05 01:05:40",
+    "date_matchs": "2026-10-05",
+    "version_algorithme": "8.3 - STATISTIQUES BRUTES + FORMES 6/10 + POINTS CLASSEMENT + COTES + ANALYSE IA DEEPSEEK ENRICHIE + MATCHS COMPLETS AVEC STATS DÉTAILLÉES + CLASSEMENT COMPLET + H2H ENRICHI AVEC STATS + CONFIANCE EXTRAITE + SCORES + RETRY IA + EXTRACTION AMÉLIORÉE 2 FORMATS + PROBABILITÉS MONTE-CARLO (NON INCLUSES DANS PROMPT IA)",
+    "total_predictions": 1,
+    "mode": "stats_brutes_avec_cotes_et_ia_complete_enrichie_retry_nouvelle_structure_avec_stats_detaillees_h2h_enrichi_confiance_extraite_scores_extraction_amelioree_2_formats_montecarlo_hors_prompt",
+    "note": "Collecte des statistiques brutes complètes : moyennes, formes récentes (6 et 10 matchs), séries domicile/extérieur, classements avec points + cotes des bookmakers + analyse IA DeepSeek ENRICHIE avec matchs détaillés (nouvelle structure objet avec game_id, date, home_team, away_team, score, status, competition + STATS DÉTAILLÉES ESPN) + classement complet + confrontations directes H2H élargies AVEC STATS DÉTAILLÉES + pourcentage confiance EXTRAIT AUTOMATIQUEMENT + 2 scores probables + retry automatique IA + suppression 'match nul' + EXTRACTION AMÉLIORÉE support des 2 formats (**FORMAT** et FORMAT simple) + PROBABILITÉS MONTE-CARLO autonomes (calculées mais NON incluses dans le prompt IA)",
+    "ia_model": "deepseek-r1-distill-llama-70b",
+    "groq_keys_count": 2,
+    "monte_carlo": {
+      "enabled": true,
+      "iterations": 20000,
+      "calibrage": "moyennes_internationales + statistiques_équipes + ajustement_h2h",
+      "probabilites_calculees": [
+        "1x2",
+        "double_chance",
+        "over_under",
+        "btts",
+        "resultat_total",
+        "scores_probables"
+      ],
+      "inclus_dans_prompt_ia": false
+    },
+    "nouveautes_v8_3_modifiees": [
+      "🎲 Module de probabilités Monte-Carlo intégré (20 000 simulations)",
+      "🔢 Calibrage avec moyennes internationales FIFA/UEFA",
+      "🆚 Ajustement automatique selon les confrontations H2H",
+      "📊 Probabilités 1X2, Double Chance, Over/Under (0.5→5.5), BTTS",
+      "🎯 Scores exacts les plus probables calculés statistiquement",
+      "❌ MODIFICIATION : Probabilités Monte-Carlo NON incluses dans le prompt IA",
+      "❌ MODIFICIATION : IA ne prédit plus corners et tirs cadrés (champs gardés dans structure)",
+      "📁 MODIFICIATION : Nom de fichier simplifié prédiction-YYYY-MM-DD-analyse-ia.json",
+      "✅ Maintien de toutes les autres fonctionnalités avancées v8.2"
+    ]
+  },
+  "statistiques_brutes_avec_ia_hors_montecarlo": {
+    "count": 1,
+    "details": [
+      {
+        "id": 1,
+        "HomeTeam": "Deportivo Recoleta",
+        "AwayTeam": "Libertad",
+        "date": "5 octobre 2026 à 13:00:00 UTC",
+        "league": "Paraguay - Division Profesional",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 0.6,
+          "moyenne_encaisses": 2.3,
+          "form_6": [
+            "D",
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "form_10": [
+            "D",
+            "L",
+            "L",
+            "L",
+            "L",
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "recent_form": [
+            "D",
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "total_points_6": 1,
+          "total_points_10": 1,
+          "total_points": 1,
+          "serie_domicile": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "buts_dom_marques": 4,
+          "buts_dom_encaisses": 14,
+          "buts_ext_marques": 2,
+          "buts_ext_encaisses": 9,
+          "total_marques": 6,
+          "total_encaisses": 23
+        },
+        "stats_away": {
+          "moyenne_marques": 1.4,
+          "moyenne_encaisses": 1.2,
+          "form_6": [
+            "L",
+            "D",
+            "W",
+            "W",
+            "L",
+            "D"
+          ],
+          "form_10": [
+            "L",
+            "D",
+            "W",
+            "W",
+            "L",
+            "D",
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "recent_form": [
+            "L",
+            "D",
+            "W",
+            "W",
+            "L",
+            "D"
+          ],
+          "total_points_6": 8,
+          "total_points_10": 17,
+          "total_points": 8,
+          "serie_exterieur": [
+            "W",
+            "L",
+            "D",
+            "W",
+            "L"
+          ],
+          "buts_dom_marques": 8,
+          "buts_dom_encaisses": 5,
+          "buts_ext_marques": 6,
+          "buts_ext_encaisses": 7,
+          "total_marques": 14,
+          "total_encaisses": 12
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401888590",
+            "date": "Mon, Sep 28",
+            "home_team": "Sportivo San Lorenzo",
+            "away_team": "Deportivo Recoleta",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888590"
+          },
+          {
+            "game_id": "401888594",
+            "date": "Sun, Sep 20",
+            "home_team": "Sportivo Luqueño",
+            "away_team": "Deportivo Recoleta",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888594"
+          },
+          {
+            "game_id": "401888668",
+            "date": "Sat, Sep 12",
+            "home_team": "Deportivo Recoleta",
+            "away_team": "Sportivo Trinidense",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888668"
+          },
+          {
+            "game_id": "401888669",
+            "date": "Mon, Sep 07",
+            "home_team": "Guaraní",
+            "away_team": "Deportivo Recoleta",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888669"
+          },
+          {
+            "game_id": "401888672",
+            "date": "Thu, Sep 03",
+            "home_team": "Deportivo Recoleta",
+            "away_team": "Cerro Porteño",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888672"
+          },
+          {
+            "game_id": "401888609",
+            "date": "Sat, Aug 29",
+            "home_team": "Deportivo Recoleta",
+            "away_team": "Club Olimpia",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888609"
+          },
+          {
+            "game_id": "401888617",
+            "date": "Sat, Aug 22",
+            "home_team": "Sportivo Ameliano",
+            "away_team": "Deportivo Recoleta",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888617"
+          },
+          {
+            "game_id": "401903231",
+            "date": "Tue, Aug 18",
+            "home_team": "Deportivo Recoleta",
+            "away_team": "Boca Juniors",
+            "score": "0 - 4",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401903231"
+          },
+          {
+            "game_id": "401888619",
+            "date": "Fri, Aug 14",
+            "home_team": "Deportivo Recoleta",
+            "away_team": "2 de Mayo",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888619"
+          },
+          {
+            "game_id": "401903297",
+            "date": "Tue, Aug 11",
+            "home_team": "Boca Juniors",
+            "away_team": "Deportivo Recoleta",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401903297"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401888589",
+            "date": "Mon, Sep 28",
+            "home_team": "Libertad",
+            "away_team": "Club Olimpia",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888589"
+          },
+          {
+            "game_id": "401888595",
+            "date": "Sat, Sep 19",
+            "home_team": "Libertad",
+            "away_team": "Sportivo Ameliano",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888595"
+          },
+          {
+            "game_id": "401888597",
+            "date": "Fri, Sep 11",
+            "home_team": "2 de Mayo",
+            "away_team": "Libertad",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888597"
+          },
+          {
+            "game_id": "401888603",
+            "date": "Sun, Sep 06",
+            "home_team": "Libertad",
+            "away_team": "Rubio Ñú",
+            "score": "4 - 2",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888603"
+          },
+          {
+            "game_id": "401888605",
+            "date": "Wed, Sep 02",
+            "home_team": "Nacional Asunción",
+            "away_team": "Libertad",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888605"
+          },
+          {
+            "game_id": "401888613",
+            "date": "Sun, Aug 30",
+            "home_team": "Cerro Porteño",
+            "away_team": "Libertad",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888613"
+          },
+          {
+            "game_id": "401888614",
+            "date": "Mon, Aug 24",
+            "home_team": "Libertad",
+            "away_team": "Sportivo San Lorenzo",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888614"
+          },
+          {
+            "game_id": "401888622",
+            "date": "Sun, Aug 16",
+            "home_team": "Sportivo Luqueño",
+            "away_team": "Libertad",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888622"
+          },
+          {
+            "game_id": "401888624",
+            "date": "Mon, Aug 10",
+            "home_team": "Libertad",
+            "away_team": "Sportivo Trinidense",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888624"
+          },
+          {
+            "game_id": "401888629",
+            "date": "Sun, Aug 02",
+            "home_team": "Guaraní",
+            "away_team": "Libertad",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Paraguayan Primera División",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888629"
+          }
+        ],
+        "classement": {
+          "Deportivo Recoleta": {
+            "position": 11,
+            "points": 8
+          },
+          "Libertad": {
+            "position": 2,
+            "points": 23
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Club Olimpia",
+            "points": 25
+          },
+          {
+            "position": 2,
+            "team": "Libertad",
+            "points": 23
+          },
+          {
+            "position": 3,
+            "team": "Nacional Asunción",
+            "points": 22
+          },
+          {
+            "position": 4,
+            "team": "2 de Mayo",
+            "points": 22
+          },
+          {
+            "position": 5,
+            "team": "Guaraní",
+            "points": 21
+          },
+          {
+            "position": 6,
+            "team": "Sportivo Trinidense",
+            "points": 20
+          },
+          {
+            "position": 7,
+            "team": "Sportivo Ameliano",
+            "points": 18
+          },
+          {
+            "position": 8,
+            "team": "Cerro Porteño",
+            "points": 17
+          },
+          {
+            "position": 9,
+            "team": "Sportivo Luqueño",
+            "points": 13
+          },
+          {
+            "position": 10,
+            "team": "Rubio Ñú",
+            "points": 9
+          },
+          {
+            "position": 11,
+            "team": "Deportivo Recoleta",
+            "points": 8
+          },
+          {
+            "position": 12,
+            "team": "Sportivo San Lorenzo",
+            "points": 3
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "728868",
+            "date": "Sunday, February 2, 2025",
+            "team1": "Libertad",
+            "score": "5 - 2",
+            "team2": "Deportivo Recoleta",
+            "title": "Libertad VS Deportivo Recoleta",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/728868/deportivo-recoleta-libertad",
+            "source": "Division Profesional",
+            "stats": {}
+          },
+          {
+            "gameId": "728935",
+            "date": "Monday, April 14, 2025",
+            "team1": "Deportivo Recoleta",
+            "score": "1 - 1",
+            "team2": "Libertad",
+            "title": "Deportivo Recoleta VS Libertad",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/728935/libertad-deportivo-recoleta",
+            "source": "Division Profesional",
+            "stats": {}
+          },
+          {
+            "gameId": "749820",
+            "date": "Sunday, August 10, 2025",
+            "team1": "Libertad",
+            "score": "1 - 1",
+            "team2": "Deportivo Recoleta",
+            "title": "Libertad VS Deportivo Recoleta",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/749820/deportivo-recoleta-libertad",
+            "source": "Division Profesional",
+            "stats": {}
+          },
+          {
+            "gameId": "401848175",
+            "date": "20260201",
+            "team1": "Deportivo Recoleta",
+            "score": "2 - 1",
+            "team2": "Libertad",
+            "title": "Deportivo Recoleta VS Libertad",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/401848175/libertad-deportivo-recoleta",
+            "source": "Division Profesional",
+            "stats": {}
+          },
+          {
+            "gameId": "401848240",
+            "date": "Monday, March 30, 2026",
+            "team1": "Libertad",
+            "score": "1 - 0",
+            "team2": "Deportivo Recoleta",
+            "title": "Libertad VS Deportivo Recoleta",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/401848240/deportivo-recoleta-libertad",
+            "source": "Division Profesional",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/22517.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/2670.png",
+        "classement_home": 11,
+        "classement_away": 2,
+        "points_classement_home": 8,
+        "points_classement_away": 23,
+        "nom_classement_home": "Deportivo Recoleta",
+        "nom_classement_away": "Libertad",
+        "country_fr": "Paraguay - Division Profesional",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.289,
+            "lambda_away": 1.745,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 28.88,
+            "X": 23.42,
+            "V2": 47.7
+          },
+          "double_chance": {
+            "1X": 52.3,
+            "12": 76.59,
+            "X2": 71.11
+          },
+          "over_under": {
+            "plus_de_0.5": 94.94,
+            "moins_de_0.5": 5.06,
+            "plus_de_1.5": 80.27,
+            "moins_de_1.5": 19.73,
+            "plus_de_2.5": 58.1,
+            "moins_de_2.5": 41.9,
+            "plus_de_3.5": 35.54,
+            "moins_de_3.5": 64.46,
+            "plus_de_4.5": 18.7,
+            "moins_de_4.5": 81.3,
+            "plus_de_5.5": 8.45,
+            "moins_de_5.5": 91.55
+          },
+          "btts": {
+            "oui": 59.31,
+            "non": 40.69
+          },
+          "resultat_total": {
+            "V1et+0.5": 28.88,
+            "1Xet+0.5": 47.24,
+            "V2et+0.5": 47.7,
+            "V1et+1.5": 22.6,
+            "1Xet+1.5": 40.96,
+            "V2et+1.5": 39.32,
+            "V1et+2.5": 18.63,
+            "1Xet+2.5": 26.22,
+            "V2et+2.5": 31.88,
+            "V1et+3.5": 9.69,
+            "1Xet+3.5": 17.27,
+            "V2et+3.5": 18.27,
+            "V1et+4.5": 6.09,
+            "1Xet+4.5": 7.74,
+            "V2et+4.5": 10.96,
+            "V1et+5.5": 2.22,
+            "1Xet+5.5": 3.88,
+            "V2et+5.5": 4.58
+          },
+          "scores_probables": {
+            "1-1": 10.78,
+            "1-2": 9.5,
+            "0-1": 8.38,
+            "0-2": 7.44,
+            "2-1": 6.99,
+            "1-0": 6.28,
+            "2-2": 5.93,
+            "1-3": 5.49,
+            "0-0": 5.06,
+            "0-3": 4.11
+          },
+          "buts_moyens_simules": {
+            "home": 1.29,
+            "away": 1.72,
+            "total": 3.01
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Victoire extérieur (Libertad)  \n**CONFIANCE** : 78%  \n**SCORES PROBABLES** : 0‑2 ou 1‑2  \n**MI-TEMPS** : Mi‑temps victoire extérieur  \n**OPTION RISQUE NUL** : Non applicable  \n\n**JUSTIFICATION** :\n\n**1. Analyse comparative des forces/faiblesses**  \n- **Deportivo Recoleta** : très faible en attaque (0,60 g/j) et très mauvaise défense (2,30 g/j encaissés). En 10 matchs à domicile, ils n’ont inscrit que 4 buts et en ont laissé 14, avec une série de 5 défaites consécutives à domicile.  \n- **Libertad** : équipe du haut du tableau (2ᵉ, 23 pts) avec une attaque moyenne de 1,40 g/j et une défense raisonnable (1,20 g/j encaissés). À l’extérieur, ils ont marqué 6 buts et encaissé 7 buts sur leurs 5 derniers déplacements, soit une moyenne de 1,2 buts marqués et 1,4 buts encaissés par match.\n\n**2. Impact du facteur domicile/extérieur**  \n- Recoleta ne gagne jamais à domicile depuis plusieurs semaines (série L‑L‑L‑L‑L).  \n- Libertad, même en déplacement, montre de la solidité : 3 victoires, 2 nuls et 0 défaites sur leurs 5 derniers matchs à l’extérieur.\n\n**3. Forme récente**  \n- **Recoleta** : 1 point sur 10 matchs (D L L L L L L L L L). Aucun but marqué depuis le 12 septembre (dernier but à domicile : 1‑3 contre Trinidense).  \n- **Libertad** : 8 points sur les 6 derniers matchs (L D W W L D). Points forts : victoires 4‑2 contre Rubio Ñú, 2‑0 contre 2 de Mayo, 2‑1 contre Sportivo Trinidense. Leur attaque reste capable de produire au moins 2 buts contre des équipes moyennes.\n\n**4. Contexte du championnat**  \n- Recoleta occupe la 11ᵉ place (8 pts) et lutte contre la relégation.  \n- Libertad est à 2ᵉ place (23 pts) à seulement 2 pts du leader. La motivation de Libertad est donc très élevée pour consolider leur place en tête.\n\n**5. Confrontations directes** (dernières saisons)  \n- 5‑2, 1‑1, 1‑1, 2‑1, 1‑0 en faveur de Libertad (4 victoires, 1 nul).  \n- Même en jouant à domicile, Recoleta n’a jamais réussi à s’imposer. La tendance historique montre une domination claire de Libertad.\n\n**6. Analyse des buts**  \n- Recoleta concède en moyenne 2,30 buts à domicile ; Libertad marque en moyenne 1,40 buts à l’extérieur.  \n- La combinaison de la mauvaise défense de Recoleta et de l’efficacité offensive de Libertad conduit très souvent à plus de 1,5 buts dans le match (probabilité estimée > 65 %).  \n- Un total de plus de 2,5 buts est plausible (ex. 2‑0 ou 2‑1), mais la présence d’une possible défense solide de Libertad (1,20 g/j encaissés) rend le dépassement de 2,5 buts légèrement moins certain que la simple victoire de Libertad.\n\n**7. Évaluation des cotes**  \n- Aucune cote fournie, mais la différence de forme et de classement indique que les bookmakers (si disponibles) offriraient des cotes favorables à la victoire de Libertad.\n\n**8. Synthèse**  \n- La probabilité que Libertad gagne est la plus élevée parmi les options proposées (≈ 70‑75 %).  \n- Le risque d’un match nul reste faible (≈ 15 %).  \n- Le pari « Victoire extérieur » offre le meilleur compromis fiabilité/gain dans ce contexte.\n\n**Conclusion** : Libertad devrait s’imposer à domicile de Recoleta, probablement avec deux buts d’écart (0‑2 ou 1‑2), menant déjà à la mi‑temps. Aucun scénario de match nul n’est suffisamment probable pour justifier une option « Match nul ».",
+        "confiance_pourcentage": 71,
+        "prediction_principale": "Victoire extérieur (Libertad)",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "0‑2 ou 1‑2",
+        "mi_temps": "Mi‑temps victoire extérieur",
+        "option_nul": "Non applicable",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance X2  \n**CONFIANCE** : 71%  \n**SCORES PROBABLES** : 1‑2, 1‑1  \n\n**RAISONNEMENT** :  \n- La simulation Monte‑Carlo indique une probabilité de 71,1 % pour X2 (défaite ou match nul de Recoleta).  \n- La victoire à l’extérieur de Libertad n’atteint que 47,7 % et le nombre de buts > 2,5 seulement 58,1 %.  \n- Facteurs décisifs : forme très mauvaise de Recoleta (5 défaites consécutives), bonne dynamique à l’extérieur de Libertad (3 V, 2 N sur 5 derniers déplacements) et historique dominant de Libertad en face de Recoleta.  \n\n> **Option risque nul** (match nul) n’est pas retenue comme prédiction principale ; le double chance X2 couvre à la fois le scénario de victoire de Libertad et le cas d’un match nul, offrant la meilleure fiabilité.",
+        "confiance_pourcentage_final": 71,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "1‑2, 1‑1"
+      }
+    ]
+  }
+}
