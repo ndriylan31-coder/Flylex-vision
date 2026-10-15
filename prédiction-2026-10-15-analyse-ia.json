@@ -1,0 +1,590 @@
+{
+  "metadata": {
+    "date_generation": "2026-10-15 01:05:32",
+    "date_matchs": "2026-10-15",
+    "version_algorithme": "8.3 - STATISTIQUES BRUTES + FORMES 6/10 + POINTS CLASSEMENT + COTES + ANALYSE IA DEEPSEEK ENRICHIE + MATCHS COMPLETS AVEC STATS DÉTAILLÉES + CLASSEMENT COMPLET + H2H ENRICHI AVEC STATS + CONFIANCE EXTRAITE + SCORES + RETRY IA + EXTRACTION AMÉLIORÉE 2 FORMATS + PROBABILITÉS MONTE-CARLO (NON INCLUSES DANS PROMPT IA)",
+    "total_predictions": 1,
+    "mode": "stats_brutes_avec_cotes_et_ia_complete_enrichie_retry_nouvelle_structure_avec_stats_detaillees_h2h_enrichi_confiance_extraite_scores_extraction_amelioree_2_formats_montecarlo_hors_prompt",
+    "note": "Collecte des statistiques brutes complètes : moyennes, formes récentes (6 et 10 matchs), séries domicile/extérieur, classements avec points + cotes des bookmakers + analyse IA DeepSeek ENRICHIE avec matchs détaillés (nouvelle structure objet avec game_id, date, home_team, away_team, score, status, competition + STATS DÉTAILLÉES ESPN) + classement complet + confrontations directes H2H élargies AVEC STATS DÉTAILLÉES + pourcentage confiance EXTRAIT AUTOMATIQUEMENT + 2 scores probables + retry automatique IA + suppression 'match nul' + EXTRACTION AMÉLIORÉE support des 2 formats (**FORMAT** et FORMAT simple) + PROBABILITÉS MONTE-CARLO autonomes (calculées mais NON incluses dans le prompt IA)",
+    "ia_model": "deepseek-r1-distill-llama-70b",
+    "groq_keys_count": 2,
+    "monte_carlo": {
+      "enabled": true,
+      "iterations": 20000,
+      "calibrage": "moyennes_internationales + statistiques_équipes + ajustement_h2h",
+      "probabilites_calculees": [
+        "1x2",
+        "double_chance",
+        "over_under",
+        "btts",
+        "resultat_total",
+        "scores_probables"
+      ],
+      "inclus_dans_prompt_ia": false
+    },
+    "nouveautes_v8_3_modifiees": [
+      "🎲 Module de probabilités Monte-Carlo intégré (20 000 simulations)",
+      "🔢 Calibrage avec moyennes internationales FIFA/UEFA",
+      "🆚 Ajustement automatique selon les confrontations H2H",
+      "📊 Probabilités 1X2, Double Chance, Over/Under (0.5→5.5), BTTS",
+      "🎯 Scores exacts les plus probables calculés statistiquement",
+      "❌ MODIFICIATION : Probabilités Monte-Carlo NON incluses dans le prompt IA",
+      "❌ MODIFICIATION : IA ne prédit plus corners et tirs cadrés (champs gardés dans structure)",
+      "📁 MODIFICIATION : Nom de fichier simplifié prédiction-YYYY-MM-DD-analyse-ia.json",
+      "✅ Maintien de toutes les autres fonctionnalités avancées v8.2"
+    ]
+  },
+  "statistiques_brutes_avec_ia_hors_montecarlo": {
+    "count": 1,
+    "details": [
+      {
+        "id": 1,
+        "HomeTeam": "Al Khaleej",
+        "AwayTeam": "Al Fayha",
+        "date": "15 octobre 2026 à 14:50:00 UTC",
+        "league": "Saudi-Arabia - Pro League",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 0.4444444444444444,
+          "moyenne_encaisses": 1.4444444444444444,
+          "form_6": [
+            "D",
+            "D",
+            "D",
+            "L",
+            "L",
+            "D"
+          ],
+          "form_10": [
+            "D",
+            "D",
+            "D",
+            "L",
+            "L",
+            "D",
+            "D",
+            "L",
+            "D"
+          ],
+          "recent_form": [
+            "D",
+            "D",
+            "D",
+            "L",
+            "L",
+            "D"
+          ],
+          "total_points_6": 4,
+          "total_points_10": 6,
+          "total_points": 4,
+          "serie_domicile": [
+            "D",
+            "D",
+            "L",
+            "D"
+          ],
+          "buts_dom_marques": 2,
+          "buts_dom_encaisses": 6,
+          "buts_ext_marques": 2,
+          "buts_ext_encaisses": 7,
+          "total_marques": 4,
+          "total_encaisses": 13
+        },
+        "stats_away": {
+          "moyenne_marques": 1.1111111111111112,
+          "moyenne_encaisses": 1.3333333333333333,
+          "form_6": [
+            "D",
+            "D",
+            "L",
+            "D",
+            "W",
+            "D"
+          ],
+          "form_10": [
+            "D",
+            "D",
+            "L",
+            "D",
+            "W",
+            "D",
+            "L",
+            "W",
+            "L"
+          ],
+          "recent_form": [
+            "D",
+            "D",
+            "L",
+            "D",
+            "W",
+            "D"
+          ],
+          "total_points_6": 7,
+          "total_points_10": 10,
+          "total_points": 7,
+          "serie_exterieur": [
+            "D",
+            "L",
+            "D",
+            "W",
+            "L"
+          ],
+          "buts_dom_marques": 6,
+          "buts_dom_encaisses": 8,
+          "buts_ext_marques": 4,
+          "buts_ext_encaisses": 4,
+          "total_marques": 10,
+          "total_encaisses": 12
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401900913",
+            "date": "Sat, Oct 10",
+            "home_team": "Al Ettifaq",
+            "away_team": "Al Khaleej",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900913"
+          },
+          {
+            "game_id": "401900921",
+            "date": "Sat, Sep 12",
+            "home_team": "Al Khaleej",
+            "away_team": "Al Nassr",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900921"
+          },
+          {
+            "game_id": "401900365",
+            "date": "Mon, Sep 07",
+            "home_team": "Al Khaleej",
+            "away_team": "Al Riyadh",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900365"
+          },
+          {
+            "game_id": "401900373",
+            "date": "Thu, Sep 03",
+            "home_team": "Neom SC",
+            "away_team": "Al Khaleej",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900373"
+          },
+          {
+            "game_id": "401900382",
+            "date": "Fri, Aug 28",
+            "home_team": "Al Khaleej",
+            "away_team": "Al Hilal",
+            "score": "1 - 5",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900382"
+          },
+          {
+            "game_id": "401900390",
+            "date": "Tue, Aug 25",
+            "home_team": "Abha",
+            "away_team": "Al Khaleej",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900390"
+          },
+          {
+            "game_id": "401900394",
+            "date": "Sat, Aug 22",
+            "home_team": "Al Khaleej",
+            "away_team": "Al Shabab",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900394"
+          },
+          {
+            "game_id": "401873726",
+            "date": "Tue, Aug 18",
+            "home_team": "Al Okhdood",
+            "away_team": "Al Khaleej",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Saudi King's Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401873726"
+          },
+          {
+            "game_id": "401900404",
+            "date": "Sat, Aug 15",
+            "home_team": "Al Taawoun",
+            "away_team": "Al Khaleej",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900404"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401900911",
+            "date": "Sun, Oct 11",
+            "home_team": "Al Fayha",
+            "away_team": "Al Riyadh",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900911"
+          },
+          {
+            "game_id": "401900918",
+            "date": "Sat, Sep 12",
+            "home_team": "Al Shabab",
+            "away_team": "Al Fayha",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900918"
+          },
+          {
+            "game_id": "401900360",
+            "date": "Tue, Sep 08",
+            "home_team": "Al Ittihad",
+            "away_team": "Al Fayha",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900360"
+          },
+          {
+            "game_id": "401900374",
+            "date": "Thu, Sep 03",
+            "home_team": "Al Fayha",
+            "away_team": "Al Kholood",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900374"
+          },
+          {
+            "game_id": "401900383",
+            "date": "Fri, Aug 28",
+            "home_team": "Al Fayha",
+            "away_team": "Abha",
+            "score": "3 - 2",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900383"
+          },
+          {
+            "game_id": "401900389",
+            "date": "Tue, Aug 25",
+            "home_team": "Al Taawoun",
+            "away_team": "Al Fayha",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900389"
+          },
+          {
+            "game_id": "401900401",
+            "date": "Thu, Aug 20",
+            "home_team": "Al Fayha",
+            "away_team": "Al Hilal",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900401"
+          },
+          {
+            "game_id": "401873720",
+            "date": "Mon, Aug 17",
+            "home_team": "Al Adalah",
+            "away_team": "Al Fayha",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Saudi King's Cup",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401873720"
+          },
+          {
+            "game_id": "401900407",
+            "date": "Fri, Aug 14",
+            "home_team": "Neom SC",
+            "away_team": "Al Fayha",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900407"
+          }
+        ],
+        "classement": {
+          "Al Khaleej": {
+            "position": 14,
+            "points": 6
+          },
+          "Al Fayha": {
+            "position": 13,
+            "points": 7
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Al Hilal",
+            "points": 21
+          },
+          {
+            "position": 2,
+            "team": "Al Qadsiah",
+            "points": 19
+          },
+          {
+            "position": 3,
+            "team": "Al Nassr",
+            "points": 19
+          },
+          {
+            "position": 4,
+            "team": "Al Ittihad",
+            "points": 17
+          },
+          {
+            "position": 5,
+            "team": "Neom SC",
+            "points": 16
+          },
+          {
+            "position": 6,
+            "team": "Al Ahli",
+            "points": 15
+          },
+          {
+            "position": 7,
+            "team": "Al Ettifaq",
+            "points": 12
+          },
+          {
+            "position": 8,
+            "team": "Al Kholood",
+            "points": 12
+          },
+          {
+            "position": 9,
+            "team": "Al Diriyah",
+            "points": 11
+          },
+          {
+            "position": 10,
+            "team": "Al Hazem",
+            "points": 9
+          },
+          {
+            "position": 11,
+            "team": "Al Riyadh",
+            "points": 9
+          },
+          {
+            "position": 12,
+            "team": "Al Shabab",
+            "points": 7
+          },
+          {
+            "position": 13,
+            "team": "Al Fayha",
+            "points": 7
+          },
+          {
+            "position": 14,
+            "team": "Al Khaleej",
+            "points": 6
+          },
+          {
+            "position": 15,
+            "team": "Al Faisaly",
+            "points": 3
+          },
+          {
+            "position": 16,
+            "team": "Al Fateh",
+            "points": 3
+          },
+          {
+            "position": 17,
+            "team": "Al Taawoun",
+            "points": 3
+          },
+          {
+            "position": 18,
+            "team": "Abha",
+            "points": 2
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "715952",
+            "date": "Friday, September 20, 2024",
+            "team1": "Al Khaleej",
+            "score": "0 - 0",
+            "team2": "Al Fayha",
+            "title": "Al Khaleej VS Al Fayha",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/715952/al-fayha-al-khaleej",
+            "source": "Pro League",
+            "stats": {}
+          },
+          {
+            "gameId": "716103",
+            "date": "Thursday, February 20, 2025",
+            "team1": "Al Fayha",
+            "score": "0 - 0",
+            "team2": "Al Khaleej",
+            "title": "Al Fayha VS Al Khaleej",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/716103/al-khaleej-al-fayha",
+            "source": "Pro League",
+            "stats": {}
+          },
+          {
+            "gameId": "755916",
+            "date": "Saturday, September 13, 2025",
+            "team1": "Al Khaleej",
+            "score": "3 - 0",
+            "team2": "Al Fayha",
+            "title": "Al Khaleej VS Al Fayha",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/755916/al-fayha-al-khaleej",
+            "source": "Pro League",
+            "stats": {}
+          },
+          {
+            "gameId": "756071",
+            "date": "Wednesday, January 28, 2026",
+            "team1": "Al Fayha",
+            "score": "3 - 1",
+            "team2": "Al Khaleej",
+            "title": "Al Fayha VS Al Khaleej",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/756071/al-khaleej-al-fayha",
+            "source": "Pro League",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/21829.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/21827.png",
+        "classement_home": 14,
+        "classement_away": 13,
+        "points_classement_home": 6,
+        "points_classement_away": 7,
+        "nom_classement_home": "Al Khaleej",
+        "nom_classement_away": "Al Fayha",
+        "country_fr": "Saudi-Arabia - Pro League",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 0.888,
+            "lambda_away": 1.019,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 30.47,
+            "X": 31.85,
+            "V2": 37.68
+          },
+          "double_chance": {
+            "1X": 62.32,
+            "12": 68.15,
+            "X2": 69.53
+          },
+          "over_under": {
+            "plus_de_0.5": 84.88,
+            "moins_de_0.5": 15.12,
+            "plus_de_1.5": 56.29,
+            "moins_de_1.5": 43.71,
+            "plus_de_2.5": 29.57,
+            "moins_de_2.5": 70.43,
+            "plus_de_3.5": 12.26,
+            "moins_de_3.5": 87.74,
+            "plus_de_4.5": 4.29,
+            "moins_de_4.5": 95.71,
+            "plus_de_5.5": 1.26,
+            "moins_de_5.5": 98.74
+          },
+          "btts": {
+            "oui": 37.44,
+            "non": 62.56
+          },
+          "resultat_total": {
+            "V1et+0.5": 30.47,
+            "1Xet+0.5": 47.2,
+            "V2et+0.5": 37.68,
+            "V1et+1.5": 17.4,
+            "1Xet+1.5": 34.14,
+            "V2et+1.5": 22.16,
+            "V1et+2.5": 11.59,
+            "1Xet+2.5": 14.9,
+            "V2et+2.5": 14.68,
+            "V1et+3.5": 3.68,
+            "1Xet+3.5": 6.98,
+            "V2et+3.5": 5.28,
+            "V1et+4.5": 1.6,
+            "1Xet+4.5": 1.86,
+            "V2et+4.5": 2.43,
+            "V1et+5.5": 0.4,
+            "1Xet+5.5": 0.66,
+            "V2et+5.5": 0.6
+          },
+          "scores_probables": {
+            "0-1": 15.52,
+            "0-0": 15.12,
+            "1-1": 13.42,
+            "1-0": 13.06,
+            "0-2": 7.48,
+            "1-2": 6.93,
+            "2-1": 6.06,
+            "2-0": 5.82,
+            "2-2": 3.04,
+            "0-3": 2.46
+          },
+          "buts_moyens_simules": {
+            "home": 0.88,
+            "away": 1.01,
+            "total": 1.89
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Moins de 2.5 buts  \n**CONFIANCE** : 68%  \n**SCORES PROBABLES** : 0‑0 ou 0‑1 (victoire d’Al Fayha)  \n**MI-TEMPS** : Mi‑temps match nul  \n**OPTION RISQUE NUL** : Match nul – 30%  \n\n**JUSTIFICATION**  \n\n**1. Analyse comparative**  \n- **Al Khaleej** (domicile) : très faible puissance offensive (0,44 buts/match) et défense moyenne (1,44 buts encaissés). En 6 matchs à domicile, ils n’ont inscrit que **2 buts** et en ont concédé **6**. Leur classement (14ᵉ, 6 pts) montre une équipe en difficulté.  \n- **Al Fayha** (extérieur) : meilleure attaque (1,11 buts/match) et une défense légèrement plus solide (1,33 buts encaissés). En déplacement, ils ont marqué **4** buts et encaissé **4**. Classement 13ᵉ, 7 pts, forme récente correcte (4 défaites, 2 nulles, 1 victoire sur les 6 derniers).  \n\n**2. Impact du facteur domicile/extérieur**  \nAl Khaleej n’a jamais montré de réel avantage à domicile cette saison (2‑6). Al Fayha, bien que classé juste au-dessus, a prouvé qu’il pouvait obtenir des points à l’extérieur (défaites limitées, un nul et une victoire). Le facteur domicile ne compense pas la faiblesse offensive d’Al Khaleej.\n\n**3. Formes récentes & tendances**  \n- **Al Khaleej** : 6 derniers matchs → D D D L L D (4 pts). Aucun but marqué depuis le 12 septembre (dernier but à l’extérieur contre Al Nassr).  \n- **Al Fayha** : 6 derniers matchs → D D L D W D (7 pts). Dernier match : 1‑1 à domicile contre Al Riyadh, montrant qu’ils marquent régulièrement même contre des équipes du bas du tableau.  \n\n**4. Contexte du championnat**  \nLes deux équipes occupent les deux dernières places du tableau, mais Al Fayha a un point d’avance et une meilleure différence de buts. Aucun des deux clubs ne menace la relégation directe, ce qui rend la motivation plus liée à éviter la défaite que à chercher la victoire.\n\n**5. Confrontations directes**  \n- 4 rencontres récentes : 2 nulles (0‑0), 1 victoire d’Al Khaleej (3‑0), 1 victoire d’Al Fayha (3‑1).  \n- Les deux matchs nuls indiquent une tendance à la prudence défensive, tandis que les victoires ont été décisives mais rares.  \n\n**6. Analyse des buts attendus**  \n- Moyenne combinée de buts par match ≈ 0,44 + 1,11 (buts marqués) = **1,55**.  \n- Moyenne combinée de buts encaissés ≈ 1,44 + 1,33 = **2,77**, mais cela reflète surtout les défenses faibles de chaque équipe.  \n- Historique récent : 5 derniers matchs d’Al Khaleej → 2 buts marqués, 6 encaissés ; 5 derniers matchs d’Al Fayha → 7 buts marqués, 7 encaissés.  \n- Le total de buts attendu se situe donc autour de **1‑2** buts.  \n\n**7. Choix de la prédiction**  \n- **+2.5 buts** : improbable (nécessite au moins 3 buts, alors que les deux équipes ont produit rarement plus d’un but chacune).  \n- **+1.5 buts** : plus plausible, mais la probabilité d’un seul but (ou aucun) reste supérieure.  \n- **-2.5 buts** : très probable (2 buts ou moins).  \n- **-1.5 buts** (0‑1 but) est également plausible, mais le risque de 2 buts (ex. 1‑1) augmente l’incertitude.  \n- Ainsi, **“Moins de 2.5 buts”** offre le meilleur compromis fiabilité/gain.\n\n**8. Prédiction mi‑temps**  \nLes deux équipes affichent une tendance à démarrer prudemment (deux nuls 0‑0 la saison précédente, plusieurs matchs sans but au premier temps). La mi‑temps la plus probable est donc **match nul** (0‑0).\n\n**9. Option risque nul**  \nCompte tenu des deux nuls historiques et de la faiblesse offensive d’Al Khaleej, la probabilité d’un **match nul final** est estimée à **≈30 %**. Cette donnée est fournie uniquement à titre d’information et ne remplace pas la prédiction principale.",
+        "confiance_pourcentage": 71,
+        "prediction_principale": "Moins de 2.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "0‑0 ou 0‑1 (victoire d’Al Fayha)",
+        "mi_temps": "Mi‑temps match nul",
+        "option_nul": "Match nul – 30%",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : -2.5 buts  \n**CONFIANCE** : 71%  \n**SCORES PROBABLES** : 0‑0, 0‑1  \n\n**RAISONNEMENT** :  \n- **Offensive très faible d’Al Khaleej** (0,44 buts/match) et aucune réalisation récente.  \n- **Al Fayha** marque peu plus (1,11 buts/match) mais reste en dessous d’1,5 but/match à l’extérieur.  \n- **Monte‑Carlo** indique 70,43 % de chances de moins de 2,5 buts et les deux équipes affichent des défenses perméables mais peu de création.  \n- **Forme et H2H** montrent plusieurs nuls et peu de buts (0‑0, 0‑1 parmi les scores les plus probables).",
+        "confiance_pourcentage_final": 71,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "0‑0, 0‑1"
+      }
+    ]
+  }
+}
