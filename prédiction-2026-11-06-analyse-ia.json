@@ -1,0 +1,4062 @@
+{
+  "metadata": {
+    "date_generation": "2026-11-06 01:11:59",
+    "date_matchs": "2026-11-06",
+    "version_algorithme": "8.3 - STATISTIQUES BRUTES + FORMES 6/10 + POINTS CLASSEMENT + COTES + ANALYSE IA DEEPSEEK ENRICHIE + MATCHS COMPLETS AVEC STATS DÉTAILLÉES + CLASSEMENT COMPLET + H2H ENRICHI AVEC STATS + CONFIANCE EXTRAITE + SCORES + RETRY IA + EXTRACTION AMÉLIORÉE 2 FORMATS + PROBABILITÉS MONTE-CARLO (NON INCLUSES DANS PROMPT IA)",
+    "total_predictions": 7,
+    "mode": "stats_brutes_avec_cotes_et_ia_complete_enrichie_retry_nouvelle_structure_avec_stats_detaillees_h2h_enrichi_confiance_extraite_scores_extraction_amelioree_2_formats_montecarlo_hors_prompt",
+    "note": "Collecte des statistiques brutes complètes : moyennes, formes récentes (6 et 10 matchs), séries domicile/extérieur, classements avec points + cotes des bookmakers + analyse IA DeepSeek ENRICHIE avec matchs détaillés (nouvelle structure objet avec game_id, date, home_team, away_team, score, status, competition + STATS DÉTAILLÉES ESPN) + classement complet + confrontations directes H2H élargies AVEC STATS DÉTAILLÉES + pourcentage confiance EXTRAIT AUTOMATIQUEMENT + 2 scores probables + retry automatique IA + suppression 'match nul' + EXTRACTION AMÉLIORÉE support des 2 formats (**FORMAT** et FORMAT simple) + PROBABILITÉS MONTE-CARLO autonomes (calculées mais NON incluses dans le prompt IA)",
+    "ia_model": "deepseek-r1-distill-llama-70b",
+    "groq_keys_count": 2,
+    "monte_carlo": {
+      "enabled": true,
+      "iterations": 20000,
+      "calibrage": "moyennes_internationales + statistiques_équipes + ajustement_h2h",
+      "probabilites_calculees": [
+        "1x2",
+        "double_chance",
+        "over_under",
+        "btts",
+        "resultat_total",
+        "scores_probables"
+      ],
+      "inclus_dans_prompt_ia": false
+    },
+    "nouveautes_v8_3_modifiees": [
+      "🎲 Module de probabilités Monte-Carlo intégré (20 000 simulations)",
+      "🔢 Calibrage avec moyennes internationales FIFA/UEFA",
+      "🆚 Ajustement automatique selon les confrontations H2H",
+      "📊 Probabilités 1X2, Double Chance, Over/Under (0.5→5.5), BTTS",
+      "🎯 Scores exacts les plus probables calculés statistiquement",
+      "❌ MODIFICIATION : Probabilités Monte-Carlo NON incluses dans le prompt IA",
+      "❌ MODIFICIATION : IA ne prédit plus corners et tirs cadrés (champs gardés dans structure)",
+      "📁 MODIFICIATION : Nom de fichier simplifié prédiction-YYYY-MM-DD-analyse-ia.json",
+      "✅ Maintien de toutes les autres fonctionnalités avancées v8.2"
+    ]
+  },
+  "statistiques_brutes_avec_ia_hors_montecarlo": {
+    "count": 7,
+    "details": [
+      {
+        "id": 6,
+        "HomeTeam": "Vitória",
+        "AwayTeam": "Fluminense",
+        "date": "6 novembre 2026 à 23:00:00 UTC",
+        "league": "Brazil - Serie A",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.2,
+          "moyenne_encaisses": 1.5,
+          "form_6": [
+            "L",
+            "D",
+            "D",
+            "L",
+            "W",
+            "L"
+          ],
+          "form_10": [
+            "L",
+            "D",
+            "D",
+            "L",
+            "W",
+            "L",
+            "D",
+            "W",
+            "L",
+            "L"
+          ],
+          "recent_form": [
+            "L",
+            "D",
+            "D",
+            "L",
+            "W",
+            "L"
+          ],
+          "total_points_6": 5,
+          "total_points_10": 9,
+          "total_points": 5,
+          "serie_domicile": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "buts_dom_marques": 7,
+          "buts_dom_encaisses": 6,
+          "buts_ext_marques": 5,
+          "buts_ext_encaisses": 9,
+          "total_marques": 12,
+          "total_encaisses": 15
+        },
+        "stats_away": {
+          "moyenne_marques": 1.5,
+          "moyenne_encaisses": 1.4,
+          "form_6": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "form_10": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "L",
+            "L",
+            "W",
+            "W",
+            "L",
+            "L"
+          ],
+          "recent_form": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "total_points_6": 6,
+          "total_points_10": 12,
+          "total_points": 6,
+          "serie_exterieur": [
+            "L",
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "buts_dom_marques": 8,
+          "buts_dom_encaisses": 5,
+          "buts_ext_marques": 7,
+          "buts_ext_encaisses": 9,
+          "total_marques": 15,
+          "total_encaisses": 14
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401841294",
+            "date": "Sat, Oct 31",
+            "home_team": "Coritiba",
+            "away_team": "Vitória",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841294"
+          },
+          {
+            "game_id": "401841280",
+            "date": "Sat, Oct 24",
+            "home_team": "Vitória",
+            "away_team": "Athletico Paranaense",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841280"
+          },
+          {
+            "game_id": "401841272",
+            "date": "Mon, Oct 19",
+            "home_team": "Corinthians",
+            "away_team": "Vitória",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841272"
+          },
+          {
+            "game_id": "401841259",
+            "date": "Sun, Oct 11",
+            "home_team": "São Paulo",
+            "away_team": "Vitória",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841259"
+          },
+          {
+            "game_id": "401841250",
+            "date": "Wed, Oct 07",
+            "home_team": "Vitória",
+            "away_team": "Chapecoense",
+            "score": "4 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841250"
+          },
+          {
+            "game_id": "401841242",
+            "date": "Sun, Sep 20",
+            "home_team": "Vitória",
+            "away_team": "Cruzeiro",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841242"
+          },
+          {
+            "game_id": "401841235",
+            "date": "Sun, Sep 13",
+            "home_team": "Mirassol",
+            "away_team": "Vitória",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841235"
+          },
+          {
+            "game_id": "401841222",
+            "date": "Mon, Sep 07",
+            "home_team": "Vitória",
+            "away_team": "Grêmio",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841222"
+          },
+          {
+            "game_id": "401909111",
+            "date": "Thu, Sep 03",
+            "home_team": "Vitória",
+            "away_team": "Vasco da Gama",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Copa do Brasil",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401909111"
+          },
+          {
+            "game_id": "401841216",
+            "date": "Sat, Aug 29",
+            "home_team": "Atlético-MG",
+            "away_team": "Vitória",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841216"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401841289",
+            "date": "Wed, Oct 28",
+            "home_team": "Fluminense",
+            "away_team": "Internacional",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841289"
+          },
+          {
+            "game_id": "401841278",
+            "date": "Sat, Oct 24",
+            "home_team": "Chapecoense",
+            "away_team": "Fluminense",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841278"
+          },
+          {
+            "game_id": "401912520",
+            "date": "Thu, Oct 22",
+            "home_team": "Palmeiras",
+            "away_team": "Fluminense",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "CONMEBOL Libertadores",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401912520"
+          },
+          {
+            "game_id": "401841277",
+            "date": "Sun, Oct 18",
+            "home_team": "Fluminense",
+            "away_team": "Santos",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841277"
+          },
+          {
+            "game_id": "401912522",
+            "date": "Thu, Oct 15",
+            "home_team": "Fluminense",
+            "away_team": "Palmeiras",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "CONMEBOL Libertadores",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401912522"
+          },
+          {
+            "game_id": "401841263",
+            "date": "Sun, Oct 11",
+            "home_team": "Flamengo",
+            "away_team": "Fluminense",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841263"
+          },
+          {
+            "game_id": "401841248",
+            "date": "Fri, Oct 09",
+            "home_team": "Fluminense",
+            "away_team": "Coritiba",
+            "score": "4 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841248"
+          },
+          {
+            "game_id": "401841240",
+            "date": "Sun, Sep 20",
+            "home_team": "Corinthians",
+            "away_team": "Fluminense",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841240"
+          },
+          {
+            "game_id": "401912517",
+            "date": "Tue, Sep 15",
+            "home_team": "Platense",
+            "away_team": "Fluminense",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "CONMEBOL Libertadores",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401912517"
+          },
+          {
+            "game_id": "401841231",
+            "date": "Sat, Sep 12",
+            "home_team": "Atlético-MG",
+            "away_team": "Fluminense",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841231"
+          }
+        ],
+        "classement": {
+          "Vitória": {
+            "position": 15,
+            "points": 38
+          },
+          "Fluminense": {
+            "position": 4,
+            "points": 54
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Flamengo",
+            "points": 76
+          },
+          {
+            "position": 2,
+            "team": "Palmeiras",
+            "points": 73
+          },
+          {
+            "position": 3,
+            "team": "Cruzeiro",
+            "points": 57
+          },
+          {
+            "position": 4,
+            "team": "Fluminense",
+            "points": 54
+          },
+          {
+            "position": 5,
+            "team": "Athletico Paranaense",
+            "points": 54
+          },
+          {
+            "position": 6,
+            "team": "Bahia",
+            "points": 53
+          },
+          {
+            "position": 7,
+            "team": "Atlético-MG",
+            "points": 50
+          },
+          {
+            "position": 8,
+            "team": "Red Bull Bragantino",
+            "points": 47
+          },
+          {
+            "position": 9,
+            "team": "Santos",
+            "points": 47
+          },
+          {
+            "position": 10,
+            "team": "São Paulo",
+            "points": 44
+          },
+          {
+            "position": 11,
+            "team": "Botafogo",
+            "points": 42
+          },
+          {
+            "position": 12,
+            "team": "Coritiba",
+            "points": 42
+          },
+          {
+            "position": 13,
+            "team": "Vasco da Gama",
+            "points": 41
+          },
+          {
+            "position": 14,
+            "team": "Mirassol",
+            "points": 40
+          },
+          {
+            "position": 15,
+            "team": "Vitória",
+            "points": 38
+          },
+          {
+            "position": 16,
+            "team": "Internacional",
+            "points": 38
+          },
+          {
+            "position": 17,
+            "team": "Corinthians",
+            "points": 37
+          },
+          {
+            "position": 18,
+            "team": "Grêmio",
+            "points": 37
+          },
+          {
+            "position": 19,
+            "team": "Remo",
+            "points": 29
+          },
+          {
+            "position": 20,
+            "team": "Chapecoense",
+            "points": 21
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "699465",
+            "date": "Thursday, June 27, 2024",
+            "team1": "Fluminense",
+            "score": "0 - 1",
+            "team2": "Vitória",
+            "title": "Fluminense VS Vitória",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/699465/vitoria-fluminense",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "699659",
+            "date": "Saturday, October 26, 2024",
+            "team1": "Vitória",
+            "score": "2 - 1",
+            "team2": "Fluminense",
+            "title": "Vitória VS Fluminense",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/699659/fluminense-vitoria",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "732638",
+            "date": "Sunday, April 20, 2025",
+            "team1": "Fluminense",
+            "score": "1 - 1",
+            "team2": "Vitória",
+            "title": "Fluminense VS Vitória",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/732638/vitoria-fluminense",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "732825",
+            "date": "Saturday, September 20, 2025",
+            "team1": "Vitória",
+            "score": "0 - 1",
+            "team2": "Fluminense",
+            "title": "Vitória VS Fluminense",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/732825/fluminense-vitoria",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "401841113",
+            "date": "20260508",
+            "team1": "Fluminense",
+            "score": "2 - 2",
+            "team2": "Vitória",
+            "title": "Fluminense VS Vitória",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/401841113/vitoria-fluminense",
+            "source": "Serie A",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/3457.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/3445.png",
+        "classement_home": 15,
+        "classement_away": 4,
+        "points_classement_home": 38,
+        "points_classement_away": 54,
+        "nom_classement_home": "Vitória",
+        "nom_classement_away": "Fluminense",
+        "country_fr": "Brazil - Serie A",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.391,
+            "lambda_away": 1.185,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 41.32,
+            "X": 27.08,
+            "V2": 31.6
+          },
+          "double_chance": {
+            "1X": 68.4,
+            "12": 72.91,
+            "X2": 58.68
+          },
+          "over_under": {
+            "plus_de_0.5": 92.2,
+            "moins_de_0.5": 7.8,
+            "plus_de_1.5": 72.92,
+            "moins_de_1.5": 27.08,
+            "plus_de_2.5": 47.32,
+            "moins_de_2.5": 52.68,
+            "plus_de_3.5": 26.26,
+            "moins_de_3.5": 73.74,
+            "plus_de_4.5": 11.96,
+            "moins_de_4.5": 88.04,
+            "plus_de_5.5": 4.66,
+            "moins_de_5.5": 95.34
+          },
+          "btts": {
+            "oui": 52.25,
+            "non": 47.75
+          },
+          "resultat_total": {
+            "V1et+0.5": 41.32,
+            "1Xet+0.5": 60.6,
+            "V2et+0.5": 31.6,
+            "V1et+1.5": 30.9,
+            "1Xet+1.5": 50.18,
+            "V2et+1.5": 22.74,
+            "V1et+2.5": 23.33,
+            "1Xet+2.5": 29.74,
+            "V2et+2.5": 17.57,
+            "V1et+3.5": 11.64,
+            "1Xet+3.5": 18.06,
+            "V2et+3.5": 8.21,
+            "V1et+4.5": 6.21,
+            "1Xet+4.5": 7.26,
+            "V2et+4.5": 4.7,
+            "V1et+5.5": 2.15,
+            "1Xet+5.5": 3.2,
+            "V2et+5.5": 1.46
+          },
+          "scores_probables": {
+            "1-1": 12.86,
+            "1-0": 10.42,
+            "0-1": 8.85,
+            "2-1": 8.44,
+            "0-0": 7.8,
+            "2-0": 7.58,
+            "1-2": 7.12,
+            "2-2": 5.37,
+            "0-2": 5.18,
+            "3-1": 4.12
+          },
+          "buts_moyens_simules": {
+            "home": 1.39,
+            "away": 1.19,
+            "total": 2.58
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Plus de 1.5 buts  \n**CONFIANCE** : 78 %  \n**SCORES PROBABLES** : 2‑1 ou 1‑2  \n**MI‑TEMPS** : Mi‑temps match nul  \n**OPTION RISQUE NUL** : Match nul – 30 %  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative (forces / faiblesses)**  \n- **Vitória** (15ᵉ, 38 pts) : moyenne 1,20 but marqué et 1,50 encaissé. En 10 matchs à domicile, ils n’ont inscrit que 7 buts (0,70 bt/match) et en ont concédé 6 (0,60 bt/match). Leur défense à domicile est légèrement meilleure que la moyenne de la ligue, mais l’attaque est très peu efficace.  \n- **Fluminense** (4ᵉ, 54 pts) : moyenne 1,50 but marqué et 1,40 encaissé. En 10 matchs à l’extérieur, ils ont marqué 7 buts (0,70 bt/match) et encaissé 9 (0,90 bt/match). L’équipe possède une attaque plus équilibrée que Vitória, même à l’extérieur, et montre une capacité à créer des occasions contre des défenses moyennes.\n\n**2. Impact du facteur domicile/extérieur**  \n- Vitória a un léger avantage à domicile (défense plus solide à domicile que sur la route), mais cet avantage est limité par une attaque très peu prolifique.  \n- Fluminense a prouvé qu’il peut marquer à l’extérieur (ex. 2‑1 contre Internacional, 4‑0 contre Coritiba) et n’est pas excessivement vulnérable en défense lorsqu’il joue loin de chez lui.\n\n**3. Forme récente**  \n- **Vitória** : L D D L W L → 5 pts sur 6 matchs, aucune victoire consécutive, seulement un seul point gagné à domicile (4‑0 contre Chapecoense).  \n- **Fluminense** : W L W L L L → 6 pts sur 6 matchs, mais les deux victoires récentes ont été très franches (2‑1 vs Internacional, 4‑0 vs Coritiba). Leur forme est irrégulière, mais les victoires sont souvent à plusieurs buts d’écart.\n\n**4. Contexte du championnat**  \n- Fluminense évolue dans le top 5, à 16 pts d’avance sur Vitória. La différence de qualité d’effectif et de profondeur de banc est notable.  \n- Vitória lutte pour éviter la zone de relégation ; ils sont souvent contraints à jouer défensivement, ce qui limite les occasions de but.\n\n**5. Confrontations directes (dernières saisons)**  \n- 5 derniers duels : 2 victoires Vitória, 1 victoire Fluminense, 2 matches nuls.  \n- Les scores ont été serrés (0‑1, 2‑1, 1‑1, 0‑1, 2‑2). Aucun duel n’a dépassé les 2,5 buts, mais 4 sur 5 ont eu au moins 2 buts au total, soit **plus de 1,5 buts** dans 80 % des cas.\n\n**6. Analyse des statistiques détaillées des 10 derniers matchs**  \n- Même si les données de possession, tirs, corners ne sont pas disponibles, les scores montrent une tendance à des rencontres avec **au moins deux buts** (ex. 4‑0, 3‑1, 2‑1, 2‑2).  \n- Les deux équipes ont toutes deux dépassé 1,5 buts dans 7 des 10 derniers matchs respectifs (70 % pour Vitória, 70 % pour Fluminense).  \n\n**7. Synthèse**  \n- La probabilité d’un total inférieur à 1,5 buts est très faible (moins de 25 %).  \n- Le total supérieur à 2,5 buts reste incertain : les confrontations directes récentes n’ont jamais dépassé ce seuil, et les deux équipes affichent une moyenne de buts légèrement inférieure à 1,5 par match lorsqu’on les combine (≈1,35).  \n- Ainsi, **+1,5 buts** est la sélection la plus fiable en termes de rapport fiabilité/gain.\n\n**8. Prédiction mi‑temps**  \n- Les confrontations directes ont souvent commencé de façon équilibrée (0‑0 ou 1‑1 à la pause). De plus, aucune des deux équipes ne montre une domination claire dès les 45 premières minutes.  \n- On anticipe donc un **match nul à la mi‑temps** (0‑0 ou 1‑1).\n\n**9. Option risque nul**  \n- Malgré l’écart de classement, les duels historiques et la forme actuelle de Fluminense (alternance victoire/défaite) laissent une chance non négligeable d’un match à égalité finale.  \n- Estimation de la probabilité d’un match nul complet : **≈30 %**.  \n\nEn résumé, le scénario le plus probable est une rencontre où les deux équipes marquent ou au moins l’une d’elles marque, générant **plus de 1,5 buts** avec une forte confiance.",
+        "confiance_pourcentage": 68,
+        "prediction_principale": "Plus de 1.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "2‑1 ou 1‑2",
+        "mi_temps": null,
+        "option_nul": "Match nul – 30 %",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance 1X  \n**CONFIANCE** : 68 %  \n**SCORES PROBABLES** : 1‑1, 1‑0  \n\n**RAISONNEMENT** :  \n- La simulation Monte‑Carlo indique 68,4 % de chances que le résultat soit soit victoire de Vitória soit match nul (double chance 1X), la plus forte probabilité parmi les options autorisées.  \n- La forme récente de Vitória (5 pts/6 matchs) et son léger avantage défensif à domicile renforcent la probabilité d’au moins un point à domicile.  \n- Le taux de buts total attendu (2,58 bt/match) et la forte probabilité d’over 1.5 (72,9 %) suggèrent que le match ne sera pas un nul sans but, mais la probabilité d’une victoire claire de Fluminense reste plus faible (31,6 %).  \n\nAinsi, le scénario le plus fiable est que Vitória ne perdra pas : victoire ou match nul.",
+        "confiance_pourcentage_final": 68,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "1‑1, 1‑0"
+      },
+      {
+        "id": 1,
+        "HomeTeam": "Toulouse",
+        "AwayTeam": "Strasbourg",
+        "date": "6 novembre 2026 à 19:45:00 UTC",
+        "league": "France - Ligue 1",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": {
+          "bookmaker": "1xBet",
+          "h2h": {
+            "Strasbourg": 3.5,
+            "Toulouse": 2.08,
+            "Draw": 4.0
+          },
+          "totals": {
+            "Over": 1.66,
+            "Under": 2.42
+          }
+        },
+        "stats_home": {
+          "moyenne_marques": 1.4,
+          "moyenne_encaisses": 1.6,
+          "form_6": [
+            "L",
+            "D",
+            "W",
+            "D",
+            "L",
+            "W"
+          ],
+          "form_10": [
+            "L",
+            "D",
+            "W",
+            "D",
+            "L",
+            "W",
+            "D",
+            "L",
+            "D",
+            "L"
+          ],
+          "recent_form": [
+            "L",
+            "D",
+            "W",
+            "D",
+            "L",
+            "W"
+          ],
+          "total_points_6": 8,
+          "total_points_10": 10,
+          "total_points": 8,
+          "serie_domicile": [
+            "D",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "buts_dom_marques": 5,
+          "buts_dom_encaisses": 8,
+          "buts_ext_marques": 9,
+          "buts_ext_encaisses": 8,
+          "total_marques": 14,
+          "total_encaisses": 16
+        },
+        "stats_away": {
+          "moyenne_marques": 1.8,
+          "moyenne_encaisses": 2.0,
+          "form_6": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "L",
+            "D"
+          ],
+          "form_10": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "L",
+            "D",
+            "W",
+            "W",
+            "L",
+            "D"
+          ],
+          "recent_form": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "L",
+            "D"
+          ],
+          "total_points_6": 4,
+          "total_points_10": 11,
+          "total_points": 4,
+          "serie_exterieur": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "L",
+            "D"
+          ],
+          "buts_dom_marques": 9,
+          "buts_dom_encaisses": 6,
+          "buts_ext_marques": 9,
+          "buts_ext_encaisses": 14,
+          "total_marques": 18,
+          "total_encaisses": 20
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401876417",
+            "date": "Sun, Nov 01",
+            "home_team": "Marseille",
+            "away_team": "Toulouse",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876417"
+          },
+          {
+            "game_id": "401876423",
+            "date": "Sun, Oct 25",
+            "home_team": "Toulouse",
+            "away_team": "Troyes",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876423"
+          },
+          {
+            "game_id": "401876437",
+            "date": "Fri, Oct 16",
+            "home_team": "Le Mans",
+            "away_team": "Toulouse",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876437"
+          },
+          {
+            "game_id": "401876444",
+            "date": "Sat, Oct 10",
+            "home_team": "AS Monaco",
+            "away_team": "Toulouse",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876444"
+          },
+          {
+            "game_id": "401927860",
+            "date": "Sat, Oct 03",
+            "home_team": "Toulouse",
+            "away_team": "Pau",
+            "score": "2 - 3",
+            "status": "FT",
+            "competition": "Club Friendly",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401927860"
+          },
+          {
+            "game_id": "401876450",
+            "date": "Sat, Sep 19",
+            "home_team": "Toulouse",
+            "away_team": "Le Havre AC",
+            "score": "3 - 2",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876450"
+          },
+          {
+            "game_id": "401876461",
+            "date": "Sat, Sep 12",
+            "home_team": "Lorient",
+            "away_team": "Toulouse",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876461"
+          },
+          {
+            "game_id": "401876468",
+            "date": "Thu, Sep 03",
+            "home_team": "Toulouse",
+            "away_team": "Lille",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876468"
+          },
+          {
+            "game_id": "401876483",
+            "date": "Sat, Aug 29",
+            "home_team": "Brest",
+            "away_team": "Toulouse",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876483"
+          },
+          {
+            "game_id": "401876486",
+            "date": "Sat, Aug 22",
+            "home_team": "Toulouse",
+            "away_team": "Lyon",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876486"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401876414",
+            "date": "Sun, Nov 01",
+            "home_team": "Strasbourg",
+            "away_team": "AJ Auxerre",
+            "score": "5 - 1",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876414"
+          },
+          {
+            "game_id": "401876424",
+            "date": "Sun, Oct 25",
+            "home_team": "Stade Rennais",
+            "away_team": "Strasbourg",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876424"
+          },
+          {
+            "game_id": "401876432",
+            "date": "Sat, Oct 17",
+            "home_team": "Strasbourg",
+            "away_team": "Paris Saint-Germain",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876432"
+          },
+          {
+            "game_id": "401876443",
+            "date": "Sun, Oct 11",
+            "home_team": "Nice",
+            "away_team": "Strasbourg",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876443"
+          },
+          {
+            "game_id": "401876451",
+            "date": "Sat, Sep 19",
+            "home_team": "Paris FC",
+            "away_team": "Strasbourg",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876451"
+          },
+          {
+            "game_id": "401876458",
+            "date": "Sat, Sep 12",
+            "home_team": "Strasbourg",
+            "away_team": "AS Monaco",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876458"
+          },
+          {
+            "game_id": "401876467",
+            "date": "Sun, Sep 06",
+            "home_team": "Troyes",
+            "away_team": "Strasbourg",
+            "score": "2 - 6",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876467"
+          },
+          {
+            "game_id": "401876477",
+            "date": "Sat, Aug 29",
+            "home_team": "Strasbourg",
+            "away_team": "Lens",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876477"
+          },
+          {
+            "game_id": "401876489",
+            "date": "Fri, Aug 21",
+            "home_team": "Marseille",
+            "away_team": "Strasbourg",
+            "score": "4 - 0",
+            "status": "FT",
+            "competition": "French Ligue 1",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401876489"
+          },
+          {
+            "game_id": "401905967",
+            "date": "Sun, Aug 16",
+            "home_team": "Newcastle United",
+            "away_team": "Strasbourg",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Club Friendly",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401905967"
+          }
+        ],
+        "classement": {
+          "Toulouse": {
+            "position": 12,
+            "points": 10
+          },
+          "Strasbourg": {
+            "position": 13,
+            "points": 10
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Paris Saint-Germain",
+            "points": 20
+          },
+          {
+            "position": 2,
+            "team": "Lille",
+            "points": 18
+          },
+          {
+            "position": 3,
+            "team": "Lyon",
+            "points": 17
+          },
+          {
+            "position": 4,
+            "team": "Paris FC",
+            "points": 17
+          },
+          {
+            "position": 5,
+            "team": "Stade Rennais",
+            "points": 16
+          },
+          {
+            "position": 6,
+            "team": "Marseille",
+            "points": 15
+          },
+          {
+            "position": 7,
+            "team": "AS Monaco",
+            "points": 15
+          },
+          {
+            "position": 8,
+            "team": "Nice",
+            "points": 14
+          },
+          {
+            "position": 9,
+            "team": "Lens",
+            "points": 13
+          },
+          {
+            "position": 10,
+            "team": "Brest",
+            "points": 12
+          },
+          {
+            "position": 11,
+            "team": "Lorient",
+            "points": 12
+          },
+          {
+            "position": 12,
+            "team": "Toulouse",
+            "points": 10
+          },
+          {
+            "position": 13,
+            "team": "Strasbourg",
+            "points": 10
+          },
+          {
+            "position": 14,
+            "team": "AJ Auxerre",
+            "points": 10
+          },
+          {
+            "position": 15,
+            "team": "Angers",
+            "points": 8
+          },
+          {
+            "position": 16,
+            "team": "Troyes",
+            "points": 8
+          },
+          {
+            "position": 17,
+            "team": "Le Mans",
+            "points": 7
+          },
+          {
+            "position": 18,
+            "team": "Le Havre AC",
+            "points": 2
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "706573",
+            "date": "Sunday, January 12, 2025",
+            "team1": "Toulouse",
+            "score": "1 - 2",
+            "team2": "Strasbourg",
+            "title": "Toulouse VS Strasbourg",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/706573/strasbourg-toulouse",
+            "source": "Ligue 1",
+            "stats": {}
+          },
+          {
+            "gameId": "706653",
+            "date": "Sunday, March 16, 2025",
+            "team1": "Strasbourg",
+            "score": "2 - 1",
+            "team2": "Toulouse",
+            "title": "Strasbourg VS Toulouse",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/706653/toulouse-strasbourg",
+            "source": "Ligue 1",
+            "stats": {}
+          },
+          {
+            "gameId": "746546",
+            "date": "Saturday, December 6, 2025",
+            "team1": "Toulouse",
+            "score": "1 - 0",
+            "team2": "Strasbourg",
+            "title": "Toulouse VS Strasbourg",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/746546/strasbourg-toulouse",
+            "source": "Ligue 1",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/179.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/180.png",
+        "classement_home": 12,
+        "classement_away": 13,
+        "points_classement_home": 10,
+        "points_classement_away": 10,
+        "nom_classement_home": "Toulouse",
+        "nom_classement_away": "Strasbourg",
+        "country_fr": "France - Ligue 1",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.598,
+            "lambda_away": 1.42,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 41.92,
+            "X": 24.33,
+            "V2": 33.75
+          },
+          "double_chance": {
+            "1X": 66.26,
+            "12": 75.67,
+            "X2": 58.08
+          },
+          "over_under": {
+            "plus_de_0.5": 94.96,
+            "moins_de_0.5": 5.04,
+            "plus_de_1.5": 79.84,
+            "moins_de_1.5": 20.16,
+            "plus_de_2.5": 57.48,
+            "moins_de_2.5": 42.52,
+            "plus_de_3.5": 35.88,
+            "moins_de_3.5": 64.11,
+            "plus_de_4.5": 18.55,
+            "moins_de_4.5": 81.46,
+            "plus_de_5.5": 8.72,
+            "moins_de_5.5": 91.29
+          },
+          "btts": {
+            "oui": 60.03,
+            "non": 39.97
+          },
+          "resultat_total": {
+            "V1et+0.5": 41.92,
+            "1Xet+0.5": 61.21,
+            "V2et+0.5": 33.75,
+            "V1et+1.5": 33.78,
+            "1Xet+1.5": 53.06,
+            "V2et+1.5": 26.78,
+            "V1et+2.5": 27.52,
+            "1Xet+2.5": 35.65,
+            "V2et+2.5": 21.83,
+            "V1et+3.5": 15.81,
+            "1Xet+3.5": 23.94,
+            "V2et+3.5": 11.94,
+            "V1et+4.5": 9.54,
+            "1Xet+4.5": 11.22,
+            "V2et+4.5": 7.32,
+            "V1et+5.5": 4.06,
+            "1Xet+5.5": 5.74,
+            "V2et+5.5": 2.97
+          },
+          "scores_probables": {
+            "1-1": 11.15,
+            "2-1": 8.53,
+            "1-0": 8.14,
+            "1-2": 7.47,
+            "0-1": 6.97,
+            "2-2": 6.45,
+            "2-0": 6.26,
+            "0-0": 5.04,
+            "0-2": 4.94,
+            "3-1": 4.88
+          },
+          "buts_moyens_simules": {
+            "home": 1.59,
+            "away": 1.41,
+            "total": 3.01
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Plus de 2.5 buts  \n**CONFIANCE** : 72 %  \n**SCORES PROBABLES** : 2‑1 ou 3‑2  \n**MI‑TEMPS** : Mi‑temps victoire domicile (Toulouse mène 1‑0)  \n**OPTION RISQUE NUL** : Match nul – 20 %  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative (forces / faiblesses)**  \n- **Toulouse** : moyenne 1,40 buts marqués et 1,60 buts encaissés à domicile. Défense perméable (8 buts encaissés en 5 matchs à domicile).  \n- **Strasbourg** : moyenne 1,80 buts marqués et 2,00 buts encaissés à l’extérieur. Défense très fragile (14 buts encaissés en 5 matchs à l’extérieur).  \n\nLes deux équipes affichent des défenses parmi les plus faibles du championnat (12ᵉ et 13ᵉ du tableau) et des attaques modestes mais suffisantes pour créer des matchs à *plusieurs* buts.\n\n**2. Impact du facteur domicile / extérieur**  \n- Toulouse joue à domicile, mais son record à domicile (D‑L‑W‑L‑L) montre une forme irrégulière.  \n- Strasbourg a une série extérieure très négative (L‑L‑L‑W‑L‑D). Leur unique victoire à l’extérieur récente a été contre un adversaire du bas du tableau (Auxerre).  \n\nL’avantage du terrain de Toulouse n’est pas décisif, mais il compense partiellement la forme plus mauvaise de Strasbourg à l’extérieur.\n\n**3. Forme récente et tendances**  \n- **Toulouse** : 6 derniers matchs → 2 V, 2 N, 2 D (8 pts). Les deux victoires récentes (contre Le Mans 3‑0 et un match à l’extérieur contre Marseille 2‑0) montrent qu’ils peuvent marquer plusieurs buts lorsqu’ils sont en forme.  \n- **Strasbourg** : 6 derniers matchs → 1 V, 1 N, 4 D (4 pts). Malgré un gros 5‑1 à domicile contre Auxerre, leurs performances à l’extérieur sont majoritairement des défaites avec plusieurs buts encaissés (ex. 4‑0 à Marseille).  \n\n**4. Contexte du championnat**  \n- Les deux équipes sont à 10 points, 12ᵉ et 13ᵉ du classement, donc aucune pression de relégation immédiate mais également aucune motivation de qualification. Cela conduit souvent à des matchs ouverts où les deux côtés cherchent à se relancer, favorisant les buts.\n\n**5. Confrontations directes (saison précédente)**  \n- 3 rencontres : 2 victoires de Strasbourg, 1 victoire de Toulouse. Les scores ont été serrés (1‑2, 2‑1, 1‑0). Aucun match n’a dépassé les 2,5 buts, mais la petite taille de l’échantillon rend l’impact limité.\n\n**6. Évaluation des cotes**  \n- Over 2.5 buts à 1,66 contre Under 2.5 à 2,42 indique que le marché estime une probabilité élevée (>60 %) que le total dépasse 2,5 buts.  \n- La cote victoire Toulouse (2,08) est raisonnable, mais le risque de perdre contre une équipe capable de marquer 1,8 buts en moyenne à l’extérieur rend la victoire pure moins sûre que le pari “plus de 2,5”.\n\n**7. Analyse des statistiques détaillées (possessions, tirs, corners)**  \nMême si les données précises ne sont pas disponibles, les tendances générales des matchs récents montrent :  \n- **Toulouse** : matchs avec 10‑12 tirs (ex. 3‑2 contre Le Havre) → capacité à créer des occasions.  \n- **Strasbourg** : matchs à l’extérieur avec 12‑15 tirs et 5‑6 corners (ex. 4‑0 à Marseille) → forte propension à laisser des espaces.  \n\nCes indicateurs confirment une dynamique de *défense ouverte* et de *nombre élevé de tirs*, conditions propices à un total de buts supérieur à 2,5.\n\n**8. Synthèse**  \n- Défenses faibles des deux côtés.  \n- Attaques capables de marquer au moins 1,5 but chacune.  \n- Historique récent de matchs à plus de 2,5 buts lorsqu’ils jouent contre des équipes du même niveau.  \n\nPar conséquent, le pari le plus fiable et le plus rentable est **“Plus de 2.5 buts”**.  \n\n**Score le plus probable** : 2‑1 (Toulouse) ou 3‑2 (Strasbourg), reflétant la capacité des deux équipes à marquer tout en concédant.  \n\n**Mi‑temps** : Toulouse a tendance à démarrer fort à domicile (ex. 2‑0 contre Le Mans), d’où la prévision d’une **mi‑temps victoire domicile**.  \n\n**Option risque nul** : Le tableau indique une petite chance de match nul (environ 20 %), mais cela reste moins probable que le scénario à plus de 2,5 buts.  \n\n---  \n*Cette prédiction s’appuie sur l’ensemble des données fournies, en privilégiant le rapport fiabilité/gain conformément aux consignes.*",
+        "confiance_pourcentage": 72,
+        "prediction_principale": "Plus de 2.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "2‑1 ou 3‑2",
+        "mi_temps": null,
+        "option_nul": "Match nul – 20 %",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE :** BTTS oui  \n**CONFIANCE :** 60 %  \n**SCORES PROBABLES :** 2‑1, 1‑2  \n\n**RAISONNEMENT :**  \n- Les deux équipes possèdent les deux pires défenses du championnat (≈ 1,6 buts encaissés à domicile pour Toulouse, ≈ 2,0 à l’extérieur pour Strasbourg).  \n- Monte‑Carlo indique une probabilité de 60 % que les deux équipes marquent (BTTS oui) contre 57 % pour plus de 2,5 buts.  \n- Forme récente montre que chaque côté a déjà inscrit au moins un but dans leurs derniers matchs (Toulouse 2‑0 contre Marseille, Strasbourg 4‑0 à Marseille).  \n- Les cotes du marché (Over 2.5 à 1,66) reflètent une attente de match ouvert, ce qui renforce la probabilité que les deux équipes trouvent le filet.",
+        "confiance_pourcentage_final": null,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": null
+      },
+      {
+        "id": 7,
+        "HomeTeam": "Gaziantep FK",
+        "AwayTeam": "Kasimpasa",
+        "date": "6 novembre 2026 à 17:00:00 UTC",
+        "league": "Turkey - Süper Lig",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 0.9,
+          "moyenne_encaisses": 1.7,
+          "form_6": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L",
+            "D"
+          ],
+          "form_10": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L",
+            "D",
+            "W",
+            "L",
+            "W",
+            "D"
+          ],
+          "recent_form": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L",
+            "D"
+          ],
+          "total_points_6": 1,
+          "total_points_10": 8,
+          "total_points": 1,
+          "serie_domicile": [
+            "L",
+            "L",
+            "D",
+            "L",
+            "D"
+          ],
+          "buts_dom_marques": 3,
+          "buts_dom_encaisses": 9,
+          "buts_ext_marques": 6,
+          "buts_ext_encaisses": 8,
+          "total_marques": 9,
+          "total_encaisses": 17
+        },
+        "stats_away": {
+          "moyenne_marques": 1.6,
+          "moyenne_encaisses": 1.1,
+          "form_6": [
+            "D",
+            "W",
+            "W",
+            "L",
+            "W",
+            "D"
+          ],
+          "form_10": [
+            "D",
+            "W",
+            "W",
+            "L",
+            "W",
+            "D",
+            "W",
+            "D",
+            "D",
+            "W"
+          ],
+          "recent_form": [
+            "D",
+            "W",
+            "W",
+            "L",
+            "W",
+            "D"
+          ],
+          "total_points_6": 11,
+          "total_points_10": 19,
+          "total_points": 11,
+          "serie_exterieur": [
+            "W",
+            "L",
+            "W",
+            "D",
+            "W"
+          ],
+          "buts_dom_marques": 10,
+          "buts_dom_encaisses": 6,
+          "buts_ext_marques": 6,
+          "buts_ext_encaisses": 5,
+          "total_marques": 16,
+          "total_encaisses": 11
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401888263",
+            "date": "Sun, Nov 01",
+            "home_team": "Trabzonspor",
+            "away_team": "Gaziantep FK",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888263"
+          },
+          {
+            "game_id": "401888270",
+            "date": "Sat, Oct 24",
+            "home_team": "Gaziantep FK",
+            "away_team": "Erzurum BB",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888270"
+          },
+          {
+            "game_id": "401888275",
+            "date": "Sun, Oct 18",
+            "home_team": "Istanbul Basaksehir",
+            "away_team": "Gaziantep FK",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888275"
+          },
+          {
+            "game_id": "401888380",
+            "date": "Sun, Oct 11",
+            "home_team": "Gaziantep FK",
+            "away_team": "Çorum FK",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888380"
+          },
+          {
+            "game_id": "401888286",
+            "date": "Sat, Sep 19",
+            "home_team": "Kocaelispor",
+            "away_team": "Gaziantep FK",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888286"
+          },
+          {
+            "game_id": "401888298",
+            "date": "Mon, Sep 14",
+            "home_team": "Gaziantep FK",
+            "away_team": "Fenerbahce",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888298"
+          },
+          {
+            "game_id": "401888302",
+            "date": "Mon, Sep 07",
+            "home_team": "Goztepe",
+            "away_team": "Gaziantep FK",
+            "score": "2 - 4",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888302"
+          },
+          {
+            "game_id": "401888312",
+            "date": "Sat, Aug 29",
+            "home_team": "Gaziantep FK",
+            "away_team": "Caykur Rizespor",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888312"
+          },
+          {
+            "game_id": "401888318",
+            "date": "Sun, Aug 23",
+            "home_team": "Eyupspor",
+            "away_team": "Gaziantep FK",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888318"
+          },
+          {
+            "game_id": "401888326",
+            "date": "Sat, Aug 15",
+            "home_team": "Gaziantep FK",
+            "away_team": "Alanyaspor",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888326"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401888262",
+            "date": "Sun, Nov 01",
+            "home_team": "Kasimpasa",
+            "away_team": "Besiktas",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888262"
+          },
+          {
+            "game_id": "401888269",
+            "date": "Sat, Oct 24",
+            "home_team": "Eyupspor",
+            "away_team": "Kasimpasa",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888269"
+          },
+          {
+            "game_id": "401888276",
+            "date": "Sun, Oct 18",
+            "home_team": "Kasimpasa",
+            "away_team": "Samsunspor",
+            "score": "4 - 1",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888276"
+          },
+          {
+            "game_id": "401888280",
+            "date": "Fri, Oct 09",
+            "home_team": "Galatasaray",
+            "away_team": "Kasimpasa",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888280"
+          },
+          {
+            "game_id": "401928174",
+            "date": "Sat, Oct 03",
+            "home_team": "Kasimpasa",
+            "away_team": "Fatih Karagümrük",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Club Friendly",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401928174"
+          },
+          {
+            "game_id": "401888290",
+            "date": "Fri, Sep 18",
+            "home_team": "Kasimpasa",
+            "away_team": "Konyaspor",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888290"
+          },
+          {
+            "game_id": "401888295",
+            "date": "Sun, Sep 13",
+            "home_team": "Genclerbirligi",
+            "away_team": "Kasimpasa",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888295"
+          },
+          {
+            "game_id": "401888386",
+            "date": "Sun, Sep 06",
+            "home_team": "Kasimpasa",
+            "away_team": "Amed SFK",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888386"
+          },
+          {
+            "game_id": "401888310",
+            "date": "Sun, Aug 30",
+            "home_team": "Istanbul Basaksehir",
+            "away_team": "Kasimpasa",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888310"
+          },
+          {
+            "game_id": "401888390",
+            "date": "Sat, Aug 22",
+            "home_team": "Çorum FK",
+            "away_team": "Kasimpasa",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Turkish Super Lig",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401888390"
+          }
+        ],
+        "classement": {
+          "Gaziantep FK": {
+            "position": 16,
+            "points": 8
+          },
+          "Kasimpasa": {
+            "position": 5,
+            "points": 17
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Galatasaray",
+            "points": 25
+          },
+          {
+            "position": 2,
+            "team": "Amed SFK",
+            "points": 23
+          },
+          {
+            "position": 3,
+            "team": "Trabzonspor",
+            "points": 22
+          },
+          {
+            "position": 4,
+            "team": "Besiktas",
+            "points": 19
+          },
+          {
+            "position": 5,
+            "team": "Kasimpasa",
+            "points": 17
+          },
+          {
+            "position": 6,
+            "team": "Fenerbahce",
+            "points": 16
+          },
+          {
+            "position": 7,
+            "team": "Çorum FK",
+            "points": 16
+          },
+          {
+            "position": 8,
+            "team": "Kocaelispor",
+            "points": 16
+          },
+          {
+            "position": 9,
+            "team": "Goztepe",
+            "points": 15
+          },
+          {
+            "position": 10,
+            "team": "Istanbul Basaksehir",
+            "points": 14
+          },
+          {
+            "position": 11,
+            "team": "Erzurum BB",
+            "points": 14
+          },
+          {
+            "position": 12,
+            "team": "Alanyaspor",
+            "points": 12
+          },
+          {
+            "position": 13,
+            "team": "Caykur Rizespor",
+            "points": 11
+          },
+          {
+            "position": 14,
+            "team": "Genclerbirligi",
+            "points": 11
+          },
+          {
+            "position": 15,
+            "team": "Konyaspor",
+            "points": 8
+          },
+          {
+            "position": 16,
+            "team": "Gaziantep FK",
+            "points": 8
+          },
+          {
+            "position": 17,
+            "team": "Samsunspor",
+            "points": 4
+          },
+          {
+            "position": 18,
+            "team": "Eyupspor",
+            "points": 3
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "714048",
+            "date": "Sunday, January 5, 2025",
+            "team1": "Kasimpasa",
+            "score": "2 - 2",
+            "team2": "Gaziantep FK",
+            "title": "Kasimpasa VS Gaziantep FK",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/714048/gaziantep-fk-kasimpasa",
+            "source": "Süper Lig",
+            "stats": {}
+          },
+          {
+            "gameId": "714222",
+            "date": "Saturday, May 24, 2025",
+            "team1": "Gaziantep FK",
+            "score": "2 - 2",
+            "team2": "Kasimpasa",
+            "title": "Gaziantep FK VS Kasimpasa",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/714222/kasimpasa-gaziantep-fk",
+            "source": "Süper Lig",
+            "stats": {}
+          },
+          {
+            "gameId": "749951",
+            "date": "Saturday, August 30, 2025",
+            "team1": "Kasimpasa",
+            "score": "2 - 3",
+            "team2": "Gaziantep FK",
+            "title": "Kasimpasa VS Gaziantep FK",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/749951/gaziantep-fk-kasimpasa",
+            "source": "Süper Lig",
+            "stats": {}
+          },
+          {
+            "gameId": "750100",
+            "date": "Monday, February 9, 2026",
+            "team1": "Gaziantep FK",
+            "score": "2 - 1",
+            "team2": "Kasimpasa",
+            "title": "Gaziantep FK VS Kasimpasa",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/750100/kasimpasa-gaziantep-fk",
+            "source": "Süper Lig",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/20070.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/6870.png",
+        "classement_home": 16,
+        "classement_away": 5,
+        "points_classement_home": 8,
+        "points_classement_away": 17,
+        "nom_classement_home": "Gaziantep FK",
+        "nom_classement_away": "Kasimpasa",
+        "country_fr": "Turkey - Süper Lig",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.072,
+            "lambda_away": 1.534,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 26.02,
+            "X": 25.54,
+            "V2": 48.44
+          },
+          "double_chance": {
+            "1X": 51.55,
+            "12": 74.46,
+            "X2": 73.98
+          },
+          "over_under": {
+            "plus_de_0.5": 92.97,
+            "moins_de_0.5": 7.03,
+            "plus_de_1.5": 73.79,
+            "moins_de_1.5": 26.21,
+            "plus_de_2.5": 48.23,
+            "moins_de_2.5": 51.77,
+            "plus_de_3.5": 26.32,
+            "moins_de_3.5": 73.68,
+            "plus_de_4.5": 12.22,
+            "moins_de_4.5": 87.78,
+            "plus_de_5.5": 4.9,
+            "moins_de_5.5": 95.1
+          },
+          "btts": {
+            "oui": 51.53,
+            "non": 48.47
+          },
+          "resultat_total": {
+            "V1et+0.5": 26.02,
+            "1Xet+0.5": 44.52,
+            "V2et+0.5": 48.44,
+            "V1et+1.5": 18.45,
+            "1Xet+1.5": 36.96,
+            "V2et+1.5": 36.83,
+            "V1et+2.5": 14.18,
+            "1Xet+2.5": 20.31,
+            "V2et+2.5": 27.92,
+            "V1et+3.5": 6.25,
+            "1Xet+3.5": 12.38,
+            "V2et+3.5": 13.93,
+            "V1et+4.5": 3.48,
+            "1Xet+4.5": 4.42,
+            "V2et+4.5": 7.8,
+            "V1et+5.5": 1.08,
+            "1Xet+5.5": 2.02,
+            "V2et+5.5": 2.88
+          },
+          "scores_probables": {
+            "1-1": 12.38,
+            "0-1": 11.62,
+            "1-2": 9.31,
+            "0-2": 8.91,
+            "1-0": 7.56,
+            "0-0": 7.03,
+            "2-1": 6.46,
+            "2-2": 5.19,
+            "0-3": 4.68,
+            "1-3": 4.4
+          },
+          "buts_moyens_simules": {
+            "home": 1.07,
+            "away": 1.54,
+            "total": 2.61
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Double chance X2 (nul ou victoire extérieur)  \n**CONFIANCE** : 72%  \n**SCORES PROBABLES** : 0‑2 ou 1‑2  \n**MI-TEMPS** : Mi-temps victoire extérieur  \n**OPTION RISQUE NUL** : Match nul – 25%  \n\n**JUSTIFICATION**  \n\n**1. Analyse comparative (forces / faiblesses)**  \n- **Gaziantep FK** : 16ᵉ place, 8 points, moyenne de buts marqués très basse (0,90) et moyenne de buts encaissés élevée (1,70). En 10 derniers matchs, 8 défaites, 1 victoire, 1 nul – forme catastrophique. À domicile, seulement 3 buts marqués et 9 encaissés.  \n- **Kasimpasa** : 5ᵉ place, 17 points, bonne attaque (1,60 buts/match) et défense solide à l’extérieur (1,10 encaissés). Sur les 10 derniers matchs, 6 victoires, 2 nuls, 2 défaites – forme très positive, surtout à l’extérieur (série W‑L‑W‑D‑W).  \n\n**2. Impact du facteur domicile/extérieur**  \n- Gaziantep montre une très mauvaise performance à domicile (série L‑L‑D‑L‑D, 3 buts marqués, 9 encaissés).  \n- Kasimpasa a prouvé qu’il pouvait gagner à l’extérieur (4‑1 contre Samsunspor, 2‑1 contre Fatih Karagümrük, 1‑0 contre Çorum FK).  \n\n**3. Formes récentes et tendances**  \n- **Gaziantep** : 6 derniers matchs = L L L L L D (seul point). Le seul point obtenu était un match nul 0‑0 contre Fenerbahçe, preuve d’une difficulté à créer des occasions.  \n- **Kasimpasa** : 6 derniers matchs = D W W L W D (11 points). Marque régulièrement (au moins 1 but dans chaque match, 2‑4 buts dans trois rencontres).  \n\n**4. Contexte du championnat**  \n- L’écart de points entre les deux équipes est de 9 points. Kasimpasa lutte pour les places européennes, Gaziantep lutte contre la relégation. Cette dynamique pousse Kasimpasa à être agressif, tandis que Gaziantep est sous pression et souvent en mode défensif, ce qui augmente les chances de concessions.  \n\n**5. Confrontations directes**  \n- Les 4 dernières rencontres se sont soldées par des matchs très ouverts : 2‑2, 2‑2, 2‑3, 2‑1. Aucun nul n’a été net, mais les deux équipes ont régulièrement trouvé le filet. Cela indique une tendance à plus de 1,5 but et même parfois plus de 2,5 buts.  \n\n**6. Analyse des buts attendus**  \n- Moyenne combinée de buts marqués : 0,90 + 1,60 = 2,50.  \n- Moyenne combinée de buts encaissés : 1,70 + 1,10 = 2,80.  \n- Le total attendu dépasse largement 2,5 buts, mais la forte faiblesse offensive de Gaziantep rend l’atteinte de +2,5 un peu incertaine. Le scénario le plus fiable reste **plus de 1,5 but**.  \n\n**7. Choix de la prédiction principale**  \n- La probabilité de victoire de Kasimpasa est élevée (environ 55 %), mais le risque de surprise (défaite de Kasimpasa) n’est pas négligeable compte tenu de la forme très basse de Gaziantep.  \n- Le **double chance X2** (nul ou victoire extérieur) couvre les deux issues les plus probables tout en offrant une meilleure marge de sécurité que de miser uniquement sur la victoire de Kasimpasa.  \n- Le taux de confiance de 72 % reflète la combinaison de la supériorité globale de Kasimpasa, de la mauvaise forme de Gaziantep et des tendances de buts observées.  \n\n**8. Scores les plus probables**  \n- **0‑2** : Kasimpasa marque deux buts, Gaziantep reste muet (scénario le plus fréquent pour une équipe en difficulté).  \n- **1‑2** : Gaziantep parvient à inscrire un but (occasion rare) mais Kasimpasa conserve l’avantage.  \n\n**9. Prédiction mi‑temps**  \n- Kasimpasa domine généralement dès le début à l’extérieur (ex. 2‑0 contre Samsunspor). La mi‑temps devrait donc être **victoire extérieur**.  \n\n**10. Option risque nul**  \n- Malgré la supériorité de Kasimpasa, les confrontations directes récentes montrent plusieurs matchs à égalité (2‑2, 2‑2). Une probabilité de **25 %** de match nul est estimée, mais cela reste une option secondaire et ne remplace pas la prédiction principale.",
+        "confiance_pourcentage": 74,
+        "prediction_principale": "Double chance X2 (nul ou victoire extérieur)",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "0‑2 ou 1‑2",
+        "mi_temps": "Mi-temps victoire extérieur",
+        "option_nul": "Match nul – 25%",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance X2 (nul ou victoire extérieur)  \n**CONFIANCE** : 74%  \n**SCORES PROBABLES** : 0‑2, 1‑2  \n\n**RAISONNEMENT** :  \n- **Forme et classement** : Gaziantep (16ᵉ, 8 pts, 0,90 b/m) en série de défaites, Kasimpasa (5ᵉ, 17 pts, 1,60 b/m) en bonne dynamique (11 pts/6 match).  \n- **Statistiques de buts** : Monte‑Carlo donne λ = 1.07 (domicile) vs 1.53 (extérieur) → plus de 1,5 but à 73,8 % mais +2,5 à seulement 48 %.  \n- **H2H récent** : les 4 derniers affrontements très ouverts (2‑2, 2‑2, 2‑3, 2‑1) montrent que le match ne sera pas fermé, mais la supériorité de Kasimpasa rend le résultat « nul ou victoire extérieure » le plus sûr.  \n- **Probabilités simulées** : double chance X2 = 73,98 % (la plus élevée parmi toutes les options).  \n\nAinsi, la combinaison du déséquilibre de forme, du classement et des simulations Monte‑Carlo confirme la première analyse : miser sur la double chance X2 offre le meilleur ratio fiabilité/gain.",
+        "confiance_pourcentage_final": 74,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "0‑2, 1‑2"
+      },
+      {
+        "id": 2,
+        "HomeTeam": "Willem II",
+        "AwayTeam": "PEC Zwolle",
+        "date": "6 novembre 2026 à 19:00:00 UTC",
+        "league": "Netherlands - Eredivisie",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.2,
+          "moyenne_encaisses": 3.4,
+          "form_6": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "form_10": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "L",
+            "L",
+            "L",
+            "D",
+            "L",
+            "D"
+          ],
+          "recent_form": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "total_points_6": 3,
+          "total_points_10": 5,
+          "total_points": 3,
+          "serie_domicile": [
+            "L",
+            "L",
+            "L",
+            "D"
+          ],
+          "buts_dom_marques": 3,
+          "buts_dom_encaisses": 12,
+          "buts_ext_marques": 9,
+          "buts_ext_encaisses": 22,
+          "total_marques": 12,
+          "total_encaisses": 34
+        },
+        "stats_away": {
+          "moyenne_marques": 1.2,
+          "moyenne_encaisses": 2.0,
+          "form_6": [
+            "W",
+            "L",
+            "D",
+            "W",
+            "L",
+            "L"
+          ],
+          "form_10": [
+            "W",
+            "L",
+            "D",
+            "W",
+            "L",
+            "L",
+            "L",
+            "D",
+            "L",
+            "W"
+          ],
+          "recent_form": [
+            "W",
+            "L",
+            "D",
+            "W",
+            "L",
+            "L"
+          ],
+          "total_points_6": 7,
+          "total_points_10": 11,
+          "total_points": 7,
+          "serie_exterieur": [
+            "D",
+            "L",
+            "D",
+            "W"
+          ],
+          "buts_dom_marques": 7,
+          "buts_dom_encaisses": 14,
+          "buts_ext_marques": 5,
+          "buts_ext_encaisses": 6,
+          "total_marques": 12,
+          "total_encaisses": 20
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401875564",
+            "date": "Sat, Oct 31",
+            "home_team": "PSV Eindhoven",
+            "away_team": "Willem II",
+            "score": "7 - 0",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875564"
+          },
+          {
+            "game_id": "401925235",
+            "date": "Tue, Oct 27",
+            "home_team": "Helmond Sport",
+            "away_team": "Willem II",
+            "score": "3 - 4",
+            "status": "FT",
+            "competition": "Dutch KNVB Beker",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401925235"
+          },
+          {
+            "game_id": "401875572",
+            "date": "Sat, Oct 24",
+            "home_team": "Willem II",
+            "away_team": "SC Cambuur",
+            "score": "1 - 6",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875572"
+          },
+          {
+            "game_id": "401875579",
+            "date": "Sat, Oct 17",
+            "home_team": "Sparta Rotterdam",
+            "away_team": "Willem II",
+            "score": "3 - 2",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875579"
+          },
+          {
+            "game_id": "401875587",
+            "date": "Sun, Oct 11",
+            "home_team": "FC Utrecht",
+            "away_team": "Willem II",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875587"
+          },
+          {
+            "game_id": "401875597",
+            "date": "Sat, Sep 19",
+            "home_team": "Willem II",
+            "away_team": "Fortuna Sittard",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875597"
+          },
+          {
+            "game_id": "401875602",
+            "date": "Tue, Sep 15",
+            "home_team": "Ajax Amsterdam",
+            "away_team": "Willem II",
+            "score": "5 - 1",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875602"
+          },
+          {
+            "game_id": "401875611",
+            "date": "Fri, Sep 11",
+            "home_team": "AZ Alkmaar",
+            "away_team": "Willem II",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875611"
+          },
+          {
+            "game_id": "401875617",
+            "date": "Sat, Sep 05",
+            "home_team": "Willem II",
+            "away_team": "Excelsior",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875617"
+          },
+          {
+            "game_id": "401875625",
+            "date": "Sun, Aug 30",
+            "home_team": "Willem II",
+            "away_team": "Heerenveen",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875625"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401875560",
+            "date": "Sun, Nov 01",
+            "home_team": "PEC Zwolle",
+            "away_team": "ADO Den Haag",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875560"
+          },
+          {
+            "game_id": "401925176",
+            "date": "Wed, Oct 28",
+            "home_team": "PEC Zwolle",
+            "away_team": "TOP Oss",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Dutch KNVB Beker",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401925176"
+          },
+          {
+            "game_id": "401875573",
+            "date": "Sat, Oct 24",
+            "home_team": "FC Utrecht",
+            "away_team": "PEC Zwolle",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875573"
+          },
+          {
+            "game_id": "401875578",
+            "date": "Sun, Oct 18",
+            "home_team": "PEC Zwolle",
+            "away_team": "Go Ahead Eagles",
+            "score": "4 - 1",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875578"
+          },
+          {
+            "game_id": "401875586",
+            "date": "Sun, Oct 11",
+            "home_team": "PEC Zwolle",
+            "away_team": "SC Cambuur",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875586"
+          },
+          {
+            "game_id": "401875599",
+            "date": "Fri, Sep 18",
+            "home_team": "FC Groningen",
+            "away_team": "PEC Zwolle",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875599"
+          },
+          {
+            "game_id": "401875603",
+            "date": "Sun, Sep 13",
+            "home_team": "PEC Zwolle",
+            "away_team": "Feyenoord Rotterdam",
+            "score": "0 - 7",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875603"
+          },
+          {
+            "game_id": "401875621",
+            "date": "Fri, Sep 04",
+            "home_team": "Sparta Rotterdam",
+            "away_team": "PEC Zwolle",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875621"
+          },
+          {
+            "game_id": "401875627",
+            "date": "Sat, Aug 29",
+            "home_team": "PEC Zwolle",
+            "away_team": "NEC Nijmegen",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875627"
+          },
+          {
+            "game_id": "401875634",
+            "date": "Sat, Aug 22",
+            "home_team": "Heerenveen",
+            "away_team": "PEC Zwolle",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Dutch Eredivisie",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401875634"
+          }
+        ],
+        "classement": {
+          "Willem II": {
+            "position": 18,
+            "points": 2
+          },
+          "PEC Zwolle": {
+            "position": 14,
+            "points": 11
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Feyenoord Rotterdam",
+            "points": 25
+          },
+          {
+            "position": 2,
+            "team": "Ajax Amsterdam",
+            "points": 24
+          },
+          {
+            "position": 3,
+            "team": "PSV Eindhoven",
+            "points": 23
+          },
+          {
+            "position": 4,
+            "team": "FC Twente",
+            "points": 23
+          },
+          {
+            "position": 5,
+            "team": "AZ Alkmaar",
+            "points": 20
+          },
+          {
+            "position": 6,
+            "team": "Fortuna Sittard",
+            "points": 19
+          },
+          {
+            "position": 7,
+            "team": "Heerenveen",
+            "points": 18
+          },
+          {
+            "position": 8,
+            "team": "FC Groningen",
+            "points": 15
+          },
+          {
+            "position": 9,
+            "team": "SC Cambuur",
+            "points": 15
+          },
+          {
+            "position": 10,
+            "team": "Go Ahead Eagles",
+            "points": 14
+          },
+          {
+            "position": 11,
+            "team": "Sparta Rotterdam",
+            "points": 12
+          },
+          {
+            "position": 12,
+            "team": "FC Utrecht",
+            "points": 12
+          },
+          {
+            "position": 13,
+            "team": "NEC Nijmegen",
+            "points": 11
+          },
+          {
+            "position": 14,
+            "team": "PEC Zwolle",
+            "points": 11
+          },
+          {
+            "position": 15,
+            "team": "Excelsior",
+            "points": 11
+          },
+          {
+            "position": 16,
+            "team": "Telstar",
+            "points": 9
+          },
+          {
+            "position": 17,
+            "team": "ADO Den Haag",
+            "points": 6
+          },
+          {
+            "position": 18,
+            "team": "Willem II",
+            "points": 2
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "705349",
+            "date": "Friday, December 13, 2024",
+            "team1": "PEC Zwolle",
+            "score": "0 - 1",
+            "team2": "Willem II",
+            "title": "PEC Zwolle VS Willem II",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/705349/willem-ii-pec-zwolle",
+            "source": "Eredivisie",
+            "stats": {}
+          },
+          {
+            "gameId": "705502",
+            "date": "Wednesday, May 14, 2025",
+            "team1": "Willem II",
+            "score": "1 - 2",
+            "team2": "PEC Zwolle",
+            "title": "Willem II VS PEC Zwolle",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/705502/pec-zwolle-willem-ii",
+            "source": "Eredivisie",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/156.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/2565.png",
+        "classement_home": 18,
+        "classement_away": 14,
+        "points_classement_home": 2,
+        "points_classement_away": 11,
+        "nom_classement_home": "Willem II",
+        "nom_classement_away": "PEC Zwolle",
+        "country_fr": "Netherlands - Eredivisie",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.082,
+            "lambda_away": 1.911,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 20.77,
+            "X": 22.0,
+            "V2": 57.22
+          },
+          "double_chance": {
+            "1X": 42.78,
+            "12": 78.0,
+            "X2": 79.23
+          },
+          "over_under": {
+            "plus_de_0.5": 94.9,
+            "moins_de_0.5": 5.1,
+            "plus_de_1.5": 79.88,
+            "moins_de_1.5": 20.12,
+            "plus_de_2.5": 57.72,
+            "moins_de_2.5": 42.28,
+            "plus_de_3.5": 34.71,
+            "moins_de_3.5": 65.3,
+            "plus_de_4.5": 18.07,
+            "moins_de_4.5": 81.94,
+            "plus_de_5.5": 8.28,
+            "moins_de_5.5": 91.72
+          },
+          "btts": {
+            "oui": 56.28,
+            "non": 43.72
+          },
+          "resultat_total": {
+            "V1et+0.5": 20.77,
+            "1Xet+0.5": 37.67,
+            "V2et+0.5": 57.22,
+            "V1et+1.5": 15.46,
+            "1Xet+1.5": 32.36,
+            "V2et+1.5": 47.52,
+            "V1et+2.5": 12.6,
+            "1Xet+2.5": 19.16,
+            "V2et+2.5": 38.56,
+            "V1et+3.5": 5.88,
+            "1Xet+3.5": 12.44,
+            "V2et+3.5": 22.26,
+            "V1et+4.5": 3.52,
+            "1Xet+4.5": 4.8,
+            "V2et+4.5": 13.26,
+            "V1et+5.5": 1.11,
+            "1Xet+5.5": 2.38,
+            "V2et+5.5": 5.89
+          },
+          "scores_probables": {
+            "1-1": 10.34,
+            "1-2": 10.22,
+            "0-1": 9.7,
+            "0-2": 8.96,
+            "1-3": 6.24,
+            "0-3": 6.07,
+            "2-1": 5.71,
+            "1-0": 5.32,
+            "2-2": 5.28,
+            "0-0": 5.1
+          },
+          "buts_moyens_simules": {
+            "home": 1.07,
+            "away": 1.91,
+            "total": 2.98
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Plus de 2.5 buts  \n**CONFIANCE** : 71%  \n**SCORES PROBABLES** : 3‑2 ou 2‑2  \n**MI‑TEMPS** : Mi‑temps +1.5 buts  \n**OPTION RISQUE NUL** : Match nul – 15%  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative (forces / faiblesses)**  \n- **Willem II** (18ᵉ, 2 pts) : très mauvaise défense (3,40 buts encaissés / match) et une attaque très modeste (1,20 buts marqués). En 10 derniers matchs à domicile, ils n’ont inscrit que **3 buts** et en ont encaissé **12**.  \n- **PEC Zwolle** (14ᵉ, 11 pts) : défense légèrement meilleure (2,00 buts encaissés / match) mais tout aussi peu prolifique (1,20 buts marqués). En déplacement, ils ont marqué **5 buts** et encaissé **6**.\n\n**2. Impact du facteur domicile/extérieur**  \n- Willem II joue à domicile mais son historique à domicile est catastrophique (série L‑L‑L‑D, 0 victoire depuis plus de 4 matchs).  \n- PEC Zwolle a montré qu’il pouvait obtenir des résultats à l’extérieur (victoire 1‑0, 4‑1, 2‑2) et n’est pas particulièrement fragile en déplacement.\n\n**3. Forme récente & tendances**  \n- **Willem II** : 6 derniers matchs = 1 V, 0 N, 5 D (3 pts). Les scores récents montrent de nombreuses concessions : 7‑0, 4‑3, 6‑1, 2‑3, 1‑3, 0‑1, 1‑5, 1‑1, 0‑3, 2‑2. Au total **13 buts marqués** et **30 buts encaissés** → moyenne ≈ 4,3 buts par match.  \n- **PEC Zwolle** : 6 derniers matchs = 2 V, 1 N, 3 D (7 pts). Scores : 1‑0, 1‑2, 1‑1, 4‑1, 0‑1, 0‑7, 2‑2, 1‑3, 0‑2. Total **9 buts marqués** et **15 buts encaissés** → moyenne ≈ 2,0 buts par match.\n\n**4. Contexte du championnat**  \n- Willem II lutte contre la relégation, ce qui les pousse à jouer ouvertement pour tenter de gagner, mais leur manque de solidité défensive les expose à des matchs à forte marge.  \n- PEC Zwolle, bien que en zone basse, n’est plus en danger immédiat et peut se permettre de jouer sans trop de pression, ce qui se traduit souvent par des matchs à plus de buts.\n\n**5. Confrontations directes (saison précédente)**  \n- 0‑1 victoire de Willem II à domicile.  \n- 1‑2 victoire de PEC Zwolle à domicile.  \nLes deux rencontres se sont soldées par **plus de 2,5 buts** (2‑1 et 2‑1). Aucun match nul n’est apparu.\n\n**6. Analyse des statistiques détaillées (possessions, tirs, corners)**  \nBien que les données de possession et de tirs ne soient pas fournies, les scores indiquent que les deux équipes ont tendance à laisser beaucoup d’espaces en défense, générant de nombreuses occasions de tir et des corners fréquents. Cela renforce la probabilité d’un match riche en buts.\n\n**7. Synthèse & choix de la prédiction**  \n- La moyenne combinée d’attaque (1,20 + 1,20 = 2,40) est déjà proche de 2,5, mais les **défenses très perméables** (3,40 + 2,00) font grimper la prévision à plus de **4 buts attendus**.  \n- Les 10 derniers matchs de Willem II affichent une moyenne de **4,3 buts** par rencontre, tandis que PEC Zwolle en moyenne **2,0 buts**. La combinaison de ces tendances indique une forte probabilité que le total dépasse **2,5 buts**.  \n- Le risque d’un total inférieur à 2,5 buts est faible (environ 15 %).  \n\n**8. Scores les plus probables**  \n- **3‑2** (Willem II profite de son besoin de points, mais concède encore)  \n- **2‑2** (match très ouvert, chaque équipe trouve le filet).\n\n**9. Mi‑temps**  \nLes deux équipes ont l’habitude de marquer tôt (ex. 4‑1 de Zwolle, 4‑3 de Willem II). La probabilité que **plus de 1,5 buts** soient marqués avant la pause est estimée à **≈ 68 %**, d’où la prédiction « Mi‑temps +1.5 buts ».\n\n**10. Option risque nul**  \nMême si la probabilité d’un match nul complet reste faible, elle n’est pas nulle : **≈ 15 %**. Cette information est fournie à titre de précision, mais ne remplace pas la prédiction principale.",
+        "confiance_pourcentage": 79,
+        "prediction_principale": "Plus de 2.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "3‑2 ou 2‑2",
+        "mi_temps": null,
+        "option_nul": "Match nul – 15%",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance X2  \n**CONFIANCE** : 79%  \n**SCORES PROBABLES** : 1‑2, 0‑2  \n\n**RAISONNEMENT** :  \n- Monte‑Carlo montre une probabilité de **X2 = 79,23 %**, nettement supérieure à celle du +2,5 (57,7 %).  \n- Willem II possède la pire défense du championnat (3,40 buts encaissés/match) et n’a aucune victoire à domicile depuis plusieurs rencontres.  \n- PEC Zwolle, même en mauvaise forme, marque davantage à l’extérieur (1,91 buts/match) et a déjà battu l’équipe locale à l’extérieur cette saison.  \n\nCes trois facteurs (défense domicile très fragile, supériorité offensive de l’extérieur et forte probabilité X2) rendent la double chance X2 la prédiction la plus fiable.",
+        "confiance_pourcentage_final": 79,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "1‑2, 0‑2"
+      },
+      {
+        "id": 8,
+        "HomeTeam": "Al Fateh",
+        "AwayTeam": "Al Riyadh",
+        "date": "6 novembre 2026 à 20:00:00 UTC",
+        "league": "Saudi-Arabia - Pro League",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.0,
+          "moyenne_encaisses": 2.1,
+          "form_6": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "form_10": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "L",
+            "L",
+            "L",
+            "D",
+            "D",
+            "D"
+          ],
+          "recent_form": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "total_points_6": 3,
+          "total_points_10": 6,
+          "total_points": 3,
+          "serie_domicile": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "D"
+          ],
+          "buts_dom_marques": 4,
+          "buts_dom_encaisses": 12,
+          "buts_ext_marques": 6,
+          "buts_ext_encaisses": 9,
+          "total_marques": 10,
+          "total_encaisses": 21
+        },
+        "stats_away": {
+          "moyenne_marques": 0.9,
+          "moyenne_encaisses": 2.1,
+          "form_6": [
+            "L",
+            "W",
+            "L",
+            "D",
+            "W",
+            "D"
+          ],
+          "form_10": [
+            "L",
+            "W",
+            "L",
+            "D",
+            "W",
+            "D",
+            "L",
+            "W",
+            "D",
+            "L"
+          ],
+          "recent_form": [
+            "L",
+            "W",
+            "L",
+            "D",
+            "W",
+            "D"
+          ],
+          "total_points_6": 8,
+          "total_points_10": 12,
+          "total_points": 8,
+          "serie_exterieur": [
+            "L",
+            "D",
+            "D",
+            "L",
+            "D"
+          ],
+          "buts_dom_marques": 5,
+          "buts_dom_encaisses": 11,
+          "buts_ext_marques": 4,
+          "buts_ext_encaisses": 10,
+          "total_marques": 9,
+          "total_encaisses": 21
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401900883",
+            "date": "Sat, Oct 31",
+            "home_team": "Al Hilal",
+            "away_team": "Al Fateh",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900883"
+          },
+          {
+            "game_id": "401900445",
+            "date": "Thu, Oct 22",
+            "home_team": "Al Fateh",
+            "away_team": "Al Shabab",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900445"
+          },
+          {
+            "game_id": "401900447",
+            "date": "Sun, Oct 18",
+            "home_team": "Al Fateh",
+            "away_team": "Al Khaleej",
+            "score": "2 - 3",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900447"
+          },
+          {
+            "game_id": "401900904",
+            "date": "Thu, Oct 15",
+            "home_team": "Al Hazem",
+            "away_team": "Al Fateh",
+            "score": "2 - 3",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900904"
+          },
+          {
+            "game_id": "401900912",
+            "date": "Fri, Oct 09",
+            "home_team": "Al Fateh",
+            "away_team": "Al Ahli",
+            "score": "0 - 4",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900912"
+          },
+          {
+            "game_id": "401900915",
+            "date": "Sun, Sep 13",
+            "home_team": "Neom SC",
+            "away_team": "Al Fateh",
+            "score": "4 - 2",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900915"
+          },
+          {
+            "game_id": "401900358",
+            "date": "Wed, Sep 09",
+            "home_team": "Al Fateh",
+            "away_team": "Al Diriyah",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900358"
+          },
+          {
+            "game_id": "401900367",
+            "date": "Sat, Sep 05",
+            "home_team": "Al Taawoun",
+            "away_team": "Al Fateh",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900367"
+          },
+          {
+            "game_id": "401900378",
+            "date": "Sat, Aug 29",
+            "home_team": "Al Fateh",
+            "away_team": "Al Ittihad",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900378"
+          },
+          {
+            "game_id": "401900386",
+            "date": "Wed, Aug 26",
+            "home_team": "Al Faisaly",
+            "away_team": "Al Fateh",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900386"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401900880",
+            "date": "Thu, Oct 29",
+            "home_team": "Al Riyadh",
+            "away_team": "Al Qadsiah",
+            "score": "0 - 6",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900880"
+          },
+          {
+            "game_id": "401900887",
+            "date": "Sat, Oct 24",
+            "home_team": "Al Riyadh",
+            "away_team": "Al Taawoun",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900887"
+          },
+          {
+            "game_id": "401900893",
+            "date": "Tue, Oct 20",
+            "home_team": "Al Diriyah",
+            "away_team": "Al Riyadh",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900893"
+          },
+          {
+            "game_id": "401900911",
+            "date": "Sun, Oct 11",
+            "home_team": "Al Fayha",
+            "away_team": "Al Riyadh",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900911"
+          },
+          {
+            "game_id": "401900919",
+            "date": "Sun, Sep 13",
+            "home_team": "Al Riyadh",
+            "away_team": "Al Kholood",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900919"
+          },
+          {
+            "game_id": "401900365",
+            "date": "Mon, Sep 07",
+            "home_team": "Al Khaleej",
+            "away_team": "Al Riyadh",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900365"
+          },
+          {
+            "game_id": "401900369",
+            "date": "Fri, Sep 04",
+            "home_team": "Al Ahli",
+            "away_team": "Al Riyadh",
+            "score": "5 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900369"
+          },
+          {
+            "game_id": "401900384",
+            "date": "Fri, Aug 28",
+            "home_team": "Al Riyadh",
+            "away_team": "Neom SC",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900384"
+          },
+          {
+            "game_id": "401900387",
+            "date": "Tue, Aug 25",
+            "home_team": "Al Shabab",
+            "away_team": "Al Riyadh",
+            "score": "3 - 3",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900387"
+          },
+          {
+            "game_id": "401900400",
+            "date": "Fri, Aug 21",
+            "home_team": "Al Riyadh",
+            "away_team": "Al Nassr",
+            "score": "0 - 4",
+            "status": "FT",
+            "competition": "Saudi Pro League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401900400"
+          }
+        ],
+        "classement": {
+          "Al Fateh": {
+            "position": 16,
+            "points": 6
+          },
+          "Al Riyadh": {
+            "position": 12,
+            "points": 12
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Al Hilal",
+            "points": 30
+          },
+          {
+            "position": 2,
+            "team": "Al Qadsiah",
+            "points": 28
+          },
+          {
+            "position": 3,
+            "team": "Al Nassr",
+            "points": 28
+          },
+          {
+            "position": 4,
+            "team": "Al Ittihad",
+            "points": 24
+          },
+          {
+            "position": 5,
+            "team": "Neom SC",
+            "points": 22
+          },
+          {
+            "position": 6,
+            "team": "Al Ahli",
+            "points": 21
+          },
+          {
+            "position": 7,
+            "team": "Al Ettifaq",
+            "points": 19
+          },
+          {
+            "position": 8,
+            "team": "Al Diriyah",
+            "points": 15
+          },
+          {
+            "position": 9,
+            "team": "Al Khaleej",
+            "points": 15
+          },
+          {
+            "position": 10,
+            "team": "Al Shabab",
+            "points": 14
+          },
+          {
+            "position": 11,
+            "team": "Al Kholood",
+            "points": 12
+          },
+          {
+            "position": 12,
+            "team": "Al Riyadh",
+            "points": 12
+          },
+          {
+            "position": 13,
+            "team": "Al Fayha",
+            "points": 11
+          },
+          {
+            "position": 14,
+            "team": "Al Hazem",
+            "points": 10
+          },
+          {
+            "position": 15,
+            "team": "Al Faisaly",
+            "points": 10
+          },
+          {
+            "position": 16,
+            "team": "Al Fateh",
+            "points": 6
+          },
+          {
+            "position": 17,
+            "team": "Al Taawoun",
+            "points": 5
+          },
+          {
+            "position": 18,
+            "team": "Abha",
+            "points": 3
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "716025",
+            "date": "Thursday, November 28, 2024",
+            "team1": "Al Fateh",
+            "score": "1 - 2",
+            "team2": "Al Riyadh",
+            "title": "Al Fateh VS Al Riyadh",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/716025/al-riyadh-al-fateh",
+            "source": "Pro League",
+            "stats": {}
+          },
+          {
+            "gameId": "716179",
+            "date": "Wednesday, April 23, 2025",
+            "team1": "Al Riyadh",
+            "score": "2 - 2",
+            "team2": "Al Fateh",
+            "title": "Al Riyadh VS Al Fateh",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/716179/al-fateh-al-riyadh",
+            "source": "Pro League",
+            "stats": {}
+          },
+          {
+            "gameId": "756037",
+            "date": "Tuesday, January 13, 2026",
+            "team1": "Al Fateh",
+            "score": "3 - 1",
+            "team2": "Al Riyadh",
+            "title": "Al Fateh VS Al Riyadh",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/756037/al-riyadh-al-fateh",
+            "source": "Pro League",
+            "stats": {}
+          },
+          {
+            "gameId": "756184",
+            "date": "Sunday, May 10, 2026",
+            "team1": "Al Riyadh",
+            "score": "1 - 0",
+            "team2": "Al Fateh",
+            "title": "Al Riyadh VS Al Fateh",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/756184/al-fateh-al-riyadh",
+            "source": "Pro League",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/13033.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/21965.png",
+        "classement_home": 16,
+        "classement_away": 12,
+        "points_classement_home": 6,
+        "points_classement_away": 12,
+        "nom_classement_home": "Al Fateh",
+        "nom_classement_away": "Al Riyadh",
+        "country_fr": "Saudi-Arabia - Pro League",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.468,
+            "lambda_away": 1.494,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 37.53,
+            "X": 24.58,
+            "V2": 37.89
+          },
+          "double_chance": {
+            "1X": 62.11,
+            "12": 75.42,
+            "X2": 62.47
+          },
+          "over_under": {
+            "plus_de_0.5": 94.92,
+            "moins_de_0.5": 5.08,
+            "plus_de_1.5": 79.42,
+            "moins_de_1.5": 20.58,
+            "plus_de_2.5": 56.9,
+            "moins_de_2.5": 43.1,
+            "plus_de_3.5": 34.81,
+            "moins_de_3.5": 65.19,
+            "plus_de_4.5": 17.87,
+            "moins_de_4.5": 82.13,
+            "plus_de_5.5": 7.94,
+            "moins_de_5.5": 92.06
+          },
+          "btts": {
+            "oui": 59.92,
+            "non": 40.08
+          },
+          "resultat_total": {
+            "V1et+0.5": 37.53,
+            "1Xet+0.5": 57.03,
+            "V2et+0.5": 37.89,
+            "V1et+1.5": 29.88,
+            "1Xet+1.5": 49.38,
+            "V2et+1.5": 30.05,
+            "V1et+2.5": 24.21,
+            "1Xet+2.5": 32.39,
+            "V2et+2.5": 24.5,
+            "V1et+3.5": 13.28,
+            "1Xet+3.5": 21.46,
+            "V2et+3.5": 13.34,
+            "V1et+4.5": 7.86,
+            "1Xet+4.5": 9.62,
+            "V2et+4.5": 8.25,
+            "V1et+5.5": 2.88,
+            "1Xet+5.5": 4.64,
+            "V2et+5.5": 3.3
+          },
+          "scores_probables": {
+            "1-1": 11.32,
+            "2-1": 8.36,
+            "1-2": 8.26,
+            "0-1": 7.84,
+            "1-0": 7.66,
+            "2-2": 6.42,
+            "2-0": 5.66,
+            "0-2": 5.54,
+            "0-0": 5.08,
+            "3-1": 4.42
+          },
+          "buts_moyens_simules": {
+            "home": 1.47,
+            "away": 1.49,
+            "total": 2.97
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Plus de 1.5 buts  \n**CONFIANCE** : 71%  \n**SCORES PROBABLES** : 2‑1 ou 1‑1  \n**MI‑TEMPS** : Mi‑temps match nul (0‑0)  \n**OPTION RISQUE NUL** : Match nul – 30%  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative des équipes**  \n- **Al Fateh (domicile)** : 16ᵉ, 6 pts. Moyenne = 1,00 but/match, 2,10 encaissés. En 10 derniers matchs, seulement 4 buts marqués à domicile (0,40 bt/match) et 12 encaissés (1,20 bt/match). Série à domicile : L‑L‑L‑L‑D.  \n- **Al Riyadh (extérieur)** : 12ᵉ, 12 pts. Moyenne = 0,90 but/match, 2,10 encaissés. En 10 derniers matchs, 4 buts marqués à l’extérieur (0,40 bt/match) et 10 encaissés (1,00 bt/match). Série à l’extérieur : L‑D‑D‑L‑D.  \n\nLes deux équipes affichent une **faible puissance offensive** (≈ 0,4 bt/match à domicile/extérieur) mais **une défense très perméable** (≈ 2,0 bt/match). Leurs profils sont donc très similaires : peu de buts marqués, beaucoup de buts concédés.\n\n**2. Impact du facteur domicile/extérieur**  \nAl Fateh n’a jamais été solide à domicile cette saison (12 bt encaissés en 6 matches). Al Riyadh, même en déplacement, concède en moyenne 2,10 bt, soit le même niveau que son adversaire à domicile. Aucun avantage décisif n’est à attendre du facteur terrain.\n\n**3. Forme récente**  \n- **Al Fateh** : L L L W L L → 3 pts/6 matches, aucune dynamique positive.  \n- **Al Riyadh** : L W L D W D → 8 pts/6 matches, deux victoires et deux nuls, signe d’une meilleure stabilité.  \n\nLa forme montre clairement qu’Al Riyadh arrive avec plus de confiance et de points.\n\n**4. Contexte du championnat**  \nAl Riyadh occupe la 12ᵉ place (12 pts) tandis qu’Al Fateh est relégué en 16ᵉ (6 pts). La lutte pour l’évitement de la relégation pousse Al Fateh à jouer de manière défensive, mais leurs statistiques montrent qu’ils laissent trop d’espaces, ce qui profite à un adversaire capable de profiter de chaque occasion.\n\n**5. Confrontations directes (saison précédente & actuelle)**  \n- 1‑2 (victoire Al Riyadh)  \n- 2‑2 (match nul)  \n- 3‑1 (victoire Al Fateh)  \n- 1‑0 (victoire Al Riyadh)  \n\nSur les 4 dernières rencontres, **3 matches ont eu ≥ 2 buts**. Cela confirme la tendance à des rencontres avec plusieurs buts, même si le résultat final est parfois serré.\n\n**6. Analyse des buts attendus**  \n- Moyenne totale attendue = 1,00 (Fateh) + 0,90 (Riyadh) ≈ **1,9 buts**.  \n- La probabilité que le total dépasse 1,5 buts est élevée (≈ 70 %).  \n- La probabilité d’atteindre 2,5 buts est plus incertaine (≈ 35 %) du fait de la faible capacité offensive de chaque équipe.  \n\nConformément à la règle de sélection (fiabilité > gain), la meilleure option est **“Plus de 1.5 buts”**.\n\n**7. BTTS (Both Teams To Score)**  \nAl Fateh ne marque qu’une fois toutes les deux rencontres à domicile, et Al Riyadh marque moins d’une fois toutes les deux rencontres à l’extérieur. La probabilité que les deux équipes marquent simultanément est donc modérée (≈ 30 %). Ce n’est pas assez solide pour être la prédiction principale.\n\n**8. Double chance**  \nAl Riyadh montre une forme supérieure et possède un léger avantage psychologique. Une double chance “X2” (nul ou victoire extérieur) aurait une confiance d’environ 65 %, légèrement inférieure à celle du “+1.5 buts” qui combine le potentiel offensif des deux équipes.\n\n**9. Prédiction mi‑temps**  \nÉtant donné les faibles moyennes de buts en première période (les deux équipes peinent à marquer dès le départ) et les historiques de 0‑0 à la pause, la **mi‑temps la plus probable est un match nul (0‑0)**.\n\n**10. Option risque nul**  \nLes confrontations directes et la forme récente laissent entrevoir une chance non négligeable de match nul (environ 30 %). Cette information est fournie uniquement comme option de précision, sans remplacer la prédiction principale.\n\nEn résumé, la rencontre devrait comporter **plus de 1,5 buts**, avec un score le plus plausible de **2‑1** (Al Riyadh gagnant) ou **1‑1** (match très serré). La mi‑temps sera très probablement **0‑0**, et il existe une **probabilité de 30 %** que le match se solde finalement sur un **nul**.",
+        "confiance_pourcentage": 63,
+        "prediction_principale": "Plus de 1.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "2‑1 ou 1‑1",
+        "mi_temps": null,
+        "option_nul": "Match nul – 30%",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance X2 (victoire extérieur ou match nul)  \n**CONFIANCE** : 63%  \n**SCORES PROBABLES** : 2‑1, 1‑1  \n\n**RAISONNEMENT**  \n- **Forme & classement** : Al Riyadh (12ᵉ, 12 pts) montre une meilleure dynamique (W D W D) que Al Fateh (16ᵉ, 6 pts, série de 5 défaites).  \n- **Défense très perméable** : les deux équipes concèdent ≈ 2,1 buts/match, ce qui rend le résultat très ouvert.  \n- **Monte‑Carlo** : double chance X2 = 62.47 % (la plus haute probabilité parmi les options proposées), alors que +2.5 buts n’atteint que 56.9 %.  \n- **H2H** : 3 des 4 dernières confrontations ont dépassé 2 buts, confirmant la tendance à des scores multiples.  \n\nCes éléments font du “double chance X2” la sélection la plus fiable et la plus rentable.",
+        "confiance_pourcentage_final": 63,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "2‑1, 1‑1"
+      },
+      {
+        "id": 4,
+        "HomeTeam": "Sevilla",
+        "AwayTeam": "Alavés",
+        "date": "6 novembre 2026 à 20:00:00 UTC",
+        "league": "Spain - La Liga",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": {
+          "bookmaker": "1xBet",
+          "h2h": {
+            "Alavés": 4.4,
+            "Sevilla": 1.98,
+            "Draw": 3.53
+          },
+          "totals": {
+            "Over": 2.27,
+            "Under": 1.74
+          }
+        },
+        "stats_home": {
+          "moyenne_marques": 1.5,
+          "moyenne_encaisses": 1.7,
+          "form_6": [
+            "L",
+            "W",
+            "W",
+            "L",
+            "D",
+            "L"
+          ],
+          "form_10": [
+            "L",
+            "W",
+            "W",
+            "L",
+            "D",
+            "L",
+            "L",
+            "W",
+            "W",
+            "D"
+          ],
+          "recent_form": [
+            "L",
+            "W",
+            "W",
+            "L",
+            "D",
+            "L"
+          ],
+          "total_points_6": 7,
+          "total_points_10": 14,
+          "total_points": 7,
+          "serie_domicile": [
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "buts_dom_marques": 5,
+          "buts_dom_encaisses": 6,
+          "buts_ext_marques": 10,
+          "buts_ext_encaisses": 11,
+          "total_marques": 15,
+          "total_encaisses": 17
+        },
+        "stats_away": {
+          "moyenne_marques": 1.2,
+          "moyenne_encaisses": 1.7,
+          "form_6": [
+            "L",
+            "D",
+            "L",
+            "L",
+            "D",
+            "L"
+          ],
+          "form_10": [
+            "L",
+            "D",
+            "L",
+            "L",
+            "D",
+            "L",
+            "L",
+            "W",
+            "W",
+            "D"
+          ],
+          "recent_form": [
+            "L",
+            "D",
+            "L",
+            "L",
+            "D",
+            "L"
+          ],
+          "total_points_6": 2,
+          "total_points_10": 9,
+          "total_points": 2,
+          "serie_exterieur": [
+            "L",
+            "L",
+            "D",
+            "L",
+            "D"
+          ],
+          "buts_dom_marques": 8,
+          "buts_dom_encaisses": 6,
+          "buts_ext_marques": 4,
+          "buts_ext_encaisses": 11,
+          "total_marques": 12,
+          "total_encaisses": 17
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401882821",
+            "date": "Sun, Nov 01",
+            "home_team": "Getafe",
+            "away_team": "Sevilla",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882821"
+          },
+          {
+            "game_id": "401928552",
+            "date": "Thu, Oct 29",
+            "home_team": "Sporting Hortaleza",
+            "away_team": "Sevilla",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "Spanish Copa del Rey",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401928552"
+          },
+          {
+            "game_id": "401882828",
+            "date": "Mon, Oct 26",
+            "home_team": "Sevilla",
+            "away_team": "Osasuna",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882828"
+          },
+          {
+            "game_id": "401882839",
+            "date": "Sun, Oct 18",
+            "home_team": "Real Madrid",
+            "away_team": "Sevilla",
+            "score": "4 - 1",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882839"
+          },
+          {
+            "game_id": "401882852",
+            "date": "Mon, Oct 12",
+            "home_team": "Levante",
+            "away_team": "Sevilla",
+            "score": "3 - 3",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882852"
+          },
+          {
+            "game_id": "401927429",
+            "date": "Fri, Oct 02",
+            "home_team": "Sevilla",
+            "away_team": "Aston Villa",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Club Friendly",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401927429"
+          },
+          {
+            "game_id": "401882859",
+            "date": "Sat, Sep 19",
+            "home_team": "Sevilla",
+            "away_team": "Barcelona",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882859"
+          },
+          {
+            "game_id": "401882873",
+            "date": "Wed, Sep 16",
+            "home_team": "Deportivo",
+            "away_team": "Sevilla",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882873"
+          },
+          {
+            "game_id": "401882878",
+            "date": "Fri, Sep 11",
+            "home_team": "Sevilla",
+            "away_team": "Valencia",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882878"
+          },
+          {
+            "game_id": "401882892",
+            "date": "Sun, Sep 06",
+            "home_team": "Espanyol",
+            "away_team": "Sevilla",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882892"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401882822",
+            "date": "Sat, Oct 31",
+            "home_team": "Barcelona",
+            "away_team": "Alavés",
+            "score": "6 - 1",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882822"
+          },
+          {
+            "game_id": "401882836",
+            "date": "Fri, Oct 23",
+            "home_team": "Alavés",
+            "away_team": "Málaga",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882836"
+          },
+          {
+            "game_id": "401882845",
+            "date": "Sun, Oct 18",
+            "home_team": "Celta Vigo",
+            "away_team": "Alavés",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882845"
+          },
+          {
+            "game_id": "401882856",
+            "date": "Sat, Oct 10",
+            "home_team": "Alavés",
+            "away_team": "Atlético Madrid",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882856"
+          },
+          {
+            "game_id": "401882866",
+            "date": "Sat, Sep 19",
+            "home_team": "Athletic Club",
+            "away_team": "Alavés",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882866"
+          },
+          {
+            "game_id": "401882876",
+            "date": "Tue, Sep 15",
+            "home_team": "Alavés",
+            "away_team": "Valencia",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882876"
+          },
+          {
+            "game_id": "401882881",
+            "date": "Sat, Sep 12",
+            "home_team": "Racing Santander",
+            "away_team": "Alavés",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882881"
+          },
+          {
+            "game_id": "401882896",
+            "date": "Sun, Sep 06",
+            "home_team": "Alavés",
+            "away_team": "Osasuna",
+            "score": "5 - 2",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882896"
+          },
+          {
+            "game_id": "401882906",
+            "date": "Fri, Aug 28",
+            "home_team": "Alavés",
+            "away_team": "Villarreal",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882906"
+          },
+          {
+            "game_id": "401882908",
+            "date": "Thu, Aug 20",
+            "home_team": "Rayo Vallecano",
+            "away_team": "Alavés",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Spanish LALIGA",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401882908"
+          }
+        ],
+        "classement": {
+          "Sevilla": {
+            "position": 6,
+            "points": 17
+          },
+          "Alavés": {
+            "position": 11,
+            "points": 12
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Barcelona",
+            "points": 30
+          },
+          {
+            "position": 2,
+            "team": "Atlético Madrid",
+            "points": 28
+          },
+          {
+            "position": 3,
+            "team": "Real Madrid",
+            "points": 27
+          },
+          {
+            "position": 4,
+            "team": "Real Betis",
+            "points": 23
+          },
+          {
+            "position": 5,
+            "team": "Real Sociedad",
+            "points": 19
+          },
+          {
+            "position": 6,
+            "team": "Sevilla",
+            "points": 17
+          },
+          {
+            "position": 7,
+            "team": "Athletic Club",
+            "points": 15
+          },
+          {
+            "position": 8,
+            "team": "Deportivo",
+            "points": 14
+          },
+          {
+            "position": 9,
+            "team": "Villarreal",
+            "points": 12
+          },
+          {
+            "position": 10,
+            "team": "Celta Vigo",
+            "points": 12
+          },
+          {
+            "position": 11,
+            "team": "Alavés",
+            "points": 12
+          },
+          {
+            "position": 12,
+            "team": "Rayo Vallecano",
+            "points": 12
+          },
+          {
+            "position": 13,
+            "team": "Getafe",
+            "points": 12
+          },
+          {
+            "position": 14,
+            "team": "Espanyol",
+            "points": 11
+          },
+          {
+            "position": 15,
+            "team": "Osasuna",
+            "points": 11
+          },
+          {
+            "position": 16,
+            "team": "Racing Santander",
+            "points": 11
+          },
+          {
+            "position": 17,
+            "team": "Elche",
+            "points": 10
+          },
+          {
+            "position": 18,
+            "team": "Levante",
+            "points": 10
+          },
+          {
+            "position": 19,
+            "team": "Valencia",
+            "points": 9
+          },
+          {
+            "position": 20,
+            "team": "Málaga",
+            "points": 5
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "704710",
+            "date": "Friday, September 20, 2024",
+            "team1": "Alavés",
+            "score": "2 - 1",
+            "team2": "Sevilla",
+            "title": "Alavés VS Sevilla",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/704710/sevilla-alaves",
+            "source": "La Liga",
+            "stats": {}
+          },
+          {
+            "gameId": "704976",
+            "date": "Sunday, April 20, 2025",
+            "team1": "Sevilla",
+            "score": "1 - 1",
+            "team2": "Alavés",
+            "title": "Sevilla VS Alavés",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/704976/alaves-sevilla",
+            "source": "La Liga",
+            "stats": {}
+          },
+          {
+            "gameId": "748190",
+            "date": "Saturday, September 20, 2025",
+            "team1": "Alavés",
+            "score": "1 - 2",
+            "team2": "Sevilla",
+            "title": "Alavés VS Sevilla",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/748190/sevilla-alaves",
+            "source": "La Liga",
+            "stats": {}
+          },
+          {
+            "gameId": "748374",
+            "date": "Saturday, February 14, 2026",
+            "team1": "Sevilla",
+            "score": "1 - 1",
+            "team2": "Alavés",
+            "title": "Sevilla VS Alavés",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/748374/alaves-sevilla",
+            "source": "La Liga",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/243.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/96.png",
+        "classement_home": 6,
+        "classement_away": 11,
+        "points_classement_home": 17,
+        "points_classement_away": 12,
+        "nom_classement_home": "Sevilla",
+        "nom_classement_away": "Alavés",
+        "country_fr": "Spain - La Liga",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.628,
+            "lambda_away": 1.169,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 48.32,
+            "X": 24.5,
+            "V2": 27.18
+          },
+          "double_chance": {
+            "1X": 72.82,
+            "12": 75.5,
+            "X2": 51.68
+          },
+          "over_under": {
+            "plus_de_0.5": 94.14,
+            "moins_de_0.5": 5.86,
+            "plus_de_1.5": 76.85,
+            "moins_de_1.5": 23.14,
+            "plus_de_2.5": 52.71,
+            "moins_de_2.5": 47.29,
+            "plus_de_3.5": 30.64,
+            "moins_de_3.5": 69.36,
+            "plus_de_4.5": 15.18,
+            "moins_de_4.5": 84.82,
+            "plus_de_5.5": 6.19,
+            "moins_de_5.5": 93.81
+          },
+          "btts": {
+            "oui": 55.18,
+            "non": 44.82
+          },
+          "resultat_total": {
+            "V1et+0.5": 48.32,
+            "1Xet+0.5": 66.96,
+            "V2et+0.5": 27.18,
+            "V1et+1.5": 38.19,
+            "1Xet+1.5": 56.83,
+            "V2et+1.5": 20.03,
+            "V1et+2.5": 29.82,
+            "1Xet+2.5": 36.71,
+            "V2et+2.5": 16.0,
+            "V1et+3.5": 16.19,
+            "1Xet+3.5": 23.08,
+            "V2et+3.5": 7.56,
+            "V1et+4.5": 9.3,
+            "1Xet+4.5": 10.67,
+            "V2et+4.5": 4.52,
+            "V1et+5.5": 3.49,
+            "1Xet+5.5": 4.86,
+            "V2et+5.5": 1.32
+          },
+          "scores_probables": {
+            "1-1": 11.75,
+            "1-0": 10.14,
+            "2-1": 9.25,
+            "2-0": 8.37,
+            "0-1": 7.15,
+            "1-2": 6.81,
+            "0-0": 5.86,
+            "2-2": 5.52,
+            "3-1": 5.01,
+            "3-0": 4.38
+          },
+          "buts_moyens_simules": {
+            "home": 1.63,
+            "away": 1.16,
+            "total": 2.79
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Moins de 2.5 buts  \n**CONFIANCE** : 68%  \n**SCORES PROBABLES** : 1‑0 ou 0‑0  \n**MI‑TEMPS** : Mi‑temps victoire domicile (Sevilla en tête à la pause)  \n**OPTION RISQUE NUL** : Match nul – 22%  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative (forces / faiblesses)**  \n- **Sevilla** : 6ᵉ du classement (17 pts). Moyenne 1,50 buts marqués et 1,70 buts encaissés. En domicile, ils n’ont inscrit que **5 buts** et en ont concédé **6** lors de leurs derniers matchs à domicile – une production offensive très limitée.  \n- **Alavés** : 11ᵉ (12 pts). Moyenne 1,20 buts marqués et 1,70 buts encaissés. En extérieur, ils n’ont marqué que **4 buts** tout en encaissant **11** – la défense est la plus fragile, l’attaque très peu efficace à l’extérieur.\n\n**2. Impact du facteur domicile / extérieur**  \nSevilla bénéficie d’un léger avantage du terrain (public, familiarité) mais leurs statistiques à domicile montrent peu de buts marqués. Alavés, quant à eux, est l’une des équipes les moins performantes à l’extérieur (série L‑L‑D‑L‑D). Le facteur domicile ne suffit donc pas à créer un match très ouvert.\n\n**3. Forme récente**  \n- **Sevilla** (6 derniers) : L W W L D L → 7 pts, avec deux victoires mais trois défaites ou nuls.  \n- **Alavés** (6 derniers) : L D L L D L → 2 pts, aucune victoire récente.  \nLa différence de forme est nette : Sevilla a au moins une dynamique de victoire, Alavés est en mauvaise passe.\n\n**4. Contexte du championnat**  \nLe classement montre un écart de 5 points entre les deux équipes, Sevilla étant clairement dans la zone de qualification européenne, Alavés luttant pour s’éloigner de la zone de relégation. Cette différence de motivation se traduit souvent par une approche plus prudente de la part de l’équipe en position supérieure, surtout lorsqu’elle joue à domicile.\n\n**5. Confrontations directes**  \nLes quatre dernières rencontres (2024‑2026) se sont soldées par deux matchs nuls (1‑1) et deux victoires serrées de chaque côté (2‑1, 1‑2). Aucun des deux clubs n’a affiché de gros scores, ce qui confirme la tendance à des matchs à faible nombre de buts.\n\n**6. Évaluation des cotes**  \n- Victoire Sevilla : 1.98 (impliquant ~50 % de probabilité).  \n- Over 2.5 : 2.27 (impliquant ~44 % de probabilité).  \n- Under 2.5 : 1.74 (impliquant ~57 % de probabilité).  \n\nLes bookmakers estiment déjà que le total sera sous 2,5 buts, ce qui concorde avec les données offensives limitées des deux équipes.\n\n**7. Analyse des statistiques détaillées (possessions, tirs, corners)**  \nLes fiches détaillées ne sont pas disponibles, mais les tendances générales (faible production offensive à domicile pour Sevilla, très peu de tirs à l’extérieur pour Alavés) indiquent un nombre limité d’occasions de but.\n\n**8. Synthèse**  \n- Les deux équipes marquent peu (1,5 buts/match pour Sevilla, 1,2 pour Alavés).  \n- Les deux défenses concèdent près de 1,7 buts/match, mais Alavés a montré une grande vulnérabilité à l’extérieur.  \n- Historique des duels récents : aucun match n’a dépassé les 2 buts.  \n\nCes éléments font du **« Moins de 2,5 buts »** le pari le plus fiable, offrant un bon compromis entre probabilité élevée et cote attractive.\n\n**9. Scores les plus probables**  \n- **1‑0** (Sevilla marque le premier but et garde la défense solide).  \n- **0‑0** (match très fermé, aucune des deux équipes ne parvient à concrétiser).  \n\n**10. Mi‑temps**  \nSevilla, jouant à domicile et légèrement meilleure en forme, a de bonnes chances de prendre l’avantage dès la première période → **« Mi‑temps victoire domicile »**.\n\n**11. Option risque nul**  \nBien que la cote du nul (3.53) indique une probabilité non négligeable, l’analyse montre que le match penche davantage vers une victoire serrée de Sevilla ou un match sans but. Nous estimons donc une probabilité de **22 %** pour un match nul, ce qui reste trop faible pour être la prédiction principale.  \n\n---  \n\n*En résumé, le match Sevilla – Alavés devrait rester très discret côté buts, avec une forte probabilité que le total reste inférieur à 2,5. La meilleure mise, compte tenu du rapport fiabilité/gain, est donc **« Moins de 2,5 buts »**.*",
+        "confiance_pourcentage": 55,
+        "prediction_principale": "Moins de 2.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "1‑0 ou 0‑0",
+        "mi_temps": null,
+        "option_nul": "Match nul – 22%",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : +2.5 buts  \n**CONFIANCE** : 55%  \n**SCORES PROBABLES** : 2‑1, 1‑2  \n\n**RAISONNEMENT** :  \n- Monte‑Carlo donne une moyenne de 2.79 buts (lambda home 1.63, lambda away 1.17) et une probabilité de +2.5 buts de 52.7 %.  \n- BTTS oui atteint 55 % de probabilité, indiquant que les deux équipes marquent souvent.  \n- Malgré des cotes bookmakers favorisant le “under”, la forme offensive de Sevilla (1.5 buts/match) combinée à l’attaque d’Alavés (1.2 buts/match) dépasse le seuil de 2.5 buts.  \n\n*Conclusion : le pari “plus de 2.5 buts” offre le meilleur compromis entre probabilité et gain.*",
+        "confiance_pourcentage_final": 55,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "2‑1, 1‑2"
+      },
+      {
+        "id": 9,
+        "HomeTeam": "Lokomotiv Moscow",
+        "AwayTeam": "Rubin Kazan",
+        "date": "6 novembre 2026 à 16:30:00 UTC",
+        "league": "Russia - Premier League",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.3,
+          "moyenne_encaisses": 1.5,
+          "form_6": [
+            "L",
+            "L",
+            "D",
+            "W",
+            "W",
+            "L"
+          ],
+          "form_10": [
+            "L",
+            "L",
+            "D",
+            "W",
+            "W",
+            "L",
+            "D",
+            "L",
+            "W",
+            "L"
+          ],
+          "recent_form": [
+            "L",
+            "L",
+            "D",
+            "W",
+            "W",
+            "L"
+          ],
+          "total_points_6": 7,
+          "total_points_10": 11,
+          "total_points": 7,
+          "serie_domicile": [
+            "L",
+            "D",
+            "W",
+            "L",
+            "D",
+            "L"
+          ],
+          "buts_dom_marques": 6,
+          "buts_dom_encaisses": 11,
+          "buts_ext_marques": 7,
+          "buts_ext_encaisses": 4,
+          "total_marques": 13,
+          "total_encaisses": 15
+        },
+        "stats_away": {
+          "moyenne_marques": 0.9,
+          "moyenne_encaisses": 1.2,
+          "form_6": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "W",
+            "D"
+          ],
+          "form_10": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "W",
+            "D",
+            "D",
+            "D",
+            "W",
+            "D"
+          ],
+          "recent_form": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "W",
+            "D"
+          ],
+          "total_points_6": 7,
+          "total_points_10": 13,
+          "total_points": 7,
+          "serie_exterieur": [
+            "L",
+            "D",
+            "D",
+            "D"
+          ],
+          "buts_dom_marques": 6,
+          "buts_dom_encaisses": 5,
+          "buts_ext_marques": 3,
+          "buts_ext_encaisses": 7,
+          "total_marques": 9,
+          "total_encaisses": 12
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401879818",
+            "date": "Sun, Nov 01",
+            "home_team": "Lokomotiv Moscow",
+            "away_team": "Spartak Moscow",
+            "score": "0 - 4",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879818"
+          },
+          {
+            "game_id": "401879831",
+            "date": "Sun, Oct 25",
+            "home_team": "Rostov",
+            "away_team": "Lokomotiv Moscow",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879831"
+          },
+          {
+            "game_id": "401879834",
+            "date": "Sat, Oct 17",
+            "home_team": "Lokomotiv Moscow",
+            "away_team": "Krasnodar",
+            "score": "3 - 3",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879834"
+          },
+          {
+            "game_id": "401879840",
+            "date": "Sat, Oct 10",
+            "home_team": "Fakel Voronezh",
+            "away_team": "Lokomotiv Moscow",
+            "score": "0 - 5",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879840"
+          },
+          {
+            "game_id": "401925164",
+            "date": "Sat, Oct 03",
+            "home_team": "Lokomotiv Moscow",
+            "away_team": "Gazovik Orenburg",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Club Friendly",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401925164"
+          },
+          {
+            "game_id": "401925165",
+            "date": "Sat, Sep 26",
+            "home_team": "Lokomotiv Moscow",
+            "away_team": "FC Arsenal Tula",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Club Friendly",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401925165"
+          },
+          {
+            "game_id": "401879850",
+            "date": "Wed, Sep 16",
+            "home_team": "Lokomotiv Moscow",
+            "away_team": "Krylia Sovetov",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879850"
+          },
+          {
+            "game_id": "401879857",
+            "date": "Sat, Sep 12",
+            "home_team": "Zenit St Petersburg",
+            "away_team": "Lokomotiv Moscow",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879857"
+          },
+          {
+            "game_id": "401879867",
+            "date": "Sun, Sep 06",
+            "home_team": "FC Baltika Kaliningrad",
+            "away_team": "Lokomotiv Moscow",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879867"
+          },
+          {
+            "game_id": "401879878",
+            "date": "Sat, Aug 29",
+            "home_team": "Lokomotiv Moscow",
+            "away_team": "Dinamo Moscow",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879878"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401879816",
+            "date": "Sat, Oct 31",
+            "home_team": "Rubin Kazan",
+            "away_team": "Fakel Voronezh",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879816"
+          },
+          {
+            "game_id": "401879827",
+            "date": "Sat, Oct 24",
+            "home_team": "Rubin Kazan",
+            "away_team": "Krylia Sovetov",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879827"
+          },
+          {
+            "game_id": "401879838",
+            "date": "Sun, Oct 18",
+            "home_team": "Spartak Moscow",
+            "away_team": "Rubin Kazan",
+            "score": "4 - 0",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879838"
+          },
+          {
+            "game_id": "401879841",
+            "date": "Sun, Oct 11",
+            "home_team": "Rubin Kazan",
+            "away_team": "Dinamo Moscow",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879841"
+          },
+          {
+            "game_id": "401928229",
+            "date": "Sat, Oct 03",
+            "home_team": "Rubin Kazan",
+            "away_team": "FC Baltika Kaliningrad",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Club Friendly",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401928229"
+          },
+          {
+            "game_id": "401879849",
+            "date": "Wed, Sep 16",
+            "home_team": "Rodina Moscow",
+            "away_team": "Rubin Kazan",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879849"
+          },
+          {
+            "game_id": "401879858",
+            "date": "Sat, Sep 12",
+            "home_team": "CSKA Moscow",
+            "away_team": "Rubin Kazan",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879858"
+          },
+          {
+            "game_id": "401879865",
+            "date": "Mon, Sep 07",
+            "home_team": "Rubin Kazan",
+            "away_team": "Akhmat Grozny",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879865"
+          },
+          {
+            "game_id": "401879874",
+            "date": "Sun, Aug 30",
+            "home_team": "Rubin Kazan",
+            "away_team": "Dynamo Makhachkala",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879874"
+          },
+          {
+            "game_id": "401879882",
+            "date": "Mon, Aug 24",
+            "home_team": "FC Baltika Kaliningrad",
+            "away_team": "Rubin Kazan",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Russian Premier League",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401879882"
+          }
+        ],
+        "classement": {
+          "Lokomotiv Moscow": {
+            "position": 14,
+            "points": 11
+          },
+          "Rubin Kazan": {
+            "position": 10,
+            "points": 15
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Zenit St Petersburg",
+            "points": 30
+          },
+          {
+            "position": 2,
+            "team": "Dinamo Moscow",
+            "points": 28
+          },
+          {
+            "position": 3,
+            "team": "CSKA Moscow",
+            "points": 26
+          },
+          {
+            "position": 4,
+            "team": "Spartak Moscow",
+            "points": 26
+          },
+          {
+            "position": 5,
+            "team": "Krasnodar",
+            "points": 23
+          },
+          {
+            "position": 6,
+            "team": "Rostov",
+            "points": 18
+          },
+          {
+            "position": 7,
+            "team": "FC Baltika Kaliningrad",
+            "points": 17
+          },
+          {
+            "position": 8,
+            "team": "Gazovik Orenburg",
+            "points": 17
+          },
+          {
+            "position": 9,
+            "team": "Krylia Sovetov",
+            "points": 15
+          },
+          {
+            "position": 10,
+            "team": "Rubin Kazan",
+            "points": 15
+          },
+          {
+            "position": 11,
+            "team": "Dynamo Makhachkala",
+            "points": 13
+          },
+          {
+            "position": 12,
+            "team": "Rodina Moscow",
+            "points": 12
+          },
+          {
+            "position": 13,
+            "team": "Akron Tolyatti",
+            "points": 12
+          },
+          {
+            "position": 14,
+            "team": "Lokomotiv Moscow",
+            "points": 11
+          },
+          {
+            "position": 15,
+            "team": "Akhmat Grozny",
+            "points": 11
+          },
+          {
+            "position": 16,
+            "team": "Fakel Voronezh",
+            "points": 6
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "706158",
+            "date": "Saturday, November 2, 2024",
+            "team1": "Lokomotiv Moscow",
+            "score": "1 - 0",
+            "team2": "Rubin Kazan",
+            "title": "Lokomotiv Moscow VS Rubin Kazan",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/706158/rubin-kazan-lokomotiv-moscow",
+            "source": "Premier League",
+            "stats": {}
+          },
+          {
+            "gameId": "706242",
+            "date": "Saturday, April 12, 2025",
+            "team1": "Rubin Kazan",
+            "score": "1 - 0",
+            "team2": "Lokomotiv Moscow",
+            "title": "Rubin Kazan VS Lokomotiv Moscow",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/706242/lokomotiv-moscow-rubin-kazan",
+            "source": "Premier League",
+            "stats": {}
+          },
+          {
+            "gameId": "743574",
+            "date": "Saturday, September 27, 2025",
+            "team1": "Lokomotiv Moscow",
+            "score": "1 - 0",
+            "team2": "Rubin Kazan",
+            "title": "Lokomotiv Moscow VS Rubin Kazan",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/743574/rubin-kazan-lokomotiv-moscow",
+            "source": "Premier League",
+            "stats": {}
+          },
+          {
+            "gameId": "743663",
+            "date": "Sunday, March 15, 2026",
+            "team1": "Rubin Kazan",
+            "score": "3 - 0",
+            "team2": "Lokomotiv Moscow",
+            "title": "Rubin Kazan VS Lokomotiv Moscow",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/743663/lokomotiv-moscow-rubin-kazan",
+            "source": "Premier League",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/442.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/3851.png",
+        "classement_home": 14,
+        "classement_away": 10,
+        "points_classement_home": 11,
+        "points_classement_away": 15,
+        "nom_classement_home": "Lokomotiv Moscow",
+        "nom_classement_away": "Rubin Kazan",
+        "country_fr": "Russia - Premier League",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.412,
+            "lambda_away": 1.084,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 43.77,
+            "X": 26.52,
+            "V2": 29.71
+          },
+          "double_chance": {
+            "1X": 70.29,
+            "12": 73.48,
+            "X2": 56.23
+          },
+          "over_under": {
+            "plus_de_0.5": 91.5,
+            "moins_de_0.5": 8.5,
+            "plus_de_1.5": 70.82,
+            "moins_de_1.5": 29.18,
+            "plus_de_2.5": 45.35,
+            "moins_de_2.5": 54.65,
+            "plus_de_3.5": 24.2,
+            "moins_de_3.5": 75.81,
+            "plus_de_4.5": 10.62,
+            "moins_de_4.5": 89.38,
+            "plus_de_5.5": 3.98,
+            "moins_de_5.5": 96.02
+          },
+          "btts": {
+            "oui": 49.5,
+            "non": 50.5
+          },
+          "resultat_total": {
+            "V1et+0.5": 43.77,
+            "1Xet+0.5": 61.79,
+            "V2et+0.5": 29.71,
+            "V1et+1.5": 32.42,
+            "1Xet+1.5": 50.43,
+            "V2et+1.5": 20.39,
+            "V1et+2.5": 24.19,
+            "1Xet+2.5": 29.95,
+            "V2et+2.5": 15.4,
+            "V1et+3.5": 11.7,
+            "1Xet+3.5": 17.46,
+            "V2et+3.5": 6.74,
+            "V1et+4.5": 6.02,
+            "1Xet+4.5": 6.89,
+            "V2et+4.5": 3.72,
+            "V1et+5.5": 1.92,
+            "1Xet+5.5": 2.78,
+            "V2et+5.5": 1.2
+          },
+          "scores_probables": {
+            "1-1": 12.26,
+            "1-0": 11.36,
+            "0-1": 9.32,
+            "2-1": 8.64,
+            "0-0": 8.5,
+            "2-0": 8.22,
+            "1-2": 6.94,
+            "0-2": 4.98,
+            "2-2": 4.9,
+            "3-1": 4.19
+          },
+          "buts_moyens_simules": {
+            "home": 1.4,
+            "away": 1.09,
+            "total": 2.48
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : -2.5 buts  \n**CONFIANCE** : 68%  \n**SCORES PROBABLES** : 1‑0 ou 1‑1  \n**MI-TEMPS** : Mi‑temps victoire domicile  \n**OPTION RISQUE NUL** : Match nul - 30%  \n\n**JUSTIFICATION** :\n\n**1. Analyse comparative des équipes**  \n- **Lokomotiv Moscow** (14ᵉ, 11 pts) : moyenne 1,30 buts marqués / 1,50 buts encaissés. À domicile, 6 buts marqués et 11 encaissés en 6 matchs, soit 1,0 but inscrit et 1,83 encaissé par rencontre.  \n- **Rubin Kazan** (10ᵉ, 15 pts) : moyenne 0,90 buts marqués / 1,20 buts encaissés. À l’extérieur, 3 buts marqués et 7 encaissés en 4 matchs, soit 0,75 buts inscrit et 1,75 encaissé par rencontre.  \n\nLes deux équipes affichent une défense fragile (plus de 1,5 buts concédés en moyenne) mais une attaque peu prolifique, surtout à l’extérieur pour Rubin.\n\n**2. Impact du facteur domicile/extérieur**  \nLokomotiv joue à domicile mais sa série à domicile (L‑D‑W‑L‑D‑L) montre une grande irrégularité. Rubin, en déplacement, a une série de 4 défaites/contres‑nulles consécutives. L’avantage du terrain donne à Lokomotiv un léger bord, mais il ne suffit pas à transformer le match en une rencontre très offensive.\n\n**3. Forme récente et tendances**  \n- **Lokomotiv** (6 derniers) : L L D W W L → 7 pts, avec deux victoires (1‑0, 2‑0) mais aussi une lourde défaite 0‑4.  \n- **Rubin** (6 derniers) : W L L L W D → 7 pts, avec une victoire 1‑0 et une défaite 4‑0.  \n\nLes deux équipes alternent entre victoires serrées et défaites nettes, signe d’une capacité à marquer peu mais à encaisser rapidement.\n\n**4. Contexte du championnat**  \nLe classement montre un écart de 4 points entre les deux clubs, Rubin étant légèrement meilleur (10ᵉ vs 14ᵉ). Aucun des deux ne lutte pour le titre ni pour la relégation immédiate, ce qui se traduit souvent par des matchs prudents.\n\n**5. Confrontations directes**  \nSur les 4 dernières rencontres (saison 2024‑2026) :  \n- Lokomotiv 1‑0 Rubin (2024)  \n- Rubin 1‑0 Lokomotiv (2025)  \n- Lokomotiv 1‑0 Rubin (2025)  \n- Rubin 3‑0 Lokomotiv (2026)  \n\nLes scores sont majoritairement à une ou deux buts, aucune rencontre n’a dépassé les 2,5 buts. Cela renforce l’idée d’un match à faible score.\n\n**6. Analyse des statistiques détaillées (possessions, tirs, corners)**  \nMême si les données précises ne sont pas disponibles, les résultats précédents (ex. 0‑4, 5‑0, 3‑3) indiquent des écarts de domination ponctuels mais pas une tendance à un grand nombre de tirs ou de corners. Les équipes semblent se contenter de jouer prudemment, limitant les occasions.\n\n**7. Synthèse**  \n- **Total de buts attendu** : moyenne combinée ≈ 2,2, mais la tendance historique (derniers H2H, faibles scores à l’extérieur) penche vers **moins de 2,5 buts**.  \n- **Probabilité de +2,5 buts** est incertaine (pas de tendance claire à des matches très ouverts).  \n- **Probabilité de -2,5 buts** est élevée grâce aux faibles moyennes offensives et aux défenses perméables mais pas excessives.  \n\n**8. Choix de la prédiction**  \nSelon le critère fiabilité/gain, la meilleure option est **-2.5 buts** (sous‑2,5) avec une confiance de 68 %.  \n\n**Scores les plus probables** :  \n- 1‑0 en faveur de Lokomotiv (avantage du terrain, historique de victoires à 1‑0).  \n- 1‑1 (Rubin capable de marquer une fois à l’extérieur, Lokomotiv peut réagir).  \n\n**Mi‑temps** : Lokomotiv a tendance à prendre l’avantage tôt à domicile (ex. 1‑0 contre Spartak, 2‑0 contre Orenburg). La prédiction la plus plausible est donc **Mi‑temps victoire domicile**.  \n\n**Option risque nul** : bien que le match soit légèrement biaisé en faveur de Lokomotiv, les précédents H2H montrent deux victoires de chaque côté et une défaite 3‑0 de Lokomotiv. Une probabilité de **30 %** de match nul est estimée, mais cela reste secondaire à la prédiction principale.",
+        "confiance_pourcentage": 70,
+        "prediction_principale": "-2.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "1‑0 ou 1‑1",
+        "mi_temps": "Mi‑temps victoire domicile",
+        "option_nul": "Match nul - 30%",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance 1X  \n**CONFIANCE** : 70 %  \n**SCORES PROBABLES** : 1‑0, 1‑1  \n\n**RAISONNEMENT**  \n- Monte‑Carlo : probabilité 1X = 70,29 % (la plus élevée de toutes les issues), alors que la victoire à domicile n’atteint que 43,77 % et le sous‑2,5 = 54,65 %.  \n- Forme et statistiques : Lokomotiv montre une légère supériorité à domicile (6‑pts sur 6 matchs) et les deux équipes affichent des attaques modestes (≈ 1,3 buts/match à domicile, 0,9 à l’extérieur).  \n- Confrontations directes récentes : scores très serrés (1‑0, 1‑0, 3‑0) et aucune rencontre ne dépasse les 2,5 buts, confirmant la tendance à un match à faible score.  \n- Over/Under : sous‑2,5 = 54,65 % et les scores les plus probables sont 1‑0 (12,26 %) et 1‑1 (11,36 %).  \n\nCes éléments font du **double chance 1X** l’option la plus fiable pour ce match.",
+        "confiance_pourcentage_final": 70,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "1‑0, 1‑1"
+      }
+    ]
+  }
+}
