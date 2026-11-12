@@ -1,0 +1,613 @@
+{
+  "metadata": {
+    "date_generation": "2026-11-12 01:05:41",
+    "date_matchs": "2026-11-12",
+    "version_algorithme": "8.3 - STATISTIQUES BRUTES + FORMES 6/10 + POINTS CLASSEMENT + COTES + ANALYSE IA DEEPSEEK ENRICHIE + MATCHS COMPLETS AVEC STATS DÉTAILLÉES + CLASSEMENT COMPLET + H2H ENRICHI AVEC STATS + CONFIANCE EXTRAITE + SCORES + RETRY IA + EXTRACTION AMÉLIORÉE 2 FORMATS + PROBABILITÉS MONTE-CARLO (NON INCLUSES DANS PROMPT IA)",
+    "total_predictions": 1,
+    "mode": "stats_brutes_avec_cotes_et_ia_complete_enrichie_retry_nouvelle_structure_avec_stats_detaillees_h2h_enrichi_confiance_extraite_scores_extraction_amelioree_2_formats_montecarlo_hors_prompt",
+    "note": "Collecte des statistiques brutes complètes : moyennes, formes récentes (6 et 10 matchs), séries domicile/extérieur, classements avec points + cotes des bookmakers + analyse IA DeepSeek ENRICHIE avec matchs détaillés (nouvelle structure objet avec game_id, date, home_team, away_team, score, status, competition + STATS DÉTAILLÉES ESPN) + classement complet + confrontations directes H2H élargies AVEC STATS DÉTAILLÉES + pourcentage confiance EXTRAIT AUTOMATIQUEMENT + 2 scores probables + retry automatique IA + suppression 'match nul' + EXTRACTION AMÉLIORÉE support des 2 formats (**FORMAT** et FORMAT simple) + PROBABILITÉS MONTE-CARLO autonomes (calculées mais NON incluses dans le prompt IA)",
+    "ia_model": "deepseek-r1-distill-llama-70b",
+    "groq_keys_count": 2,
+    "monte_carlo": {
+      "enabled": true,
+      "iterations": 20000,
+      "calibrage": "moyennes_internationales + statistiques_équipes + ajustement_h2h",
+      "probabilites_calculees": [
+        "1x2",
+        "double_chance",
+        "over_under",
+        "btts",
+        "resultat_total",
+        "scores_probables"
+      ],
+      "inclus_dans_prompt_ia": false
+    },
+    "nouveautes_v8_3_modifiees": [
+      "🎲 Module de probabilités Monte-Carlo intégré (20 000 simulations)",
+      "🔢 Calibrage avec moyennes internationales FIFA/UEFA",
+      "🆚 Ajustement automatique selon les confrontations H2H",
+      "📊 Probabilités 1X2, Double Chance, Over/Under (0.5→5.5), BTTS",
+      "🎯 Scores exacts les plus probables calculés statistiquement",
+      "❌ MODIFICIATION : Probabilités Monte-Carlo NON incluses dans le prompt IA",
+      "❌ MODIFICIATION : IA ne prédit plus corners et tirs cadrés (champs gardés dans structure)",
+      "📁 MODIFICIATION : Nom de fichier simplifié prédiction-YYYY-MM-DD-analyse-ia.json",
+      "✅ Maintien de toutes les autres fonctionnalités avancées v8.2"
+    ]
+  },
+  "statistiques_brutes_avec_ia_hors_montecarlo": {
+    "count": 1,
+    "details": [
+      {
+        "id": 1,
+        "HomeTeam": "Deportivo Pasto",
+        "AwayTeam": "Atlético Junior",
+        "date": "12 novembre 2026 à 22:00:00 UTC",
+        "league": "Colombia - Primera A",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 0.6,
+          "moyenne_encaisses": 1.4,
+          "form_6": [
+            "L",
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "form_10": [
+            "L",
+            "W",
+            "L",
+            "W",
+            "L",
+            "L",
+            "D",
+            "L",
+            "W",
+            "W"
+          ],
+          "recent_form": [
+            "L",
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "total_points_6": 6,
+          "total_points_10": 13,
+          "total_points": 6,
+          "serie_domicile": [
+            "W",
+            "L",
+            "D",
+            "W"
+          ],
+          "buts_dom_marques": 3,
+          "buts_dom_encaisses": 1,
+          "buts_ext_marques": 3,
+          "buts_ext_encaisses": 13,
+          "total_marques": 6,
+          "total_encaisses": 14
+        },
+        "stats_away": {
+          "moyenne_marques": 1.3,
+          "moyenne_encaisses": 1.3,
+          "form_6": [
+            "W",
+            "L",
+            "D",
+            "W",
+            "D",
+            "D"
+          ],
+          "form_10": [
+            "W",
+            "L",
+            "D",
+            "W",
+            "D",
+            "D",
+            "D",
+            "L",
+            "L",
+            "W"
+          ],
+          "recent_form": [
+            "W",
+            "L",
+            "D",
+            "W",
+            "D",
+            "D"
+          ],
+          "total_points_6": 9,
+          "total_points_10": 13,
+          "total_points": 9,
+          "serie_exterieur": [
+            "L",
+            "D",
+            "D",
+            "L",
+            "L"
+          ],
+          "buts_dom_marques": 8,
+          "buts_dom_encaisses": 3,
+          "buts_ext_marques": 5,
+          "buts_ext_encaisses": 10,
+          "total_marques": 13,
+          "total_encaisses": 13
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401877958",
+            "date": "Sun, Nov 08",
+            "home_team": "Independiente Santa Fe",
+            "away_team": "Deportivo Pasto",
+            "score": "5 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877958"
+          },
+          {
+            "game_id": "401877896",
+            "date": "Tue, Nov 03",
+            "home_team": "Deportivo Pasto",
+            "away_team": "Jaguares de Córdoba",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877896"
+          },
+          {
+            "game_id": "401878044",
+            "date": "Sat, Oct 31",
+            "home_team": "Atlético Bucaramanga",
+            "away_team": "Deportivo Pasto",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878044"
+          },
+          {
+            "game_id": "401877918",
+            "date": "Mon, Oct 26",
+            "home_team": "Deportes Tolima",
+            "away_team": "Deportivo Pasto",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877918"
+          },
+          {
+            "game_id": "401877877",
+            "date": "Fri, Oct 23",
+            "home_team": "Atlético Nacional",
+            "away_team": "Deportivo Pasto",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877877"
+          },
+          {
+            "game_id": "401878019",
+            "date": "Tue, Oct 20",
+            "home_team": "Deportivo Pasto",
+            "away_team": "Alianza FC",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878019"
+          },
+          {
+            "game_id": "401878051",
+            "date": "Sun, Oct 04",
+            "home_team": "Deportivo Pasto",
+            "away_team": "Fortaleza CEIF",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878051"
+          },
+          {
+            "game_id": "401878068",
+            "date": "Fri, Sep 25",
+            "home_team": "Boyacá Chicó FC",
+            "away_team": "Deportivo Pasto",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878068"
+          },
+          {
+            "game_id": "401878003",
+            "date": "Sun, Sep 20",
+            "home_team": "Deportivo Pasto",
+            "away_team": "Once Caldas",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878003"
+          },
+          {
+            "game_id": "401877902",
+            "date": "Tue, Sep 15",
+            "home_team": "América de Cali",
+            "away_team": "Deportivo Pasto",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877902"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401877901",
+            "date": "Tue, Nov 10",
+            "home_team": "Atlético Junior",
+            "away_team": "Cúcuta Deportivo",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877901"
+          },
+          {
+            "game_id": "401878071",
+            "date": "Sat, Oct 31",
+            "home_team": "Llaneros FC",
+            "away_team": "Atlético Junior",
+            "score": "3 - 2",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878071"
+          },
+          {
+            "game_id": "401877861",
+            "date": "Wed, Oct 28",
+            "home_team": "Boyacá Chicó FC",
+            "away_team": "Atlético Junior",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877861"
+          },
+          {
+            "game_id": "401877773",
+            "date": "Sat, Oct 24",
+            "home_team": "Atlético Junior",
+            "away_team": "Águilas Doradas",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877773"
+          },
+          {
+            "game_id": "401877905",
+            "date": "Mon, Oct 19",
+            "home_team": "Deportivo Cali",
+            "away_team": "Atlético Junior",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877905"
+          },
+          {
+            "game_id": "401878008",
+            "date": "Wed, Oct 14",
+            "home_team": "Atlético Junior",
+            "away_team": "Deportivo Pereira",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878008"
+          },
+          {
+            "game_id": "401877899",
+            "date": "Sat, Oct 10",
+            "home_team": "Atlético Junior",
+            "away_team": "Internacional de Bogotá",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877899"
+          },
+          {
+            "game_id": "401877900",
+            "date": "Sun, Oct 04",
+            "home_team": "Atlético Bucaramanga",
+            "away_team": "Atlético Junior",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877900"
+          },
+          {
+            "game_id": "401877865",
+            "date": "Thu, Oct 01",
+            "home_team": "Atlético Nacional",
+            "away_team": "Atlético Junior",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401877865"
+          },
+          {
+            "game_id": "401878060",
+            "date": "Sun, Sep 27",
+            "home_team": "Atlético Junior",
+            "away_team": "Independiente Medellín",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Colombian Primera A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401878060"
+          }
+        ],
+        "classement": {
+          "Deportivo Pasto": {
+            "position": 18,
+            "points": 15
+          },
+          "Atlético Junior": {
+            "position": 14,
+            "points": 19
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Atlético Nacional",
+            "points": 39
+          },
+          {
+            "position": 2,
+            "team": "América de Cali",
+            "points": 36
+          },
+          {
+            "position": 3,
+            "team": "Deportivo Cali",
+            "points": 34
+          },
+          {
+            "position": 4,
+            "team": "Atlético Bucaramanga",
+            "points": 32
+          },
+          {
+            "position": 5,
+            "team": "Independiente Santa Fe",
+            "points": 31
+          },
+          {
+            "position": 6,
+            "team": "Independiente Medellín",
+            "points": 29
+          },
+          {
+            "position": 7,
+            "team": "Millonarios",
+            "points": 27
+          },
+          {
+            "position": 8,
+            "team": "Once Caldas",
+            "points": 27
+          },
+          {
+            "position": 9,
+            "team": "Deportes Tolima",
+            "points": 26
+          },
+          {
+            "position": 10,
+            "team": "Águilas Doradas",
+            "points": 25
+          },
+          {
+            "position": 11,
+            "team": "Cúcuta Deportivo",
+            "points": 24
+          },
+          {
+            "position": 12,
+            "team": "Llaneros FC",
+            "points": 23
+          },
+          {
+            "position": 13,
+            "team": "Internacional de Bogotá",
+            "points": 20
+          },
+          {
+            "position": 14,
+            "team": "Atlético Junior",
+            "points": 19
+          },
+          {
+            "position": 15,
+            "team": "Boyacá Chicó FC",
+            "points": 19
+          },
+          {
+            "position": 16,
+            "team": "Alianza FC",
+            "points": 18
+          },
+          {
+            "position": 17,
+            "team": "Deportivo Pereira",
+            "points": 17
+          },
+          {
+            "position": 18,
+            "team": "Deportivo Pasto",
+            "points": 15
+          },
+          {
+            "position": 19,
+            "team": "Jaguares de Córdoba",
+            "points": 13
+          },
+          {
+            "position": 20,
+            "team": "Fortaleza CEIF",
+            "points": 12
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "693628",
+            "date": "Thursday, February 8, 2024",
+            "team1": "Atlético Junior",
+            "score": "2 - 0",
+            "team2": "Deportivo Pasto",
+            "title": "Atlético Junior VS Deportivo Pasto",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/693628/deportivo-pasto-atletico-junior",
+            "source": "Primera A",
+            "stats": {}
+          },
+          {
+            "gameId": "714260",
+            "date": "Wednesday, August 28, 2024",
+            "team1": "Deportivo Pasto",
+            "score": "1 - 0",
+            "team2": "Atlético Junior",
+            "title": "Deportivo Pasto VS Atlético Junior",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/714260/atletico-junior-deportivo-pasto",
+            "source": "Primera A",
+            "stats": {}
+          },
+          {
+            "gameId": "730434",
+            "date": "Saturday, April 12, 2025",
+            "team1": "Deportivo Pasto",
+            "score": "3 - 3",
+            "team2": "Atlético Junior",
+            "title": "Deportivo Pasto VS Atlético Junior",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/730434/atletico-junior-deportivo-pasto",
+            "source": "Primera A",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/5485.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/4815.png",
+        "classement_home": 18,
+        "classement_away": 14,
+        "points_classement_home": 15,
+        "points_classement_away": 19,
+        "nom_classement_home": "Deportivo Pasto",
+        "nom_classement_away": "Atlético Junior",
+        "country_fr": "Colombia - Primera A",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.487,
+            "lambda_away": 0.752,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 55.07,
+            "X": 26.15,
+            "V2": 18.78
+          },
+          "double_chance": {
+            "1X": 81.22,
+            "12": 73.85,
+            "X2": 44.93
+          },
+          "over_under": {
+            "plus_de_0.5": 89.3,
+            "moins_de_0.5": 10.7,
+            "plus_de_1.5": 65.1,
+            "moins_de_1.5": 34.89,
+            "plus_de_2.5": 38.56,
+            "moins_de_2.5": 61.44,
+            "plus_de_3.5": 18.68,
+            "moins_de_3.5": 81.32,
+            "plus_de_4.5": 7.44,
+            "moins_de_4.5": 92.56,
+            "plus_de_5.5": 2.36,
+            "moins_de_5.5": 97.64
+          },
+          "btts": {
+            "oui": 40.22,
+            "non": 59.78
+          },
+          "resultat_total": {
+            "V1et+0.5": 55.07,
+            "1Xet+0.5": 70.52,
+            "V2et+0.5": 18.78,
+            "V1et+1.5": 39.0,
+            "1Xet+1.5": 54.44,
+            "V2et+1.5": 10.66,
+            "V1et+2.5": 27.3,
+            "1Xet+2.5": 30.96,
+            "V2et+2.5": 7.6,
+            "V1et+3.5": 12.46,
+            "1Xet+3.5": 16.12,
+            "V2et+3.5": 2.56,
+            "V1et+4.5": 5.72,
+            "1Xet+4.5": 6.18,
+            "V2et+4.5": 1.26,
+            "V1et+5.5": 1.62,
+            "1Xet+5.5": 2.08,
+            "V2et+5.5": 0.27
+          },
+          "scores_probables": {
+            "1-0": 16.07,
+            "1-1": 11.79,
+            "2-0": 11.7,
+            "0-0": 10.7,
+            "2-1": 8.93,
+            "0-1": 8.12,
+            "3-0": 5.9,
+            "3-1": 4.42,
+            "1-2": 4.22,
+            "2-2": 3.2
+          },
+          "buts_moyens_simules": {
+            "home": 1.48,
+            "away": 0.74,
+            "total": 2.22
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Moins de 1.5 buts  \n**CONFIANCE** : 68 %  \n**SCORES PROBABLES** : 0‑0 ou 1‑0 (victoire Deportivo Pasto)  \n**MI-TEMPS** : Mi‑temps match nul (0‑0)  \n**OPTION RISQUE NUL** : Match nul – 30 %  \n\n---\n\n### JUSTIFICATION  \n\n#### 1. Analyse comparative des forces / faiblesses  \n|                     | **Deportivo Pasto** | **Atlético Junior** |\n|---------------------|---------------------|----------------------|\n| Classement          | 18ᵉ (15 pts)        | 14ᵉ (19 pts)         |\n| Moy. buts marqués   | 0,60 (défensive)    | 1,30 (équilibré)      |\n| Moy. buts encaissés | 1,40 (défensive)    | 1,30 (équilibré)      |\n| Forme 6 derniers    | L W L W L L (6 pts) | W L D W D D (9 pts)   |\n| Série domicile      | W‑L‑D‑W (3 victoires à domicile) | – |\n| Série extérieur     | – | L‑D‑D‑L‑L (5 matchs sans victoire) |\n| Buts marqués domicile | 3 (sur 6) ≈ 0,5 bt/match | – |\n| Buts encaissés domicile | 1 (sur 6) ≈ 0,17 bt/match | – |\n| Buts marqués extérieur | – | 5 (sur 10) ≈ 0,5 bt/match |\n| Buts encaissés extérieur | – | 10 (sur 10) ≈ 1,0 bt/match |\n\n- **Pasto** possède la meilleure solidité à domicile : 1 but encaissé en 6 matchs à domicile, soit la meilleure moyenne défensive du tableau (0,17 bt/match).  \n- **Junior** montre une défense moyenne à l’extérieur (1,0 bt/match encaissé) et une attaque qui ne dépasse pas 1,3 bt/match.  \n\n#### 2. Impact du facteur domicile / extérieur  \n- Le facteur domicile favorise fortement Pasto qui a gardé sa cage inviolée à 5 reprises sur ses 6 derniers matchs à domicile (4 victoires, 1 nul, 1 défaite 2‑1).  \n- Junior, en revanche, a concédé 10 buts à l’extérieur, dont 3 fois contre Atlético Bucaramanga et Atlético Nacional, ce qui montre une vulnérabilité à l’extérieur.\n\n#### 3. Formes récentes & tendances (données disponibles)  \n- **Pasto** : 3 victoires (5‑0, 2‑0, 1‑0) et 3 défaites (2‑1, 3‑0, 0‑1) à domicile. Toutes les victoires sont des matches où ils n’ont encaissé **aucun** but.  \n- **Junior** : 4 victoires, 3 nuls, 3 défaites à l’extérieur. Les victoires sont souvent 2‑0 ou 1‑0, mais les défaites montrent qu’ils peuvent concéder 3 buts.  \n\n#### 4. Contexte du championnat  \n- Pasto lutte contre la relégation (18ᵉ) et a besoin de points à domicile.  \n- Junior, légèrement mieux placé (14ᵉ), ne peut plus se permettre de perdre, mais n’est pas en position de domination.  \n- Aucun des deux ne possède une attaque puissante ; le match s’oriente donc naturellement vers la défense.\n\n#### 5. Confrontations directes (dernières saisons)  \n- 2‑0 Junior (2024) – victoire Junior à l’extérieur.  \n- 1‑0 Pasto (2024) – victoire Pasto à domicile.  \n- 3‑3 (2025) – match très ouvert, mais c’est une exception ponctuelle.  \nCes trois rencontres montrent une **équilibre** avec une légère tendance à des scores bas (2‑0, 1‑0).  \n\n#### 6. Analyse des statistiques détaillées (possession, tirs, corners)  \nLes données de possession, tirs et corners ne sont pas disponibles dans les sources fournies. Néanmoins, les tendances observées (faible nombre de buts marqués à domicile par Pasto, défense solide à domicile, capacité de Junior à marquer 1‑2 buts à l’extérieur) permettent de conclure que le match sera **peu prolifique** en buts.\n\n#### 7. Évaluation du marché des buts  \n- **Moyenne totale attendue** : 0,5 (Pasto) + 1,3 (Junior) ≈ 1,8 buts.  \n- La distribution de cette moyenne, combinée à la défense à domicile de Pasto (0,17 bt/match encaissé), indique une forte probabilité que le total réel soit **inférieur à 1,5** (0 ou 1 but).  \n- La probabilité d’atteindre **+2,5 buts** est nettement plus faible (nécessiterait au moins 2 buts de Junior et un but de Pasto).  \n\n#### 8. Choix de la prédiction principale  \n- **Moins de 1.5 buts** est le pari le plus fiable compte tenu des données (défense à domicile solide, attaque faible de Pasto, moyenne de buts de Junior à l’extérieur).  \n- Le pari **BTTS non** serait également plausible, mais le marché “moins de 1.5 buts” offre un meilleur ratio risque/ gain pour la probabilité estimée.  \n\n#### 9. Option risque nul  \n- La probabilité d’un match nul (0‑0) est estimée autour de **30 %** (puisque Pasto a gardé sa cage inviolée dans 5 de ses 6 derniers matchs à domicile).  \n- Cette information est fournie uniquement à titre d’« option risque nul » et ne remplace pas la prédiction principale.",
+        "confiance_pourcentage": 81,
+        "prediction_principale": "Moins de 1.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "0‑0 ou 1‑0 (victoire Deportivo Pasto)",
+        "mi_temps": "Mi‑temps match nul (0‑0)",
+        "option_nul": "Match nul – 30 %",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : double chance 1X  \n**CONFIANCE** : 81 %  \n**SCORES PROBABLES** : 0‑0, 1‑0  \n\n**RAISONNEMENT** :  \n- Monte‑Carlo indique 55 % de victoire à domicile et 26 % de match nul → 81 % pour 1X.  \n- Pasto a la meilleure défense à domicile (0,17 but encaissé/match) et a gardé sa cage inviolée 5 fois sur 6 à domicile.  \n- Junior marque en moyenne seulement 1,30 but à l’extérieur et concède 1,0 but, ce qui limite les chances d’une victoire claire.  \n- Classement et forme montrent un léger avantage de Pasto (défense solide) contre une équipe extérieure en légère baisse.",
+        "confiance_pourcentage_final": 81,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "0‑0, 1‑0"
+      }
+    ]
+  }
+}
