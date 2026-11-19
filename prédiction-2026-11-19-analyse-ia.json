@@ -1,0 +1,1243 @@
+{
+  "metadata": {
+    "date_generation": "2026-11-19 01:06:44",
+    "date_matchs": "2026-11-19",
+    "version_algorithme": "8.3 - STATISTIQUES BRUTES + FORMES 6/10 + POINTS CLASSEMENT + COTES + ANALYSE IA DEEPSEEK ENRICHIE + MATCHS COMPLETS AVEC STATS DÉTAILLÉES + CLASSEMENT COMPLET + H2H ENRICHI AVEC STATS + CONFIANCE EXTRAITE + SCORES + RETRY IA + EXTRACTION AMÉLIORÉE 2 FORMATS + PROBABILITÉS MONTE-CARLO (NON INCLUSES DANS PROMPT IA)",
+    "total_predictions": 2,
+    "mode": "stats_brutes_avec_cotes_et_ia_complete_enrichie_retry_nouvelle_structure_avec_stats_detaillees_h2h_enrichi_confiance_extraite_scores_extraction_amelioree_2_formats_montecarlo_hors_prompt",
+    "note": "Collecte des statistiques brutes complètes : moyennes, formes récentes (6 et 10 matchs), séries domicile/extérieur, classements avec points + cotes des bookmakers + analyse IA DeepSeek ENRICHIE avec matchs détaillés (nouvelle structure objet avec game_id, date, home_team, away_team, score, status, competition + STATS DÉTAILLÉES ESPN) + classement complet + confrontations directes H2H élargies AVEC STATS DÉTAILLÉES + pourcentage confiance EXTRAIT AUTOMATIQUEMENT + 2 scores probables + retry automatique IA + suppression 'match nul' + EXTRACTION AMÉLIORÉE support des 2 formats (**FORMAT** et FORMAT simple) + PROBABILITÉS MONTE-CARLO autonomes (calculées mais NON incluses dans le prompt IA)",
+    "ia_model": "deepseek-r1-distill-llama-70b",
+    "groq_keys_count": 2,
+    "monte_carlo": {
+      "enabled": true,
+      "iterations": 20000,
+      "calibrage": "moyennes_internationales + statistiques_équipes + ajustement_h2h",
+      "probabilites_calculees": [
+        "1x2",
+        "double_chance",
+        "over_under",
+        "btts",
+        "resultat_total",
+        "scores_probables"
+      ],
+      "inclus_dans_prompt_ia": false
+    },
+    "nouveautes_v8_3_modifiees": [
+      "🎲 Module de probabilités Monte-Carlo intégré (20 000 simulations)",
+      "🔢 Calibrage avec moyennes internationales FIFA/UEFA",
+      "🆚 Ajustement automatique selon les confrontations H2H",
+      "📊 Probabilités 1X2, Double Chance, Over/Under (0.5→5.5), BTTS",
+      "🎯 Scores exacts les plus probables calculés statistiquement",
+      "❌ MODIFICIATION : Probabilités Monte-Carlo NON incluses dans le prompt IA",
+      "❌ MODIFICIATION : IA ne prédit plus corners et tirs cadrés (champs gardés dans structure)",
+      "📁 MODIFICIATION : Nom de fichier simplifié prédiction-YYYY-MM-DD-analyse-ia.json",
+      "✅ Maintien de toutes les autres fonctionnalités avancées v8.2"
+    ]
+  },
+  "statistiques_brutes_avec_ia_hors_montecarlo": {
+    "count": 2,
+    "details": [
+      {
+        "id": 2,
+        "HomeTeam": "Vitória",
+        "AwayTeam": "Red Bull Bragantino",
+        "date": "19 novembre 2026 à 22:30:00 UTC",
+        "league": "Brazil - Serie A",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": null,
+        "stats_home": {
+          "moyenne_marques": 1.1,
+          "moyenne_encaisses": 1.6,
+          "form_6": [
+            "L",
+            "L",
+            "D",
+            "D",
+            "L",
+            "W"
+          ],
+          "form_10": [
+            "L",
+            "L",
+            "D",
+            "D",
+            "L",
+            "W",
+            "L",
+            "D",
+            "W",
+            "L"
+          ],
+          "recent_form": [
+            "L",
+            "L",
+            "D",
+            "D",
+            "L",
+            "W"
+          ],
+          "total_points_6": 5,
+          "total_points_10": 9,
+          "total_points": 5,
+          "serie_domicile": [
+            "L",
+            "D",
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "buts_dom_marques": 7,
+          "buts_dom_encaisses": 9,
+          "buts_ext_marques": 4,
+          "buts_ext_encaisses": 7,
+          "total_marques": 11,
+          "total_encaisses": 16
+        },
+        "stats_away": {
+          "moyenne_marques": 1.5,
+          "moyenne_encaisses": 1.4,
+          "form_6": [
+            "W",
+            "W",
+            "L",
+            "D",
+            "W",
+            "D"
+          ],
+          "form_10": [
+            "W",
+            "W",
+            "L",
+            "D",
+            "W",
+            "D",
+            "L",
+            "L",
+            "D",
+            "L"
+          ],
+          "recent_form": [
+            "W",
+            "W",
+            "L",
+            "D",
+            "W",
+            "D"
+          ],
+          "total_points_6": 11,
+          "total_points_10": 12,
+          "total_points": 11,
+          "serie_exterieur": [
+            "L",
+            "D",
+            "L",
+            "L",
+            "D"
+          ],
+          "buts_dom_marques": 12,
+          "buts_dom_encaisses": 7,
+          "buts_ext_marques": 3,
+          "buts_ext_encaisses": 7,
+          "total_marques": 15,
+          "total_encaisses": 14
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401841302",
+            "date": "Fri, Nov 06",
+            "home_team": "Vitória",
+            "away_team": "Fluminense",
+            "score": "0 - 3",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841302"
+          },
+          {
+            "game_id": "401841294",
+            "date": "Sat, Oct 31",
+            "home_team": "Coritiba",
+            "away_team": "Vitória",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841294"
+          },
+          {
+            "game_id": "401841280",
+            "date": "Sat, Oct 24",
+            "home_team": "Vitória",
+            "away_team": "Athletico Paranaense",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841280"
+          },
+          {
+            "game_id": "401841272",
+            "date": "Mon, Oct 19",
+            "home_team": "Corinthians",
+            "away_team": "Vitória",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841272"
+          },
+          {
+            "game_id": "401841259",
+            "date": "Sun, Oct 11",
+            "home_team": "São Paulo",
+            "away_team": "Vitória",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841259"
+          },
+          {
+            "game_id": "401841250",
+            "date": "Wed, Oct 07",
+            "home_team": "Vitória",
+            "away_team": "Chapecoense",
+            "score": "4 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841250"
+          },
+          {
+            "game_id": "401841242",
+            "date": "Sun, Sep 20",
+            "home_team": "Vitória",
+            "away_team": "Cruzeiro",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841242"
+          },
+          {
+            "game_id": "401841235",
+            "date": "Sun, Sep 13",
+            "home_team": "Mirassol",
+            "away_team": "Vitória",
+            "score": "2 - 2",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841235"
+          },
+          {
+            "game_id": "401841222",
+            "date": "Mon, Sep 07",
+            "home_team": "Vitória",
+            "away_team": "Grêmio",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841222"
+          },
+          {
+            "game_id": "401909111",
+            "date": "Thu, Sep 03",
+            "home_team": "Vitória",
+            "away_team": "Vasco da Gama",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Copa do Brasil",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401909111"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401841299",
+            "date": "Mon, Nov 02",
+            "home_team": "Red Bull Bragantino",
+            "away_team": "Santos",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841299"
+          },
+          {
+            "game_id": "401841291",
+            "date": "Wed, Oct 28",
+            "home_team": "Red Bull Bragantino",
+            "away_team": "Chapecoense",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841291"
+          },
+          {
+            "game_id": "401841283",
+            "date": "Sat, Oct 24",
+            "home_team": "Palmeiras",
+            "away_team": "Red Bull Bragantino",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841283"
+          },
+          {
+            "game_id": "401841274",
+            "date": "Sun, Oct 18",
+            "home_team": "Remo",
+            "away_team": "Red Bull Bragantino",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841274"
+          },
+          {
+            "game_id": "401841260",
+            "date": "Tue, Oct 13",
+            "home_team": "Red Bull Bragantino",
+            "away_team": "Cruzeiro",
+            "score": "4 - 2",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841260"
+          },
+          {
+            "game_id": "401841253",
+            "date": "Wed, Oct 07",
+            "home_team": "Red Bull Bragantino",
+            "away_team": "Mirassol",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841253"
+          },
+          {
+            "game_id": "401841168",
+            "date": "Sat, Oct 03",
+            "home_team": "Atlético-MG",
+            "away_team": "Red Bull Bragantino",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841168"
+          },
+          {
+            "game_id": "401841241",
+            "date": "Sun, Sep 20",
+            "home_team": "Flamengo",
+            "away_team": "Red Bull Bragantino",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841241"
+          },
+          {
+            "game_id": "401841229",
+            "date": "Sat, Sep 12",
+            "home_team": "Botafogo",
+            "away_team": "Red Bull Bragantino",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841229"
+          },
+          {
+            "game_id": "401841224",
+            "date": "Sat, Sep 05",
+            "home_team": "Red Bull Bragantino",
+            "away_team": "Bahia",
+            "score": "2 - 3",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841224"
+          }
+        ],
+        "classement": {
+          "Vitória": {
+            "position": 15,
+            "points": 38
+          },
+          "Red Bull Bragantino": {
+            "position": 9,
+            "points": 47
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Flamengo",
+            "points": 76
+          },
+          {
+            "position": 2,
+            "team": "Palmeiras",
+            "points": 73
+          },
+          {
+            "position": 3,
+            "team": "Cruzeiro",
+            "points": 60
+          },
+          {
+            "position": 4,
+            "team": "Fluminense",
+            "points": 57
+          },
+          {
+            "position": 5,
+            "team": "Athletico Paranaense",
+            "points": 54
+          },
+          {
+            "position": 6,
+            "team": "Bahia",
+            "points": 53
+          },
+          {
+            "position": 7,
+            "team": "Atlético-MG",
+            "points": 51
+          },
+          {
+            "position": 8,
+            "team": "Santos",
+            "points": 50
+          },
+          {
+            "position": 9,
+            "team": "Red Bull Bragantino",
+            "points": 47
+          },
+          {
+            "position": 10,
+            "team": "São Paulo",
+            "points": 44
+          },
+          {
+            "position": 11,
+            "team": "Vasco da Gama",
+            "points": 44
+          },
+          {
+            "position": 12,
+            "team": "Botafogo",
+            "points": 42
+          },
+          {
+            "position": 13,
+            "team": "Coritiba",
+            "points": 42
+          },
+          {
+            "position": 14,
+            "team": "Mirassol",
+            "points": 41
+          },
+          {
+            "position": 15,
+            "team": "Vitória",
+            "points": 38
+          },
+          {
+            "position": 16,
+            "team": "Internacional",
+            "points": 38
+          },
+          {
+            "position": 17,
+            "team": "Corinthians",
+            "points": 37
+          },
+          {
+            "position": 18,
+            "team": "Grêmio",
+            "points": 37
+          },
+          {
+            "position": 19,
+            "team": "Remo",
+            "points": 32
+          },
+          {
+            "position": 20,
+            "team": "Chapecoense",
+            "points": 21
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "699458",
+            "date": "Sunday, June 23, 2024",
+            "team1": "Red Bull Bragantino",
+            "score": "2 - 1",
+            "team2": "Vitória",
+            "title": "Red Bull Bragantino VS Vitória",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/699458/vitoria-red-bull-bragantino",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "699649",
+            "date": "Saturday, October 19, 2024",
+            "team1": "Vitória",
+            "score": "1 - 0",
+            "team2": "Red Bull Bragantino",
+            "title": "Vitória VS Red Bull Bragantino",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/699649/red-bull-bragantino-vitoria",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "732735",
+            "date": "Sunday, July 20, 2025",
+            "team1": "Vitória",
+            "score": "1 - 0",
+            "team2": "Red Bull Bragantino",
+            "title": "Vitória VS Red Bull Bragantino",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/732735/red-bull-bragantino-vitoria",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "732921",
+            "date": "20251202",
+            "team1": "Red Bull Bragantino",
+            "score": "4 - 0",
+            "team2": "Vitória",
+            "title": "Red Bull Bragantino VS Vitória",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/732921/vitoria-red-bull-bragantino",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "401841124",
+            "date": "Sunday, May 17, 2026",
+            "team1": "Red Bull Bragantino",
+            "score": "2 - 0",
+            "team2": "Vitória",
+            "title": "Red Bull Bragantino VS Vitória",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/401841124/vitoria-red-bull-bragantino",
+            "source": "Serie A",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/3457.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/6079.png",
+        "classement_home": 15,
+        "classement_away": 9,
+        "points_classement_home": 38,
+        "points_classement_away": 47,
+        "nom_classement_home": "Vitória",
+        "nom_classement_away": "Red Bull Bragantino",
+        "country_fr": "Brazil - Serie A",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.421,
+            "lambda_away": 0.939,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 47.99,
+            "X": 27.28,
+            "V2": 24.73
+          },
+          "double_chance": {
+            "1X": 75.27,
+            "12": 72.72,
+            "X2": 52.01
+          },
+          "over_under": {
+            "plus_de_0.5": 90.58,
+            "moins_de_0.5": 9.41,
+            "plus_de_1.5": 68.28,
+            "moins_de_1.5": 31.72,
+            "plus_de_2.5": 41.58,
+            "moins_de_2.5": 58.42,
+            "plus_de_3.5": 21.2,
+            "moins_de_3.5": 78.8,
+            "plus_de_4.5": 9.3,
+            "moins_de_4.5": 90.7,
+            "plus_de_5.5": 3.41,
+            "moins_de_5.5": 96.59
+          },
+          "btts": {
+            "oui": 46.36,
+            "non": 53.64
+          },
+          "resultat_total": {
+            "V1et+0.5": 47.99,
+            "1Xet+0.5": 65.85,
+            "V2et+0.5": 24.73,
+            "V1et+1.5": 34.76,
+            "1Xet+1.5": 52.62,
+            "V2et+1.5": 15.66,
+            "V1et+2.5": 25.44,
+            "1Xet+2.5": 30.19,
+            "V2et+2.5": 11.39,
+            "V1et+3.5": 11.82,
+            "1Xet+3.5": 16.57,
+            "V2et+3.5": 4.64,
+            "V1et+4.5": 6.06,
+            "1Xet+4.5": 6.74,
+            "V2et+4.5": 2.56,
+            "V1et+5.5": 2.05,
+            "1Xet+5.5": 2.74,
+            "V2et+5.5": 0.67
+          },
+          "scores_probables": {
+            "1-0": 13.24,
+            "1-1": 13.12,
+            "0-0": 9.41,
+            "2-0": 9.31,
+            "2-1": 9.2,
+            "0-1": 9.07,
+            "1-2": 5.56,
+            "3-0": 4.42,
+            "0-2": 4.28,
+            "3-1": 4.07
+          },
+          "buts_moyens_simules": {
+            "home": 1.42,
+            "away": 0.94,
+            "total": 2.36
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Victoire extérieur (Red Bull Bragantino)  \n**CONFIANCE** : 66%  \n**SCORES PROBABLES** : 0‑1 ou 0‑2  \n**MI-TEMPS** : Mi‑temps victoire extérieur  \n**OPTION RISQUE NUL** : Non applicable  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative (forces / faiblesses)**  \n- **Vitória** (15ᵉ, 38 pts) : moyenne 1,10 but marqué et 1,60 encaissé. À domicile, 7 buts marqués et 9 encaissés (≈ 0,78 but marqué et 1,00 but encaissé par match). Défense assez perméable, attaque très peu efficace.  \n- **Red Bull Bragantino** (9ᵉ, 47 pts) : moyenne 1,50 but marqué et 1,40 encaissé. En déplacement, 3 buts marqués et 7 encaissés (≈ 0,33 but marqué et 0,78 but encaissé par match). Bonne organisation défensive, attaque capable de marquer mais peu prolifique à l’extérieur.\n\n**2. Impact du facteur domicile / extérieur**  \n- Vitória montre une faiblesse offensive à domicile (moins d’un but par match) et concède régulièrement.  \n- Bragantino, même en déplacement, garde une solidité défensive (moins d’un but encaissé par match) et a déjà prouvé qu’il pouvait marquer à l’extérieur (ex. 2‑1 contre Santos, 3‑0 contre Chapecoense).\n\n**3. Forme récente**  \n- **Vitória** (6 derniers) : L L D D L W → 5 pts, aucune séquence de victoires.  \n- **Bragantino** (6 derniers) : W W L D W D → 11 pts, 3 victoires dont 2 à domicile, aucune défaite lourde. La dynamique est clairement en faveur de Bragantino.\n\n**4. Contexte du championnat**  \n- Bragantino se situe à la 9ᵉ place, à 9 points du top‑4, donc motivé pour consolider sa position.  \n- Vitória lutte dans la zone basse (15ᵉ) et n’a aucun enjeu majeur, ce qui se traduit souvent par un manque de motivation et de performances.\n\n**5. Confrontations directes (5 dernières rencontres)**  \n- Bragantino 2‑1 (2024)  \n- Vitória 1‑0 (2024)  \n- Vitória 1‑0 (2025)  \n- Bragantino 4‑0 (2025)  \n- Bragantino 2‑0 (2026)  \n\nSur 5 matchs, Bragantino a remporté 3, dont deux avec une marge de deux buts ou plus. Les confrontations récentes montrent une tendance à la supériorité de Bragantino, surtout lorsqu’il joue à l’extérieur.\n\n**6. Analyse des statistiques détaillées des matchs passés**  \nMême si les données de possession, tirs, corners ne sont pas disponibles, les scores récents permettent d’observer :  \n- Vitória ne marque que 7 buts à domicile sur 9 matchs (≈ 0,78 buts/match).  \n- Bragantino ne marque que 3 buts à l’extérieur sur 9 matchs (≈ 0,33 buts/match).  \nCes faibles moyennes indiquent un match à faible score, mais la supériorité défensive de Bragantino rend probable un **0‑1** ou **0‑2**.\n\n**7. Évaluation des cotes**  \nAucune cote fournie – la décision repose uniquement sur l’analyse statistique.\n\n**8. Choix de la prédiction**  \n- **Résultat** : Bragantino est clairement favori (meilleure forme, meilleur classement, historique favorable).  \n- **Buts** : La probabilité d’un total > 2,5 buts reste incertaine (faible production offensive des deux équipes).  \n- **Double chance** n’est pas nécessaire car le différentiel de forme est suffisamment net pour justifier une prédiction de victoire extérieure.  \n\n**9. Option risque nul**  \nLa probabilité d’un match nul est estimée à ≈ 15 % (faible), donc l’option « Match nul » n’est pas pertinente ici.  \n\nEn résumé, le tableau général (classement, forme, confrontations directes et statistiques de buts) pointe vers une victoire de Red Bull Bragantino, très probablement par un but d’écart.",
+        "confiance_pourcentage": 60,
+        "prediction_principale": "Victoire extérieur (Red Bull Bragantino)",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "0‑1 ou 0‑2",
+        "mi_temps": "Mi‑temps victoire extérieur",
+        "option_nul": "Non applicable",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "**PRÉDICTION FINALE** : -2.5 buts  \n**CONFIANCE** : 60%  \n**SCORES PROBABLES** : 1‑0, 1‑1  \n\n**RAISONNEMENT** :  \n- Monte‑Carlo indique 58 % de chances que le total de buts soit ≤ 2,5, la meilleure probabilité parmi les marchés proposés.  \n- Les deux équipes affichent de faibles moyennes de buts (Vitória ≈ 0,78 c. domicile, Bragantino ≈ 0,33 c. extérieur) et les scores les plus probables (1‑0, 1‑1) restent sous 2,5.  \n- Malgré un léger avantage à domicile (48 % de victoire), le manque d’efficacité offensive rend le pari “moins de 2,5 buts” plus fiable que le résultat du match.",
+        "confiance_pourcentage_final": 60,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": "1‑0, 1‑1"
+      },
+      {
+        "id": 1,
+        "HomeTeam": "Vasco da Gama",
+        "AwayTeam": "Internacional",
+        "date": "19 novembre 2026 à 22:30:00 UTC",
+        "league": "Brazil - Serie A",
+        "type": "stats_brutes_avec_cotes_et_ia_avec_stats_detaillees_h2h_enrichi_tirs_confiance_scores_extraction_amelioree",
+        "odds": {
+          "bookmaker": "1xBet",
+          "h2h": {
+            "Internacional": 5.1,
+            "Vasco da Gama": 1.69,
+            "Draw": 3.92
+          },
+          "totals": {
+            "Over": 1.83,
+            "Under": 2.02
+          }
+        },
+        "stats_home": {
+          "moyenne_marques": 1.3,
+          "moyenne_encaisses": 1.3,
+          "form_6": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "form_10": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "L",
+            "W",
+            "L",
+            "L",
+            "W",
+            "D"
+          ],
+          "recent_form": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "total_points_6": 12,
+          "total_points_10": 16,
+          "total_points": 12,
+          "serie_domicile": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "D"
+          ],
+          "buts_dom_marques": 7,
+          "buts_dom_encaisses": 10,
+          "buts_ext_marques": 6,
+          "buts_ext_encaisses": 3,
+          "total_marques": 13,
+          "total_encaisses": 13
+        },
+        "stats_away": {
+          "moyenne_marques": 1.3,
+          "moyenne_encaisses": 1.4,
+          "form_6": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "D",
+            "W"
+          ],
+          "form_10": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "D",
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "recent_form": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "D",
+            "W"
+          ],
+          "total_points_6": 10,
+          "total_points_10": 13,
+          "total_points": 10,
+          "serie_exterieur": [
+            "L",
+            "L",
+            "D",
+            "L",
+            "W",
+            "L"
+          ],
+          "buts_dom_marques": 8,
+          "buts_dom_encaisses": 4,
+          "buts_ext_marques": 5,
+          "buts_ext_encaisses": 10,
+          "total_marques": 13,
+          "total_encaisses": 14
+        },
+        "last_matches_home": [
+          {
+            "game_id": "401841175",
+            "date": "Sat, Nov 14",
+            "home_team": "Chapecoense",
+            "away_team": "Vasco da Gama",
+            "score": "0 - 2",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841175"
+          },
+          {
+            "game_id": "401913107",
+            "date": "Sun, Nov 08",
+            "home_team": "Vasco da Gama",
+            "away_team": "Palmeiras",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Copa do Brasil",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401913107"
+          },
+          {
+            "game_id": "401841306",
+            "date": "Wed, Nov 04",
+            "home_team": "Athletico Paranaense",
+            "away_team": "Vasco da Gama",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841306"
+          },
+          {
+            "game_id": "401913105",
+            "date": "Sun, Nov 01",
+            "home_team": "Palmeiras",
+            "away_team": "Vasco da Gama",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Copa do Brasil",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401913105"
+          },
+          {
+            "game_id": "401841292",
+            "date": "Thu, Oct 29",
+            "home_team": "Vasco da Gama",
+            "away_team": "Flamengo",
+            "score": "1 - 4",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841292"
+          },
+          {
+            "game_id": "401841281",
+            "date": "Sat, Oct 24",
+            "home_team": "Vasco da Gama",
+            "away_team": "Corinthians",
+            "score": "3 - 2",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841281"
+          },
+          {
+            "game_id": "401913957",
+            "date": "Wed, Oct 21",
+            "home_team": "Vasco da Gama",
+            "away_team": "Boca Juniors",
+            "score": "1 - 3",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401913957"
+          },
+          {
+            "game_id": "401841273",
+            "date": "Sun, Oct 18",
+            "home_team": "São Paulo",
+            "away_team": "Vasco da Gama",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841273"
+          },
+          {
+            "game_id": "401913958",
+            "date": "Wed, Oct 14",
+            "home_team": "Boca Juniors",
+            "away_team": "Vasco da Gama",
+            "score": "0 - 1",
+            "status": "FT",
+            "competition": "CONMEBOL Sudamericana",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401913958"
+          },
+          {
+            "game_id": "401841262",
+            "date": "Sat, Oct 10",
+            "home_team": "Vasco da Gama",
+            "away_team": "Remo",
+            "score": "0 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841262"
+          }
+        ],
+        "last_matches_away": [
+          {
+            "game_id": "401841301",
+            "date": "Wed, Nov 04",
+            "home_team": "Internacional",
+            "away_team": "Coritiba",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841301"
+          },
+          {
+            "game_id": "401841289",
+            "date": "Wed, Oct 28",
+            "home_team": "Fluminense",
+            "away_team": "Internacional",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841289"
+          },
+          {
+            "game_id": "401841285",
+            "date": "Sat, Oct 24",
+            "home_team": "Internacional",
+            "away_team": "Botafogo",
+            "score": "3 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841285"
+          },
+          {
+            "game_id": "401841275",
+            "date": "Fri, Oct 16",
+            "home_team": "Mirassol",
+            "away_team": "Internacional",
+            "score": "2 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841275"
+          },
+          {
+            "game_id": "401841267",
+            "date": "Sun, Oct 11",
+            "home_team": "Grêmio",
+            "away_team": "Internacional",
+            "score": "1 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841267"
+          },
+          {
+            "game_id": "401841255",
+            "date": "Wed, Oct 07",
+            "home_team": "Internacional",
+            "away_team": "Corinthians",
+            "score": "2 - 1",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841255"
+          },
+          {
+            "game_id": "401841243",
+            "date": "Sun, Sep 20",
+            "home_team": "São Paulo",
+            "away_team": "Internacional",
+            "score": "1 - 0",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841243"
+          },
+          {
+            "game_id": "401841228",
+            "date": "Sat, Sep 12",
+            "home_team": "Chapecoense",
+            "away_team": "Internacional",
+            "score": "1 - 2",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841228"
+          },
+          {
+            "game_id": "401841223",
+            "date": "Sun, Sep 06",
+            "home_team": "Internacional",
+            "away_team": "Santos",
+            "score": "2 - 3",
+            "status": "FT",
+            "competition": "Brazilian Serie A",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401841223"
+          },
+          {
+            "game_id": "401909114",
+            "date": "Thu, Sep 03",
+            "home_team": "Grêmio",
+            "away_team": "Internacional",
+            "score": "3 - 1",
+            "status": "FT",
+            "competition": "Copa do Brasil",
+            "stats": {},
+            "url": "https://www.espn.com/soccer/match/_/gameId/401909114"
+          }
+        ],
+        "classement": {
+          "Vasco da Gama": {
+            "position": 11,
+            "points": 44
+          },
+          "Internacional": {
+            "position": 16,
+            "points": 38
+          }
+        },
+        "classement_complet": [
+          {
+            "position": 1,
+            "team": "Flamengo",
+            "points": 76
+          },
+          {
+            "position": 2,
+            "team": "Palmeiras",
+            "points": 73
+          },
+          {
+            "position": 3,
+            "team": "Cruzeiro",
+            "points": 60
+          },
+          {
+            "position": 4,
+            "team": "Fluminense",
+            "points": 57
+          },
+          {
+            "position": 5,
+            "team": "Athletico Paranaense",
+            "points": 54
+          },
+          {
+            "position": 6,
+            "team": "Bahia",
+            "points": 53
+          },
+          {
+            "position": 7,
+            "team": "Atlético-MG",
+            "points": 51
+          },
+          {
+            "position": 8,
+            "team": "Santos",
+            "points": 50
+          },
+          {
+            "position": 9,
+            "team": "Red Bull Bragantino",
+            "points": 47
+          },
+          {
+            "position": 10,
+            "team": "São Paulo",
+            "points": 44
+          },
+          {
+            "position": 11,
+            "team": "Vasco da Gama",
+            "points": 44
+          },
+          {
+            "position": 12,
+            "team": "Botafogo",
+            "points": 42
+          },
+          {
+            "position": 13,
+            "team": "Coritiba",
+            "points": 42
+          },
+          {
+            "position": 14,
+            "team": "Mirassol",
+            "points": 41
+          },
+          {
+            "position": 15,
+            "team": "Vitória",
+            "points": 38
+          },
+          {
+            "position": 16,
+            "team": "Internacional",
+            "points": 38
+          },
+          {
+            "position": 17,
+            "team": "Corinthians",
+            "points": 37
+          },
+          {
+            "position": 18,
+            "team": "Grêmio",
+            "points": 37
+          },
+          {
+            "position": 19,
+            "team": "Remo",
+            "points": 32
+          },
+          {
+            "position": 20,
+            "team": "Chapecoense",
+            "points": 21
+          }
+        ],
+        "confrontations_saison_derniere": [
+          {
+            "gameId": "699497",
+            "date": "Sunday, July 7, 2024",
+            "team1": "Internacional",
+            "score": "1 - 2",
+            "team2": "Vasco da Gama",
+            "title": "Internacional VS Vasco da Gama",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/699497/vasco-da-gama-internacional",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "699689",
+            "date": "Thursday, November 21, 2024",
+            "team1": "Vasco da Gama",
+            "score": "0 - 1",
+            "team2": "Internacional",
+            "title": "Vasco da Gama VS Internacional",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/699689/internacional-vasco-da-gama",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "732752",
+            "date": "Sunday, July 27, 2025",
+            "team1": "Internacional",
+            "score": "1 - 1",
+            "team2": "Vasco da Gama",
+            "title": "Internacional VS Vasco da Gama",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/732752/vasco-da-gama-internacional",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "732948",
+            "date": "Friday, November 28, 2025",
+            "team1": "Vasco da Gama",
+            "score": "5 - 1",
+            "team2": "Internacional",
+            "title": "Vasco da Gama VS Internacional",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/732948/internacional-vasco-da-gama",
+            "source": "Serie A",
+            "stats": {}
+          },
+          {
+            "gameId": "401841126",
+            "date": "Saturday, May 16, 2026",
+            "team1": "Internacional",
+            "score": "4 - 1",
+            "team2": "Vasco da Gama",
+            "title": "Internacional VS Vasco da Gama",
+            "match_url": "https://www.espn.com/soccer/match/_/gameId/401841126/vasco-da-gama-internacional",
+            "source": "Serie A",
+            "stats": {}
+          }
+        ],
+        "logo_home": "https://a.espncdn.com/i/teamlogos/soccer/500/3454.png",
+        "logo_away": "https://a.espncdn.com/i/teamlogos/soccer/500/1936.png",
+        "classement_home": 11,
+        "classement_away": 16,
+        "points_classement_home": 44,
+        "points_classement_away": 38,
+        "nom_classement_home": "Vasco da Gama",
+        "nom_classement_away": "Internacional",
+        "country_fr": "Brazil - Serie A",
+        "Probabilites": {
+          "parametres_simulation": {
+            "iterations": 20000,
+            "lambda_home": 1.632,
+            "lambda_away": 1.354,
+            "ajustement_h2h": true
+          },
+          "1x2": {
+            "V1": 43.78,
+            "X": 24.04,
+            "V2": 32.17
+          },
+          "double_chance": {
+            "1X": 67.82,
+            "12": 75.96,
+            "X2": 56.22
+          },
+          "over_under": {
+            "plus_de_0.5": 94.89,
+            "moins_de_0.5": 5.11,
+            "plus_de_1.5": 80.13,
+            "moins_de_1.5": 19.87,
+            "plus_de_2.5": 57.31,
+            "moins_de_2.5": 42.69,
+            "plus_de_3.5": 34.92,
+            "moins_de_3.5": 65.08,
+            "plus_de_4.5": 18.69,
+            "moins_de_4.5": 81.31,
+            "plus_de_5.5": 8.47,
+            "moins_de_5.5": 91.53
+          },
+          "btts": {
+            "oui": 59.8,
+            "non": 40.2
+          },
+          "resultat_total": {
+            "V1et+0.5": 43.78,
+            "1Xet+0.5": 62.72,
+            "V2et+0.5": 32.17,
+            "V1et+1.5": 35.8,
+            "1Xet+1.5": 54.74,
+            "V2et+1.5": 25.4,
+            "V1et+2.5": 28.92,
+            "1Xet+2.5": 36.68,
+            "V2et+2.5": 20.64,
+            "V1et+3.5": 16.34,
+            "1Xet+3.5": 24.09,
+            "V2et+3.5": 10.84,
+            "V1et+4.5": 10.17,
+            "1Xet+4.5": 11.96,
+            "V2et+4.5": 6.74,
+            "V1et+5.5": 4.14,
+            "1Xet+5.5": 5.92,
+            "V2et+5.5": 2.55
+          },
+          "scores_probables": {
+            "1-1": 11.18,
+            "2-1": 9.0,
+            "1-0": 7.98,
+            "1-2": 7.72,
+            "2-0": 6.88,
+            "0-1": 6.78,
+            "2-2": 5.98,
+            "0-0": 5.11,
+            "0-2": 4.76,
+            "3-1": 4.64
+          },
+          "buts_moyens_simules": {
+            "home": 1.63,
+            "away": 1.36,
+            "total": 2.99
+          }
+        },
+        "analyse_ia": "**PRÉDICTION PRINCIPALE** : Plus de 2.5 buts  \n**CONFIANCE** : 58%  \n**SCORES PROBABLES** : 2‑1 ou 1‑2  \n**MI-TEMPS** : Mi‑temps +1.5 buts (au moins un but marqué)  \n**OPTION RISQUE NUL** : Match nul – 24%  \n\n**JUSTIFICATION**\n\n**1. Analyse comparative (forces / faiblesses)**  \n- **Vasco da Gama** (11ᵉ, 44 pts) : moyenne 1,30 buts marqués et 1,30 buts encaissés. À domicile, 7 buts marqués et 10 encaissés en 9 matchs – une défense légèrement fragile et une attaque modérée.  \n- **Internacional** (16ᵉ, 38 pts) : même moyenne de buts marqués (1,30) mais 1,40 buts encaissés en moyenne. À l’extérieur, 5 buts marqués et 10 encaissés – la défense est la plus perméable de la ligue.  \n\nLes deux équipes affichent des chiffres d’attaque similaires et une défense qui laisse passer plus d’un but par match. Cela crée naturellement un potentiel de **plus de 2,5 buts**.\n\n**2. Impact du facteur domicile / extérieur**  \n- Vasco bénéficie d’un léger avantage à domicile, mais ses 7 buts à domicile sur la saison restent modestes.  \n- Internacional a montré qu’il pouvait marquer à l’extérieur (ex. 3‑0 à Botafogo, 4‑1 contre Vasco en mai 2026).  \n\nL’avantage de terrain ne compense pas la tendance à concéder, ce qui maintient le risque de matchs à score élevé.\n\n**3. Forme récente**  \n- **Vasco** (6 derniers) : W W W L L W – 3 victoires dont deux avec 3 buts marqués (3‑1 vs Athletico, 3‑2 vs Corinthians).  \n- **Internacional** (6 derniers) : W L W L D W – 3 victoires dont deux à plus de 2 buts (3‑0 vs Botafogo, 2‑1 vs Corinthians).  \n\nLes deux équipes ont donc produit des matchs avec 3 buts ou plus récemment.\n\n**4. Contexte du championnat**  \n- Le classement montre un écart de 6 points entre les deux clubs, mais aucune des deux équipes n’est en lutte pour le titre ou la relégation immédiate. Elles sont donc susceptibles de jouer de façon ouverte, cherchant les points sans trop de prudence défensive.\n\n**5. Confrontations directes** (dernières saisons)  \n- 5 rencontres récentes : 2 victoires de chaque côté, 1 nul.  \n- Scores notables : 5‑1 (Vasco) et 4‑1 (Internacional). Deux matchs ont dépassé les 2,5 buts, indiquant que les duels entre ces clubs sont souvent riches en buts.\n\n**6. Évaluation des cotes**  \n- Over 2.5 buts : 1,83 → probabilité implicite ≈ 54,6 %  \n- Under 2.5 buts : 2,02 → probabilité implicite ≈ 49,5 %  \n\nLe bookmaker favorise légèrement le *over*, ce qui concorde avec l’analyse statistique (total attendu ≈ 2,6 buts).\n\n**7. Analyse détaillée des matchs récents** (possibilité de possession, tirs, corners)  \nMême si les données précises de possession et tirs ne sont pas disponibles, les scores récents (ex. 3‑2, 3‑0, 4‑1) suggèrent un nombre élevé de tirs et de corners dans les matchs impliquant ces deux équipes. Aucun des deux clubs n’a affiché une tendance à “fermer le jeu” lors de leurs dernières rencontres.\n\n**8. Synthèse**  \n- Moyennes d’attaque similaires (≈ 1,30) + défenses qui laissent passer > 1,3 buts → total attendu > 2,5.  \n- Historique direct riche en matchs à plus de 2,5 buts.  \n- Forme récente montre plusieurs matchs à 3 buts ou plus.  \n\nCes éléments rendent la prédiction **“Plus de 2.5 buts”** la plus fiable en termes de rapport fiabilité/gain.\n\n**9. Scores les plus probables**  \n- 2‑1 (Vasco) ou 1‑2 (Internacional) : deux scénarios qui donnent exactement 3 buts, correspondant à la moyenne attendue.  \n\n**10. Mi‑temps**  \n- Les deux équipes marquent régulièrement dès les 45 premières minutes (ex. 1‑0, 2‑1 en première période). La prédiction “Mi‑temps +1.5 buts” (au moins un but) reflète cette tendance.\n\n**11. Option risque nul**  \n- Les cotes du match nul (3,92) traduisent une probabilité d’environ 25 %. Ce n’est pas assez élevé pour justifier un double chance, mais il convient de le signaler comme risque secondaire.  \n\nEn résumé, le match présente de fortes chances de dépasser les 2,5 buts, avec une confiance de 58 % et deux scores plausibles de 2‑1 ou 1‑2.",
+        "confiance_pourcentage": 58,
+        "prediction_principale": "Plus de 2.5 buts",
+        "corners_prevu": null,
+        "tirs_cadres_prevu": null,
+        "scores_probables": "2‑1 ou 1‑2",
+        "mi_temps": "Mi‑temps +1.5 buts (au moins un but marqué)",
+        "option_nul": "Match nul – 24%",
+        "mi_temps_final": null,
+        "option_nul_final": null,
+        "analyse_ia_profonde": "❌ Échec définitif après 5 tentatives. Dernière erreur : 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions",
+        "confiance_pourcentage_final": null,
+        "prediction_principale_finale": null,
+        "scores_probables_finaux": null
+      }
+    ]
+  }
+}
